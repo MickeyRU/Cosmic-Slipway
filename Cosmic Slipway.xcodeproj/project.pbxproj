@@ -7,21 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BEB0624229D1AE2B005AEB24 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0624129D1AE2B005AEB24 /* Colors.swift */; };
+		BEB0624429D1B5A0005AEB24 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0624329D1B5A0005AEB24 /* Images.swift */; };
+		BEB0624729D1B71F005AEB24 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0624629D1B71F005AEB24 /* Fonts.swift */; };
 		BEB7D0A329CF18AE002B3431 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7D0A229CF18AE002B3431 /* AppDelegate.swift */; };
 		BEB7D0A529CF18AE002B3431 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7D0A429CF18AE002B3431 /* SceneDelegate.swift */; };
-		BEB7D0A729CF18AE002B3431 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7D0A629CF18AE002B3431 /* MainViewController.swift */; };
+		BEB7D0A729CF18AE002B3431 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7D0A629CF18AE002B3431 /* HomeViewController.swift */; };
 		BEB7D0AC29CF18B3002B3431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEB7D0AB29CF18B3002B3431 /* Assets.xcassets */; };
 		BEB7D0AF29CF18B3002B3431 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEB7D0AD29CF18B3002B3431 /* LaunchScreen.storyboard */; };
+		BEB7D0BA29CF2EEE002B3431 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7D0B929CF2EEE002B3431 /* HomeView.swift */; };
+		BEB7D0C629CF5D1A002B3431 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7D0C529CF5D1A002B3431 /* UIView+Extension.swift */; };
+		BEEA422529D03B57008B98E4 /* ShipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEA422429D03B57008B98E4 /* ShipCell.swift */; };
+		BEEA422729D044B2008B98E4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEA422629D044B2008B98E4 /* UIColor+Extension.swift */; };
+		BEEA422D29D06CB6008B98E4 /* Figtree-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEEA422C29D06CB6008B98E4 /* Figtree-ExtraBold.ttf */; };
+		BEEA423029D09684008B98E4 /* Figtree-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEEA422F29D09684008B98E4 /* Figtree-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BEB0624129D1AE2B005AEB24 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		BEB0624329D1B5A0005AEB24 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		BEB0624629D1B71F005AEB24 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		BEB7D09F29CF18AE002B3431 /* Cosmic Slipway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cosmic Slipway.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB7D0A229CF18AE002B3431 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEB7D0A429CF18AE002B3431 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BEB7D0A629CF18AE002B3431 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BEB7D0A629CF18AE002B3431 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BEB7D0AB29CF18B3002B3431 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEB7D0AE29CF18B3002B3431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEB7D0B029CF18B3002B3431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEB7D0B929CF2EEE002B3431 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		BEB7D0C529CF5D1A002B3431 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		BEEA422429D03B57008B98E4 /* ShipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipCell.swift; sourceTree = "<group>"; };
+		BEEA422629D044B2008B98E4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		BEEA422C29D06CB6008B98E4 /* Figtree-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-ExtraBold.ttf"; sourceTree = "<group>"; };
+		BEEA422F29D09684008B98E4 /* Figtree-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +53,82 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BEB0623829D1A3CD005AEB24 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BEB7D0BB29CF2EF3002B3431 /* View */,
+				BEB7D0BC29CF2EFE002B3431 /* Controller */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BEB0623929D1A665005AEB24 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BEB7D0AB29CF18B3002B3431 /* Assets.xcassets */,
+				BEB0624029D1AE07005AEB24 /* Colors */,
+				BEB0624529D1B5A9005AEB24 /* Images */,
+				BEEA422E29D06D0B008B98E4 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BEB0623A29D1A6AA005AEB24 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				BEB0623E29D1A869005AEB24 /* Profile */,
+				BEB0623829D1A3CD005AEB24 /* Home */,
+				BEB0623C29D1A7B7005AEB24 /* Login */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		BEB0623C29D1A7B7005AEB24 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		BEB0623D29D1A7FB005AEB24 /* Storybords */ = {
+			isa = PBXGroup;
+			children = (
+				BEB7D0AD29CF18B3002B3431 /* LaunchScreen.storyboard */,
+			);
+			path = Storybords;
+			sourceTree = "<group>";
+		};
+		BEB0623E29D1A869005AEB24 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		BEB0623F29D1AB90005AEB24 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				BEB7D0B029CF18B3002B3431 /* Info.plist */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		BEB0624029D1AE07005AEB24 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				BEB0624129D1AE2B005AEB24 /* Colors.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		BEB0624529D1B5A9005AEB24 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				BEB0624329D1B5A0005AEB24 /* Images.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		BEB7D09629CF18AD002B3431 = {
 			isa = PBXGroup;
 			children = (
@@ -55,8 +149,11 @@
 			isa = PBXGroup;
 			children = (
 				BEB7D0B729CF1C8B002B3431 /* Application */,
-				BEB7D0A629CF18AE002B3431 /* MainViewController.swift */,
-				BEB7D0B829CF1C9F002B3431 /* Resources */,
+				BEB0623F29D1AB90005AEB24 /* Configuration */,
+				BEB0623A29D1A6AA005AEB24 /* Screens */,
+				BEB0623D29D1A7FB005AEB24 /* Storybords */,
+				BEB0623929D1A665005AEB24 /* Resources */,
+				BEB7D0BF29CF3775002B3431 /* Extensions */,
 			);
 			path = "Cosmic Slipway";
 			sourceTree = "<group>";
@@ -70,14 +167,48 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		BEB7D0B829CF1C9F002B3431 /* Resources */ = {
+		BEB7D0BB29CF2EF3002B3431 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BEB7D0AB29CF18B3002B3431 /* Assets.xcassets */,
-				BEB7D0AD29CF18B3002B3431 /* LaunchScreen.storyboard */,
-				BEB7D0B029CF18B3002B3431 /* Info.plist */,
+				BEB7D0B929CF2EEE002B3431 /* HomeView.swift */,
+				BEEA422429D03B57008B98E4 /* ShipCell.swift */,
 			);
-			path = Resources;
+			path = View;
+			sourceTree = "<group>";
+		};
+		BEB7D0BC29CF2EFE002B3431 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BEB7D0A629CF18AE002B3431 /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BEB7D0BF29CF3775002B3431 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BEB7D0C229CF5C8B002B3431 /* UIKit+Extension */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BEB7D0C229CF5C8B002B3431 /* UIKit+Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BEB7D0C529CF5D1A002B3431 /* UIView+Extension.swift */,
+				BEEA422629D044B2008B98E4 /* UIColor+Extension.swift */,
+			);
+			path = "UIKit+Extension";
+			sourceTree = "<group>";
+		};
+		BEEA422E29D06D0B008B98E4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BEB0624629D1B71F005AEB24 /* Fonts.swift */,
+				BEEA422C29D06CB6008B98E4 /* Figtree-ExtraBold.ttf */,
+				BEEA422F29D09684008B98E4 /* Figtree-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +269,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEEA423029D09684008B98E4 /* Figtree-Regular.ttf in Resources */,
+				BEEA422D29D06CB6008B98E4 /* Figtree-ExtraBold.ttf in Resources */,
 				BEB7D0AF29CF18B3002B3431 /* LaunchScreen.storyboard in Resources */,
 				BEB7D0AC29CF18B3002B3431 /* Assets.xcassets in Resources */,
 			);
@@ -150,9 +283,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEB7D0A729CF18AE002B3431 /* MainViewController.swift in Sources */,
+				BEB7D0C629CF5D1A002B3431 /* UIView+Extension.swift in Sources */,
+				BEB0624229D1AE2B005AEB24 /* Colors.swift in Sources */,
+				BEEA422529D03B57008B98E4 /* ShipCell.swift in Sources */,
+				BEB0624429D1B5A0005AEB24 /* Images.swift in Sources */,
+				BEB7D0A729CF18AE002B3431 /* HomeViewController.swift in Sources */,
+				BEB7D0BA29CF2EEE002B3431 /* HomeView.swift in Sources */,
 				BEB7D0A329CF18AE002B3431 /* AppDelegate.swift in Sources */,
+				BEB0624729D1B71F005AEB24 /* Fonts.swift in Sources */,
 				BEB7D0A529CF18AE002B3431 /* SceneDelegate.swift in Sources */,
+				BEEA422729D044B2008B98E4 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +433,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3YZWNV863X;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Cosmic Slipway/Resources/Info.plist";
+				INFOPLIST_FILE = "Cosmic Slipway/Configuration/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -323,7 +463,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3YZWNV863X;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Cosmic Slipway/Resources/Info.plist";
+				INFOPLIST_FILE = "Cosmic Slipway/Configuration/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
