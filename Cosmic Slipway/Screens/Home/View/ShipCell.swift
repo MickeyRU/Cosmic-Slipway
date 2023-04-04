@@ -8,7 +8,9 @@
 import UIKit
 
 final class ShipCell: UICollectionViewCell {
+    
     // MARK: - Public Properties
+    
     static let reuseIdentifier = "ShipCell"
     
     // MARK: - Private Properties
@@ -17,7 +19,7 @@ final class ShipCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.image = Images.bgCellImage
+        imageView.image = Images.shipCellBgImage
         return imageView
     }()
     
@@ -32,7 +34,7 @@ final class ShipCell: UICollectionViewCell {
         label.text = "New ship"
         label.textAlignment = .left
         label.textColor = UIColor(rgb: Colors.accentColor)
-        label.font = Fonts.ebFigtree
+        label.font = UIFont(name: Fonts.ebFigtree, size: 16)
         return label
     }()
     
@@ -41,17 +43,18 @@ final class ShipCell: UICollectionViewCell {
         label.text = "Configure"
         label.textAlignment = .left
         label.textColor = UIColor(rgb: Colors.textHelpers)
-        label.font = Fonts.rFigtree
+        label.font = UIFont(name: Fonts.rFigtree, size: 12)
         return label
     }()
     
-    private let addShipButton: UIButton = {
-        let button = UIButton()
-        button.setImage(Images.addButtonImage, for: .normal)
-        return button
+    private let addShipImage: UIImageView = {
+        let imageView = UIImageView(image: Images.addButtonImage)
+        imageView.contentMode = .scaleAspectFill
+        return imageView
     }()
     
     // MARK: - Initializers
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -64,12 +67,13 @@ final class ShipCell: UICollectionViewCell {
     }
     
     // MARK: - Private Methods
+    
     private func setupCell() {
         layer.cornerRadius = 28
     }
     
     private func layout() {
-        [backgroundImageView, shipImageView, shipTitle, shipStatusTitle, addShipButton].forEach { addViews($0) }
+        [backgroundImageView, shipImageView, shipTitle, shipStatusTitle, addShipImage].forEach { addViews($0) }
         
         NSLayoutConstraint.activate([
             backgroundImageView.topAnchor.constraint(equalTo: topAnchor),
@@ -88,10 +92,10 @@ final class ShipCell: UICollectionViewCell {
             shipStatusTitle.leadingAnchor.constraint(equalTo: shipTitle.leadingAnchor),
             shipStatusTitle.bottomAnchor.constraint(equalTo: shipTitle.topAnchor, constant: -6),
             
-            addShipButton.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -4),
-            addShipButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4),
-            addShipButton.widthAnchor.constraint(equalToConstant: 80),
-            addShipButton.heightAnchor.constraint(equalToConstant: 80)
+            addShipImage.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -4),
+            addShipImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4),
+            addShipImage.widthAnchor.constraint(equalToConstant: 80),
+            addShipImage.heightAnchor.constraint(equalToConstant: 80)
         ])
     }
 }

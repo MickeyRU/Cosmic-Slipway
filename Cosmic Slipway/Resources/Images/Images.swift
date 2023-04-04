@@ -8,8 +8,15 @@
 import UIKit
 
 enum Images {
-    static let bgImage = UIImage(named: "backgroud")
-    static let defaultShipImage = UIImage(named: "shipImage")
-    static let addButtonImage = UIImage(named: "addShipButton")
-    static let bgCellImage = UIImage(named: "cellBg")
+    static let homeBgImage = UIImage(named: "homeBg")!
+    static let shipSelectionBgImage = UIImage (named: "shipSelectionBg")!
+    static let shipCellBgImage = UIImage(named: "shipCellBg")!
+    static let backBorderImage = UIImage(named: "backBorderImage")!
+
+
+    
+    static let backButtonImage = UIImage (named: "backButton")!
+
+    static let defaultShipImage = UIImage(named: "shipImage")!
+    static let addButtonImage = UIImage(named: "addShipButton")!
 }
