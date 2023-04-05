@@ -131,8 +131,9 @@ extension ShipSelectionController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let ship = shipsDataArray[indexPath.item]
         if indexPath.row == 3 {
-            navigationController?.popToRootViewController(animated: true)
-            print("BattleShip")
+            let nextVC = ShipConfigController()
+            nextVC.ship = ship
+            navigationController?.pushViewController(nextVC, animated: true)
         } else {
             print("else")
         }

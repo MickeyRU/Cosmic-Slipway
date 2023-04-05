@@ -19,3 +19,7 @@ enum Images {
     static let defaultShipImage = UIImage(named: "shipImage")!
     static let addButtonImage = UIImage(named: "addShipButton")!
 }
+
+enum ShipImages {
+    static let megathronStriker = UIImage(named: "megathronStriker")
+}

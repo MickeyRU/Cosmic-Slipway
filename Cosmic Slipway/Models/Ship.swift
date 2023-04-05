@@ -30,6 +30,7 @@ struct ShipSubtype: Codable, IdentifiableWithName {
 struct Ship: Codable, IdentifiableWithName {
     let id: Int
     let name: String
+    let shipImage: String
     var characteristics: ShipCharacteristics // Характеристики корабля
     var fitting: [ShipModule]? // Модули корабля (может отсутствовать)
     var core: ShipCore? // Ядро корабля (может отсутствовать)

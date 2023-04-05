@@ -16,10 +16,10 @@ let mockData: [ShipType] = [
     ShipType(id: 6, name: "Battleships", subtypes: [
         ShipSubtype(id: 1, name: "Battleships", ships: []),
         ShipSubtype(id: 2, name: "Siege BattleShips", ships: [
-            Ship(id: 1, name: "Raven Striker", characteristics: ShipCharacteristics(), fitting: [ShipModule()], core: ShipCore()),
-            Ship(id: 2, name: "Tempest Striker", characteristics: ShipCharacteristics(), fitting: [ShipModule()], core: ShipCore()),
-            Ship(id: 2, name: "Apocalypse Striker", characteristics: ShipCharacteristics(), fitting: [ShipModule()], core: ShipCore()),
-            Ship(id: 2, name: "Megathron Striker", characteristics: ShipCharacteristics(), fitting: [ShipModule()], core: ShipCore()),
+            Ship(id: 1, name: "Raven Striker", shipImage: "", characteristics: ShipCharacteristics(), fitting: [ShipModule()], core: ShipCore()),
+            Ship(id: 2, name: "Tempest Striker", shipImage: "", characteristics: ShipCharacteristics(), fitting: [ShipModule()], core: ShipCore()),
+            Ship(id: 2, name: "Apocalypse Striker", shipImage: "", characteristics: ShipCharacteristics(), fitting: [ShipModule()], core: ShipCore()),
+            Ship(id: 2, name: "Megathron Striker", shipImage: "megathronStriker", characteristics: ShipCharacteristics(), fitting: [ShipModule()], core: ShipCore()),
         ])
     ]),
     ShipType(id: 7, name: "Capital Ships", subtypes: []),
