@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BEA553F929DC779C001A1BA5 /* ShipTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA553F829DC779C001A1BA5 /* ShipTypeController.swift */; };
+		BEA553F929DC779C001A1BA5 /* ShipTypeSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA553F829DC779C001A1BA5 /* ShipTypeSelectionController.swift */; };
 		BEA553FB29DC9777001A1BA5 /* ShipTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA553FA29DC9777001A1BA5 /* ShipTypeCell.swift */; };
 		BEA553FD29DCC1B6001A1BA5 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA553FC29DCC1B6001A1BA5 /* Ship.swift */; };
-		BEA5540329DCC5EB001A1BA5 /* ShipSubTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA5540229DCC5EB001A1BA5 /* ShipSubTypeController.swift */; };
+		BEA5540329DCC5EB001A1BA5 /* ShipSubTypeSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA5540229DCC5EB001A1BA5 /* ShipSubTypeSelectionController.swift */; };
 		BEA5540529DCD711001A1BA5 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA5540429DCD711001A1BA5 /* MockData.swift */; };
+		BEA5540729DDB79D001A1BA5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA5540629DDB79D001A1BA5 /* MainView.swift */; };
+		BEA5540929DDC14A001A1BA5 /* ShipSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA5540829DDC14A001A1BA5 /* ShipSelectionController.swift */; };
 		BEB0624229D1AE2B005AEB24 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0624129D1AE2B005AEB24 /* Colors.swift */; };
 		BEB0624429D1B5A0005AEB24 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0624329D1B5A0005AEB24 /* Images.swift */; };
 		BEB0624729D1B71F005AEB24 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0624629D1B71F005AEB24 /* Fonts.swift */; };
 		BEB7D0A329CF18AE002B3431 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7D0A229CF18AE002B3431 /* AppDelegate.swift */; };
 		BEB7D0A529CF18AE002B3431 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7D0A429CF18AE002B3431 /* SceneDelegate.swift */; };
-		BEB7D0A729CF18AE002B3431 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7D0A629CF18AE002B3431 /* HomeViewController.swift */; };
+		BEB7D0A729CF18AE002B3431 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7D0A629CF18AE002B3431 /* MainViewController.swift */; };
 		BEB7D0AC29CF18B3002B3431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEB7D0AB29CF18B3002B3431 /* Assets.xcassets */; };
 		BEB7D0AF29CF18B3002B3431 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEB7D0AD29CF18B3002B3431 /* LaunchScreen.storyboard */; };
 		BEB7D0C629CF5D1A002B3431 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7D0C529CF5D1A002B3431 /* UIView+Extension.swift */; };
@@ -28,18 +30,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BEA553F829DC779C001A1BA5 /* ShipTypeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipTypeController.swift; sourceTree = "<group>"; };
+		BEA553F829DC779C001A1BA5 /* ShipTypeSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipTypeSelectionController.swift; sourceTree = "<group>"; };
 		BEA553FA29DC9777001A1BA5 /* ShipTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipTypeCell.swift; sourceTree = "<group>"; };
 		BEA553FC29DCC1B6001A1BA5 /* Ship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
-		BEA5540229DCC5EB001A1BA5 /* ShipSubTypeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipSubTypeController.swift; sourceTree = "<group>"; };
+		BEA5540229DCC5EB001A1BA5 /* ShipSubTypeSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipSubTypeSelectionController.swift; sourceTree = "<group>"; };
 		BEA5540429DCD711001A1BA5 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		BEA5540629DDB79D001A1BA5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		BEA5540829DDC14A001A1BA5 /* ShipSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipSelectionController.swift; sourceTree = "<group>"; };
 		BEB0624129D1AE2B005AEB24 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		BEB0624329D1B5A0005AEB24 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		BEB0624629D1B71F005AEB24 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		BEB7D09F29CF18AE002B3431 /* Cosmic Slipway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cosmic Slipway.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB7D0A229CF18AE002B3431 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEB7D0A429CF18AE002B3431 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BEB7D0A629CF18AE002B3431 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BEB7D0A629CF18AE002B3431 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BEB7D0AB29CF18B3002B3431 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEB7D0AE29CF18B3002B3431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEB7D0B029CF18B3002B3431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,8 +77,9 @@
 		BEA553EA29DB411A001A1BA5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BEA553F829DC779C001A1BA5 /* ShipTypeController.swift */,
-				BEA5540229DCC5EB001A1BA5 /* ShipSubTypeController.swift */,
+				BEA553F829DC779C001A1BA5 /* ShipTypeSelectionController.swift */,
+				BEA5540229DCC5EB001A1BA5 /* ShipSubTypeSelectionController.swift */,
+				BEA5540829DDC14A001A1BA5 /* ShipSelectionController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				BEEA422429D03B57008B98E4 /* ShipCell.swift */,
+				BEA5540629DDB79D001A1BA5 /* MainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -207,7 +213,7 @@
 		BEB7D0BC29CF2EFE002B3431 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BEB7D0A629CF18AE002B3431 /* HomeViewController.swift */,
+				BEB7D0A629CF18AE002B3431 /* MainViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -316,14 +322,16 @@
 				BEEA422529D03B57008B98E4 /* ShipCell.swift in Sources */,
 				BEB0624429D1B5A0005AEB24 /* Images.swift in Sources */,
 				BEA5540529DCD711001A1BA5 /* MockData.swift in Sources */,
-				BEB7D0A729CF18AE002B3431 /* HomeViewController.swift in Sources */,
+				BEB7D0A729CF18AE002B3431 /* MainViewController.swift in Sources */,
 				BEA553FD29DCC1B6001A1BA5 /* Ship.swift in Sources */,
-				BEA553F929DC779C001A1BA5 /* ShipTypeController.swift in Sources */,
+				BEA5540929DDC14A001A1BA5 /* ShipSelectionController.swift in Sources */,
+				BEA553F929DC779C001A1BA5 /* ShipTypeSelectionController.swift in Sources */,
 				BEB7D0A329CF18AE002B3431 /* AppDelegate.swift in Sources */,
-				BEA5540329DCC5EB001A1BA5 /* ShipSubTypeController.swift in Sources */,
+				BEA5540329DCC5EB001A1BA5 /* ShipSubTypeSelectionController.swift in Sources */,
 				BEA553FB29DC9777001A1BA5 /* ShipTypeCell.swift in Sources */,
 				BEB0624729D1B71F005AEB24 /* Fonts.swift in Sources */,
 				BEB7D0A529CF18AE002B3431 /* SceneDelegate.swift in Sources */,
+				BEA5540729DDB79D001A1BA5 /* MainView.swift in Sources */,
 				BEEA422729D044B2008B98E4 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

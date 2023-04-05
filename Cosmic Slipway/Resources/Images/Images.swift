@@ -8,9 +8,8 @@
 import UIKit
 
 enum Images {
-    static let homeBgImage = UIImage(named: "homeBg")!
+    static let mainBackImage = UIImage(named: "mainBackImage")!
     static let shipSelectionBgImage = UIImage (named: "shipSelectionBg")!
-    static let shipCellBgImage = UIImage(named: "shipCellBg")!
     static let backBorderImage = UIImage(named: "backBorderImage")!
 
 

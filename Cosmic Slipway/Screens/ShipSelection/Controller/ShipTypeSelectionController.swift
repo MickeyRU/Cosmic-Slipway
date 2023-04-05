@@ -1,5 +1,5 @@
 //
-//  ShipSubTypeSelectionController.swift
+//  ShipSelectionWindowControllerswift.swift
 //  Cosmic Slipway
 //
 //  Created by Павел Афанасьев on 04.04.2023.
@@ -7,14 +7,14 @@
 
 import UIKit
 
-final class ShipSubTypeController: UIViewController {
+final class ShipTypeSelectionController: UIViewController {
     
     // MARK: - Types
     
     // MARK: - Constants
     
     // MARK: - Public Properties
-    var shipSubTypesDataArray = [ShipSubtype]()
+    var shipTypesDataArray = [ShipType]()
     
     // MARK: - IBOutlet
     
@@ -44,13 +44,13 @@ final class ShipSubTypeController: UIViewController {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(rgb: Colors.accentColor)
-        label.text = "Select ship type"
+        label.text = "Select type"
         label.textAlignment = .center
         label.font = UIFont(name: Fonts.ebFigtree, size: 24)
         return label
     }()
     
-    private let shipSubTypeCollectionView: UICollectionView = {
+    private let shipTypeCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.backgroundColor = .clear
         return collectionView
@@ -63,6 +63,7 @@ final class ShipSubTypeController: UIViewController {
         
         layout()
         configCollectionView()
+        configNavigationBar()
     }
     
     // MARK: - Public methods
@@ -71,15 +72,24 @@ final class ShipSubTypeController: UIViewController {
     
     // MARK: - Private Methods
     
+    private func configNavigationBar() {
+        let navBarAppearance = UINavigationBarAppearance()
+        navigationController?.navigationBar.standardAppearance = navBarAppearance
+        navigationController?.navigationBar.tintColor = .white
+    }
+    
+    @objc private func backButtonTapped() {
+        navigationController?.popViewController(animated: true)
+    }
+    
     private func layout() {
-        [bgImageView, backgroundView, backgroundViewTwo, titleLabel, shipSubTypeCollectionView].forEach { view.addViews($0) }
+        [bgImageView, backgroundView, backgroundViewTwo, titleLabel, shipTypeCollectionView].forEach { view.addViews($0) }
         
         NSLayoutConstraint.activate([
             bgImageView.topAnchor.constraint(equalTo: view.topAnchor),
             bgImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             bgImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             bgImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            
             
             backgroundView.topAnchor.constraint(equalTo: view.topAnchor),
             backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -95,52 +105,61 @@ final class ShipSubTypeController: UIViewController {
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
             titleLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
             
-            shipSubTypeCollectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 24),
-            shipSubTypeCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 48),
-            shipSubTypeCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -48),
-            shipSubTypeCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -24),
-            
+            shipTypeCollectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 24),
+            shipTypeCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 48),
+            shipTypeCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -48),
+            shipTypeCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -24),
         ])
     }
     
     private func configCollectionView() {
-        shipSubTypeCollectionView.delegate = self
-        shipSubTypeCollectionView.dataSource = self
-        shipSubTypeCollectionView.register(ShipTypeCell.self, forCellWithReuseIdentifier: ShipTypeCell.reuseIdentifier)
-        shipSubTypeCollectionView.showsVerticalScrollIndicator = false
+        shipTypeCollectionView.delegate = self
+        shipTypeCollectionView.dataSource = self
+        shipTypeCollectionView.register(ShipTypeCell.self, forCellWithReuseIdentifier: ShipTypeCell.reuseIdentifier)
+        shipTypeCollectionView.showsVerticalScrollIndicator = false
     }
 }
 
 // MARK: - UICollectionViewDataSource
 
-extension ShipSubTypeController: UICollectionViewDataSource {
+extension ShipTypeSelectionController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return shipSubTypesDataArray.count
+        return shipTypesDataArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ShipTypeCell.reuseIdentifier, for: indexPath) as! ShipTypeCell
-        let ship = shipSubTypesDataArray[indexPath.item]
-        cell.shipTitleLabel.text = ship.name
+        let shipType = shipTypesDataArray[indexPath.item]
+        cell.shipTitleLabel.text = shipType.name
         return cell
     }
 }
 
 // MARK: - UICollectionViewDelegate
 
-extension ShipSubTypeController: UICollectionViewDelegate {
+extension ShipTypeSelectionController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 24
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let shipType = shipTypesDataArray[indexPath.item]
+        if indexPath.row == 5 {
+            let nextViewController = ShipSubTypeSelectionController()
+            nextViewController.shipSubTypesDataArray = shipType.subtypes
+            navigationController?.pushViewController(nextViewController, animated: true)
+        } else {
+            print("else")
+        }
     }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
 
-extension ShipSubTypeController: UICollectionViewDelegateFlowLayout {
+extension ShipTypeSelectionController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellInserts = UIEdgeInsets(top: 0, left: 48, bottom: 0, right: 48)
         let width = view.frame.width - (cellInserts.left + cellInserts.right)
         return CGSize(width: width, height: 44)
     }
 }
-

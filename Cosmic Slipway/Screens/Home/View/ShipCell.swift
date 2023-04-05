@@ -15,12 +15,11 @@ final class ShipCell: UICollectionViewCell {
     
     // MARK: - Private Properties
     
-    private let backgroundImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.image = Images.shipCellBgImage
-        return imageView
+    private let backgroundImageView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(rgb: Colors.backgroundGray)
+        view.alpha = 0.7
+        return view
     }()
     
     private let shipImageView: UIImageView = {

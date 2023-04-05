@@ -13,8 +13,8 @@ let mockData: [ShipType] = [
     ShipType(id: 3, name: "Cruisers", subtypes: []),
     ShipType(id: 4, name: "Battlecruisers", subtypes: []),
     ShipType(id: 5, name: "Industrial Ships", subtypes: []),
-    ShipType(id: 6, name: "BattleShips", subtypes: [
-        ShipSubtype(id: 1, name: "BattleShips", ships: []),
+    ShipType(id: 6, name: "Battleships", subtypes: [
+        ShipSubtype(id: 1, name: "Battleships", ships: []),
         ShipSubtype(id: 2, name: "Siege BattleShips", ships: [
             Ship(id: 1, name: "Raven Striker", characteristics: ShipCharacteristics(), fitting: [ShipModule()], core: ShipCore()),
             Ship(id: 2, name: "Tempest Striker", characteristics: ShipCharacteristics(), fitting: [ShipModule()], core: ShipCore()),
