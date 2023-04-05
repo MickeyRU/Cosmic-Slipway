@@ -7,18 +7,26 @@
 
 import UIKit
 
-final class WindowShipSelectionController: UIViewController {
+final class ShipTypeController: UIViewController {
     
     // MARK: - Types
     
     // MARK: - Constants
     
     // MARK: - Public Properties
-    var shipTypesArray = [String]()
+    var shipTypesDataArray = [ShipType]()
     
     // MARK: - IBOutlet
     
     // MARK: - Private Properties
+    
+    private let bgImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = Images.shipSelectionBgImage
+        return imageView
+    }()
     
     private let backgroundView: UIView = {
         let bgView = UIView()
@@ -55,6 +63,7 @@ final class WindowShipSelectionController: UIViewController {
         
         layout()
         configCollectionView()
+        configNavigationBar()
     }
     
     // MARK: - Public methods
@@ -63,10 +72,25 @@ final class WindowShipSelectionController: UIViewController {
     
     // MARK: - Private Methods
     
+    private func configNavigationBar() {
+        let navBarAppearance = UINavigationBarAppearance()
+        navigationController?.navigationBar.standardAppearance = navBarAppearance
+        navigationController?.navigationBar.tintColor = .white
+    }
+    
+    @objc private func backButtonTapped() {
+        navigationController?.popViewController(animated: true)
+    }
+    
     private func layout() {
-        [backgroundView, backgroundViewTwo, titleLabel, shipTypeCollectionView].forEach { view.addViews($0) }
+        [bgImageView, backgroundView, backgroundViewTwo, titleLabel, shipTypeCollectionView].forEach { view.addViews($0) }
         
         NSLayoutConstraint.activate([
+            bgImageView.topAnchor.constraint(equalTo: view.topAnchor),
+            bgImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            bgImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            bgImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
             backgroundView.topAnchor.constraint(equalTo: view.topAnchor),
             backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -85,7 +109,6 @@ final class WindowShipSelectionController: UIViewController {
             shipTypeCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 48),
             shipTypeCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -48),
             shipTypeCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -24),
-            
         ])
     }
     
@@ -99,28 +122,41 @@ final class WindowShipSelectionController: UIViewController {
 
 // MARK: - UICollectionViewDataSource
 
-extension WindowShipSelectionController: UICollectionViewDataSource {
+extension ShipTypeController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return shipTypesArray.count
+        return shipTypesDataArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ShipTypeCell.reuseIdentifier, for: indexPath) as! ShipTypeCell
+        let shipType = shipTypesDataArray[indexPath.item]
+        cell.shipTitleLabel.text = shipType.name
         return cell
     }
 }
 
 // MARK: - UICollectionViewDelegate
 
-extension WindowShipSelectionController: UICollectionViewDelegate {
+extension ShipTypeController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 24
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let shipType = shipTypesDataArray[indexPath.item]
+        if indexPath.row == 3 {
+            let nextViewController = ShipSubTypeController()
+            nextViewController.shipSubTypesDataArray = shipType.subtypes
+            navigationController?.pushViewController(nextViewController, animated: true)
+        } else {
+            print("else")
+        }
     }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
 
-extension WindowShipSelectionController: UICollectionViewDelegateFlowLayout {
+extension ShipTypeController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellInserts = UIEdgeInsets(top: 0, left: 48, bottom: 0, right: 48)
         let width = view.frame.width - (cellInserts.left + cellInserts.right)

@@ -21,7 +21,7 @@ final class ShipTypeCell: UICollectionViewCell {
         return imageView
     }()
     
-    private let shipTitleLabel: UILabel = {
+    let shipTitleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
         label.text = "Frigates"

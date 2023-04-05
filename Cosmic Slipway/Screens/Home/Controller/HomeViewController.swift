@@ -31,7 +31,6 @@ final class HomeViewController: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = true
     }
 
     
@@ -49,7 +48,7 @@ final class HomeViewController: UICollectionViewController {
 
 extension HomeViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        1
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -63,8 +62,9 @@ extension HomeViewController {
 extension HomeViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            let destVC = MainShipTypeSelectionViewController()
-            navigationController?.pushViewController(destVC, animated: true)
+            let nextViewController = ShipTypeController()
+            nextViewController.shipTypesDataArray = mockData
+            navigationController?.pushViewController(nextViewController, animated: true)
         } else {
             print("else")
         }
