@@ -23,3 +23,7 @@ enum Images {
 enum ShipImages {
     static let megathronStriker = UIImage(named: "megathronStriker")
 }
+
+enum ModuleImages {
+    static let iconHighSlot = UIImage(named: "iconHighSlot")
+}

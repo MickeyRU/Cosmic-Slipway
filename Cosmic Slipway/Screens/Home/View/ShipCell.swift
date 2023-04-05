@@ -42,7 +42,7 @@ final class ShipCell: UICollectionViewCell {
         label.text = "Configure"
         label.textAlignment = .left
         label.textColor = UIColor(rgb: Colors.textHelpers)
-        label.font = UIFont(name: Fonts.rFigtree, size: 12)
+        label.font = UIFont(name: Fonts.ebFigtree, size: 12)
         return label
     }()
     

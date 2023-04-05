@@ -10,6 +10,4 @@ import UIKit
 enum Fonts {
     static let ebFigtree = "Figtree-ExtraBold"
     static let rFigtree = "Figtree-Regular"
-//    static let ebFigtree = UIFont(name: "Figtree-ExtraBold", size: 16.0)
-//    static let rFigtree =  UIFont(name: "Figtree-Regular", size: 12.0)
 }

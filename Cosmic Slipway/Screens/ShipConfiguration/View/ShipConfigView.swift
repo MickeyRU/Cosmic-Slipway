@@ -10,11 +10,11 @@ import UIKit
 final class ShipConfigView: UIView {
     
     // MARK: - Types
-
+    
     // MARK: - Constants
-
+    
     // MARK: - Public Properties
-
+    
     // MARK: - Private Properties
     
     private let backImageView: UIImageView = {
@@ -28,10 +28,11 @@ final class ShipConfigView: UIView {
     let shipConfigCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.register(ShipSelectedCell.self, forCellWithReuseIdentifier: ShipSelectedCell.reuseIdentifier)
+        collectionView.register(FittingCell.self, forCellWithReuseIdentifier: FittingCell.reuseIdentifier)
         collectionView.backgroundColor = .clear
         return collectionView
     }()
-
+    
     // MARK: - Initializers
     
     override init(frame: CGRect) {
@@ -40,13 +41,13 @@ final class ShipConfigView: UIView {
         layout()
         configShipCollectionView()
     }
-
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
     // MARK: - Public methods
-
+    
     // MARK: - Private Methods
     
     private func layout() {

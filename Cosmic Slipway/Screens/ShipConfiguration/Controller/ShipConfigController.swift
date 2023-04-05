@@ -11,7 +11,7 @@ final class ShipConfigController: UIViewController {
     
     // MARK: - Public Properties
     var ship: Ship?
-
+    
     // MARK: - Private Properties
     private let shipConfig = ShipConfigView()
     
@@ -46,43 +46,70 @@ final class ShipConfigController: UIViewController {
 // MARK: - UICollectionViewDataSource
 
 extension ShipConfigController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            let nextViewController = ShipTypeSelectionController()
-            nextViewController.shipTypesDataArray = mockData
-            navigationController?.pushViewController(nextViewController, animated: true)
-        } else {
-            print("else")
-        }
-    }
+    
 }
 
 // MARK: - UICollectionViewDelegate
 
-extension ShipConfigController: UICollectionViewDelegate{
+extension ShipConfigController: UICollectionViewDelegate {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 6
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        1
+        switch section {
+        case 0:
+            return 1
+        default:
+            return 3
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ShipSelectedCell.reuseIdentifier, for: indexPath) as! ShipSelectedCell
-        if let shipImage = ship?.shipImage {
-            cell.shipImageView.image = UIImage(named: shipImage)
+        switch indexPath.section {
+        case 0:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ShipSelectedCell.reuseIdentifier, for: indexPath) as! ShipSelectedCell
+            if let shipImage = ship?.shipImage {
+                cell.shipImageView.image = UIImage(named: shipImage)
+            }
+            cell.shipTitle.text = ship?.name
+            cell.shipStatusTitle.text = "Your Ship"
+            cell.layer.cornerRadius = 28
+            cell.clipsToBounds = true
+            return cell
+        case 1...5:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FittingCell.reuseIdentifier, for: indexPath) as! FittingCell
+            cell.layer.cornerRadius = 28
+            cell.clipsToBounds = true
+            return cell
+        default:
+            fatalError("Неожиданный индекс секции")
         }
-        cell.shipTitle.text = ship?.name
-        cell.shipStatusTitle.text = "Your Ship"
-        cell.layer.cornerRadius = 28
-        cell.clipsToBounds = true
-        return cell
     }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension ShipConfigController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        switch section {
+        case 0:
+            return UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0)
+        default:
+            return UIEdgeInsets(top: 0, left: 24, bottom: 24, right: 0)
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellInserts = UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24)
-        let width = view.frame.width - (cellInserts.left + cellInserts.right)
-        return CGSize(width: width, height: 96)
+        switch indexPath.section {
+        case 0:
+            let cellInserts = UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24)
+            let width = view.frame.width - (cellInserts.left + cellInserts.right)
+            return CGSize(width: width, height: 96)
+        case 1...5:
+            return CGSize(width: 118, height: 48)
+        default:
+            fatalError("Неожиданный размер секции")
+        }
     }
 }

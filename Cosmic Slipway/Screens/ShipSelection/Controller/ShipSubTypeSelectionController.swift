@@ -61,7 +61,6 @@ final class ShipSubTypeSelectionController: UIViewController {
         
         layout()
         configCollectionView()
-        print(shipSubTypesDataArray.count)
     }
     
     // MARK: - Public methods

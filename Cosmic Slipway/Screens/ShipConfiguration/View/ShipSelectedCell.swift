@@ -66,7 +66,7 @@ final class ShipSelectedCell: UICollectionViewCell {
     }
     
     private func layout() {
-        [backgroundImageView, shipImageView, shipTitle, shipStatusTitle, addShipImage].forEach { addViews($0) }
+        [backgroundImageView, shipImageView, shipTitle, shipStatusTitle].forEach { addViews($0) }
         
         NSLayoutConstraint.activate([
             backgroundImageView.topAnchor.constraint(equalTo: topAnchor),
@@ -76,7 +76,7 @@ final class ShipSelectedCell: UICollectionViewCell {
             
             shipImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 18),
             shipImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            shipImageView.widthAnchor.constraint(equalToConstant: 64),
+            shipImageView.widthAnchor.constraint(equalToConstant: 60),
             shipImageView.heightAnchor.constraint(equalToConstant: 60),
             
             shipTitle.centerXAnchor.constraint(equalTo: centerXAnchor),
