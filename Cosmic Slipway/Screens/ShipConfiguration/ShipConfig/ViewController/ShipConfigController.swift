@@ -40,6 +40,8 @@ final class ShipConfigController: UIViewController {
     private func configCollectionView() {
         shipConfig.shipConfigCollectionView.delegate = self
         shipConfig.shipConfigCollectionView.dataSource = self
+        shipConfig.shipConfigCollectionView.showsVerticalScrollIndicator = false
+
     }
 }
 
@@ -77,39 +79,28 @@ extension ShipConfigController: UICollectionViewDelegate {
             cell.layer.cornerRadius = 28
             cell.clipsToBounds = true
             return cell
-        case 1...5:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FittingCell.reuseIdentifier, for: indexPath) as! FittingCell
-            cell.layer.cornerRadius = 28
-            cell.clipsToBounds = true
-            return cell
+        case 1:
+            return UICollectionViewCell.setupFittingCell(collectionView: collectionView, indexPath: indexPath, title: "High Slot", Image: ModuleImages.highSlotClean)
+        case 2:
+            return UICollectionViewCell.setupFittingCell(collectionView: collectionView, indexPath: indexPath, title: "Mid Slot", Image: ModuleImages.midSlotClean)
+        case 3:
+            return UICollectionViewCell.setupFittingCell(collectionView: collectionView, indexPath: indexPath, title: "Low Slot", Image: ModuleImages.lowSlotClean)
+        case 4:
+            return UICollectionViewCell.setupFittingCell(collectionView: collectionView, indexPath: indexPath, title: "Combat Rig", Image: ModuleImages.combatRigClean)
+        case 5:
+            return UICollectionViewCell.setupFittingCell(collectionView: collectionView, indexPath: indexPath, title: "Engineering Rig", Image: ModuleImages.enginRigsClean)
         default:
             fatalError("Неожиданный индекс секции")
         }
     }
-}
-
-// MARK: - UICollectionViewDelegateFlowLayout
-
-extension ShipConfigController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        switch section {
-        case 0:
-            return UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0)
-        default:
-            return UIEdgeInsets(top: 0, left: 24, bottom: 24, right: 0)
-        }
-    }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        switch indexPath.section {
-        case 0:
-            let cellInserts = UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24)
-            let width = view.frame.width - (cellInserts.left + cellInserts.right)
-            return CGSize(width: width, height: 96)
-        case 1...5:
-            return CGSize(width: 118, height: 48)
-        default:
-            fatalError("Неожиданный размер секции")
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            let navController = UINavigationController()
+            let destVC = HighSlotsFittingController()
+            destVC.highSlotModules = highSlotsMockData
+            navController.viewControllers = [destVC]
+            present(navController, animated: true)
         }
     }
 }

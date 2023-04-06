@@ -21,16 +21,14 @@ final class FittingCell: UICollectionViewCell {
         return view
     }()
     
-    private let moduleImage: UIImageView = {
+    let moduleImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = ModuleImages.iconHighSlot
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
-    private let moduleTitle: UILabel = {
+    let moduleTitle: UILabel = {
         let label = UILabel()
-        label.text = "Slot label"
         label.textAlignment = .left
         label.textColor = .white
         label.font = UIFont(name: Fonts.ebFigtree, size: 12)
@@ -41,7 +39,6 @@ final class FittingCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setupCell()
         layout()
     }
     
@@ -52,10 +49,6 @@ final class FittingCell: UICollectionViewCell {
     // MARK: - Public methods
     
     // MARK: - Private Methods
-    
-    private func setupCell() {
-        layer.cornerRadius = 28
-    }
     
     private func layout() {
         [backgroundImageView, moduleImage, moduleTitle].forEach { addViews($0) }

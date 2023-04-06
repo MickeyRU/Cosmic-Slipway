@@ -101,7 +101,7 @@ final class ShipSelectionController: UIViewController {
     private func configCollectionView() {
         shipsCollectionView.delegate = self
         shipsCollectionView.dataSource = self
-        shipsCollectionView.register(ShipTypeCell.self, forCellWithReuseIdentifier: ShipTypeCell.reuseIdentifier)
+        shipsCollectionView.register(UniversalSelectTypeCell.self, forCellWithReuseIdentifier: UniversalSelectTypeCell.reuseIdentifier)
         shipsCollectionView.showsVerticalScrollIndicator = false
     }
 }
@@ -114,9 +114,9 @@ extension ShipSelectionController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ShipTypeCell.reuseIdentifier, for: indexPath) as! ShipTypeCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UniversalSelectTypeCell.reuseIdentifier, for: indexPath) as! UniversalSelectTypeCell
         let ship = shipsDataArray[indexPath.item]
-        cell.shipTitleLabel.text = ship.name
+        cell.CellLabel.text = ship.name
         return cell
     }
 }
@@ -146,6 +146,6 @@ extension ShipSelectionController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellInserts = UIEdgeInsets(top: 0, left: 48, bottom: 0, right: 48)
         let width = view.frame.width - (cellInserts.left + cellInserts.right)
-        return CGSize(width: width, height: 44)
+        return CGSize(width: width, height: 48)
     }
 }

@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE4CFC1229DEFA5900B42547 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4CFC1129DEFA5900B42547 /* UICollectionView+Extension.swift */; };
+		BE4CFC1429DF126700B42547 /* HighSlotsFittingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4CFC1329DF126700B42547 /* HighSlotsFittingController.swift */; };
 		BEA553F929DC779C001A1BA5 /* ShipTypeSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA553F829DC779C001A1BA5 /* ShipTypeSelectionController.swift */; };
-		BEA553FB29DC9777001A1BA5 /* ShipTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA553FA29DC9777001A1BA5 /* ShipTypeCell.swift */; };
-		BEA553FD29DCC1B6001A1BA5 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA553FC29DCC1B6001A1BA5 /* Ship.swift */; };
+		BEA553FB29DC9777001A1BA5 /* UniversalSelectTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA553FA29DC9777001A1BA5 /* UniversalSelectTypeCell.swift */; };
+		BEA553FD29DCC1B6001A1BA5 /* allObjectsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA553FC29DCC1B6001A1BA5 /* allObjectsModel.swift */; };
 		BEA5540329DCC5EB001A1BA5 /* ShipSubTypeSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA5540229DCC5EB001A1BA5 /* ShipSubTypeSelectionController.swift */; };
 		BEA5540529DCD711001A1BA5 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA5540429DCD711001A1BA5 /* MockData.swift */; };
 		BEA5540729DDB79D001A1BA5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA5540629DDB79D001A1BA5 /* MainView.swift */; };
@@ -34,9 +36,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE4CFC1129DEFA5900B42547 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		BE4CFC1329DF126700B42547 /* HighSlotsFittingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSlotsFittingController.swift; sourceTree = "<group>"; };
 		BEA553F829DC779C001A1BA5 /* ShipTypeSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipTypeSelectionController.swift; sourceTree = "<group>"; };
-		BEA553FA29DC9777001A1BA5 /* ShipTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipTypeCell.swift; sourceTree = "<group>"; };
-		BEA553FC29DCC1B6001A1BA5 /* Ship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
+		BEA553FA29DC9777001A1BA5 /* UniversalSelectTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalSelectTypeCell.swift; sourceTree = "<group>"; };
+		BEA553FC29DCC1B6001A1BA5 /* allObjectsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = allObjectsModel.swift; sourceTree = "<group>"; };
 		BEA5540229DCC5EB001A1BA5 /* ShipSubTypeSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipSubTypeSelectionController.swift; sourceTree = "<group>"; };
 		BEA5540429DCD711001A1BA5 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		BEA5540629DDB79D001A1BA5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -73,6 +77,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE4CFC1929DF191C00B42547 /* ShipConfig */ = {
+			isa = PBXGroup;
+			children = (
+				BE4CFC1A29DF195D00B42547 /* Views */,
+				BE4CFC1B29DF196800B42547 /* ViewController */,
+			);
+			path = ShipConfig;
+			sourceTree = "<group>";
+		};
+		BE4CFC1A29DF195D00B42547 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BEA5541329DDFD2A001A1BA5 /* FittingCell.swift */,
+				BEA5541129DDD060001A1BA5 /* ShipSelectedCell.swift */,
+				BEA5540F29DDC9BA001A1BA5 /* ShipConfigView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BE4CFC1B29DF196800B42547 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BEA5540A29DDC85A001A1BA5 /* ShipConfigController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		BE4CFC1D29DF198500B42547 /* ModulsConfig */ = {
+			isa = PBXGroup;
+			children = (
+				BEA5540D29DDC98C001A1BA5 /* Controller */,
+			);
+			path = ModulsConfig;
+			sourceTree = "<group>";
+		};
 		BEA553E929DB4101001A1BA5 /* ShipSelection */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +134,7 @@
 		BEA553F129DB6B5F001A1BA5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BEA553FA29DC9777001A1BA5 /* ShipTypeCell.swift */,
+				BEA553FA29DC9777001A1BA5 /* UniversalSelectTypeCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -103,7 +142,7 @@
 		BEA553FE29DCC1BC001A1BA5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BEA553FC29DCC1B6001A1BA5 /* Ship.swift */,
+				BEA553FC29DCC1B6001A1BA5 /* allObjectsModel.swift */,
 				BEA5540429DCD711001A1BA5 /* MockData.swift */,
 			);
 			path = Models;
@@ -112,8 +151,8 @@
 		BEA5540C29DDC85D001A1BA5 /* ShipConfiguration */ = {
 			isa = PBXGroup;
 			children = (
-				BEA5540E29DDC99A001A1BA5 /* View */,
-				BEA5540D29DDC98C001A1BA5 /* Controller */,
+				BE4CFC1929DF191C00B42547 /* ShipConfig */,
+				BE4CFC1D29DF198500B42547 /* ModulsConfig */,
 			);
 			path = ShipConfiguration;
 			sourceTree = "<group>";
@@ -121,19 +160,9 @@
 		BEA5540D29DDC98C001A1BA5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BEA5540A29DDC85A001A1BA5 /* ShipConfigController.swift */,
+				BE4CFC1329DF126700B42547 /* HighSlotsFittingController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		BEA5540E29DDC99A001A1BA5 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				BEA5541329DDFD2A001A1BA5 /* FittingCell.swift */,
-				BEA5541129DDD060001A1BA5 /* ShipSelectedCell.swift */,
-				BEA5540F29DDC9BA001A1BA5 /* ShipConfigView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		BEB0623829D1A3CD005AEB24 /* Home */ = {
@@ -267,6 +296,7 @@
 			children = (
 				BEB7D0C529CF5D1A002B3431 /* UIView+Extension.swift */,
 				BEEA422629D044B2008B98E4 /* UIColor+Extension.swift */,
+				BE4CFC1129DEFA5900B42547 /* UICollectionView+Extension.swift */,
 			);
 			path = "UIKit+Extension";
 			sourceTree = "<group>";
@@ -358,16 +388,18 @@
 				BEEA422529D03B57008B98E4 /* ShipCell.swift in Sources */,
 				BEB0624429D1B5A0005AEB24 /* Images.swift in Sources */,
 				BEA5541029DDC9BA001A1BA5 /* ShipConfigView.swift in Sources */,
+				BE4CFC1429DF126700B42547 /* HighSlotsFittingController.swift in Sources */,
 				BEA5540B29DDC85A001A1BA5 /* ShipConfigController.swift in Sources */,
 				BEA5540529DCD711001A1BA5 /* MockData.swift in Sources */,
 				BEB7D0A729CF18AE002B3431 /* MainViewController.swift in Sources */,
-				BEA553FD29DCC1B6001A1BA5 /* Ship.swift in Sources */,
+				BEA553FD29DCC1B6001A1BA5 /* allObjectsModel.swift in Sources */,
 				BEA5540929DDC14A001A1BA5 /* ShipSelectionController.swift in Sources */,
 				BEA553F929DC779C001A1BA5 /* ShipTypeSelectionController.swift in Sources */,
 				BEB7D0A329CF18AE002B3431 /* AppDelegate.swift in Sources */,
 				BEA5540329DCC5EB001A1BA5 /* ShipSubTypeSelectionController.swift in Sources */,
 				BEA5541429DDFD2A001A1BA5 /* FittingCell.swift in Sources */,
-				BEA553FB29DC9777001A1BA5 /* ShipTypeCell.swift in Sources */,
+				BEA553FB29DC9777001A1BA5 /* UniversalSelectTypeCell.swift in Sources */,
+				BE4CFC1229DEFA5900B42547 /* UICollectionView+Extension.swift in Sources */,
 				BEB0624729D1B71F005AEB24 /* Fonts.swift in Sources */,
 				BEB7D0A529CF18AE002B3431 /* SceneDelegate.swift in Sources */,
 				BEA5540729DDB79D001A1BA5 /* MainView.swift in Sources */,
@@ -515,7 +547,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Cosmic Slipway/Configuration/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -545,7 +578,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Cosmic Slipway/Configuration/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

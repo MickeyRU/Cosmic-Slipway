@@ -39,6 +39,7 @@ final class MainViewController: UIViewController {
     private func configCollectionView() {
         mainView.shipCollectionView.delegate = self
         mainView.shipCollectionView.dataSource = self
+        mainView.shipCollectionView.showsVerticalScrollIndicator = false
     }
 }
 
@@ -48,7 +49,7 @@ extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             let nextViewController = ShipTypeSelectionController()
-            nextViewController.shipTypesDataArray = mockData
+            nextViewController.shipTypesDataArray = shipsMockData
             navigationController?.pushViewController(nextViewController, animated: true)
         } else {
             print("else")
@@ -60,7 +61,7 @@ extension MainViewController: UICollectionViewDataSource {
 
 extension MainViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        1
+        10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

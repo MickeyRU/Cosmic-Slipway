@@ -21,9 +21,15 @@ enum Images {
 }
 
 enum ShipImages {
-    static let megathronStriker = UIImage(named: "megathronStriker")
+    static let megathronStriker = UIImage(named: "megathronStriker")!
 }
 
 enum ModuleImages {
-    static let iconHighSlot = UIImage(named: "iconHighSlot")
+    static let highSlotClean = UIImage(named: "highSlotClean")!
+    static let midSlotClean = UIImage(named: "midSlotClean")!
+    static let lowSlotClean = UIImage(named: "lowSlotClean")!
+    
+    static let combatRigClean = UIImage(named: "combatRigClean")!
+    static let enginRigsClean = UIImage(named: "enginRigsClean")!
+    
 }

@@ -57,7 +57,6 @@ final class ShipCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setupCell()
         layout()
     }
     
@@ -66,10 +65,6 @@ final class ShipCell: UICollectionViewCell {
     }
     
     // MARK: - Private Methods
-    
-    private func setupCell() {
-        layer.cornerRadius = 28
-    }
     
     private func layout() {
         [backgroundImageView, shipImageView, shipTitle, shipStatusTitle, addShipImage].forEach { addViews($0) }

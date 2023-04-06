@@ -1,5 +1,5 @@
 //
-//  shipTypesModel.swift
+//  allObjectsModel.swift
 //  Cosmic Slipway
 //
 //  Created by Павел Афанасьев on 04.04.2023.
@@ -32,7 +32,7 @@ struct Ship: Codable, IdentifiableWithName {
     let name: String
     let shipImage: String
     var characteristics: ShipCharacteristics // Характеристики корабля
-    var fitting: [ShipModule]? // Модули корабля (может отсутствовать)
+    var fitting: [HighSlotModule]? // Модули корабля (может отсутствовать)
     var core: ShipCore? // Ядро корабля (может отсутствовать)
 }
  
@@ -47,6 +47,7 @@ struct ShipCharacteristics: Codable {
 }
 
 // Структура для хранения данных модуля корабля
-struct ShipModule: Codable {
-    
+struct HighSlotModule: Codable {
+    let id: Int?
+    let name: String?
 }

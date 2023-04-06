@@ -7,11 +7,11 @@
 
 import UIKit
 
-final class ShipTypeCell: UICollectionViewCell {
+final class UniversalSelectTypeCell: UICollectionViewCell {
     
     // MARK: - Public Properties
     
-    static let reuseIdentifier = "ShipTypeCell"
+    static let reuseIdentifier = "UniversalSelectTypeCell"
     
     // MARK: - Private Properties
     
@@ -21,7 +21,7 @@ final class ShipTypeCell: UICollectionViewCell {
         return imageView
     }()
     
-    let shipTitleLabel: UILabel = {
+    let CellLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
         label.text = "Frigates"
@@ -44,7 +44,7 @@ final class ShipTypeCell: UICollectionViewCell {
     // MARK: - Private Methods
     
     private func layout() {
-        [backBorderImageView, shipTitleLabel].forEach { addViews($0) }
+        [backBorderImageView, CellLabel].forEach { addViews($0) }
         
         NSLayoutConstraint.activate([
             backBorderImageView.topAnchor.constraint(equalTo: topAnchor),
@@ -52,8 +52,8 @@ final class ShipTypeCell: UICollectionViewCell {
             backBorderImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
             backBorderImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            shipTitleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            shipTitleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            CellLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            CellLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
     }
 }
