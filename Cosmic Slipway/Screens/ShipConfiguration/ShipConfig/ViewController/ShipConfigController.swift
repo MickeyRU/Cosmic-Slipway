@@ -59,11 +59,22 @@ extension ShipConfigController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let ship = self.ship else { return 0}
         switch section {
         case 0:
             return 1
+        case 1:
+            return ship.fitting.highSlots
+        case 2:
+            return ship.fitting.midSlots
+        case 3:
+            return ship.fitting.lowSlots
+        case 4:
+            return ship.fitting.combatRigs
+        case 5:
+            return ship.fitting.engineeringRigs
         default:
-            return 3
+            return 1
         }
     }
     
@@ -96,11 +107,9 @@ extension ShipConfigController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 1 {
-            let navController = UINavigationController()
             let destVC = HighSlotsFittingController()
             destVC.highSlotModules = highSlotsMockData
-            navController.viewControllers = [destVC]
-            present(navController, animated: true)
+            navigationController?.pushViewController(destVC, animated: true)
         }
     }
 }

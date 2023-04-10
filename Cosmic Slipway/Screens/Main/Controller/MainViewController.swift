@@ -48,7 +48,7 @@ final class MainViewController: UIViewController {
 extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            let nextViewController = ShipTypeSelectionController()
+            let nextViewController = UniversalSelectController()
             nextViewController.shipTypesDataArray = shipsMockData
             navigationController?.pushViewController(nextViewController, animated: true)
         } else {
@@ -61,7 +61,7 @@ extension MainViewController: UICollectionViewDataSource {
 
 extension MainViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -80,4 +80,5 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
         let width = view.frame.width - (cellInserts.left + cellInserts.right)
         return CGSize(width: width, height: 96)
     }
+
 }

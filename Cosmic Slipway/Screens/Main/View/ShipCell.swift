@@ -17,13 +17,12 @@ final class ShipCell: UICollectionViewCell {
     
     private let backgroundImageView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(rgb: Colors.backgroundGray)
-        view.alpha = 0.7
+        view.backgroundColor = hexStringToUIColor(hex: BasicColors.darkBG, alpha: 0.7)
         return view
     }()
     
     private let shipImageView: UIImageView = {
-        let imageView = UIImageView(image: Images.defaultShipImage)
+        let imageView = UIImageView(image: ShipImages.defaultShipImage)
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
@@ -32,7 +31,7 @@ final class ShipCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "New ship"
         label.textAlignment = .left
-        label.textColor = UIColor(rgb: Colors.accentColor)
+        label.textColor = hexStringToUIColor(hex: BasicColors.accent, alpha: 1.0)
         label.font = UIFont(name: Fonts.ebFigtree, size: 16)
         return label
     }()
@@ -41,13 +40,13 @@ final class ShipCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "Configure"
         label.textAlignment = .left
-        label.textColor = UIColor(rgb: Colors.textHelpers)
+        label.textColor = UIColor(rgb: BasicColors.iconText)
         label.font = UIFont(name: Fonts.ebFigtree, size: 12)
         return label
     }()
     
     private let addShipImage: UIImageView = {
-        let imageView = UIImageView(image: Images.addButtonImage)
+        let imageView = UIImageView(image: NavigationImages.addButtonImage)
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()

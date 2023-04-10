@@ -21,7 +21,7 @@ final class MainView: UIView {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.image = Images.mainBackImage
+        imageView.image = BgImages.mainBackImage
         return imageView
     }()
     
@@ -57,7 +57,7 @@ final class MainView: UIView {
             backImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
             backImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            shipCollectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 40),
+            shipCollectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             shipCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             shipCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             shipCollectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)

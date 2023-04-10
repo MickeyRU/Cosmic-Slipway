@@ -7,20 +7,15 @@
 
 import UIKit
 
-enum Images {
+enum BgImages {
     static let mainBackImage = UIImage(named: "mainBackImage")!
     static let shipSelectionBgImage = UIImage (named: "shipSelectionBg")!
     static let backBorderImage = UIImage(named: "backBorderImage")!
-
-
-    
-    static let backButtonImage = UIImage (named: "backButton")!
-
-    static let defaultShipImage = UIImage(named: "shipImage")!
-    static let addButtonImage = UIImage(named: "addShipButton")!
 }
 
 enum ShipImages {
+    static let defaultShipImage = UIImage(named: "shipImage")!
+
     static let megathronStriker = UIImage(named: "megathronStriker")!
 }
 
@@ -31,5 +26,14 @@ enum ModuleImages {
     
     static let combatRigClean = UIImage(named: "combatRigClean")!
     static let enginRigsClean = UIImage(named: "enginRigsClean")!
-    
+}
+
+enum NavigationImages {
+    static let homeTabBarClean = UIImage(named: "homeTabBarClean")!
+    static let homeTabBarSelected = UIImage(named: "homeTabBarSelected")!
+    static let fittingTabBarClean = UIImage(named: "fittingTabBarClean")!
+    static let fittingTabBarSelected = UIImage(named: "fittingTabBarSelected")!
+
+    static let addButtonImage = UIImage(named: "addButtonImage")!
+
 }

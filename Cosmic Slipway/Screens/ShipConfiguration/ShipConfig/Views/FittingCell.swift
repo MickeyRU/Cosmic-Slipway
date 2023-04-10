@@ -16,8 +16,7 @@ final class FittingCell: UICollectionViewCell {
     
     private let backgroundImageView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(rgb: Colors.backgroundGray)
-        view.alpha = 0.7
+        view.backgroundColor = hexStringToUIColor(hex: BasicColors.darkBG, alpha: 0.7)
         return view
     }()
     

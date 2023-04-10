@@ -7,12 +7,10 @@
 
 import UIKit
 
-enum Colors {
-    static let accentColor = 0x11DCE8
-    static let textHelpers = 0x8D8E99
-    static let backgroundGray = 0x091522
-    
-    static let gradientStartColor = 0x00E5E5
-    static let gradientMiddleColor = 0x72A5F2
-    static let gradientEndColor = 0xE961FF
+enum BasicColors {
+    static let accent = "11DCE8"
+    static let iconText = 0x8D8E99
+    static let active = 0xfff
+    static let darkBG = "091522"
+
 }

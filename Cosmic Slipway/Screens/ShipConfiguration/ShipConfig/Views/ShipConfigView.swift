@@ -29,7 +29,7 @@ final class ShipConfigView: UIView {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.image = Images.mainBackImage
+        imageView.image = BgImages.mainBackImage
         return imageView
     }()
     

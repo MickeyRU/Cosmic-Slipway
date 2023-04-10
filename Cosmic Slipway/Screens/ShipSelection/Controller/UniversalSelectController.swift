@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ShipTypeSelectionController: UIViewController {
+class UniversalSelectController: UIViewController {
     
     // MARK: - Types
     
@@ -24,14 +24,13 @@ final class ShipTypeSelectionController: UIViewController {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.image = Images.shipSelectionBgImage
+        imageView.image = BgImages.shipSelectionBgImage
         return imageView
     }()
     
     private let backgroundView: UIView = {
         let bgView = UIView()
-        bgView.backgroundColor = UIColor(rgb: Colors.backgroundGray)
-        bgView.alpha = 0.7
+        bgView.backgroundColor = hexStringToUIColor(hex: BasicColors.darkBG, alpha: 0.7)
         return bgView
     }()
     
@@ -43,7 +42,7 @@ final class ShipTypeSelectionController: UIViewController {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor(rgb: Colors.accentColor)
+        label.textColor = hexStringToUIColor(hex: BasicColors.accent, alpha: 1.0)
         label.text = "Select type"
         label.textAlignment = .center
         label.font = UIFont(name: Fonts.ebFigtree, size: 24)
@@ -98,7 +97,7 @@ final class ShipTypeSelectionController: UIViewController {
             backgroundViewTwo.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
             titleLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
             
             shipTypeCollectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 24),
@@ -118,7 +117,7 @@ final class ShipTypeSelectionController: UIViewController {
 
 // MARK: - UICollectionViewDataSource
 
-extension ShipTypeSelectionController: UICollectionViewDataSource {
+extension UniversalSelectController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return shipTypesDataArray.count
     }
@@ -133,7 +132,7 @@ extension ShipTypeSelectionController: UICollectionViewDataSource {
 
 // MARK: - UICollectionViewDelegate
 
-extension ShipTypeSelectionController: UICollectionViewDelegate {
+extension UniversalSelectController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 24
     }
@@ -152,7 +151,7 @@ extension ShipTypeSelectionController: UICollectionViewDelegate {
 
 // MARK: - UICollectionViewDelegateFlowLayout
 
-extension ShipTypeSelectionController: UICollectionViewDelegateFlowLayout {
+extension UniversalSelectController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellInserts = UIEdgeInsets(top: 0, left: 48, bottom: 0, right: 48)
         let width = view.frame.width - (cellInserts.left + cellInserts.right)

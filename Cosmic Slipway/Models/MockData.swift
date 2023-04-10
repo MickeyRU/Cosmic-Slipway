@@ -16,23 +16,33 @@ let shipsMockData: [ShipType] = [
     ShipType(id: 6, name: "Battleships", subtypes: [
         ShipSubtype(id: 1, name: "Battleships", ships: []),
         ShipSubtype(id: 2, name: "Siege BattleShips", ships: [
-            Ship(id: 1, name: "Raven Striker", shipImage: "", characteristics: ShipCharacteristics(), fitting: [HighSlotModule(id: nil, name: nil)], core: ShipCore()),
-            Ship(id: 2, name: "Tempest Striker", shipImage: "", characteristics: ShipCharacteristics(), fitting: [HighSlotModule(id: nil, name: nil)], core: ShipCore()),
-            Ship(id: 2, name: "Apocalypse Striker", shipImage: "", characteristics: ShipCharacteristics(), fitting: [HighSlotModule(id: nil, name: nil)], core: ShipCore()),
-            Ship(id: 2, name: "Megathron Striker", shipImage: "megathronStriker", characteristics: ShipCharacteristics(), fitting: [HighSlotModule(id: nil, name: nil)], core: ShipCore()),
+            Ship(id: 1, name: "Raven Striker", shipImage: "", fitting: Fitting(highSlots: 7, midSlots: 4, lowSlots: 6, combatRigs: 3, engineeringRigs: 3)),
+            Ship(id: 1, name: "Tempest Striker", shipImage: "", fitting: Fitting(highSlots: 7, midSlots: 4, lowSlots: 6, combatRigs: 3, engineeringRigs: 3)),
+            Ship(id: 1, name: "Apocalypse Striker", shipImage: "", fitting: Fitting(highSlots: 7, midSlots: 4, lowSlots: 6, combatRigs: 3, engineeringRigs: 3)),
+            Ship(id: 1, name: "Megathron Striker", shipImage: "megathronStriker", fitting: Fitting(highSlots: 7, midSlots: 4, lowSlots: 6, combatRigs: 3, engineeringRigs: 3)),
         ])
     ]),
     ShipType(id: 7, name: "Capital Ships", subtypes: []),
 ]
 
-let highSlotsMockData: [HighSlotModule] = [
-    HighSlotModule(id: 1, name: "Lasers"),
-    HighSlotModule(id: 2, name: "Rialguns"),
-    HighSlotModule(id: 3, name: "Cannons"),
-    HighSlotModule(id: 4, name: "Decomposers"),
-    HighSlotModule(id: 5, name: "Missle Launchers"),
-    HighSlotModule(id: 6, name: "Harvest Equipments"),
-    HighSlotModule(id: 7, name: "Remote Shield Boosters"),
-    HighSlotModule(id: 8, name: "Remote Armor Boosters"),
-    HighSlotModule(id: 9, name: "Bombs"),
-]
+//let highSlotsMockData: [HighSlotsMainWeaponType] = [
+//    HighSlotsMainWeaponType(id: 1, name: "Lasers", subtype: [WeaponSubtype(id: 1, name: nil, weaponModuleName: nil)]),
+//    HighSlotsMainWeaponType(id: 2, name: "Railguns", subtype: [
+//        WeaponSubtype(id: 1, name: "Small Rifled Railguns, weaponModuleName: nil),
+//        WeaponSubtype(id: 2, name: nil, weaponModuleName: nil),
+//        WeaponSubtype(id: 3, name: nil, weaponModuleName: nil),
+//        WeaponSubtype(id: 4, name: nil, weaponModuleName: nil),
+//        WeaponSubtype(id: 5, name: nil, weaponModuleName: nil),
+//        WeaponSubtype(id: 6, name: nil, weaponModuleName: nil),
+//        WeaponSubtype(id: 7, name: nil, weaponModuleName: nil),
+//        WeaponSubtype(id: 8, name: nil, weaponModuleName: nil),
+//        WeaponSubtype(id: 9, name: nil, weaponModuleName: nil),
+//    ]),
+//    HighSlotsMainWeaponType(id: 3, name: "Cannons", subtype: [WeaponSubtype(id: 1, name: nil, weaponModuleName: nil)]),
+//    HighSlotsMainWeaponType(id: 4, name: "Decomposers", subtype: [WeaponSubtype(id: 1, name: nil, weaponModuleName: nil)]),
+//    HighSlotsMainWeaponType(id: 5, name: "Missle Launchers", subtype: [WeaponSubtype(id: 1, name: nil, weaponModuleName: nil)]),
+//    HighSlotsMainWeaponType(id: 6, name: "Harvest Equipments", subtype: [WeaponSubtype(id: 1, name: nil, weaponModuleName: nil)]),
+//    HighSlotsMainWeaponType(id: 7, name: "Remote Shield Boosters", subtype: [WeaponSubtype(id: 1, name: nil, weaponModuleName: nil)]),
+//    HighSlotsMainWeaponType(id: 8, name: "Remote Armor Boosters", subtype: [WeaponSubtype(id: 1, name: nil, weaponModuleName: nil)]),
+//    HighSlotsMainWeaponType(id: 9, name: "Bombs", subtype: [WeaponSubtype(id: 1, name: nil, weaponModuleName: nil)]),
+//]

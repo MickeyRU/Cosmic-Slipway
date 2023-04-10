@@ -17,7 +17,7 @@ final class UniversalSelectTypeCell: UICollectionViewCell {
     
     private let backBorderImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = Images.backBorderImage
+        imageView.image = BgImages.backBorderImage
         return imageView
     }()
     

@@ -7,35 +7,30 @@
 
 import UIKit
 
-protocol IdentifiableWithName {
-    var id: Int { get } // Уникальный идентификатор
-    var name: String { get } // Название
-}
-
 // Структура для хранения данных типа корабля
-struct ShipType: Codable, IdentifiableWithName {
+struct ShipType: Codable {
     let id: Int
     let name: String
     let subtypes: [ShipSubtype] // Подтипы корабля
 }
 
 // Структура для хранения данных подтипа корабля
-struct ShipSubtype: Codable, IdentifiableWithName {
+struct ShipSubtype: Codable {
     let id: Int
     let name: String
     let ships: [Ship] // Корабли подтипа
 }
-
+ 
 // Структура для хранения данных конкретного корабля
-struct Ship: Codable, IdentifiableWithName {
+struct Ship: Codable {
     let id: Int
     let name: String
-    let shipImage: String
-    var characteristics: ShipCharacteristics // Характеристики корабля
-    var fitting: [HighSlotModule]? // Модули корабля (может отсутствовать)
+    let shipImage: String?
+    var characteristics: ShipCharacteristics? // Характеристики корабля
+    var fitting: Fitting // Модули корабля
     var core: ShipCore? // Ядро корабля (может отсутствовать)
 }
- 
+
 // Структура для хранения характеристик ядра
 struct ShipCore: Codable {
     
@@ -46,8 +41,11 @@ struct ShipCharacteristics: Codable {
     
 }
 
-// Структура для хранения данных модуля корабля
-struct HighSlotModule: Codable {
-    let id: Int?
-    let name: String?
+// Структура для хранения оснащения корабля
+struct Fitting: Codable {
+    let highSlots: Int
+    let midSlots: Int
+    let lowSlots: Int
+    let combatRigs: Int
+    let engineeringRigs: Int
 }

@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		BE4CFC1229DEFA5900B42547 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4CFC1129DEFA5900B42547 /* UICollectionView+Extension.swift */; };
 		BE4CFC1429DF126700B42547 /* HighSlotsFittingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4CFC1329DF126700B42547 /* HighSlotsFittingController.swift */; };
-		BEA553F929DC779C001A1BA5 /* ShipTypeSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA553F829DC779C001A1BA5 /* ShipTypeSelectionController.swift */; };
+		BEA553F929DC779C001A1BA5 /* UniversalSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA553F829DC779C001A1BA5 /* UniversalSelectController.swift */; };
 		BEA553FB29DC9777001A1BA5 /* UniversalSelectTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA553FA29DC9777001A1BA5 /* UniversalSelectTypeCell.swift */; };
-		BEA553FD29DCC1B6001A1BA5 /* allObjectsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA553FC29DCC1B6001A1BA5 /* allObjectsModel.swift */; };
+		BEA553FD29DCC1B6001A1BA5 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA553FC29DCC1B6001A1BA5 /* Ship.swift */; };
 		BEA5540329DCC5EB001A1BA5 /* ShipSubTypeSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA5540229DCC5EB001A1BA5 /* ShipSubTypeSelectionController.swift */; };
 		BEA5540529DCD711001A1BA5 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA5540429DCD711001A1BA5 /* MockData.swift */; };
 		BEA5540729DDB79D001A1BA5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA5540629DDB79D001A1BA5 /* MainView.swift */; };
@@ -20,6 +20,10 @@
 		BEA5541029DDC9BA001A1BA5 /* ShipConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA5540F29DDC9BA001A1BA5 /* ShipConfigView.swift */; };
 		BEA5541229DDD060001A1BA5 /* ShipSelectedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA5541129DDD060001A1BA5 /* ShipSelectedCell.swift */; };
 		BEA5541429DDFD2A001A1BA5 /* FittingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA5541329DDFD2A001A1BA5 /* FittingCell.swift */; };
+		BEAC9BD329E42542009987A3 /* Modules.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC9BD229E42542009987A3 /* Modules.swift */; };
+		BEAC9BD529E4258B009987A3 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC9BD429E4258B009987A3 /* Protocols.swift */; };
+		BEAC9BD729E43834009987A3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC9BD629E43834009987A3 /* MainTabBarController.swift */; };
+		BEAC9BDB29E440E6009987A3 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC9BDA29E440E6009987A3 /* Helper.swift */; };
 		BEB0624229D1AE2B005AEB24 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0624129D1AE2B005AEB24 /* Colors.swift */; };
 		BEB0624429D1B5A0005AEB24 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0624329D1B5A0005AEB24 /* Images.swift */; };
 		BEB0624729D1B71F005AEB24 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0624629D1B71F005AEB24 /* Fonts.swift */; };
@@ -38,9 +42,9 @@
 /* Begin PBXFileReference section */
 		BE4CFC1129DEFA5900B42547 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		BE4CFC1329DF126700B42547 /* HighSlotsFittingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSlotsFittingController.swift; sourceTree = "<group>"; };
-		BEA553F829DC779C001A1BA5 /* ShipTypeSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipTypeSelectionController.swift; sourceTree = "<group>"; };
+		BEA553F829DC779C001A1BA5 /* UniversalSelectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalSelectController.swift; sourceTree = "<group>"; };
 		BEA553FA29DC9777001A1BA5 /* UniversalSelectTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalSelectTypeCell.swift; sourceTree = "<group>"; };
-		BEA553FC29DCC1B6001A1BA5 /* allObjectsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = allObjectsModel.swift; sourceTree = "<group>"; };
+		BEA553FC29DCC1B6001A1BA5 /* Ship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
 		BEA5540229DCC5EB001A1BA5 /* ShipSubTypeSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipSubTypeSelectionController.swift; sourceTree = "<group>"; };
 		BEA5540429DCD711001A1BA5 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		BEA5540629DDB79D001A1BA5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -49,6 +53,10 @@
 		BEA5540F29DDC9BA001A1BA5 /* ShipConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipConfigView.swift; sourceTree = "<group>"; };
 		BEA5541129DDD060001A1BA5 /* ShipSelectedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipSelectedCell.swift; sourceTree = "<group>"; };
 		BEA5541329DDFD2A001A1BA5 /* FittingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FittingCell.swift; sourceTree = "<group>"; };
+		BEAC9BD229E42542009987A3 /* Modules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modules.swift; sourceTree = "<group>"; };
+		BEAC9BD429E4258B009987A3 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		BEAC9BD629E43834009987A3 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		BEAC9BDA29E440E6009987A3 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		BEB0624129D1AE2B005AEB24 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		BEB0624329D1B5A0005AEB24 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		BEB0624629D1B71F005AEB24 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -124,7 +132,7 @@
 		BEA553EA29DB411A001A1BA5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BEA553F829DC779C001A1BA5 /* ShipTypeSelectionController.swift */,
+				BEA553F829DC779C001A1BA5 /* UniversalSelectController.swift */,
 				BEA5540229DCC5EB001A1BA5 /* ShipSubTypeSelectionController.swift */,
 				BEA5540829DDC14A001A1BA5 /* ShipSelectionController.swift */,
 			);
@@ -142,7 +150,9 @@
 		BEA553FE29DCC1BC001A1BA5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BEA553FC29DCC1B6001A1BA5 /* allObjectsModel.swift */,
+				BEAC9BD429E4258B009987A3 /* Protocols.swift */,
+				BEA553FC29DCC1B6001A1BA5 /* Ship.swift */,
+				BEAC9BD229E42542009987A3 /* Modules.swift */,
 				BEA5540429DCD711001A1BA5 /* MockData.swift */,
 			);
 			path = Models;
@@ -165,13 +175,29 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		BEB0623829D1A3CD005AEB24 /* Home */ = {
+		BEAC9BD829E43838009987A3 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				BEAC9BD629E43834009987A3 /* MainTabBarController.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		BEAC9BD929E440A5009987A3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BEAC9BDA29E440E6009987A3 /* Helper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		BEB0623829D1A3CD005AEB24 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				BEB7D0BB29CF2EF3002B3431 /* View */,
 				BEB7D0BC29CF2EFE002B3431 /* Controller */,
 			);
-			path = Home;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		BEB0623929D1A665005AEB24 /* Resources */ = {
@@ -188,7 +214,7 @@
 		BEB0623A29D1A6AA005AEB24 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				BEB0623829D1A3CD005AEB24 /* Home */,
+				BEB0623829D1A3CD005AEB24 /* Main */,
 				BEA553E929DB4101001A1BA5 /* ShipSelection */,
 				BEA5540C29DDC85D001A1BA5 /* ShipConfiguration */,
 			);
@@ -249,9 +275,11 @@
 				BEB7D0B729CF1C8B002B3431 /* Application */,
 				BEB0623F29D1AB90005AEB24 /* Configuration */,
 				BEA553FE29DCC1BC001A1BA5 /* Models */,
+				BEAC9BD829E43838009987A3 /* Navigation */,
 				BEB0623A29D1A6AA005AEB24 /* Screens */,
 				BEB0623D29D1A7FB005AEB24 /* Storybords */,
 				BEB0623929D1A665005AEB24 /* Resources */,
+				BEAC9BD929E440A5009987A3 /* Helpers */,
 				BEB7D0BF29CF3775002B3431 /* Extensions */,
 			);
 			path = "Cosmic Slipway";
@@ -385,6 +413,7 @@
 			files = (
 				BEB7D0C629CF5D1A002B3431 /* UIView+Extension.swift in Sources */,
 				BEB0624229D1AE2B005AEB24 /* Colors.swift in Sources */,
+				BEAC9BD729E43834009987A3 /* MainTabBarController.swift in Sources */,
 				BEEA422529D03B57008B98E4 /* ShipCell.swift in Sources */,
 				BEB0624429D1B5A0005AEB24 /* Images.swift in Sources */,
 				BEA5541029DDC9BA001A1BA5 /* ShipConfigView.swift in Sources */,
@@ -392,17 +421,20 @@
 				BEA5540B29DDC85A001A1BA5 /* ShipConfigController.swift in Sources */,
 				BEA5540529DCD711001A1BA5 /* MockData.swift in Sources */,
 				BEB7D0A729CF18AE002B3431 /* MainViewController.swift in Sources */,
-				BEA553FD29DCC1B6001A1BA5 /* allObjectsModel.swift in Sources */,
+				BEA553FD29DCC1B6001A1BA5 /* Ship.swift in Sources */,
 				BEA5540929DDC14A001A1BA5 /* ShipSelectionController.swift in Sources */,
-				BEA553F929DC779C001A1BA5 /* ShipTypeSelectionController.swift in Sources */,
+				BEA553F929DC779C001A1BA5 /* UniversalSelectController.swift in Sources */,
 				BEB7D0A329CF18AE002B3431 /* AppDelegate.swift in Sources */,
 				BEA5540329DCC5EB001A1BA5 /* ShipSubTypeSelectionController.swift in Sources */,
 				BEA5541429DDFD2A001A1BA5 /* FittingCell.swift in Sources */,
+				BEAC9BD529E4258B009987A3 /* Protocols.swift in Sources */,
 				BEA553FB29DC9777001A1BA5 /* UniversalSelectTypeCell.swift in Sources */,
 				BE4CFC1229DEFA5900B42547 /* UICollectionView+Extension.swift in Sources */,
+				BEAC9BD329E42542009987A3 /* Modules.swift in Sources */,
 				BEB0624729D1B71F005AEB24 /* Fonts.swift in Sources */,
 				BEB7D0A529CF18AE002B3431 /* SceneDelegate.swift in Sources */,
 				BEA5540729DDB79D001A1BA5 /* MainView.swift in Sources */,
+				BEAC9BDB29E440E6009987A3 /* Helper.swift in Sources */,
 				BEEA422729D044B2008B98E4 /* UIColor+Extension.swift in Sources */,
 				BEA5541229DDD060001A1BA5 /* ShipSelectedCell.swift in Sources */,
 			);
