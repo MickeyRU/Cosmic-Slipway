@@ -107,8 +107,8 @@ extension ShipConfigController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 1 {
-            let destVC = HighSlotsFittingController()
-            destVC.highSlotModules = highSlotsMockData
+            let destVC = WeaponTypeController()
+            destVC.weaponTypeDataArray = highSlotsMockData
             navigationController?.pushViewController(destVC, animated: true)
         }
     }

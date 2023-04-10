@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BE4CFC1229DEFA5900B42547 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4CFC1129DEFA5900B42547 /* UICollectionView+Extension.swift */; };
-		BE4CFC1429DF126700B42547 /* HighSlotsFittingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4CFC1329DF126700B42547 /* HighSlotsFittingController.swift */; };
+		BE4CFC1429DF126700B42547 /* WeaponTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4CFC1329DF126700B42547 /* WeaponTypeController.swift */; };
 		BEA553F929DC779C001A1BA5 /* UniversalSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA553F829DC779C001A1BA5 /* UniversalSelectController.swift */; };
 		BEA553FB29DC9777001A1BA5 /* UniversalSelectTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA553FA29DC9777001A1BA5 /* UniversalSelectTypeCell.swift */; };
 		BEA553FD29DCC1B6001A1BA5 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA553FC29DCC1B6001A1BA5 /* Ship.swift */; };
@@ -24,6 +24,8 @@
 		BEAC9BD529E4258B009987A3 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC9BD429E4258B009987A3 /* Protocols.swift */; };
 		BEAC9BD729E43834009987A3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC9BD629E43834009987A3 /* MainTabBarController.swift */; };
 		BEAC9BDB29E440E6009987A3 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC9BDA29E440E6009987A3 /* Helper.swift */; };
+		BEAC9BDF29E47607009987A3 /* WeaponSubTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC9BDE29E47607009987A3 /* WeaponSubTypeController.swift */; };
+		BEAC9BE129E4788B009987A3 /* WeaponController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC9BE029E4788B009987A3 /* WeaponController.swift */; };
 		BEB0624229D1AE2B005AEB24 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0624129D1AE2B005AEB24 /* Colors.swift */; };
 		BEB0624429D1B5A0005AEB24 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0624329D1B5A0005AEB24 /* Images.swift */; };
 		BEB0624729D1B71F005AEB24 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0624629D1B71F005AEB24 /* Fonts.swift */; };
@@ -41,7 +43,7 @@
 
 /* Begin PBXFileReference section */
 		BE4CFC1129DEFA5900B42547 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
-		BE4CFC1329DF126700B42547 /* HighSlotsFittingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSlotsFittingController.swift; sourceTree = "<group>"; };
+		BE4CFC1329DF126700B42547 /* WeaponTypeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponTypeController.swift; sourceTree = "<group>"; };
 		BEA553F829DC779C001A1BA5 /* UniversalSelectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalSelectController.swift; sourceTree = "<group>"; };
 		BEA553FA29DC9777001A1BA5 /* UniversalSelectTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalSelectTypeCell.swift; sourceTree = "<group>"; };
 		BEA553FC29DCC1B6001A1BA5 /* Ship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
@@ -57,6 +59,8 @@
 		BEAC9BD429E4258B009987A3 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		BEAC9BD629E43834009987A3 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		BEAC9BDA29E440E6009987A3 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		BEAC9BDE29E47607009987A3 /* WeaponSubTypeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponSubTypeController.swift; sourceTree = "<group>"; };
+		BEAC9BE029E4788B009987A3 /* WeaponController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponController.swift; sourceTree = "<group>"; };
 		BEB0624129D1AE2B005AEB24 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		BEB0624329D1B5A0005AEB24 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		BEB0624629D1B71F005AEB24 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -170,7 +174,9 @@
 		BEA5540D29DDC98C001A1BA5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BE4CFC1329DF126700B42547 /* HighSlotsFittingController.swift */,
+				BE4CFC1329DF126700B42547 /* WeaponTypeController.swift */,
+				BEAC9BDE29E47607009987A3 /* WeaponSubTypeController.swift */,
+				BEAC9BE029E4788B009987A3 /* WeaponController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -413,11 +419,12 @@
 			files = (
 				BEB7D0C629CF5D1A002B3431 /* UIView+Extension.swift in Sources */,
 				BEB0624229D1AE2B005AEB24 /* Colors.swift in Sources */,
+				BEAC9BDF29E47607009987A3 /* WeaponSubTypeController.swift in Sources */,
 				BEAC9BD729E43834009987A3 /* MainTabBarController.swift in Sources */,
 				BEEA422529D03B57008B98E4 /* ShipCell.swift in Sources */,
 				BEB0624429D1B5A0005AEB24 /* Images.swift in Sources */,
 				BEA5541029DDC9BA001A1BA5 /* ShipConfigView.swift in Sources */,
-				BE4CFC1429DF126700B42547 /* HighSlotsFittingController.swift in Sources */,
+				BE4CFC1429DF126700B42547 /* WeaponTypeController.swift in Sources */,
 				BEA5540B29DDC85A001A1BA5 /* ShipConfigController.swift in Sources */,
 				BEA5540529DCD711001A1BA5 /* MockData.swift in Sources */,
 				BEB7D0A729CF18AE002B3431 /* MainViewController.swift in Sources */,
@@ -425,6 +432,7 @@
 				BEA5540929DDC14A001A1BA5 /* ShipSelectionController.swift in Sources */,
 				BEA553F929DC779C001A1BA5 /* UniversalSelectController.swift in Sources */,
 				BEB7D0A329CF18AE002B3431 /* AppDelegate.swift in Sources */,
+				BEAC9BE129E4788B009987A3 /* WeaponController.swift in Sources */,
 				BEA5540329DCC5EB001A1BA5 /* ShipSubTypeSelectionController.swift in Sources */,
 				BEA5541429DDFD2A001A1BA5 /* FittingCell.swift in Sources */,
 				BEAC9BD529E4258B009987A3 /* Protocols.swift in Sources */,

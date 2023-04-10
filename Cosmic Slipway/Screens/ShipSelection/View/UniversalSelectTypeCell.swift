@@ -53,6 +53,8 @@ final class UniversalSelectTypeCell: UICollectionViewCell {
             backBorderImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             
             CellLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            CellLabel.leadingAnchor.constraint(equalTo: backBorderImageView.leadingAnchor, constant: 17),
+            CellLabel.trailingAnchor.constraint(equalTo: backBorderImageView.trailingAnchor, constant: -17),
             CellLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
     }

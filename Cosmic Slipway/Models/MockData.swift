@@ -25,24 +25,83 @@ let shipsMockData: [ShipType] = [
     ShipType(id: 7, name: "Capital Ships", subtypes: []),
 ]
 
-//let highSlotsMockData: [HighSlotsMainWeaponType] = [
-//    HighSlotsMainWeaponType(id: 1, name: "Lasers", subtype: [WeaponSubtype(id: 1, name: nil, weaponModuleName: nil)]),
-//    HighSlotsMainWeaponType(id: 2, name: "Railguns", subtype: [
-//        WeaponSubtype(id: 1, name: "Small Rifled Railguns, weaponModuleName: nil),
-//        WeaponSubtype(id: 2, name: nil, weaponModuleName: nil),
-//        WeaponSubtype(id: 3, name: nil, weaponModuleName: nil),
-//        WeaponSubtype(id: 4, name: nil, weaponModuleName: nil),
-//        WeaponSubtype(id: 5, name: nil, weaponModuleName: nil),
-//        WeaponSubtype(id: 6, name: nil, weaponModuleName: nil),
-//        WeaponSubtype(id: 7, name: nil, weaponModuleName: nil),
-//        WeaponSubtype(id: 8, name: nil, weaponModuleName: nil),
-//        WeaponSubtype(id: 9, name: nil, weaponModuleName: nil),
-//    ]),
-//    HighSlotsMainWeaponType(id: 3, name: "Cannons", subtype: [WeaponSubtype(id: 1, name: nil, weaponModuleName: nil)]),
-//    HighSlotsMainWeaponType(id: 4, name: "Decomposers", subtype: [WeaponSubtype(id: 1, name: nil, weaponModuleName: nil)]),
-//    HighSlotsMainWeaponType(id: 5, name: "Missle Launchers", subtype: [WeaponSubtype(id: 1, name: nil, weaponModuleName: nil)]),
-//    HighSlotsMainWeaponType(id: 6, name: "Harvest Equipments", subtype: [WeaponSubtype(id: 1, name: nil, weaponModuleName: nil)]),
-//    HighSlotsMainWeaponType(id: 7, name: "Remote Shield Boosters", subtype: [WeaponSubtype(id: 1, name: nil, weaponModuleName: nil)]),
-//    HighSlotsMainWeaponType(id: 8, name: "Remote Armor Boosters", subtype: [WeaponSubtype(id: 1, name: nil, weaponModuleName: nil)]),
-//    HighSlotsMainWeaponType(id: 9, name: "Bombs", subtype: [WeaponSubtype(id: 1, name: nil, weaponModuleName: nil)]),
-//]
+let highSlotsMockData: [HighSlotsMainWeaponType] = [
+    HighSlotsMainWeaponType(
+        id: 1,
+        name: "Lasers",
+        subtype: [
+            WeaponSubtype(
+                id: 1,
+                name: "",
+                weaponModuleName: [
+                    Weapon(id: 1, name: "")
+                ])
+        ]),
+    HighSlotsMainWeaponType(
+        id: 2,
+        name: "Railguns",
+        subtype: [
+            WeaponSubtype(
+                id: 1,
+                name: "Small Rifled Railguns",
+                weaponModuleName: [
+                    Weapon(id: 1, name: "")
+                ]),
+            WeaponSubtype(
+                id: 2,
+                name: "Medium Rifled Railguns",
+                weaponModuleName: [
+                    Weapon(id: 2, name: "")
+                ]),
+            WeaponSubtype(
+                id: 3,
+                name: "Large Rifled Railguns",
+                weaponModuleName: [
+                    Weapon(id: 1, name: "Core C-Type Large Snubnosed Railguns"),
+                    Weapon(id: 2, name: "Core B-Type Large Snubnosed Railguns"),
+                    Weapon(id: 3, name: "Core A-Type Large Snubnosed Railguns"),
+                    Weapon(id: 4, name: "Core X-Type Large Snubnosed Railguns"),
+                ]),
+            WeaponSubtype(
+                id: 4,
+                name: "Capital Rifled Railguns",
+                weaponModuleName: [
+                    Weapon(id: 2, name: "")
+                ])
+        ]),
+    HighSlotsMainWeaponType(id: 3, name: "Cannons", subtype: [
+        WeaponSubtype(id: 1, name: "nil", weaponModuleName: [
+            Weapon(id: 2, name: "")
+        ])
+    ]),
+    HighSlotsMainWeaponType(id: 4, name: "Decomposers", subtype: [
+        WeaponSubtype(id: 1, name: "nil", weaponModuleName: [
+            Weapon(id: 2, name: "")
+        ])
+    ]),
+    HighSlotsMainWeaponType(id: 5, name: "Missle Launchers", subtype: [
+        WeaponSubtype(id: 1, name: "nil", weaponModuleName: [
+            Weapon(id: 2, name: "")
+        ])
+    ]),
+    HighSlotsMainWeaponType(id: 6, name: "Harvest Equipments", subtype: [
+        WeaponSubtype(id: 1, name: "nil", weaponModuleName: [
+            Weapon(id: 2, name: "")
+        ])
+    ]),
+    HighSlotsMainWeaponType(id: 7, name: "Remote Shield Boosters", subtype: [
+        WeaponSubtype(id: 1, name: "nil", weaponModuleName: [
+            Weapon(id: 2, name: "")
+        ])
+    ]),
+    HighSlotsMainWeaponType(id: 8, name: "Remote Armor Boosters", subtype: [
+        WeaponSubtype(id: 1, name: "nil", weaponModuleName: [
+            Weapon(id: 2, name: "")
+        ])
+    ]),
+    HighSlotsMainWeaponType(id: 9, name: "Bombs", subtype: [
+        WeaponSubtype(id: 1, name: "nil", weaponModuleName: [
+            Weapon(id: 2, name: "")
+        ])
+    ])
+]
