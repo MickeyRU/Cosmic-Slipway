@@ -14,6 +14,7 @@ class UniversalSelectController: UIViewController {
     // MARK: - Constants
     
     // MARK: - Public Properties
+    
     var shipTypesDataArray = [ShipType]()
     
     // MARK: - IBOutlet
@@ -62,7 +63,8 @@ class UniversalSelectController: UIViewController {
         
         layout()
         configCollectionView()
-        configNavigationBar()
+        navigationController?.navigationBar.tintColor = .white
+
     }
     
     // MARK: - Public methods
@@ -71,10 +73,8 @@ class UniversalSelectController: UIViewController {
     
     // MARK: - Private Methods
     
-    private func configNavigationBar() {
-        let navBarAppearance = UINavigationBarAppearance()
-        navigationController?.navigationBar.standardAppearance = navBarAppearance
-        navigationController?.navigationBar.tintColor = .white
+    @objc private func backButtonTapped() {
+        self.dismiss(animated: true)
     }
     
     private func layout() {
@@ -95,7 +95,7 @@ class UniversalSelectController: UIViewController {
             backgroundViewTwo.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             backgroundViewTwo.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             backgroundViewTwo.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            
+        
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
             titleLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
@@ -125,7 +125,7 @@ extension UniversalSelectController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UniversalSelectTypeCell.reuseIdentifier, for: indexPath) as! UniversalSelectTypeCell
         let shipType = shipTypesDataArray[indexPath.item]
-        cell.CellLabel.text = shipType.name
+        cell.cellLabel.text = shipType.name
         return cell
     }
 }

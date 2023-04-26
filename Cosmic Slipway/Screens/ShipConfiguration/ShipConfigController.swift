@@ -7,13 +7,19 @@
 
 import UIKit
 
+protocol ShipConfigControllerDelegate: AnyObject {
+    func saveShipConfig(ship: Ship)
+}
+
 final class ShipConfigController: UIViewController {
     
     // MARK: - Public Properties
     var ship: Ship?
     
+    weak var delegate: ShipConfigControllerDelegate?
+    
     // MARK: - Private Properties
-    private let shipConfig = ShipConfigView()
+    private let shipConfigView = ShipConfigView()
     
     // MARK: - UIViewController
     
@@ -22,26 +28,43 @@ final class ShipConfigController: UIViewController {
         
         layout()
         configCollectionView()
+        setupNavigationBar()
     }
     
     // MARK: - Private Methods
     
+    private func setupNavigationBar() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonDidTapped))
+    }
+    
+    @objc private func doneButtonDidTapped() {
+        guard let ship = ship,
+              let rootTabBarController = navigationController?.viewControllers.first as? MainTabBarController,
+              let rootViewController = rootTabBarController.viewControllers?.first as? MainViewController
+        else {
+            print ("Не удалось достучаться до rootViewController")
+            return
+        }
+        delegate = rootViewController
+        delegate?.saveShipConfig(ship: ship)
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
     private func layout() {
-        [shipConfig].forEach { view.addViews($0) }
+        [shipConfigView].forEach { view.addViews($0) }
         
         NSLayoutConstraint.activate([
-            shipConfig.topAnchor.constraint(equalTo: view.topAnchor),
-            shipConfig.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            shipConfig.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            shipConfig.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            shipConfigView.topAnchor.constraint(equalTo: view.topAnchor),
+            shipConfigView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            shipConfigView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            shipConfigView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
     
     private func configCollectionView() {
-        shipConfig.shipConfigCollectionView.delegate = self
-        shipConfig.shipConfigCollectionView.dataSource = self
-        shipConfig.shipConfigCollectionView.showsVerticalScrollIndicator = false
-
+        shipConfigView.shipConfigCollectionView.delegate = self
+        shipConfigView.shipConfigCollectionView.dataSource = self
+        shipConfigView.shipConfigCollectionView.showsVerticalScrollIndicator = false
     }
 }
 

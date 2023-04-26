@@ -27,7 +27,7 @@ final class MainView: UIView {
     
     let shipCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-        collectionView.register(ShipCell.self, forCellWithReuseIdentifier: ShipCell.reuseIdentifier)
+        collectionView.register(ShipsCell.self, forCellWithReuseIdentifier: ShipsCell.reuseIdentifier)
         collectionView.backgroundColor = .clear
         return collectionView
     }()
@@ -57,7 +57,7 @@ final class MainView: UIView {
             backImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
             backImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            shipCollectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            shipCollectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 40),
             shipCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             shipCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             shipCollectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)

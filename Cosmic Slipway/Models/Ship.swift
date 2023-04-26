@@ -8,41 +8,29 @@
 import UIKit
 
 // Структура для хранения данных типа корабля
-struct ShipType: Codable {
+struct ShipType {
     let id: Int
     let name: String
     let subtypes: [ShipSubtype] // Подтипы корабля
 }
 
 // Структура для хранения данных подтипа корабля
-struct ShipSubtype: Codable {
+struct ShipSubtype {
     let id: Int
     let name: String
     let ships: [Ship] // Корабли подтипа
 }
  
 // Структура для хранения данных конкретного корабля
-struct Ship: Codable {
+struct Ship {
     let id: Int
     let name: String
-    let shipImage: String?
-    var characteristics: ShipCharacteristics? // Характеристики корабля
+    let shipImage: String
     var fitting: Fitting // Модули корабля
-    var core: ShipCore? // Ядро корабля (может отсутствовать)
-}
-
-// Структура для хранения характеристик ядра
-struct ShipCore: Codable {
-    
-}
-
-// Структура для хранения характеристик корабля
-struct ShipCharacteristics: Codable {
-    
 }
 
 // Структура для хранения оснащения корабля
-struct Fitting: Codable {
+struct Fitting {
     let highSlots: Int
     let midSlots: Int
     let lowSlots: Int

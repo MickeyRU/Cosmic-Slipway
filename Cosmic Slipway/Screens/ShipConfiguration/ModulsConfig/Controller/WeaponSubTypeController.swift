@@ -10,6 +10,7 @@ import UIKit
 final class WeaponSubTypeController: UniversalSelectController {
     
     // MARK: - Public Properties
+    
     var weaponSubTypesData = [WeaponSubtype]()
     
     // MARK: - UICollectionViewDataSource
@@ -21,7 +22,7 @@ final class WeaponSubTypeController: UniversalSelectController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UniversalSelectTypeCell.reuseIdentifier, for: indexPath) as! UniversalSelectTypeCell
         let weaponSubType = weaponSubTypesData[indexPath.item]
-        cell.CellLabel.text = weaponSubType.name
+        cell.cellLabel.text = weaponSubType.name
         return cell
     }
     
@@ -30,8 +31,8 @@ final class WeaponSubTypeController: UniversalSelectController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let weapon = weaponSubTypesData[indexPath.item]
         if indexPath.row == 2 {
-            let nextVC = WeaponController()
-            nextVC.weapon = weapon.weaponModuleName
+            let nextVC = WeaponModuleController()
+            nextVC.weaponModules = weapon.weaponModuleName
             navigationController?.pushViewController(nextVC, animated: true)
         } else {
             print("else")

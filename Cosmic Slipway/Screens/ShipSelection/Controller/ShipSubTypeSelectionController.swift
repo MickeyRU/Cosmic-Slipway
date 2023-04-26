@@ -22,7 +22,7 @@ final class ShipSubTypeSelectionController: UniversalSelectController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UniversalSelectTypeCell.reuseIdentifier, for: indexPath) as! UniversalSelectTypeCell
         let ship = shipSubTypesDataArray[indexPath.item]
-        cell.CellLabel.text = ship.name
+        cell.cellLabel.text = ship.name
         return cell
     }
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE2DF81429E6E5D800CB71C0 /* WeaponController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2DF81329E6E5D700CB71C0 /* WeaponController.swift */; };
 		BE4CFC1229DEFA5900B42547 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4CFC1129DEFA5900B42547 /* UICollectionView+Extension.swift */; };
 		BE4CFC1429DF126700B42547 /* WeaponTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4CFC1329DF126700B42547 /* WeaponTypeController.swift */; };
 		BEA553F929DC779C001A1BA5 /* UniversalSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA553F829DC779C001A1BA5 /* UniversalSelectController.swift */; };
@@ -21,11 +22,10 @@
 		BEA5541229DDD060001A1BA5 /* ShipSelectedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA5541129DDD060001A1BA5 /* ShipSelectedCell.swift */; };
 		BEA5541429DDFD2A001A1BA5 /* FittingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA5541329DDFD2A001A1BA5 /* FittingCell.swift */; };
 		BEAC9BD329E42542009987A3 /* Modules.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC9BD229E42542009987A3 /* Modules.swift */; };
-		BEAC9BD529E4258B009987A3 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC9BD429E4258B009987A3 /* Protocols.swift */; };
 		BEAC9BD729E43834009987A3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC9BD629E43834009987A3 /* MainTabBarController.swift */; };
 		BEAC9BDB29E440E6009987A3 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC9BDA29E440E6009987A3 /* Helper.swift */; };
 		BEAC9BDF29E47607009987A3 /* WeaponSubTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC9BDE29E47607009987A3 /* WeaponSubTypeController.swift */; };
-		BEAC9BE129E4788B009987A3 /* WeaponController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC9BE029E4788B009987A3 /* WeaponController.swift */; };
+		BEAC9BE129E4788B009987A3 /* WeaponModuleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC9BE029E4788B009987A3 /* WeaponModuleController.swift */; };
 		BEB0624229D1AE2B005AEB24 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0624129D1AE2B005AEB24 /* Colors.swift */; };
 		BEB0624429D1B5A0005AEB24 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0624329D1B5A0005AEB24 /* Images.swift */; };
 		BEB0624729D1B71F005AEB24 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0624629D1B71F005AEB24 /* Fonts.swift */; };
@@ -35,13 +35,14 @@
 		BEB7D0AC29CF18B3002B3431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEB7D0AB29CF18B3002B3431 /* Assets.xcassets */; };
 		BEB7D0AF29CF18B3002B3431 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEB7D0AD29CF18B3002B3431 /* LaunchScreen.storyboard */; };
 		BEB7D0C629CF5D1A002B3431 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7D0C529CF5D1A002B3431 /* UIView+Extension.swift */; };
-		BEEA422529D03B57008B98E4 /* ShipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEA422429D03B57008B98E4 /* ShipCell.swift */; };
+		BEEA422529D03B57008B98E4 /* ShipsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEA422429D03B57008B98E4 /* ShipsCell.swift */; };
 		BEEA422729D044B2008B98E4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEA422629D044B2008B98E4 /* UIColor+Extension.swift */; };
 		BEEA422D29D06CB6008B98E4 /* Figtree-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEEA422C29D06CB6008B98E4 /* Figtree-ExtraBold.ttf */; };
 		BEEA423029D09684008B98E4 /* Figtree-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEEA422F29D09684008B98E4 /* Figtree-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE2DF81329E6E5D700CB71C0 /* WeaponController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponController.swift; sourceTree = "<group>"; };
 		BE4CFC1129DEFA5900B42547 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		BE4CFC1329DF126700B42547 /* WeaponTypeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponTypeController.swift; sourceTree = "<group>"; };
 		BEA553F829DC779C001A1BA5 /* UniversalSelectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalSelectController.swift; sourceTree = "<group>"; };
@@ -56,11 +57,10 @@
 		BEA5541129DDD060001A1BA5 /* ShipSelectedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipSelectedCell.swift; sourceTree = "<group>"; };
 		BEA5541329DDFD2A001A1BA5 /* FittingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FittingCell.swift; sourceTree = "<group>"; };
 		BEAC9BD229E42542009987A3 /* Modules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modules.swift; sourceTree = "<group>"; };
-		BEAC9BD429E4258B009987A3 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		BEAC9BD629E43834009987A3 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		BEAC9BDA29E440E6009987A3 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		BEAC9BDE29E47607009987A3 /* WeaponSubTypeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponSubTypeController.swift; sourceTree = "<group>"; };
-		BEAC9BE029E4788B009987A3 /* WeaponController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponController.swift; sourceTree = "<group>"; };
+		BEAC9BE029E4788B009987A3 /* WeaponModuleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponModuleController.swift; sourceTree = "<group>"; };
 		BEB0624129D1AE2B005AEB24 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		BEB0624329D1B5A0005AEB24 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		BEB0624629D1B71F005AEB24 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 		BEB7D0AE29CF18B3002B3431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEB7D0B029CF18B3002B3431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEB7D0C529CF5D1A002B3431 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		BEEA422429D03B57008B98E4 /* ShipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipCell.swift; sourceTree = "<group>"; };
+		BEEA422429D03B57008B98E4 /* ShipsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipsCell.swift; sourceTree = "<group>"; };
 		BEEA422629D044B2008B98E4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		BEEA422C29D06CB6008B98E4 /* Figtree-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-ExtraBold.ttf"; sourceTree = "<group>"; };
 		BEEA422F29D09684008B98E4 /* Figtree-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-Regular.ttf"; sourceTree = "<group>"; };
@@ -93,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				BE4CFC1A29DF195D00B42547 /* Views */,
-				BE4CFC1B29DF196800B42547 /* ViewController */,
 			);
 			path = ShipConfig;
 			sourceTree = "<group>";
@@ -106,14 +105,6 @@
 				BEA5540F29DDC9BA001A1BA5 /* ShipConfigView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		BE4CFC1B29DF196800B42547 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				BEA5540A29DDC85A001A1BA5 /* ShipConfigController.swift */,
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		BE4CFC1D29DF198500B42547 /* ModulsConfig */ = {
@@ -154,7 +145,6 @@
 		BEA553FE29DCC1BC001A1BA5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BEAC9BD429E4258B009987A3 /* Protocols.swift */,
 				BEA553FC29DCC1B6001A1BA5 /* Ship.swift */,
 				BEAC9BD229E42542009987A3 /* Modules.swift */,
 				BEA5540429DCD711001A1BA5 /* MockData.swift */,
@@ -166,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				BE4CFC1929DF191C00B42547 /* ShipConfig */,
+				BEA5540A29DDC85A001A1BA5 /* ShipConfigController.swift */,
 				BE4CFC1D29DF198500B42547 /* ModulsConfig */,
 			);
 			path = ShipConfiguration;
@@ -176,7 +167,8 @@
 			children = (
 				BE4CFC1329DF126700B42547 /* WeaponTypeController.swift */,
 				BEAC9BDE29E47607009987A3 /* WeaponSubTypeController.swift */,
-				BEAC9BE029E4788B009987A3 /* WeaponController.swift */,
+				BEAC9BE029E4788B009987A3 /* WeaponModuleController.swift */,
+				BE2DF81329E6E5D700CB71C0 /* WeaponController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -201,7 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				BEB7D0BB29CF2EF3002B3431 /* View */,
-				BEB7D0BC29CF2EFE002B3431 /* Controller */,
+				BEB7D0A629CF18AE002B3431 /* MainViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -303,18 +295,10 @@
 		BEB7D0BB29CF2EF3002B3431 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BEEA422429D03B57008B98E4 /* ShipCell.swift */,
+				BEEA422429D03B57008B98E4 /* ShipsCell.swift */,
 				BEA5540629DDB79D001A1BA5 /* MainView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		BEB7D0BC29CF2EFE002B3431 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				BEB7D0A629CF18AE002B3431 /* MainViewController.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		BEB7D0BF29CF3775002B3431 /* Extensions */ = {
@@ -421,7 +405,7 @@
 				BEB0624229D1AE2B005AEB24 /* Colors.swift in Sources */,
 				BEAC9BDF29E47607009987A3 /* WeaponSubTypeController.swift in Sources */,
 				BEAC9BD729E43834009987A3 /* MainTabBarController.swift in Sources */,
-				BEEA422529D03B57008B98E4 /* ShipCell.swift in Sources */,
+				BEEA422529D03B57008B98E4 /* ShipsCell.swift in Sources */,
 				BEB0624429D1B5A0005AEB24 /* Images.swift in Sources */,
 				BEA5541029DDC9BA001A1BA5 /* ShipConfigView.swift in Sources */,
 				BE4CFC1429DF126700B42547 /* WeaponTypeController.swift in Sources */,
@@ -432,10 +416,10 @@
 				BEA5540929DDC14A001A1BA5 /* ShipSelectionController.swift in Sources */,
 				BEA553F929DC779C001A1BA5 /* UniversalSelectController.swift in Sources */,
 				BEB7D0A329CF18AE002B3431 /* AppDelegate.swift in Sources */,
-				BEAC9BE129E4788B009987A3 /* WeaponController.swift in Sources */,
+				BE2DF81429E6E5D800CB71C0 /* WeaponController.swift in Sources */,
+				BEAC9BE129E4788B009987A3 /* WeaponModuleController.swift in Sources */,
 				BEA5540329DCC5EB001A1BA5 /* ShipSubTypeSelectionController.swift in Sources */,
 				BEA5541429DDFD2A001A1BA5 /* FittingCell.swift in Sources */,
-				BEAC9BD529E4258B009987A3 /* Protocols.swift in Sources */,
 				BEA553FB29DC9777001A1BA5 /* UniversalSelectTypeCell.swift in Sources */,
 				BE4CFC1229DEFA5900B42547 /* UICollectionView+Extension.swift in Sources */,
 				BEAC9BD329E42542009987A3 /* Modules.swift in Sources */,
@@ -588,6 +572,7 @@
 				INFOPLIST_FILE = "Cosmic Slipway/Configuration/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -619,6 +604,7 @@
 				INFOPLIST_FILE = "Cosmic Slipway/Configuration/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

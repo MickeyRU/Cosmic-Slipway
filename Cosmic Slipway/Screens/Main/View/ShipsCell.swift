@@ -7,11 +7,11 @@
 
 import UIKit
 
-final class ShipCell: UICollectionViewCell {
+final class ShipsCell: UICollectionViewCell {
     
     // MARK: - Public Properties
     
-    static let reuseIdentifier = "ShipCell"
+    static let reuseIdentifier = "ShipsCell"
     
     // MARK: - Private Properties
     
@@ -21,13 +21,13 @@ final class ShipCell: UICollectionViewCell {
         return view
     }()
     
-    private let shipImageView: UIImageView = {
+    var shipImageView: UIImageView = {
         let imageView = UIImageView(image: ShipImages.defaultShipImage)
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
-    private let shipTitle: UILabel = {
+    var shipTitle: UILabel = {
         let label = UILabel()
         label.text = "New ship"
         label.textAlignment = .left
@@ -47,7 +47,7 @@ final class ShipCell: UICollectionViewCell {
     
     private let addShipImage: UIImageView = {
         let imageView = UIImageView(image: NavigationImages.addButtonImage)
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFill  
         return imageView
     }()
     
@@ -76,7 +76,7 @@ final class ShipCell: UICollectionViewCell {
             
             shipImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 18),
             shipImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            shipImageView.widthAnchor.constraint(equalToConstant: 64),
+            shipImageView.widthAnchor.constraint(equalToConstant: 60),
             shipImageView.heightAnchor.constraint(equalToConstant: 60),
             
             shipTitle.centerXAnchor.constraint(equalTo: centerXAnchor),
@@ -85,10 +85,10 @@ final class ShipCell: UICollectionViewCell {
             shipStatusTitle.leadingAnchor.constraint(equalTo: shipTitle.leadingAnchor),
             shipStatusTitle.bottomAnchor.constraint(equalTo: shipTitle.topAnchor, constant: -6),
             
-            addShipImage.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -4),
-            addShipImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4),
-            addShipImage.widthAnchor.constraint(equalToConstant: 80),
-            addShipImage.heightAnchor.constraint(equalToConstant: 80)
+            addShipImage.centerYAnchor.constraint(equalTo: centerYAnchor),
+            addShipImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -19),
+            addShipImage.widthAnchor.constraint(equalToConstant: 48),
+            addShipImage.heightAnchor.constraint(equalToConstant: 48)
         ])
     }
 }

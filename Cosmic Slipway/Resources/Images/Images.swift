@@ -35,5 +35,6 @@ enum NavigationImages {
     static let fittingTabBarSelected = UIImage(named: "fittingTabBarSelected")!
 
     static let addButtonImage = UIImage(named: "addButtonImage")!
-
+    static let backButton = UIImage(named: "backButton")
+    static let exitButton = UIImage(named: "exitButton")!
 }

@@ -1,38 +1,38 @@
 //
-//  WeaponTypeController.swift
+//  WeaponController.swift
 //  Cosmic Slipway
 //
-//  Created by Павел Афанасьев on 06.04.2023.
+//  Created by Павел Афанасьев on 10.04.2023.
 //
 
 import UIKit
 
-final class WeaponTypeController: UniversalSelectController {
+final class WeaponModuleController: UniversalSelectController {
     
     // MARK: - Public Properties
     
-    var weaponTypeDataArray = [HighSlotsMainWeaponType]()
+    var weaponModules = [Weapon]()
     
     // MARK: - UICollectionViewDataSource
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return weaponTypeDataArray.count
+        return weaponModules.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UniversalSelectTypeCell.reuseIdentifier, for: indexPath) as! UniversalSelectTypeCell
-        let hightSlotModule = weaponTypeDataArray[indexPath.item]
-        cell.cellLabel.text = hightSlotModule.name
+        let weapon = weaponModules[indexPath.item]
+        cell.cellLabel.text = weapon.name
         return cell
     }
     
     // MARK: - UICollectionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let weaponSubType = weaponTypeDataArray[indexPath.item]
-        if indexPath.row == 1 {
-            let nextVC = WeaponSubTypeController()
-            nextVC.weaponSubTypesData = weaponSubType.subtype
+        let weapon = weaponModules[indexPath.item]
+        if indexPath.row == 0 {
+            let nextVC = WeaponController()
+            nextVC.weapon = weapon
             navigationController?.pushViewController(nextVC, animated: true)
         } else {
             print("else")

@@ -18,7 +18,6 @@ final class MainTabBarController: UITabBarController {
     private let mainViewController = MainViewController()
     private let fittingViewController = ShipConfigController()
     
-    
     // MARK: - UIViewController
     
     override func viewDidLoad() {
@@ -38,7 +37,6 @@ final class MainTabBarController: UITabBarController {
         tabBar.backgroundColor = hexStringToUIColor(hex: BasicColors.darkBG, alpha: 0.7)
         tabBar.layer.cornerRadius = 20
 
-        
         mainViewController.tabBarItem = UITabBarItem(
             title: "Dock",
             image: NavigationImages.homeTabBarClean,

@@ -21,7 +21,7 @@ final class UniversalSelectTypeCell: UICollectionViewCell {
         return imageView
     }()
     
-    let CellLabel: UILabel = {
+    let cellLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
         label.text = "Frigates"
@@ -44,7 +44,7 @@ final class UniversalSelectTypeCell: UICollectionViewCell {
     // MARK: - Private Methods
     
     private func layout() {
-        [backBorderImageView, CellLabel].forEach { addViews($0) }
+        [backBorderImageView, cellLabel].forEach { addViews($0) }
         
         NSLayoutConstraint.activate([
             backBorderImageView.topAnchor.constraint(equalTo: topAnchor),
@@ -52,10 +52,10 @@ final class UniversalSelectTypeCell: UICollectionViewCell {
             backBorderImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
             backBorderImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            CellLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            CellLabel.leadingAnchor.constraint(equalTo: backBorderImageView.leadingAnchor, constant: 17),
-            CellLabel.trailingAnchor.constraint(equalTo: backBorderImageView.trailingAnchor, constant: -17),
-            CellLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            cellLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            cellLabel.leadingAnchor.constraint(equalTo: backBorderImageView.leadingAnchor, constant: 17),
+            cellLabel.trailingAnchor.constraint(equalTo: backBorderImageView.trailingAnchor, constant: -17),
+            cellLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
     }
 }

@@ -57,7 +57,17 @@ let highSlotsMockData: [HighSlotsMainWeaponType] = [
                 id: 3,
                 name: "Large Rifled Railguns",
                 weaponModuleName: [
-                    Weapon(id: 1, name: "Core C-Type Large Snubnosed Railguns"),
+                    Weapon(id: 1, name: "Core C-Type Large Snubnosed Railguns", characteristics: WeaponCharacteristics(
+                        dps: 83.24,
+                        damageTypes: DamageTypes(em: 0, thermal: 245, kinetic: 419, explosive: 0),
+                        metaLevel: 11,
+                        powerGrid: 830,
+                        activationCost: 15.1,
+                        activationTime: 7.88,
+                        optimalRange: 7.2,
+                        fallOff: 10,
+                        tracking: 7.09)
+                    ),
                     Weapon(id: 2, name: "Core B-Type Large Snubnosed Railguns"),
                     Weapon(id: 3, name: "Core A-Type Large Snubnosed Railguns"),
                     Weapon(id: 4, name: "Core X-Type Large Snubnosed Railguns"),
