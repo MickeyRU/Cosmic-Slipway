@@ -23,6 +23,7 @@
 		BEC331E72AEA957100630D0D /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC331E62AEA957100630D0D /* MainViewModel.swift */; };
 		BEC331E92AEA95AF00630D0D /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC331E82AEA95AF00630D0D /* MainModel.swift */; };
 		BEC331ED2AEA97B600630D0D /* ShipModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC331EC2AEA97B600630D0D /* ShipModels.swift */; };
+		BEC331F22AEAB6AD00630D0D /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC331F12AEAB6AD00630D0D /* SelectionViewController.swift */; };
 		BEEA422529D03B57008B98E4 /* ShipsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEA422429D03B57008B98E4 /* ShipsCell.swift */; };
 		BEEA422729D044B2008B98E4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEA422629D044B2008B98E4 /* UIColor+Extension.swift */; };
 		BEEA422D29D06CB6008B98E4 /* Figtree-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEEA422C29D06CB6008B98E4 /* Figtree-ExtraBold.ttf */; };
@@ -46,6 +47,7 @@
 		BEC331E62AEA957100630D0D /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		BEC331E82AEA95AF00630D0D /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		BEC331EC2AEA97B600630D0D /* ShipModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipModels.swift; sourceTree = "<group>"; };
+		BEC331F12AEAB6AD00630D0D /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
 		BEEA422429D03B57008B98E4 /* ShipsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipsCell.swift; sourceTree = "<group>"; };
 		BEEA422629D044B2008B98E4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		BEEA422C29D06CB6008B98E4 /* Figtree-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				BEAC9BD629E43834009987A3 /* MainTabBarController.swift */,
 				BEB0623829D1A3CD005AEB24 /* Main */,
+				BEC331F02AEAB47C00630D0D /* ChoosingShip */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -217,6 +220,14 @@
 			path = Factories;
 			sourceTree = "<group>";
 		};
+		BEC331F02AEAB47C00630D0D /* ChoosingShip */ = {
+			isa = PBXGroup;
+			children = (
+				BEC331F12AEAB6AD00630D0D /* SelectionViewController.swift */,
+			);
+			path = ChoosingShip;
+			sourceTree = "<group>";
+		};
 		BEEA422E29D06D0B008B98E4 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +327,7 @@
 				BEC331ED2AEA97B600630D0D /* ShipModels.swift in Sources */,
 				BEB7D0A729CF18AE002B3431 /* MainViewController.swift in Sources */,
 				BEB7D0A329CF18AE002B3431 /* AppDelegate.swift in Sources */,
+				BEC331F22AEAB6AD00630D0D /* SelectionViewController.swift in Sources */,
 				BEB0624729D1B71F005AEB24 /* Fonts.swift in Sources */,
 				BEB7D0A529CF18AE002B3431 /* SceneDelegate.swift in Sources */,
 				BEC331E72AEA957100630D0D /* MainViewModel.swift in Sources */,

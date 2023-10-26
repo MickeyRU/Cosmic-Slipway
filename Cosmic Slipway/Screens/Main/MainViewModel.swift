@@ -7,11 +7,11 @@ protocol MainViewModelProtocol {
 }
 
 final class MainViewModel: ObservableObject, MainViewModelProtocol {
-
-    @Published 
+    
+    @Published
     private (set) var ships: [Ship] = []
     
     var shipsPublisher: AnyPublisher<[Ship], Never> {
-            $ships.eraseToAnyPublisher()  // 
-        }
+        $ships.eraseToAnyPublisher()  
+    }
 }

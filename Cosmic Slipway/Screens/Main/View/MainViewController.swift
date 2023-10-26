@@ -12,7 +12,6 @@ final class MainViewController: UIViewController {
     
     private var cancellables: Set<AnyCancellable> = []
     
-    
     private lazy var bgImageView: UIImageView = {
         viewsFactory.createBGImageView(for: .main)
     }()
@@ -47,6 +46,12 @@ final class MainViewController: UIViewController {
     
     // MARK: - UIViewController LC
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,13 +62,17 @@ final class MainViewController: UIViewController {
             })
             .store(in: &cancellables)
         
-        
-        layout()
+        setupViews()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     // MARK: - Private Methods
     
-    private func layout() {
+    private func setupViews() {
         [bgImageView, shipCollectionView].forEach { view.addSubview($0) }
         
         bgImageView.snp.makeConstraints { make in
@@ -81,7 +90,7 @@ final class MainViewController: UIViewController {
 
 extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        2
+        20
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

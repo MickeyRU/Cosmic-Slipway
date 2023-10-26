@@ -7,8 +7,8 @@ enum Fonts {
 
 
 struct CustomFonts {
-    static let figtree16 = UIFont(name: Fonts.ebFigtree, size: 16)
-    static let figtree12  = UIFont(name: Fonts.ebFigtree, size: 12)
+    static let figtreeBold16 = UIFont(name: Fonts.ebFigtree, size: 16)
+    static let figtreeRegular12  = UIFont(name: Fonts.rFigtree, size: 12)
 }
 
 

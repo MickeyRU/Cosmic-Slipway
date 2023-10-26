@@ -48,10 +48,11 @@ final class ViewsFactory: ViewsFactoryProtocol {
         case .shipTitle:
             label.text = "New ship +"
             label.textColor = BasicColors.accent
-            label.font = CustomFonts.figtree16
+            label.font = CustomFonts.figtreeBold16
         case .shipDescription:
+            label.text = "Configure"
             label.textColor = BasicColors.iconText
-            label.font = CustomFonts.figtree12
+            label.font = CustomFonts.figtreeRegular12
         }
         return label
     }
