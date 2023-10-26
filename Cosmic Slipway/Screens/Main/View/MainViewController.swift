@@ -1,12 +1,22 @@
 import SnapKit
 import UIKit
+import Combine
 
 final class MainViewController: UIViewController {
     
     // MARK: - Private Properties
     
+    private let viewModel: MainViewModelProtocol
+    
     private let viewsFactory: ViewsFactoryProtocol
-    private let bgImageView: UIImageView
+    
+    private var cancellables: Set<AnyCancellable> = []
+    
+    
+    private lazy var bgImageView: UIImageView = {
+        viewsFactory.createBGImageView(for: .main)
+    }()
+    
     private lazy var shipCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.register(ShipsCell.self, forCellWithReuseIdentifier: ShipsCell.reuseIdentifier)
@@ -24,9 +34,10 @@ final class MainViewController: UIViewController {
     
     // MARK: - init
     
-    init(viewsFactory: ViewsFactoryProtocol = ViewsFactory()) {
+    init(viewsFactory: ViewsFactoryProtocol = ViewsFactory(),
+         viewModel: MainViewModelProtocol = MainViewModel()) {
         self.viewsFactory = viewsFactory
-        self.bgImageView = viewsFactory.createBGImageView(for: .main)
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -38,6 +49,15 @@ final class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel.shipsPublisher
+            .sink(receiveValue: { [weak self] _ in
+                guard let self = self else { return }
+                self.shipCollectionView.reloadData()
+            })
+            .store(in: &cancellables)
+        
+        
         layout()
     }
     
@@ -61,7 +81,7 @@ final class MainViewController: UIViewController {
 
 extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

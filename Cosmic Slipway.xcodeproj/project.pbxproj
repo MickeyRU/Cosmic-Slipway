@@ -20,6 +20,9 @@
 		BEB7D0AC29CF18B3002B3431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEB7D0AB29CF18B3002B3431 /* Assets.xcassets */; };
 		BEB7D0AF29CF18B3002B3431 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEB7D0AD29CF18B3002B3431 /* LaunchScreen.storyboard */; };
 		BEB7D0C629CF5D1A002B3431 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7D0C529CF5D1A002B3431 /* UIView+Extension.swift */; };
+		BEC331E72AEA957100630D0D /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC331E62AEA957100630D0D /* MainViewModel.swift */; };
+		BEC331E92AEA95AF00630D0D /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC331E82AEA95AF00630D0D /* MainModel.swift */; };
+		BEC331ED2AEA97B600630D0D /* ShipModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC331EC2AEA97B600630D0D /* ShipModels.swift */; };
 		BEEA422529D03B57008B98E4 /* ShipsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEA422429D03B57008B98E4 /* ShipsCell.swift */; };
 		BEEA422729D044B2008B98E4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEA422629D044B2008B98E4 /* UIColor+Extension.swift */; };
 		BEEA422D29D06CB6008B98E4 /* Figtree-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEEA422C29D06CB6008B98E4 /* Figtree-ExtraBold.ttf */; };
@@ -40,6 +43,9 @@
 		BEB7D0AE29CF18B3002B3431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEB7D0B029CF18B3002B3431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEB7D0C529CF5D1A002B3431 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		BEC331E62AEA957100630D0D /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		BEC331E82AEA95AF00630D0D /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		BEC331EC2AEA97B600630D0D /* ShipModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipModels.swift; sourceTree = "<group>"; };
 		BEEA422429D03B57008B98E4 /* ShipsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipsCell.swift; sourceTree = "<group>"; };
 		BEEA422629D044B2008B98E4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		BEEA422C29D06CB6008B98E4 /* Figtree-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -62,6 +68,7 @@
 		BEA553FE29DCC1BC001A1BA5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BEC331EC2AEA97B600630D0D /* ShipModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -77,7 +84,9 @@
 		BEB0623829D1A3CD005AEB24 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				BEC331E82AEA95AF00630D0D /* MainModel.swift */,
 				BEB7D0BB29CF2EF3002B3431 /* View */,
+				BEC331E62AEA957100630D0D /* MainViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -298,15 +307,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEB7D0C629CF5D1A002B3431 /* UIView+Extension.swift in Sources */,
+				BEC331E92AEA95AF00630D0D /* MainModel.swift in Sources */,
 				BEB0624229D1AE2B005AEB24 /* Colors.swift in Sources */,
 				BE4D01112AE6A057005CA4CA /* ViewsFactory.swift in Sources */,
 				BEAC9BD729E43834009987A3 /* MainTabBarController.swift in Sources */,
 				BEEA422529D03B57008B98E4 /* ShipsCell.swift in Sources */,
 				BEB0624429D1B5A0005AEB24 /* Images.swift in Sources */,
+				BEC331ED2AEA97B600630D0D /* ShipModels.swift in Sources */,
 				BEB7D0A729CF18AE002B3431 /* MainViewController.swift in Sources */,
 				BEB7D0A329CF18AE002B3431 /* AppDelegate.swift in Sources */,
 				BEB0624729D1B71F005AEB24 /* Fonts.swift in Sources */,
 				BEB7D0A529CF18AE002B3431 /* SceneDelegate.swift in Sources */,
+				BEC331E72AEA957100630D0D /* MainViewModel.swift in Sources */,
 				BEEA422729D044B2008B98E4 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
