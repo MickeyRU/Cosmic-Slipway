@@ -1,10 +1,4 @@
-//
-//  ShipCell.swift
-//  Cosmic Slipway
-//
-//  Created by Павел Афанасьев on 26.03.2023.
-//
-
+import SnapKit
 import UIKit
 
 final class ShipsCell: UICollectionViewCell {
@@ -15,45 +9,33 @@ final class ShipsCell: UICollectionViewCell {
     
     // MARK: - Private Properties
     
-    private let backgroundImageView: UIView = {
-        let view = UIView()
-        view.backgroundColor = hexStringToUIColor(hex: BasicColors.darkBG, alpha: 0.7)
-        return view
+    private let viewsFactory: ViewsFactoryProtocol
+    
+    private lazy var bgView: UIView = {
+        return viewsFactory.createBGView()
     }()
     
-    var shipImageView: UIImageView = {
-        let imageView = UIImageView(image: ShipImages.defaultShipImage)
-        imageView.contentMode = .scaleAspectFill
-        return imageView
+    private lazy var shipImageView: UIImageView = {
+        return viewsFactory.createShipImageView()
     }()
     
-    var shipTitle: UILabel = {
-        let label = UILabel()
-        label.text = "New ship"
-        label.textAlignment = .left
-        label.textColor = hexStringToUIColor(hex: BasicColors.accent, alpha: 1.0)
-        label.font = UIFont(name: Fonts.ebFigtree, size: 16)
-        return label
+    private lazy var shipTitle: UILabel = {
+        return viewsFactory.createTitle(for: .shipTitle)
     }()
     
-    private let shipStatusTitle: UILabel = {
-        let label = UILabel()
-        label.text = "Configure"
-        label.textAlignment = .left
-        label.textColor = UIColor(rgb: BasicColors.iconText)
-        label.font = UIFont(name: Fonts.ebFigtree, size: 12)
-        return label
+    private lazy var shipStatusTitle: UILabel = {
+        return viewsFactory.createTitle(for: .shipDescription)
     }()
     
-    private let addShipImage: UIImageView = {
-        let imageView = UIImageView(image: NavigationImages.addButtonImage)
-        imageView.contentMode = .scaleAspectFill  
-        return imageView
+    private lazy var addShipImage: UIImageView = {
+        return viewsFactory.createAddShipImage()
     }()
+    
     
     // MARK: - Initializers
     
     override init(frame: CGRect) {
+        self.viewsFactory = ViewsFactory()
         super.init(frame: frame)
         
         layout()
@@ -66,29 +48,32 @@ final class ShipsCell: UICollectionViewCell {
     // MARK: - Private Methods
     
     private func layout() {
-        [backgroundImageView, shipImageView, shipTitle, shipStatusTitle, addShipImage].forEach { addViews($0) }
+        [bgView, shipImageView, shipTitle, shipStatusTitle, addShipImage].forEach { addSubview($0) }
         
-        NSLayoutConstraint.activate([
-            backgroundImageView.topAnchor.constraint(equalTo: topAnchor),
-            backgroundImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            backgroundImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            backgroundImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            
-            shipImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 18),
-            shipImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            shipImageView.widthAnchor.constraint(equalToConstant: 60),
-            shipImageView.heightAnchor.constraint(equalToConstant: 60),
-            
-            shipTitle.centerXAnchor.constraint(equalTo: centerXAnchor),
-            shipTitle.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -35),
-            
-            shipStatusTitle.leadingAnchor.constraint(equalTo: shipTitle.leadingAnchor),
-            shipStatusTitle.bottomAnchor.constraint(equalTo: shipTitle.topAnchor, constant: -6),
-            
-            addShipImage.centerYAnchor.constraint(equalTo: centerYAnchor),
-            addShipImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -19),
-            addShipImage.widthAnchor.constraint(equalToConstant: 48),
-            addShipImage.heightAnchor.constraint(equalToConstant: 48)
-        ])
+        bgView.snp.makeConstraints { make in
+            make.top.leading.bottom.trailing.equalToSuperview()
+        }
+        
+        shipImageView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(18)
+            make.centerY.equalToSuperview()
+            make.width.height.equalTo(60)
+        }
+        
+        shipTitle.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().inset(35)
+        }
+        
+        shipStatusTitle.snp.makeConstraints { make in
+            make.leading.equalTo(shipTitle)
+            make.bottom.equalTo(shipTitle.snp.top).inset(-6)
+        }
+        
+        addShipImage.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.trailing.equalToSuperview().inset(19)
+            make.width.height.equalTo(48)
+        }
     }
 }

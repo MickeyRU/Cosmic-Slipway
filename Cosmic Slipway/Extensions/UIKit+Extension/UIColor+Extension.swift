@@ -1,50 +1,19 @@
-//
-//  UIColor+Extension.swift
-//  Cosmic Slipway
-//
-//  Created by Павел Афанасьев on 26.03.2023.
-//
 
 import UIKit
 
 extension UIColor {
-    // For use HEX colors
-   convenience init(red: Int, green: Int, blue: Int) {
-       assert(red >= 0 && red <= 255, "Invalid red component")
-       assert(green >= 0 && green <= 255, "Invalid green component")
-       assert(blue >= 0 && blue <= 255, "Invalid blue component")
-
-       self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
-   }
-
-   convenience init(rgb: Int) {
-       self.init(
-           red: (rgb >> 16) & 0xFF,
-           green: (rgb >> 8) & 0xFF,
-           blue: rgb & 0xFF
-       )
-   }
-    
-    public func hexStringToUIColor (hex: String, alpha: Double) -> UIColor {
+    convenience init(hex: String, alpha: CGFloat = 1.0) {
+        var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
+        hexSanitized = hexSanitized.replacingOccurrences(of: "#", with: "")
         
-        var cString: String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        var rgb: UInt64 = 0
         
-        if (cString.hasPrefix("#")) {
-            cString.remove(at: cString.startIndex)
-        }
+        Scanner(string: hexSanitized).scanHexInt64(&rgb)
         
-        if ((cString.count) != 6) {
-            return UIColor.gray
-        }
+        let red = CGFloat((rgb & 0xFF0000) >> 16) / 255.0
+        let green = CGFloat((rgb & 0x00FF00) >> 8) / 255.0
+        let blue = CGFloat(rgb & 0x0000FF) / 255.0
         
-        var rgbValue: UInt64 = 0
-        Scanner(string: cString).scanHexInt64(&rgbValue)
-        
-        return UIColor(
-            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(alpha)
-        )
+        self.init(red: red, green: green, blue: blue, alpha: alpha)
     }
 }

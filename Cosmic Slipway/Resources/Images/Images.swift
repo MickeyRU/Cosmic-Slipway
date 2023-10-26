@@ -1,10 +1,3 @@
-//
-//  Images.swift
-//  Cosmic Slipway
-//
-//  Created by Павел Афанасьев on 27.03.2023.
-//
-
 import UIKit
 
 enum BgImages {

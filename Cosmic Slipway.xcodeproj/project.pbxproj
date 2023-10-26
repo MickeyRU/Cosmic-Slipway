@@ -7,25 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BE2DF81429E6E5D800CB71C0 /* WeaponController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2DF81329E6E5D700CB71C0 /* WeaponController.swift */; };
-		BE4CFC1229DEFA5900B42547 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4CFC1129DEFA5900B42547 /* UICollectionView+Extension.swift */; };
-		BE4CFC1429DF126700B42547 /* WeaponTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4CFC1329DF126700B42547 /* WeaponTypeController.swift */; };
-		BEA553F929DC779C001A1BA5 /* UniversalSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA553F829DC779C001A1BA5 /* UniversalSelectController.swift */; };
-		BEA553FB29DC9777001A1BA5 /* UniversalSelectTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA553FA29DC9777001A1BA5 /* UniversalSelectTypeCell.swift */; };
-		BEA553FD29DCC1B6001A1BA5 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA553FC29DCC1B6001A1BA5 /* Ship.swift */; };
-		BEA5540329DCC5EB001A1BA5 /* ShipSubTypeSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA5540229DCC5EB001A1BA5 /* ShipSubTypeSelectionController.swift */; };
-		BEA5540529DCD711001A1BA5 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA5540429DCD711001A1BA5 /* MockData.swift */; };
-		BEA5540729DDB79D001A1BA5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA5540629DDB79D001A1BA5 /* MainView.swift */; };
-		BEA5540929DDC14A001A1BA5 /* ShipSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA5540829DDC14A001A1BA5 /* ShipSelectionController.swift */; };
-		BEA5540B29DDC85A001A1BA5 /* ShipConfigController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA5540A29DDC85A001A1BA5 /* ShipConfigController.swift */; };
-		BEA5541029DDC9BA001A1BA5 /* ShipConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA5540F29DDC9BA001A1BA5 /* ShipConfigView.swift */; };
-		BEA5541229DDD060001A1BA5 /* ShipSelectedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA5541129DDD060001A1BA5 /* ShipSelectedCell.swift */; };
-		BEA5541429DDFD2A001A1BA5 /* FittingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA5541329DDFD2A001A1BA5 /* FittingCell.swift */; };
-		BEAC9BD329E42542009987A3 /* Modules.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC9BD229E42542009987A3 /* Modules.swift */; };
+		BE4D01112AE6A057005CA4CA /* ViewsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4D01102AE6A057005CA4CA /* ViewsFactory.swift */; };
+		BE4D01142AE6AB0B005CA4CA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BE4D01132AE6AB0B005CA4CA /* SnapKit */; };
+		BE4D01162AE6AB0B005CA4CA /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = BE4D01152AE6AB0B005CA4CA /* SnapKit-Dynamic */; };
 		BEAC9BD729E43834009987A3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC9BD629E43834009987A3 /* MainTabBarController.swift */; };
-		BEAC9BDB29E440E6009987A3 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC9BDA29E440E6009987A3 /* Helper.swift */; };
-		BEAC9BDF29E47607009987A3 /* WeaponSubTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC9BDE29E47607009987A3 /* WeaponSubTypeController.swift */; };
-		BEAC9BE129E4788B009987A3 /* WeaponModuleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC9BE029E4788B009987A3 /* WeaponModuleController.swift */; };
 		BEB0624229D1AE2B005AEB24 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0624129D1AE2B005AEB24 /* Colors.swift */; };
 		BEB0624429D1B5A0005AEB24 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0624329D1B5A0005AEB24 /* Images.swift */; };
 		BEB0624729D1B71F005AEB24 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0624629D1B71F005AEB24 /* Fonts.swift */; };
@@ -42,25 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BE2DF81329E6E5D700CB71C0 /* WeaponController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponController.swift; sourceTree = "<group>"; };
-		BE4CFC1129DEFA5900B42547 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
-		BE4CFC1329DF126700B42547 /* WeaponTypeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponTypeController.swift; sourceTree = "<group>"; };
-		BEA553F829DC779C001A1BA5 /* UniversalSelectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalSelectController.swift; sourceTree = "<group>"; };
-		BEA553FA29DC9777001A1BA5 /* UniversalSelectTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalSelectTypeCell.swift; sourceTree = "<group>"; };
-		BEA553FC29DCC1B6001A1BA5 /* Ship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
-		BEA5540229DCC5EB001A1BA5 /* ShipSubTypeSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipSubTypeSelectionController.swift; sourceTree = "<group>"; };
-		BEA5540429DCD711001A1BA5 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
-		BEA5540629DDB79D001A1BA5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		BEA5540829DDC14A001A1BA5 /* ShipSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipSelectionController.swift; sourceTree = "<group>"; };
-		BEA5540A29DDC85A001A1BA5 /* ShipConfigController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipConfigController.swift; sourceTree = "<group>"; };
-		BEA5540F29DDC9BA001A1BA5 /* ShipConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipConfigView.swift; sourceTree = "<group>"; };
-		BEA5541129DDD060001A1BA5 /* ShipSelectedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipSelectedCell.swift; sourceTree = "<group>"; };
-		BEA5541329DDFD2A001A1BA5 /* FittingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FittingCell.swift; sourceTree = "<group>"; };
-		BEAC9BD229E42542009987A3 /* Modules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modules.swift; sourceTree = "<group>"; };
+		BE4D01102AE6A057005CA4CA /* ViewsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsFactory.swift; sourceTree = "<group>"; };
 		BEAC9BD629E43834009987A3 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		BEAC9BDA29E440E6009987A3 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		BEAC9BDE29E47607009987A3 /* WeaponSubTypeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponSubTypeController.swift; sourceTree = "<group>"; };
-		BEAC9BE029E4788B009987A3 /* WeaponModuleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponModuleController.swift; sourceTree = "<group>"; };
 		BEB0624129D1AE2B005AEB24 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		BEB0624329D1B5A0005AEB24 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		BEB0624629D1B71F005AEB24 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -83,108 +51,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE4D01142AE6AB0B005CA4CA /* SnapKit in Frameworks */,
+				BE4D01162AE6AB0B005CA4CA /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BE4CFC1929DF191C00B42547 /* ShipConfig */ = {
-			isa = PBXGroup;
-			children = (
-				BE4CFC1A29DF195D00B42547 /* Views */,
-			);
-			path = ShipConfig;
-			sourceTree = "<group>";
-		};
-		BE4CFC1A29DF195D00B42547 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				BEA5541329DDFD2A001A1BA5 /* FittingCell.swift */,
-				BEA5541129DDD060001A1BA5 /* ShipSelectedCell.swift */,
-				BEA5540F29DDC9BA001A1BA5 /* ShipConfigView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		BE4CFC1D29DF198500B42547 /* ModulsConfig */ = {
-			isa = PBXGroup;
-			children = (
-				BEA5540D29DDC98C001A1BA5 /* Controller */,
-			);
-			path = ModulsConfig;
-			sourceTree = "<group>";
-		};
-		BEA553E929DB4101001A1BA5 /* ShipSelection */ = {
-			isa = PBXGroup;
-			children = (
-				BEA553F129DB6B5F001A1BA5 /* View */,
-				BEA553EA29DB411A001A1BA5 /* Controller */,
-			);
-			path = ShipSelection;
-			sourceTree = "<group>";
-		};
-		BEA553EA29DB411A001A1BA5 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				BEA553F829DC779C001A1BA5 /* UniversalSelectController.swift */,
-				BEA5540229DCC5EB001A1BA5 /* ShipSubTypeSelectionController.swift */,
-				BEA5540829DDC14A001A1BA5 /* ShipSelectionController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		BEA553F129DB6B5F001A1BA5 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				BEA553FA29DC9777001A1BA5 /* UniversalSelectTypeCell.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		BEA553FE29DCC1BC001A1BA5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BEA553FC29DCC1B6001A1BA5 /* Ship.swift */,
-				BEAC9BD229E42542009987A3 /* Modules.swift */,
-				BEA5540429DCD711001A1BA5 /* MockData.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		BEA5540C29DDC85D001A1BA5 /* ShipConfiguration */ = {
-			isa = PBXGroup;
-			children = (
-				BE4CFC1929DF191C00B42547 /* ShipConfig */,
-				BEA5540A29DDC85A001A1BA5 /* ShipConfigController.swift */,
-				BE4CFC1D29DF198500B42547 /* ModulsConfig */,
-			);
-			path = ShipConfiguration;
-			sourceTree = "<group>";
-		};
-		BEA5540D29DDC98C001A1BA5 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				BE4CFC1329DF126700B42547 /* WeaponTypeController.swift */,
-				BEAC9BDE29E47607009987A3 /* WeaponSubTypeController.swift */,
-				BEAC9BE029E4788B009987A3 /* WeaponModuleController.swift */,
-				BE2DF81329E6E5D700CB71C0 /* WeaponController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		BEAC9BD829E43838009987A3 /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-				BEAC9BD629E43834009987A3 /* MainTabBarController.swift */,
-			);
-			path = Navigation;
 			sourceTree = "<group>";
 		};
 		BEAC9BD929E440A5009987A3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				BEAC9BDA29E440E6009987A3 /* Helper.swift */,
+				BEC331E52AEA834100630D0D /* Factories */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -193,7 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				BEB7D0BB29CF2EF3002B3431 /* View */,
-				BEB7D0A629CF18AE002B3431 /* MainViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -212,9 +96,8 @@
 		BEB0623A29D1A6AA005AEB24 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				BEAC9BD629E43834009987A3 /* MainTabBarController.swift */,
 				BEB0623829D1A3CD005AEB24 /* Main */,
-				BEA553E929DB4101001A1BA5 /* ShipSelection */,
-				BEA5540C29DDC85D001A1BA5 /* ShipConfiguration */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -273,12 +156,11 @@
 				BEB7D0B729CF1C8B002B3431 /* Application */,
 				BEB0623F29D1AB90005AEB24 /* Configuration */,
 				BEA553FE29DCC1BC001A1BA5 /* Models */,
-				BEAC9BD829E43838009987A3 /* Navigation */,
 				BEB0623A29D1A6AA005AEB24 /* Screens */,
-				BEB0623D29D1A7FB005AEB24 /* Storybords */,
 				BEB0623929D1A665005AEB24 /* Resources */,
 				BEAC9BD929E440A5009987A3 /* Helpers */,
 				BEB7D0BF29CF3775002B3431 /* Extensions */,
+				BEB0623D29D1A7FB005AEB24 /* Storybords */,
 			);
 			path = "Cosmic Slipway";
 			sourceTree = "<group>";
@@ -295,8 +177,8 @@
 		BEB7D0BB29CF2EF3002B3431 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BEB7D0A629CF18AE002B3431 /* MainViewController.swift */,
 				BEEA422429D03B57008B98E4 /* ShipsCell.swift */,
-				BEA5540629DDB79D001A1BA5 /* MainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -314,9 +196,16 @@
 			children = (
 				BEB7D0C529CF5D1A002B3431 /* UIView+Extension.swift */,
 				BEEA422629D044B2008B98E4 /* UIColor+Extension.swift */,
-				BE4CFC1129DEFA5900B42547 /* UICollectionView+Extension.swift */,
 			);
 			path = "UIKit+Extension";
+			sourceTree = "<group>";
+		};
+		BEC331E52AEA834100630D0D /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				BE4D01102AE6A057005CA4CA /* ViewsFactory.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 		BEEA422E29D06D0B008B98E4 /* Fonts */ = {
@@ -345,6 +234,10 @@
 			dependencies = (
 			);
 			name = "Cosmic Slipway";
+			packageProductDependencies = (
+				BE4D01132AE6AB0B005CA4CA /* SnapKit */,
+				BE4D01152AE6AB0B005CA4CA /* SnapKit-Dynamic */,
+			);
 			productName = "Cosmic Slipway";
 			productReference = BEB7D09F29CF18AE002B3431 /* Cosmic Slipway.app */;
 			productType = "com.apple.product-type.application";
@@ -357,7 +250,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					BEB7D09E29CF18AE002B3431 = {
 						CreatedOnToolsVersion = 14.2;
@@ -373,6 +266,9 @@
 				Base,
 			);
 			mainGroup = BEB7D09629CF18AD002B3431;
+			packageReferences = (
+				BE4D01122AE6AB0B005CA4CA /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = BEB7D0A029CF18AE002B3431 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -403,32 +299,15 @@
 			files = (
 				BEB7D0C629CF5D1A002B3431 /* UIView+Extension.swift in Sources */,
 				BEB0624229D1AE2B005AEB24 /* Colors.swift in Sources */,
-				BEAC9BDF29E47607009987A3 /* WeaponSubTypeController.swift in Sources */,
+				BE4D01112AE6A057005CA4CA /* ViewsFactory.swift in Sources */,
 				BEAC9BD729E43834009987A3 /* MainTabBarController.swift in Sources */,
 				BEEA422529D03B57008B98E4 /* ShipsCell.swift in Sources */,
 				BEB0624429D1B5A0005AEB24 /* Images.swift in Sources */,
-				BEA5541029DDC9BA001A1BA5 /* ShipConfigView.swift in Sources */,
-				BE4CFC1429DF126700B42547 /* WeaponTypeController.swift in Sources */,
-				BEA5540B29DDC85A001A1BA5 /* ShipConfigController.swift in Sources */,
-				BEA5540529DCD711001A1BA5 /* MockData.swift in Sources */,
 				BEB7D0A729CF18AE002B3431 /* MainViewController.swift in Sources */,
-				BEA553FD29DCC1B6001A1BA5 /* Ship.swift in Sources */,
-				BEA5540929DDC14A001A1BA5 /* ShipSelectionController.swift in Sources */,
-				BEA553F929DC779C001A1BA5 /* UniversalSelectController.swift in Sources */,
 				BEB7D0A329CF18AE002B3431 /* AppDelegate.swift in Sources */,
-				BE2DF81429E6E5D800CB71C0 /* WeaponController.swift in Sources */,
-				BEAC9BE129E4788B009987A3 /* WeaponModuleController.swift in Sources */,
-				BEA5540329DCC5EB001A1BA5 /* ShipSubTypeSelectionController.swift in Sources */,
-				BEA5541429DDFD2A001A1BA5 /* FittingCell.swift in Sources */,
-				BEA553FB29DC9777001A1BA5 /* UniversalSelectTypeCell.swift in Sources */,
-				BE4CFC1229DEFA5900B42547 /* UICollectionView+Extension.swift in Sources */,
-				BEAC9BD329E42542009987A3 /* Modules.swift in Sources */,
 				BEB0624729D1B71F005AEB24 /* Fonts.swift in Sources */,
 				BEB7D0A529CF18AE002B3431 /* SceneDelegate.swift in Sources */,
-				BEA5540729DDB79D001A1BA5 /* MainView.swift in Sources */,
-				BEAC9BDB29E440E6009987A3 /* Helper.swift in Sources */,
 				BEEA422729D044B2008B98E4 /* UIColor+Extension.swift in Sources */,
-				BEA5541229DDD060001A1BA5 /* ShipSelectedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +361,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -496,7 +376,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -542,6 +422,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -550,7 +431,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -646,6 +527,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BE4D01122AE6AB0B005CA4CA /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BE4D01132AE6AB0B005CA4CA /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE4D01122AE6AB0B005CA4CA /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		BE4D01152AE6AB0B005CA4CA /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE4D01122AE6AB0B005CA4CA /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BEB7D09729CF18AD002B3431 /* Project object */;
 }
