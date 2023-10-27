@@ -2,10 +2,6 @@ import UIKit
 
 final class MainTabBarController: UITabBarController {
         
-// MARK: - Private Properties
-    
-    private let mainViewController = MainViewController()
-    
     // MARK: - ViewController LC
     
     override func viewDidLoad() {
@@ -22,11 +18,10 @@ final class MainTabBarController: UITabBarController {
         tabBar.backgroundColor = BasicColors.colorWithAlpha(BasicColors.darkBG, withAlpha: 0.7)
         tabBar.layer.cornerRadius = 20
 
-        mainViewController.tabBarItem = UITabBarItem(
+        tabBarItem = UITabBarItem(
             title: "Dock",
             image: NavigationImages.homeTabBarClean,
             tag: 0
         )
-        viewControllers = [mainViewController]
     }
 }

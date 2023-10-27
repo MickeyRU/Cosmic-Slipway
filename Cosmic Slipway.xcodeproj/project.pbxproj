@@ -24,6 +24,7 @@
 		BEC331E92AEA95AF00630D0D /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC331E82AEA95AF00630D0D /* MainModel.swift */; };
 		BEC331ED2AEA97B600630D0D /* ShipModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC331EC2AEA97B600630D0D /* ShipModels.swift */; };
 		BEC331F22AEAB6AD00630D0D /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC331F12AEAB6AD00630D0D /* SelectionViewController.swift */; };
+		BEC332182AEBA29400630D0D /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC332172AEBA29400630D0D /* NavigationRouter.swift */; };
 		BEEA422529D03B57008B98E4 /* ShipsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEA422429D03B57008B98E4 /* ShipsCell.swift */; };
 		BEEA422729D044B2008B98E4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEA422629D044B2008B98E4 /* UIColor+Extension.swift */; };
 		BEEA422D29D06CB6008B98E4 /* Figtree-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEEA422C29D06CB6008B98E4 /* Figtree-ExtraBold.ttf */; };
@@ -48,6 +49,7 @@
 		BEC331E82AEA95AF00630D0D /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		BEC331EC2AEA97B600630D0D /* ShipModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipModels.swift; sourceTree = "<group>"; };
 		BEC331F12AEAB6AD00630D0D /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
+		BEC332172AEBA29400630D0D /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		BEEA422429D03B57008B98E4 /* ShipsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipsCell.swift; sourceTree = "<group>"; };
 		BEEA422629D044B2008B98E4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		BEEA422C29D06CB6008B98E4 /* Figtree-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -78,7 +80,8 @@
 		BEAC9BD929E440A5009987A3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				BEC331E52AEA834100630D0D /* Factories */,
+				BEC332172AEBA29400630D0D /* NavigationRouter.swift */,
+				BE4D01102AE6A057005CA4CA /* ViewsFactory.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -212,14 +215,6 @@
 			path = "UIKit+Extension";
 			sourceTree = "<group>";
 		};
-		BEC331E52AEA834100630D0D /* Factories */ = {
-			isa = PBXGroup;
-			children = (
-				BE4D01102AE6A057005CA4CA /* ViewsFactory.swift */,
-			);
-			path = Factories;
-			sourceTree = "<group>";
-		};
 		BEC331F02AEAB47C00630D0D /* ChoosingShip */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +314,7 @@
 			files = (
 				BEB7D0C629CF5D1A002B3431 /* UIView+Extension.swift in Sources */,
 				BEC331E92AEA95AF00630D0D /* MainModel.swift in Sources */,
+				BEC332182AEBA29400630D0D /* NavigationRouter.swift in Sources */,
 				BEB0624229D1AE2B005AEB24 /* Colors.swift in Sources */,
 				BE4D01112AE6A057005CA4CA /* ViewsFactory.swift in Sources */,
 				BEAC9BD729E43834009987A3 /* MainTabBarController.swift in Sources */,

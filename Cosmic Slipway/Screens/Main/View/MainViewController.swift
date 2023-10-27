@@ -6,6 +6,8 @@ final class MainViewController: UIViewController {
     
     // MARK: - Private Properties
     
+    private let router: NavigationRouterProtocol
+    
     private let viewModel: MainViewModelProtocol
     
     private let viewsFactory: ViewsFactoryProtocol
@@ -34,9 +36,11 @@ final class MainViewController: UIViewController {
     // MARK: - init
     
     init(viewsFactory: ViewsFactoryProtocol = ViewsFactory(),
-         viewModel: MainViewModelProtocol = MainViewModel()) {
+         viewModel: MainViewModelProtocol = MainViewModel(),
+         router: NavigationRouterProtocol) {
         self.viewsFactory = viewsFactory
         self.viewModel = viewModel
+        self.router = router
         super.init(nibName: nil, bundle: nil)
     }
     
