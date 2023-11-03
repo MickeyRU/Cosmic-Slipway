@@ -4,17 +4,21 @@ import Combine
 
 final class ShipSubTypeViewController: UIViewController {
     
-    private let viewModel = BackgroundContainerViewModel<ShipSubtype>(shipsData: ShipDataService.shared.getAllShipSubtypes())
+    private let shipTypeID: UUID
+    
     private let router: NavigationRouterProtocol
     
+    private lazy var viewModel = BackgroundContainerViewModel<ShipSubtype>(shipsData: ShipDataService.shared.getShipSubtypes(forShipTypeId: shipTypeID))
+    
     private lazy var backgroundView = BackgroundContainerView<ShipSubtype>(frame: .zero,
-                                                               title: "Select ship type",
-                                                               viewModel: viewModel)
-
+                                                                           title: "Select ship subtype",
+                                                                           viewModel: viewModel)
+    
     private var subscriptions = Set<AnyCancellable>()
     
-    init(router: NavigationRouterProtocol) {
+    init(router: NavigationRouterProtocol, shipTypeID: UUID) {
         self.router = router
+        self.shipTypeID = shipTypeID
         super.init(nibName: nil, bundle: nil)
         layout()
     }

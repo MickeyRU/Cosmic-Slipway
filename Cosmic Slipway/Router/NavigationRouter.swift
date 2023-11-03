@@ -32,7 +32,7 @@ final class NavigationRouter: NavigationRouterProtocol {
     }
     
     func navigateToShipSubTypeScreen(shipTypeId: UUID) {
-        let shipSubTypeSelectVC = ShipTypeViewController(router: self)
+        let shipSubTypeSelectVC = ShipSubTypeViewController(router: self, shipTypeID: shipTypeId)
         navigationController.pushViewController(shipSubTypeSelectVC, animated: true)
     }
 }

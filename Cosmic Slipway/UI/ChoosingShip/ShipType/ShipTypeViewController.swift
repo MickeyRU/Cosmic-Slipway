@@ -8,8 +8,8 @@ final class ShipTypeViewController: UIViewController {
     private let router: NavigationRouterProtocol
     
     private lazy var  backgroundView = BackgroundContainerView<ShipType>(frame: .zero,
-                                                               title: "Select ship type",
-                                                               viewModel: viewModel)
+                                                                         title: "Select ship type",
+                                                                         viewModel: viewModel)
     
     
     private var subscriptions = Set<AnyCancellable>()
@@ -28,9 +28,9 @@ final class ShipTypeViewController: UIViewController {
         super.viewDidLoad()
         
         viewModel.selectedShipData
-            .sink { shipType in
-                print("Selected ship type: \(shipType.name)")
-                // Здесь вы можете реагировать на выбранный тип корабля, например, открывать новый экран.
+            .sink { [weak self] shipType in
+                guard let self = self else { return }
+                self.router.navigateToShipSubTypeScreen(shipTypeId: shipType.id)
             }
             .store(in: &subscriptions)
     }
