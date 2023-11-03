@@ -66,7 +66,7 @@ final class ViewsFactory: ViewsFactoryProtocol {
         case .shipSelectionPageTitle:
             label.textColor = BasicColors.accent
             label.textAlignment = .center
-            label.font = CustomFonts.figtreeExBold22
+            label.font = CustomFonts.figtreeExBold24
         }
         return label
     }

@@ -11,8 +11,13 @@ class ShipDataService {
     private init() {
         // Инициализация массивов данными, например, заглушками
         self.shipTypes = [
-            ShipType(id: 1, name: "Type 1", subtypes: []),
-            ShipType(id: 2, name: "Type 2", subtypes: [])
+            ShipType(id: 1, name: "Frigates", subtypes: []),
+            ShipType(id: 2, name: "Destroyers", subtypes: []),
+            ShipType(id: 3, name: "Cruisers", subtypes: []),
+            ShipType(id: 4, name: "Battlecruisers", subtypes: []),
+            ShipType(id: 5, name: "Industrial Ships", subtypes: []),
+            ShipType(id: 6, name: "Battleships", subtypes: []),
+            ShipType(id: 7, name: "Capital Ships", subtypes: [])
         ]
         
         self.shipSubtypes = [

@@ -8,23 +8,39 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        
         window = UIWindow(windowScene: windowScene)
         
-        navigationController = UINavigationController()
+        setupNavigationController()
         
-        if let navigationController = navigationController {
-            navigationRouter = NavigationRouter(navigationController: navigationController)
-        }
-
         let mainTabBarController = MainTabBarController()
         
-        if let navigationController = navigationController, let navigationRouter = navigationRouter {
-            navigationRouter.setRootViewController(mainTabBarController)
-            
-            navigationRouter.startNavigation()
-            
-            window?.rootViewController = navigationController
-            window?.makeKeyAndVisible()
-        }
+        guard let navigationController = navigationController, let navigationRouter = navigationRouter else { return }
+        
+        navigationRouter.setRootViewController(mainTabBarController)
+        navigationRouter.startNavigation()
+        
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+    }
+    
+    private func setupNavigationController() {
+        navigationController = UINavigationController()
+        
+        guard let navigationController = navigationController else { return }
+        
+        navigationController.navigationBar.tintColor = .white
+        configureNavigationBarAppearance()
+        
+        navigationRouter = NavigationRouter(navigationController: navigationController)
+    }
+    
+    private func configureNavigationBarAppearance() {
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: CustomFonts.figtreeExBold18 as Any
+        ]
+        
+        UIBarButtonItem.appearance().setTitleTextAttributes(attributes, for: .normal)
+        UIBarButtonItem.appearance().setTitleTextAttributes(attributes, for: .highlighted)
     }
 }

@@ -136,8 +136,8 @@
 		BEAA532B2AF4469500E44AE4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				BEA553FE29DCC1BC001A1BA5 /* Models */,
 				BEAA532C2AF446A800E44AE4 /* ShipDataService.swift */,
+				BEA553FE29DCC1BC001A1BA5 /* Models */,
 			);
 			path = Data;
 			sourceTree = "<group>";

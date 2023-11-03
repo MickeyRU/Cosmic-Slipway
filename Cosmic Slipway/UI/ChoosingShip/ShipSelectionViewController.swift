@@ -5,7 +5,7 @@ final class ShipSelectionViewController: UIViewController {
     
     private let viewsFactory: ViewsFactoryProtocol
     
-    private let backgroundView = BackgroundContainerView(frame: .zero, title: "Select type", shipTypesDataArray: ShipDataService.shared.getAllShipTypes())
+    private let backgroundView = BackgroundContainerView(frame: .zero, title: "Select ship type", shipTypesDataArray: ShipDataService.shared.getAllShipTypes())
     
     init(viewsFactory: ViewsFactoryProtocol = ViewsFactory()) {
         self.viewsFactory = viewsFactory

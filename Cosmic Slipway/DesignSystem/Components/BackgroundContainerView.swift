@@ -13,12 +13,6 @@ final class BackgroundContainerView: UIView {
         return bgView
     }()
     
-    private let backgroundViewTwo: UIView = {
-        let bgView = UIView()
-        bgView.backgroundColor = .clear
-        return bgView
-    }()
-    
     private lazy var titleLabel: UILabel = {
         return viewsFactory.createTitle(for: .shipSelectionPageTitle)
     }()
@@ -56,18 +50,14 @@ final class BackgroundContainerView: UIView {
     // MARK: - Private Methods
     
     private func setupSubviews() {
-        [bgImageView, backgroundView, backgroundViewTwo, titleLabel, shipTypeCollectionView].forEach { addSubview($0) }
+        [bgImageView, backgroundView, titleLabel, shipTypeCollectionView].forEach { addSubview($0) }
         
         bgImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
         
         backgroundView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        
-        backgroundViewTwo.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.leading.trailing.bottom.equalToSuperview()
         }
         
         titleLabel.snp.makeConstraints { make in

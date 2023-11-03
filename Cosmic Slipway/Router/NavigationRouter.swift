@@ -27,5 +27,4 @@ final class NavigationRouter: NavigationRouterProtocol {
         let shipSelectionViewController = ShipSelectionViewController()
         navigationController.pushViewController(shipSelectionViewController, animated: true)
     }
-    
 }
