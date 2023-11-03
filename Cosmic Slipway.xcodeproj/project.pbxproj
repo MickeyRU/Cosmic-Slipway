@@ -10,6 +10,9 @@
 		BE4D01112AE6A057005CA4CA /* ViewsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4D01102AE6A057005CA4CA /* ViewsFactory.swift */; };
 		BE4D01142AE6AB0B005CA4CA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BE4D01132AE6AB0B005CA4CA /* SnapKit */; };
 		BE4D01162AE6AB0B005CA4CA /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = BE4D01152AE6AB0B005CA4CA /* SnapKit-Dynamic */; };
+		BEAA532A2AF43E4300E44AE4 /* BackgroundContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAA53292AF43E4300E44AE4 /* BackgroundContainerView.swift */; };
+		BEAA532D2AF446A800E44AE4 /* ShipDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAA532C2AF446A800E44AE4 /* ShipDataService.swift */; };
+		BEAA532F2AF4479800E44AE4 /* UniversalSelectionShipTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAA532E2AF4479800E44AE4 /* UniversalSelectionShipTypeCell.swift */; };
 		BEAC9BD729E43834009987A3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC9BD629E43834009987A3 /* MainTabBarController.swift */; };
 		BEB0624229D1AE2B005AEB24 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0624129D1AE2B005AEB24 /* Colors.swift */; };
 		BEB0624429D1B5A0005AEB24 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0624329D1B5A0005AEB24 /* Images.swift */; };
@@ -23,7 +26,7 @@
 		BEC331E72AEA957100630D0D /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC331E62AEA957100630D0D /* MainViewModel.swift */; };
 		BEC331E92AEA95AF00630D0D /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC331E82AEA95AF00630D0D /* MainModel.swift */; };
 		BEC331ED2AEA97B600630D0D /* ShipModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC331EC2AEA97B600630D0D /* ShipModels.swift */; };
-		BEC331F22AEAB6AD00630D0D /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC331F12AEAB6AD00630D0D /* SelectionViewController.swift */; };
+		BEC331F22AEAB6AD00630D0D /* ShipSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC331F12AEAB6AD00630D0D /* ShipSelectionViewController.swift */; };
 		BEC332182AEBA29400630D0D /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC332172AEBA29400630D0D /* NavigationRouter.swift */; };
 		BEEA422529D03B57008B98E4 /* ShipsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEA422429D03B57008B98E4 /* ShipsCell.swift */; };
 		BEEA422729D044B2008B98E4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEA422629D044B2008B98E4 /* UIColor+Extension.swift */; };
@@ -33,6 +36,9 @@
 
 /* Begin PBXFileReference section */
 		BE4D01102AE6A057005CA4CA /* ViewsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsFactory.swift; sourceTree = "<group>"; };
+		BEAA53292AF43E4300E44AE4 /* BackgroundContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundContainerView.swift; sourceTree = "<group>"; };
+		BEAA532C2AF446A800E44AE4 /* ShipDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipDataService.swift; sourceTree = "<group>"; };
+		BEAA532E2AF4479800E44AE4 /* UniversalSelectionShipTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalSelectionShipTypeCell.swift; sourceTree = "<group>"; };
 		BEAC9BD629E43834009987A3 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		BEB0624129D1AE2B005AEB24 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		BEB0624329D1B5A0005AEB24 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
@@ -48,7 +54,7 @@
 		BEC331E62AEA957100630D0D /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		BEC331E82AEA95AF00630D0D /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		BEC331EC2AEA97B600630D0D /* ShipModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipModels.swift; sourceTree = "<group>"; };
-		BEC331F12AEAB6AD00630D0D /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
+		BEC331F12AEAB6AD00630D0D /* ShipSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipSelectionViewController.swift; sourceTree = "<group>"; };
 		BEC332172AEBA29400630D0D /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		BEEA422429D03B57008B98E4 /* ShipsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipsCell.swift; sourceTree = "<group>"; };
 		BEEA422629D044B2008B98E4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -77,21 +83,71 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		BEAC9BD929E440A5009987A3 /* Helpers */ = {
+		BEAA531F2AF4238D00E44AE4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BEC331E82AEA95AF00630D0D /* MainModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BEAA53202AF4239D00E44AE4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BEC331E62AEA957100630D0D /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BEAA53212AF4264E00E44AE4 /* Router */ = {
 			isa = PBXGroup;
 			children = (
 				BEC332172AEBA29400630D0D /* NavigationRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		BEAA53222AF4265B00E44AE4 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
 				BE4D01102AE6A057005CA4CA /* ViewsFactory.swift */,
 			);
-			path = Helpers;
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		BEAA53272AF43E1600E44AE4 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				BEAA53282AF43E3100E44AE4 /* Components */,
+				BEAA53222AF4265B00E44AE4 /* Factories */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		BEAA53282AF43E3100E44AE4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				BEAA53292AF43E4300E44AE4 /* BackgroundContainerView.swift */,
+				BEAA532E2AF4479800E44AE4 /* UniversalSelectionShipTypeCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		BEAA532B2AF4469500E44AE4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BEA553FE29DCC1BC001A1BA5 /* Models */,
+				BEAA532C2AF446A800E44AE4 /* ShipDataService.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		BEB0623829D1A3CD005AEB24 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				BEC331E82AEA95AF00630D0D /* MainModel.swift */,
+				BEAA531F2AF4238D00E44AE4 /* Model */,
 				BEB7D0BB29CF2EF3002B3431 /* View */,
-				BEC331E62AEA957100630D0D /* MainViewModel.swift */,
+				BEAA53202AF4239D00E44AE4 /* ViewModel */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -107,14 +163,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		BEB0623A29D1A6AA005AEB24 /* Screens */ = {
+		BEB0623A29D1A6AA005AEB24 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				BEAC9BD629E43834009987A3 /* MainTabBarController.swift */,
 				BEB0623829D1A3CD005AEB24 /* Main */,
 				BEC331F02AEAB47C00630D0D /* ChoosingShip */,
 			);
-			path = Screens;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		BEB0623D29D1A7FB005AEB24 /* Storybords */ = {
@@ -169,13 +225,14 @@
 			isa = PBXGroup;
 			children = (
 				BEB7D0B729CF1C8B002B3431 /* Application */,
-				BEB0623F29D1AB90005AEB24 /* Configuration */,
-				BEA553FE29DCC1BC001A1BA5 /* Models */,
-				BEB0623A29D1A6AA005AEB24 /* Screens */,
+				BEAA53272AF43E1600E44AE4 /* DesignSystem */,
+				BEAA53212AF4264E00E44AE4 /* Router */,
+				BEAA532B2AF4469500E44AE4 /* Data */,
+				BEB0623A29D1A6AA005AEB24 /* UI */,
 				BEB0623929D1A665005AEB24 /* Resources */,
-				BEAC9BD929E440A5009987A3 /* Helpers */,
 				BEB7D0BF29CF3775002B3431 /* Extensions */,
 				BEB0623D29D1A7FB005AEB24 /* Storybords */,
+				BEB0623F29D1AB90005AEB24 /* Configuration */,
 			);
 			path = "Cosmic Slipway";
 			sourceTree = "<group>";
@@ -218,7 +275,7 @@
 		BEC331F02AEAB47C00630D0D /* ChoosingShip */ = {
 			isa = PBXGroup;
 			children = (
-				BEC331F12AEAB6AD00630D0D /* SelectionViewController.swift */,
+				BEC331F12AEAB6AD00630D0D /* ShipSelectionViewController.swift */,
 			);
 			path = ChoosingShip;
 			sourceTree = "<group>";
@@ -323,9 +380,12 @@
 				BEC331ED2AEA97B600630D0D /* ShipModels.swift in Sources */,
 				BEB7D0A729CF18AE002B3431 /* MainViewController.swift in Sources */,
 				BEB7D0A329CF18AE002B3431 /* AppDelegate.swift in Sources */,
-				BEC331F22AEAB6AD00630D0D /* SelectionViewController.swift in Sources */,
+				BEC331F22AEAB6AD00630D0D /* ShipSelectionViewController.swift in Sources */,
 				BEB0624729D1B71F005AEB24 /* Fonts.swift in Sources */,
+				BEAA532A2AF43E4300E44AE4 /* BackgroundContainerView.swift in Sources */,
+				BEAA532F2AF4479800E44AE4 /* UniversalSelectionShipTypeCell.swift in Sources */,
 				BEB7D0A529CF18AE002B3431 /* SceneDelegate.swift in Sources */,
+				BEAA532D2AF446A800E44AE4 /* ShipDataService.swift in Sources */,
 				BEC331E72AEA957100630D0D /* MainViewModel.swift in Sources */,
 				BEEA422729D044B2008B98E4 /* UIColor+Extension.swift in Sources */,
 			);

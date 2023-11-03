@@ -2,11 +2,14 @@ import UIKit
 
 enum ScreenTypes {
     case main
+    case shipSelection
 }
 
 enum TitleType {
     case shipTitle
     case shipDescription
+    case shipTypeInCell
+    case shipSelectionPageTitle
 }
 
 protocol ViewsFactoryProtocol {
@@ -24,6 +27,8 @@ final class ViewsFactory: ViewsFactoryProtocol {
         switch screen {
         case .main:
             imageView.image = BgImages.mainBackImage
+        case .shipSelection:
+            imageView.image = BgImages.shipSelectionBgImage
         }
         
         return imageView
@@ -46,13 +51,22 @@ final class ViewsFactory: ViewsFactoryProtocol {
         
         switch title {
         case .shipTitle:
-            label.text = "New ship +"
+            label.text = "New ship"
             label.textColor = BasicColors.accent
-            label.font = CustomFonts.figtreeBold16
+            label.font = CustomFonts.figtreeExBold16
         case .shipDescription:
             label.text = "Configure"
             label.textColor = BasicColors.iconText
             label.font = CustomFonts.figtreeRegular12
+        case .shipTypeInCell:
+            label.textColor = .white
+            label.textAlignment = .center
+            label.font = CustomFonts.figtreeExBold16
+            
+        case .shipSelectionPageTitle:
+            label.textColor = BasicColors.accent
+            label.textAlignment = .center
+            label.font = CustomFonts.figtreeExBold22
         }
         return label
     }
@@ -68,5 +82,4 @@ final class ViewsFactory: ViewsFactoryProtocol {
         imageView.clipsToBounds = true
         return imageView
     }
-    
 }

@@ -94,17 +94,22 @@ final class MainViewController: UIViewController {
 
 extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        20
+        viewModel.ships.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ShipsCell.reuseIdentifier, for: indexPath) as? ShipsCell else {
             return UICollectionViewCell()
         }
-        
         cell.layer.cornerRadius = 28
         cell.clipsToBounds = true
-        return cell
+        
+        switch indexPath.row {
+        case 0:
+            return cell
+        default:
+            return cell
+        }
     }
 }
 
@@ -115,5 +120,14 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
         let cellInserts = UIEdgeInsets(top: 0, left: collectionViewInsets.sideInsets, bottom: 0, right: collectionViewInsets.sideInsets)
         let width = view.frame.width - (cellInserts.left + cellInserts.right)
         return CGSize(width: width, height: collectionViewInsets.cellHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            router.navigateToShipSelectionViewController()
+        default:
+            break
+        }
     }
 }

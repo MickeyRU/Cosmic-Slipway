@@ -3,13 +3,11 @@ import Combine
 
 protocol MainViewModelProtocol {
     var ships: [Ship] { get}
-    var shipsPublisher: AnyPublisher<[Ship], Never> { get }  // добавить эту строку
+    var shipsPublisher: AnyPublisher<[Ship], Never> { get } 
 }
 
 final class MainViewModel: ObservableObject, MainViewModelProtocol {
-    
-    @Published
-    private (set) var ships: [Ship] = []
+    @Published private (set) var ships: [Ship] = []
     
     var shipsPublisher: AnyPublisher<[Ship], Never> {
         $ships.eraseToAnyPublisher()  

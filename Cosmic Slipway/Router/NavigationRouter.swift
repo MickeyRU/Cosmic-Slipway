@@ -3,6 +3,8 @@ import UIKit
 protocol NavigationRouterProtocol {
     func setRootViewController(_ viewController: UIViewController)
     func startNavigation()
+    
+    func navigateToShipSelectionViewController()
 }
 
 final class NavigationRouter: NavigationRouterProtocol {
@@ -20,4 +22,10 @@ final class NavigationRouter: NavigationRouterProtocol {
         let rootViewController = MainViewController(router: self)
         navigationController.pushViewController(rootViewController, animated: false)
     }
+    
+    func navigateToShipSelectionViewController() {
+        let shipSelectionViewController = ShipSelectionViewController()
+        navigationController.pushViewController(shipSelectionViewController, animated: true)
+    }
+    
 }
