@@ -1,7 +1,7 @@
 import UIKit
 import SnapKit
 
-final class BackgroundContainerView: UIView {
+final class BackgroundContainerView<DataType: Nameable>: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     // MARK: - Private Properties
     
@@ -31,13 +31,16 @@ final class BackgroundContainerView: UIView {
         return collectionView
     }()
     
-    private var shipTypesDataArray: [ShipType]
+    private var viewModel: BackgroundContainerViewModel<DataType>
     
     // MARK: - Initializers
     
-    init(frame: CGRect, title: String, shipTypesDataArray: [ShipType], viewsFactory: ViewsFactoryProtocol = ViewsFactory()) {
-        self.shipTypesDataArray = shipTypesDataArray
+    init(frame: CGRect,
+         title: String,
+         viewsFactory: ViewsFactoryProtocol = ViewsFactory(),
+         viewModel: BackgroundContainerViewModel<DataType>) {
         self.viewsFactory = viewsFactory
+        self.viewModel = viewModel
         super.init(frame: frame)
         self.titleLabel.text = title
         setupSubviews()
@@ -71,37 +74,38 @@ final class BackgroundContainerView: UIView {
             make.bottom.equalTo(safeAreaLayoutGuide).offset(-24)
         }
     }
-}
-
-
-// MARK: - UICollectionViewDataSource
-
-extension BackgroundContainerView: UICollectionViewDataSource {
+    
+    
+    
+    // MARK: - UICollectionViewDataSource
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return shipTypesDataArray.count
+        viewModel.shipsData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UniversalSelectionShipTypeCell.reuseIdentifier, for: indexPath) as? UniversalSelectionShipTypeCell else {
             return UICollectionViewCell()
         }
-        let shipType = shipTypesDataArray[indexPath.item]
+        let shipType = viewModel.shipsData[indexPath.item]
         cell.setupCell(title: shipType.name)
         return cell
     }
-}
-
-// MARK: - UICollectionViewDelegate
-
-extension BackgroundContainerView: UICollectionViewDelegate {
+    
+    
+    // MARK: - UICollectionViewDelegate
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 24
     }
-}
-
-// MARK: - UICollectionViewDelegateFlowLayout
-
-extension BackgroundContainerView: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelectItemAt(index: indexPath.row)
+    }
+    
+    
+    // MARK: - UICollectionViewDelegateFlowLayout
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellInserts = UIEdgeInsets(top: 0, left: 48, bottom: 0, right: 48)
         let width = frame.width - (cellInserts.left + cellInserts.right)

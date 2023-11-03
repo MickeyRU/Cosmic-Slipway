@@ -4,10 +4,13 @@ protocol NavigationRouterProtocol {
     func setRootViewController(_ viewController: UIViewController)
     func startNavigation()
     
-    func navigateToShipSelectionViewController()
+    func navigateToShipTypeScreen()
+    func navigateToShipSubTypeScreen(shipTypeId: UUID)
 }
 
 final class NavigationRouter: NavigationRouterProtocol {
+
+    
     private let navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
@@ -23,8 +26,13 @@ final class NavigationRouter: NavigationRouterProtocol {
         navigationController.pushViewController(rootViewController, animated: false)
     }
     
-    func navigateToShipSelectionViewController() {
-        let shipSelectionViewController = ShipSelectionViewController()
-        navigationController.pushViewController(shipSelectionViewController, animated: true)
+    func navigateToShipTypeScreen() {
+        let shipTypeSelectVC = ShipTypeViewController(router: self)
+        navigationController.pushViewController(shipTypeSelectVC, animated: true)
+    }
+    
+    func navigateToShipSubTypeScreen(shipTypeId: UUID) {
+        let shipSubTypeSelectVC = ShipTypeViewController(router: self)
+        navigationController.pushViewController(shipSubTypeSelectVC, animated: true)
     }
 }

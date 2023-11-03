@@ -125,7 +125,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            router.navigateToShipSelectionViewController()
+            router.navigateToShipTypeScreen()
         default:
             break
         }
