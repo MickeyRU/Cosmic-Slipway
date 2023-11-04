@@ -5,12 +5,12 @@ protocol NavigationRouterProtocol {
     func startNavigation()
     
     func navigateToShipTypeScreen()
-    func navigateToShipSubTypeScreen(shipTypeId: UUID)
+    func navigateToShipSubTypeScreen(shipTypeID: UUID)
+    func navigateToShipScreen(shipSubTypeID: UUID)
 }
 
 final class NavigationRouter: NavigationRouterProtocol {
 
-    
     private let navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
@@ -31,8 +31,13 @@ final class NavigationRouter: NavigationRouterProtocol {
         navigationController.pushViewController(shipTypeSelectVC, animated: true)
     }
     
-    func navigateToShipSubTypeScreen(shipTypeId: UUID) {
-        let shipSubTypeSelectVC = ShipSubTypeViewController(router: self, shipTypeID: shipTypeId)
+    func navigateToShipSubTypeScreen(shipTypeID: UUID) {
+        let shipSubTypeSelectVC = ShipSubTypeViewController(router: self, shipTypeID: shipTypeID)
         navigationController.pushViewController(shipSubTypeSelectVC, animated: true)
+    }
+    
+    func navigateToShipScreen(shipSubTypeID: UUID) {
+        let shipSelectVC = ShipViewController(router: self, shipSubTypeID: shipSubTypeID)
+        navigationController.pushViewController(shipSelectVC, animated: true)
     }
 }

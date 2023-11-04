@@ -8,7 +8,7 @@ final class ShipSubTypeViewController: UIViewController {
     
     private let router: NavigationRouterProtocol
     
-    private lazy var viewModel = BackgroundContainerViewModel<ShipSubtype>(shipsData: ShipDataService.shared.getShipSubtypes(forShipTypeId: shipTypeID))
+    private lazy var viewModel = BackgroundContainerViewModel<ShipSubtype>(shipsData: ShipDataService.shared.getShipSubtypes(forShipTypeID: shipTypeID))
     
     private lazy var backgroundView = BackgroundContainerView<ShipSubtype>(frame: .zero,
                                                                            title: "Select ship subtype",
@@ -29,6 +29,13 @@ final class ShipSubTypeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel.selectedShipData
+            .sink { [weak self] shipSubType in
+                guard let self = self else { return }
+                self.router.navigateToShipScreen(shipSubTypeID: shipSubType.id)
+            }
+            .store(in: &subscriptions)
     }
     
     private func layout() {

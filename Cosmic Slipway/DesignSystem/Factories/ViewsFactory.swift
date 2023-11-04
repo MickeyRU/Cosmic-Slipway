@@ -34,7 +34,6 @@ final class ViewsFactory: ViewsFactoryProtocol {
         return imageView
     }
     
-    
     func createBGView() -> UIView {
         let view = UIView()
         view.backgroundColor = BasicColors.colorWithAlpha(BasicColors.darkBG, withAlpha: 0.7)

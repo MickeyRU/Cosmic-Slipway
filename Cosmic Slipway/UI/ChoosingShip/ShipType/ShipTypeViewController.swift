@@ -30,7 +30,7 @@ final class ShipTypeViewController: UIViewController {
         viewModel.selectedShipData
             .sink { [weak self] shipType in
                 guard let self = self else { return }
-                self.router.navigateToShipSubTypeScreen(shipTypeId: shipType.id)
+                self.router.navigateToShipSubTypeScreen(shipTypeID: shipType.id)
             }
             .store(in: &subscriptions)
     }

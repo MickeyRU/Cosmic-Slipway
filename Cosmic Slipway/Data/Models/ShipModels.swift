@@ -31,7 +31,7 @@ struct Ship: Nameable {
     let id: UUID
     let name: String
     let shipImage: String
-    var fitting: Fitting // Модули корабля
+    let fitting: Fitting // Модули корабля
     
     init(id: UUID = UUID(), name: String, shipImage: String, fitting: Fitting) {
         self.id = id
