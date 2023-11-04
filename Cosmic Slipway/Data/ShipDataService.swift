@@ -8,6 +8,8 @@ class ShipDataService {
     
     private var shipSubTypes: [ShipSubtype] = []
     
+    private var ships: [Ship] = []
+    
     private init() {
         // Инициализация массивов данными, например, заглушками
         self.shipTypes = [
@@ -41,6 +43,15 @@ class ShipDataService {
     }
     
     func getShips(forShipSubTypeID shipSubTypeID: UUID) -> [Ship] {
-        self.shipSubTypes.first(where: { $0.id == shipSubTypeID })?.ships ?? []
+        self.ships = self.shipSubTypes.first(where: { $0.id == shipSubTypeID })?.ships ?? []
+        return ships
+    }
+    
+    func getShip(byID: UUID) -> Ship {
+        guard let ship = ships.first(where: {$0.id == byID }) else {
+            print("Ошибка получения корабля")
+            fatalError()
+        }
+        return ship
     }
 }

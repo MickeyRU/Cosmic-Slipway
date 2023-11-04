@@ -34,6 +34,7 @@ final class ViewsFactory: ViewsFactoryProtocol {
         return imageView
     }
     
+    
     func createBGView() -> UIView {
         let view = UIView()
         view.backgroundColor = BasicColors.colorWithAlpha(BasicColors.darkBG, withAlpha: 0.7)
@@ -41,7 +42,7 @@ final class ViewsFactory: ViewsFactoryProtocol {
     }
     
     func createShipImageView() -> UIImageView  {
-        return baseImageView(image: ShipImages.defaultShipImage)
+        return baseImageView(image: nil)
     }
     
     func createTitle(for title: TitleType) -> UILabel {
@@ -50,11 +51,9 @@ final class ViewsFactory: ViewsFactoryProtocol {
         
         switch title {
         case .shipTitle:
-            label.text = "New ship"
             label.textColor = BasicColors.accent
             label.font = CustomFonts.figtreeExBold16
         case .shipDescription:
-            label.text = "Configure"
             label.textColor = BasicColors.iconText
             label.font = CustomFonts.figtreeRegular12
         case .shipTypeInCell:

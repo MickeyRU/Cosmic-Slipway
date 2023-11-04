@@ -101,15 +101,16 @@ extension MainViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ShipsCell.reuseIdentifier, for: indexPath) as? ShipsCell else {
             return UICollectionViewCell()
         }
-        cell.layer.cornerRadius = 28
-        cell.clipsToBounds = true
+
         
         switch indexPath.row {
         case 0:
-            return cell
+            let shipViewModel = viewModel.getShipViewModel(cellType: .newShip)
+            cell.configure(with: shipViewModel)
         default:
             return cell
         }
+        return cell
     }
 }
 
