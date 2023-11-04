@@ -27,11 +27,11 @@ enum ShipImages {
 
 // Изображения модулей
 enum ModuleImages {
-    static let highSlotClean: UIImage = ImageFactory.safeImage(named: "highSlotClean")
-    static let midSlotClean: UIImage = ImageFactory.safeImage(named: "midSlotClean")
-    static let lowSlotClean: UIImage = ImageFactory.safeImage(named: "lowSlotClean")
-    static let combatRigClean: UIImage = ImageFactory.safeImage(named: "combatRigClean")
-    static let engineerRigsClean: UIImage = ImageFactory.safeImage(named: "enginRigsClean")
+    static let highSlotClean: UIImage = ImageFactory.safeImage(named: "highSlot")
+    static let midSlotClean: UIImage = ImageFactory.safeImage(named: "midSlot")
+    static let lowSlotClean: UIImage = ImageFactory.safeImage(named: "lowSlot")
+    static let combatRigClean: UIImage = ImageFactory.safeImage(named: "combatRig")
+    static let engineerRigsClean: UIImage = ImageFactory.safeImage(named: "engineerRigs")
 }
 
 // Изображения для навигации

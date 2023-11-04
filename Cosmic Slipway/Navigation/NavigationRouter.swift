@@ -8,10 +8,13 @@ protocol NavigationRouterProtocol {
     func navigateToShipScreen(shipSubTypeID: UUID)
     
     func navigateToShipFittingScreen(shipID: UUID)
+    
+    func dismissPresentedController()
+    
 }
 
 final class NavigationRouter: NavigationRouterProtocol {
-
+    
     private let navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
@@ -39,16 +42,21 @@ final class NavigationRouter: NavigationRouterProtocol {
     }
     
     func navigateToShipFittingScreen(shipID: UUID) {
-        let shipFittingVC = ShipFittingViewController(shipID: shipID)
+        let shipFittingVC = ShipFittingViewController(shipID: shipID, router: self)
         shipFittingVC.tabBarItem = UITabBarItem(title: "Fitting", image: NavigationImages.fittingTabBarClean, tag: 0)
-
-        let secondVC = ShipFittingViewController(shipID: shipID)
-        secondVC.tabBarItem = UITabBarItem(title: "Power", image: NavigationImages.fittingTabBarSelected, tag: 1)
-
+        
+        let shipPowerVC = PowerViewController(router: self)
+        shipPowerVC.tabBarItem = UITabBarItem(title: "Power", image: NavigationImages.fittingTabBarSelected, tag: 1)
+        
         let tabBarController = MainTabBarController()
-        tabBarController.viewControllers = [shipFittingVC, secondVC]
+        tabBarController.viewControllers = [shipFittingVC, shipPowerVC]
         
         tabBarController.modalPresentationStyle = .fullScreen
         navigationController.present(tabBarController, animated: true)
+    }
+    
+    func dismissPresentedController() {
+        navigationController.popToRootViewController(animated: true)
+        navigationController.dismiss(animated: true)
     }
 }

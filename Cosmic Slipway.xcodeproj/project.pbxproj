@@ -16,6 +16,7 @@
 		BE07C3EC2AF6BF6F00E272E4 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C3EB2AF6BF6F00E272E4 /* UICollectionView+Extension.swift */; };
 		BE07C3EE2AF6E36600E272E4 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C3ED2AF6E36600E272E4 /* HeaderView.swift */; };
 		BE07C3F12AF6EBEB00E272E4 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C3F02AF6EBEB00E272E4 /* Section.swift */; };
+		BE07C3F42AF6F0E200E272E4 /* PowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C3F32AF6F0E200E272E4 /* PowerViewController.swift */; };
 		BE4D01112AE6A057005CA4CA /* ViewsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4D01102AE6A057005CA4CA /* ViewsFactory.swift */; };
 		BE4D01142AE6AB0B005CA4CA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BE4D01132AE6AB0B005CA4CA /* SnapKit */; };
 		BE4D01162AE6AB0B005CA4CA /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = BE4D01152AE6AB0B005CA4CA /* SnapKit-Dynamic */; };
@@ -55,6 +56,7 @@
 		BE07C3EB2AF6BF6F00E272E4 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		BE07C3ED2AF6E36600E272E4 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		BE07C3F02AF6EBEB00E272E4 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		BE07C3F32AF6F0E200E272E4 /* PowerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerViewController.swift; sourceTree = "<group>"; };
 		BE4D01102AE6A057005CA4CA /* ViewsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsFactory.swift; sourceTree = "<group>"; };
 		BE952F512AF531E400CBAEFC /* BackgroundContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundContainerViewModel.swift; sourceTree = "<group>"; };
 		BE952F552AF537CD00CBAEFC /* ShipSubTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipSubTypeViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +156,14 @@
 				BE07C3ED2AF6E36600E272E4 /* HeaderView.swift */,
 			);
 			path = HeaderView;
+			sourceTree = "<group>";
+		};
+		BE07C3F22AF6F0A300E272E4 /* Power */ = {
+			isa = PBXGroup;
+			children = (
+				BE07C3F32AF6F0E200E272E4 /* PowerViewController.swift */,
+			);
+			path = Power;
 			sourceTree = "<group>";
 		};
 		BE952F532AF5377600CBAEFC /* ShipType */ = {
@@ -272,6 +282,7 @@
 				BEB0623829D1A3CD005AEB24 /* Main */,
 				BEC331F02AEAB47C00630D0D /* ChoosingShip */,
 				BE07C3DE2AF67B3D00E272E4 /* FittingShip */,
+				BE07C3F22AF6F0A300E272E4 /* Power */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -483,6 +494,7 @@
 				BE07C3E12AF67F2100E272E4 /* ShipFittingView.swift in Sources */,
 				BE4D01112AE6A057005CA4CA /* ViewsFactory.swift in Sources */,
 				BE07C3EC2AF6BF6F00E272E4 /* UICollectionView+Extension.swift in Sources */,
+				BE07C3F42AF6F0E200E272E4 /* PowerViewController.swift in Sources */,
 				BE07C3DD2AF67B3800E272E4 /* ShipFittingViewController.swift in Sources */,
 				BEAC9BD729E43834009987A3 /* MainTabBarController.swift in Sources */,
 				BE07C3E42AF68B8400E272E4 /* ShipUIViewModel.swift in Sources */,
