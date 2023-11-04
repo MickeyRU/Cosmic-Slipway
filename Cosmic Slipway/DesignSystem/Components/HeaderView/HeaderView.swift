@@ -41,8 +41,6 @@ final class HeaderView: UIView {
         return button
     }()
     
-    
-    
     // MARK: - Init
     
     init() {

@@ -49,6 +49,21 @@ final class ShipFittingViewModel {
                                addShipImage: nil)
     }
     
+    private func handleOkButtonTapped() {
+        if let shipToSave = ship.value {
+            saveShip(shipToSave)
+        } else {
+            error.send("Ошибка: корабль не найден или данные неполные.")
+        }
+    }
+    
+    private func handleExitButtonTapped() {
+        print("exitButtonPressed")
+    }
+    
+    private func saveShip(_ ship: Ship) {
+        ShipDataService.shared.saveUserShip(ship)
+    }
     
     private func loadShip(with shipID: UUID) {
         DispatchQueue.global(qos: .background).async {
@@ -59,11 +74,5 @@ final class ShipFittingViewModel {
         }
     }
     
-    private func handleOkButtonTapped() {
-        print("okButtonPressed")
-    }
     
-    private func handleExitButtonTapped() {
-        print("exitButtonPressed")
-    }
 }

@@ -1,14 +1,22 @@
 import Foundation
+import Combine
 
 class ShipDataService {
     static let shared = ShipDataService()
     
-    // Массивы для хранения данных о кораблях
+    var userShipsPublisher: AnyPublisher<[Ship], Never> {
+           userShipsSubject.eraseToAnyPublisher()
+       }
+    private var userShipsSubject = CurrentValueSubject<[Ship], Never>([])
+    
+    // Массивы для хранения общих данных о кораблях
     private var shipTypes: [ShipType]
-    
     private var shipSubTypes: [ShipSubtype] = []
-    
     private var ships: [Ship] = []
+    
+    // Массив для хранения данных пользователя о сконфигурированных кораблях
+    
+    private var userShips: [Ship] = []
     
     private init() {
         // Инициализация массивов данными, например, заглушками
@@ -54,4 +62,9 @@ class ShipDataService {
         }
         return ship
     }
+    
+    func saveUserShip(_ ship: Ship) {
+            userShips.append(ship)
+            userShipsSubject.send(userShips)
+        }
 }

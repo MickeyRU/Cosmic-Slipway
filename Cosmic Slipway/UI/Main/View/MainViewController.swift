@@ -103,14 +103,8 @@ extension MainViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
 
-        
-        switch indexPath.row {
-        case 0:
-            let shipViewModel = viewModel.getShipViewModel(cellType: .newShip)
-            cell.configure(with: shipViewModel)
-        default:
-            return cell
-        }
+        let shipViewModel = viewModel.getShipViewModel(at: indexPath.row)
+        cell.configure(with: shipViewModel)
         return cell
     }
 }
