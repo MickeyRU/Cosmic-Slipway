@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BE07C3DB2AF674C700E272E4 /* ShipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C3DA2AF674C700E272E4 /* ShipViewController.swift */; };
+		BE07C3DD2AF67B3800E272E4 /* ShipFittingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C3DC2AF67B3800E272E4 /* ShipFittingViewController.swift */; };
+		BE07C3E12AF67F2100E272E4 /* ShipFittingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C3E02AF67F2100E272E4 /* ShipFittingView.swift */; };
 		BE4D01112AE6A057005CA4CA /* ViewsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4D01102AE6A057005CA4CA /* ViewsFactory.swift */; };
 		BE4D01142AE6AB0B005CA4CA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BE4D01132AE6AB0B005CA4CA /* SnapKit */; };
 		BE4D01162AE6AB0B005CA4CA /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = BE4D01152AE6AB0B005CA4CA /* SnapKit-Dynamic */; };
@@ -39,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		BE07C3DA2AF674C700E272E4 /* ShipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipViewController.swift; sourceTree = "<group>"; };
+		BE07C3DC2AF67B3800E272E4 /* ShipFittingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipFittingViewController.swift; sourceTree = "<group>"; };
+		BE07C3E02AF67F2100E272E4 /* ShipFittingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipFittingView.swift; sourceTree = "<group>"; };
 		BE4D01102AE6A057005CA4CA /* ViewsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsFactory.swift; sourceTree = "<group>"; };
 		BE952F512AF531E400CBAEFC /* BackgroundContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundContainerViewModel.swift; sourceTree = "<group>"; };
 		BE952F552AF537CD00CBAEFC /* ShipSubTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipSubTypeViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +93,22 @@
 			path = Ship;
 			sourceTree = "<group>";
 		};
+		BE07C3DE2AF67B3D00E272E4 /* FittingShip */ = {
+			isa = PBXGroup;
+			children = (
+				BE07C3DC2AF67B3800E272E4 /* ShipFittingViewController.swift */,
+			);
+			path = FittingShip;
+			sourceTree = "<group>";
+		};
+		BE07C3DF2AF67EEA00E272E4 /* FittingScreen */ = {
+			isa = PBXGroup;
+			children = (
+				BE07C3E02AF67F2100E272E4 /* ShipFittingView.swift */,
+			);
+			path = FittingScreen;
+			sourceTree = "<group>";
+		};
 		BE952F532AF5377600CBAEFC /* ShipType */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,12 +152,13 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		BEAA53212AF4264E00E44AE4 /* Router */ = {
+		BEAA53212AF4264E00E44AE4 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				BEAC9BD629E43834009987A3 /* MainTabBarController.swift */,
 				BEC332172AEBA29400630D0D /* NavigationRouter.swift */,
 			);
-			path = Router;
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		BEAA53222AF4265B00E44AE4 /* Factories */ = {
@@ -161,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				BE952F572AF53DE400CBAEFC /* SelectionScreens */,
+				BE07C3DF2AF67EEA00E272E4 /* FittingScreen */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -197,9 +219,9 @@
 		BEB0623A29D1A6AA005AEB24 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				BEAC9BD629E43834009987A3 /* MainTabBarController.swift */,
 				BEB0623829D1A3CD005AEB24 /* Main */,
 				BEC331F02AEAB47C00630D0D /* ChoosingShip */,
+				BE07C3DE2AF67B3D00E272E4 /* FittingShip */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -257,7 +279,7 @@
 			children = (
 				BEB7D0B729CF1C8B002B3431 /* Application */,
 				BEAA53272AF43E1600E44AE4 /* DesignSystem */,
-				BEAA53212AF4264E00E44AE4 /* Router */,
+				BEAA53212AF4264E00E44AE4 /* Navigation */,
 				BEAA532B2AF4469500E44AE4 /* Data */,
 				BEB0623A29D1A6AA005AEB24 /* UI */,
 				BEB0623929D1A665005AEB24 /* Resources */,
@@ -406,7 +428,9 @@
 				BE952F562AF537CD00CBAEFC /* ShipSubTypeViewController.swift in Sources */,
 				BEC332182AEBA29400630D0D /* NavigationRouter.swift in Sources */,
 				BEB0624229D1AE2B005AEB24 /* Colors.swift in Sources */,
+				BE07C3E12AF67F2100E272E4 /* ShipFittingView.swift in Sources */,
 				BE4D01112AE6A057005CA4CA /* ViewsFactory.swift in Sources */,
+				BE07C3DD2AF67B3800E272E4 /* ShipFittingViewController.swift in Sources */,
 				BEAC9BD729E43834009987A3 /* MainTabBarController.swift in Sources */,
 				BEEA422529D03B57008B98E4 /* ShipsCell.swift in Sources */,
 				BEB0624429D1B5A0005AEB24 /* Images.swift in Sources */,

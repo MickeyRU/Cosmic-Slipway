@@ -29,6 +29,13 @@ final class ShipViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel.selectedShipData
+            .sink { [weak self] ship in
+                guard let self = self else { return }
+                self.router.navigateToShipFittingScreen(shipID: ship.id)
+            }
+            .store(in: &subscriptions)
     }
     
     private func layout() {

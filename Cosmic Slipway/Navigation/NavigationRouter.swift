@@ -1,12 +1,13 @@
 import UIKit
 
 protocol NavigationRouterProtocol {
-    func setRootViewController(_ viewController: UIViewController)
     func startNavigation()
     
     func navigateToShipTypeScreen()
     func navigateToShipSubTypeScreen(shipTypeID: UUID)
     func navigateToShipScreen(shipSubTypeID: UUID)
+    
+    func navigateToShipFittingScreen(shipID: UUID)
 }
 
 final class NavigationRouter: NavigationRouterProtocol {
@@ -15,10 +16,6 @@ final class NavigationRouter: NavigationRouterProtocol {
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-    }
-    
-    func setRootViewController(_ viewController: UIViewController) {
-        navigationController.viewControllers = [viewController]
     }
     
     func startNavigation() {
@@ -39,5 +36,11 @@ final class NavigationRouter: NavigationRouterProtocol {
     func navigateToShipScreen(shipSubTypeID: UUID) {
         let shipSelectVC = ShipViewController(router: self, shipSubTypeID: shipSubTypeID)
         navigationController.pushViewController(shipSelectVC, animated: true)
+    }
+    
+    func navigateToShipFittingScreen(shipID: UUID) {
+        let shipFittingVC = ShipFittingViewController(shipID: shipID)
+        shipFittingVC.modalPresentationStyle = .fullScreen
+        navigationController.present(shipFittingVC, animated: true)
     }
 }
