@@ -12,7 +12,7 @@ final class ShipCell: UICollectionViewCell {
     private let viewsFactory: ViewsFactoryProtocol
     
     private lazy var bgView: UIView = {
-        return viewsFactory.createBGView()
+        return viewsFactory.createBGView(alpha: .semiTransparent)
     }()
     
     private lazy var shipImageView: UIImageView = {

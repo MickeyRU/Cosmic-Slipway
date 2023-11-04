@@ -40,7 +40,15 @@ final class NavigationRouter: NavigationRouterProtocol {
     
     func navigateToShipFittingScreen(shipID: UUID) {
         let shipFittingVC = ShipFittingViewController(shipID: shipID)
-        shipFittingVC.modalPresentationStyle = .fullScreen
-        navigationController.present(shipFittingVC, animated: true)
+        shipFittingVC.tabBarItem = UITabBarItem(title: "Fitting", image: NavigationImages.fittingTabBarClean, tag: 0)
+
+        let secondVC = ShipFittingViewController(shipID: shipID)
+        secondVC.tabBarItem = UITabBarItem(title: "Power", image: NavigationImages.fittingTabBarSelected, tag: 1)
+
+        let tabBarController = MainTabBarController()
+        tabBarController.viewControllers = [shipFittingVC, secondVC]
+        
+        tabBarController.modalPresentationStyle = .fullScreen
+        navigationController.present(tabBarController, animated: true)
     }
 }

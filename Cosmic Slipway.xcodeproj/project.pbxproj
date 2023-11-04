@@ -14,6 +14,8 @@
 		BE07C3E62AF6984100E272E4 /* ShipFittingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C3E52AF6984100E272E4 /* ShipFittingViewModel.swift */; };
 		BE07C3EA2AF6B9C300E272E4 /* FittingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C3E92AF6B9C200E272E4 /* FittingCell.swift */; };
 		BE07C3EC2AF6BF6F00E272E4 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C3EB2AF6BF6F00E272E4 /* UICollectionView+Extension.swift */; };
+		BE07C3EE2AF6E36600E272E4 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C3ED2AF6E36600E272E4 /* HeaderView.swift */; };
+		BE07C3F12AF6EBEB00E272E4 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C3F02AF6EBEB00E272E4 /* Section.swift */; };
 		BE4D01112AE6A057005CA4CA /* ViewsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4D01102AE6A057005CA4CA /* ViewsFactory.swift */; };
 		BE4D01142AE6AB0B005CA4CA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BE4D01132AE6AB0B005CA4CA /* SnapKit */; };
 		BE4D01162AE6AB0B005CA4CA /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = BE4D01152AE6AB0B005CA4CA /* SnapKit-Dynamic */; };
@@ -51,6 +53,8 @@
 		BE07C3E52AF6984100E272E4 /* ShipFittingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipFittingViewModel.swift; sourceTree = "<group>"; };
 		BE07C3E92AF6B9C200E272E4 /* FittingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FittingCell.swift; sourceTree = "<group>"; };
 		BE07C3EB2AF6BF6F00E272E4 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		BE07C3ED2AF6E36600E272E4 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		BE07C3F02AF6EBEB00E272E4 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		BE4D01102AE6A057005CA4CA /* ViewsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsFactory.swift; sourceTree = "<group>"; };
 		BE952F512AF531E400CBAEFC /* BackgroundContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundContainerViewModel.swift; sourceTree = "<group>"; };
 		BE952F552AF537CD00CBAEFC /* ShipSubTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipSubTypeViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 			children = (
 				BE07C3E92AF6B9C200E272E4 /* FittingCell.swift */,
 				BE07C3E02AF67F2100E272E4 /* ShipFittingView.swift */,
+				BE07C3F02AF6EBEB00E272E4 /* Section.swift */,
 			);
 			path = FittingScreen;
 			sourceTree = "<group>";
@@ -141,6 +146,14 @@
 				BE07C3DC2AF67B3800E272E4 /* ShipFittingViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BE07C3EF2AF6E5D600E272E4 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				BE07C3ED2AF6E36600E272E4 /* HeaderView.swift */,
+			);
+			path = HeaderView;
 			sourceTree = "<group>";
 		};
 		BE952F532AF5377600CBAEFC /* ShipType */ = {
@@ -218,6 +231,7 @@
 			children = (
 				BE952F572AF53DE400CBAEFC /* SelectionScreens */,
 				BE07C3DF2AF67EEA00E272E4 /* FittingScreen */,
+				BE07C3EF2AF6E5D600E272E4 /* HeaderView */,
 				BE07C3E22AF68B5200E272E4 /* ShipsCell */,
 			);
 			path = Components;
@@ -475,11 +489,13 @@
 				BEEA422529D03B57008B98E4 /* ShipCell.swift in Sources */,
 				BEB0624429D1B5A0005AEB24 /* Images.swift in Sources */,
 				BEC331ED2AEA97B600630D0D /* ShipModels.swift in Sources */,
+				BE07C3F12AF6EBEB00E272E4 /* Section.swift in Sources */,
 				BEB7D0A729CF18AE002B3431 /* MainViewController.swift in Sources */,
 				BEB7D0A329CF18AE002B3431 /* AppDelegate.swift in Sources */,
 				BEC331F22AEAB6AD00630D0D /* ShipTypeViewController.swift in Sources */,
 				BEB0624729D1B71F005AEB24 /* Fonts.swift in Sources */,
 				BEAA532A2AF43E4300E44AE4 /* BackgroundContainerView.swift in Sources */,
+				BE07C3EE2AF6E36600E272E4 /* HeaderView.swift in Sources */,
 				BEAA532F2AF4479800E44AE4 /* UniversalSelectionShipTypeCell.swift in Sources */,
 				BEB7D0A529CF18AE002B3431 /* SceneDelegate.swift in Sources */,
 				BE07C3DB2AF674C700E272E4 /* ShipViewController.swift in Sources */,

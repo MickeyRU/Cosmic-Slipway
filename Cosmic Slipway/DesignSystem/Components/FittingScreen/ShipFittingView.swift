@@ -1,52 +1,18 @@
 import UIKit
 import SnapKit
-
-enum Section: Int, CaseIterable {
-    case selectedShip = 0
-    case highSlot
-    case midSlot
-    case lowSlot
-    case combatRig
-    case engineeringRig
-    
-    func titleAndImage() -> (title: String, image: UIImage) {
-        switch self {
-        case .highSlot:
-            return ("High Slot", ModuleImages.highSlotClean)
-        case .midSlot:
-            return ("Mid Slot", ModuleImages.midSlotClean)
-        case .lowSlot:
-            return ("Low Slot", ModuleImages.lowSlotClean)
-        case .combatRig:
-            return ("Combat Rig", ModuleImages.combatRigClean)
-        case .engineeringRig:
-            return ("Engineering Rig", ModuleImages.engineerRigsClean)
-        default:
-            return ("", UIImage())
-        }
-    }
-}
+import Combine
 
 final class ShipFittingView: UIView {
     
     // MARK: - Private Properties
+    
     private let viewsFactory: ViewsFactoryProtocol
-    private var viewModel: ShipFittingViewModel
+    private let viewModel: ShipFittingViewModel
+    private let headerView: HeaderView
     
     private lazy var bgImage: UIImageView = {
         return viewsFactory.createBGImageView(for: .main)
     }()
-    
-    private lazy var okButton = {
-        let button = viewsFactory.createButton(type: .okButton)
-        button.addTarget(self, action: #selector(okButtonPressed), for: .touchUpInside)
-        return button
-    }()
-    
-    private lazy var exitButton = {
-        let button = viewsFactory.createButton(type: .exitButton)
-        button.addTarget(self, action: #selector(exitButtonPressed), for: .touchUpInside)
-        return button    }()
     
     private lazy var shipConfigCollectionView: UICollectionView = {
         let layout = createLayout()
@@ -60,13 +26,18 @@ final class ShipFittingView: UIView {
         return collectionView
     }()
     
+    private var cancellables = Set<AnyCancellable>()
+    
     // MARK: - Init
     
-    init(viewModel: ShipFittingViewModel) {
+    init(viewModel: ShipFittingViewModel, headerView: HeaderView = HeaderView()) {
         self.viewModel = viewModel
+        self.headerView = headerView
         self.viewsFactory = ViewsFactory()
         super.init(frame: .zero)
         setupViews()
+        setupBindings()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -81,39 +52,32 @@ final class ShipFittingView: UIView {
     
     // MARK: - Private Methods
     
-    @objc
-    private func okButtonPressed() {
-        viewModel.okButtonTapped.send()
-    }
-    
-    @objc
-    private func exitButtonPressed() {
-        viewModel.exitButtonTapped.send()
+    private func setupBindings() {
+        headerView.okButtonTappedPublisher
+            .sink { [weak viewModel] in viewModel?.okButtonTapped.send() }
+            .store(in: &cancellables)
+        
+        headerView.exitButtonTappedPublisher
+            .sink { [weak viewModel] in viewModel?.exitButtonTapped.send() }
+            .store(in: &cancellables)
     }
     
     private func setupViews() {
-        [bgImage, okButton, exitButton, shipConfigCollectionView].forEach { addSubview($0) }
+        [bgImage, headerView, shipConfigCollectionView].forEach { addSubview($0) }
         
         bgImage.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
         
-        okButton.snp.makeConstraints { make in
-            make.trailing.equalTo(self).offset(-24)
-            make.top.equalTo(safeAreaLayoutGuide)
-            make.width.height.equalTo(48)
-        }
-        
-        exitButton.snp.makeConstraints { make in
-            make.leading.equalTo(self).offset(24)
-            make.top.equalTo(safeAreaLayoutGuide)
-            make.width.height.equalTo(48)
+        headerView.snp.makeConstraints { make in
+            make.top.leading.trailing.equalToSuperview()
+            make.height.equalTo(128)
         }
         
         shipConfigCollectionView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.bottom.equalTo(safeAreaLayoutGuide)
-            make.top.equalTo(okButton.snp.bottom)
+            make.top.equalTo(headerView.snp.bottom)
         }
     }
     

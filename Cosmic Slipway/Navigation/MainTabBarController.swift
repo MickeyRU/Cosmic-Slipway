@@ -16,12 +16,6 @@ final class MainTabBarController: UITabBarController {
         tabBar.unselectedItemTintColor = BasicColors.iconText
         tabBar.tintColor = BasicColors.accent
         tabBar.backgroundColor = BasicColors.colorWithAlpha(BasicColors.darkBG, withAlpha: 0.7)
-        tabBar.layer.cornerRadius = 20
-
-        tabBarItem = UITabBarItem(
-            title: "Dock",
-            image: NavigationImages.homeTabBarClean,
-            tag: 0
-        )
+        tabBar.layer.cornerRadius = 28
     }
 }

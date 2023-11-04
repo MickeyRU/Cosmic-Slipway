@@ -2,7 +2,7 @@ import Combine
 import UIKit
 
 final class ShipFittingViewModel {
-    // Создаем Subjects для команд
+    // Subjects для команд
     let okButtonTapped = PassthroughSubject<Void, Never>()
     let exitButtonTapped = PassthroughSubject<Void, Never>()
     

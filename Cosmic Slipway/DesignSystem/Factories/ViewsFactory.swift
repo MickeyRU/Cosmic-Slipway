@@ -1,5 +1,10 @@
 import UIKit
 
+enum Alpha: CGFloat {
+    case semiTransparent = 0.7
+    case moreTransparent = 0.5
+}
+
 enum ScreenTypes {
     case main
     case shipSelection
@@ -20,7 +25,7 @@ enum ButtonTypes {
 
 protocol ViewsFactoryProtocol {
     func createBGImageView(for screen: ScreenTypes) -> UIImageView
-    func createBGView() -> UIView
+    func createBGView(alpha: Alpha) -> UIView
     func createShipImageView() -> UIImageView
     func createTitle(for title: TitleType) -> UILabel
     func createAddShipImage() -> UIImageView
@@ -43,9 +48,9 @@ final class ViewsFactory: ViewsFactoryProtocol {
     }
     
     
-    func createBGView() -> UIView {
+    func createBGView(alpha: Alpha) -> UIView {
         let view = UIView()
-        view.backgroundColor = BasicColors.colorWithAlpha(BasicColors.darkBG, withAlpha: 0.7)
+        view.backgroundColor = BasicColors.colorWithAlpha(BasicColors.darkBG, withAlpha: alpha.rawValue)
         return view
     }
     
