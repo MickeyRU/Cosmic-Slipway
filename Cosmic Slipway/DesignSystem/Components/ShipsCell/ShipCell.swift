@@ -1,11 +1,11 @@
 import SnapKit
 import UIKit
 
-final class ShipsCell: UICollectionViewCell {
+final class ShipCell: UICollectionViewCell {
     
     // MARK: - Public Properties
     
-    static let reuseIdentifier = "ShipsCell"
+    static let reuseIdentifier = "ShipCell"
     
     // MARK: - Private Properties
     

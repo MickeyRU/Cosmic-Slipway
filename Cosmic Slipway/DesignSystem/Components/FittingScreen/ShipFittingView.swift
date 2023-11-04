@@ -1,6 +1,32 @@
 import UIKit
 import SnapKit
 
+enum Section: Int, CaseIterable {
+    case selectedShip = 0
+    case highSlot
+    case midSlot
+    case lowSlot
+    case combatRig
+    case engineeringRig
+    
+    func titleAndImage() -> (title: String, image: UIImage) {
+        switch self {
+        case .highSlot:
+            return ("High Slot", ModuleImages.highSlotClean)
+        case .midSlot:
+            return ("Mid Slot", ModuleImages.midSlotClean)
+        case .lowSlot:
+            return ("Low Slot", ModuleImages.lowSlotClean)
+        case .combatRig:
+            return ("Combat Rig", ModuleImages.combatRigClean)
+        case .engineeringRig:
+            return ("Engineering Rig", ModuleImages.engineerRigsClean)
+        default:
+            return ("", UIImage())
+        }
+    }
+}
+
 final class ShipFittingView: UIView {
     
     // MARK: - Private Properties
@@ -11,13 +37,26 @@ final class ShipFittingView: UIView {
         return viewsFactory.createBGImageView(for: .main)
     }()
     
+    private lazy var okButton = {
+        let button = viewsFactory.createButton(type: .okButton)
+        button.addTarget(self, action: #selector(okButtonPressed), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var exitButton = {
+        let button = viewsFactory.createButton(type: .exitButton)
+        button.addTarget(self, action: #selector(exitButtonPressed), for: .touchUpInside)
+        return button    }()
+    
     private lazy var shipConfigCollectionView: UICollectionView = {
         let layout = createLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(ShipsCell.self, forCellWithReuseIdentifier: ShipsCell.reuseIdentifier)
+        collectionView.register(ShipCell.self, forCellWithReuseIdentifier: ShipCell.reuseIdentifier)
+        collectionView.register(FittingCell.self, forCellWithReuseIdentifier: FittingCell.reuseIdentifier)
         collectionView.backgroundColor = .clear
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.contentInset = UIEdgeInsets(top: 40, left: 0, bottom: 0, right: 0)
         return collectionView
     }()
     
@@ -42,83 +81,138 @@ final class ShipFittingView: UIView {
     
     // MARK: - Private Methods
     
+    @objc
+    private func okButtonPressed() {
+        viewModel.okButtonTapped.send()
+    }
+    
+    @objc
+    private func exitButtonPressed() {
+        viewModel.exitButtonTapped.send()
+    }
+    
     private func setupViews() {
-        [bgImage, shipConfigCollectionView].forEach { addSubview($0) }
+        [bgImage, okButton, exitButton, shipConfigCollectionView].forEach { addSubview($0) }
         
         bgImage.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
         
+        okButton.snp.makeConstraints { make in
+            make.trailing.equalTo(self).offset(-24)
+            make.top.equalTo(safeAreaLayoutGuide)
+            make.width.height.equalTo(48)
+        }
+        
+        exitButton.snp.makeConstraints { make in
+            make.leading.equalTo(self).offset(24)
+            make.top.equalTo(safeAreaLayoutGuide)
+            make.width.height.equalTo(48)
+        }
+        
         shipConfigCollectionView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
-            make.top.bottom.equalTo(safeAreaLayoutGuide)
+            make.bottom.equalTo(safeAreaLayoutGuide)
+            make.top.equalTo(okButton.snp.bottom)
         }
     }
     
     private func createLayout() -> UICollectionViewCompositionalLayout {
-        let layout = UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection in
+        return UICollectionViewCompositionalLayout { [weak self] (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
+            guard let self = self else { return nil }
+            
             switch sectionIndex {
             case 0:
-                // Секция с одной ячейкой на всю ширину экрана
-                let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(96)))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(96)), subitems: [item])
-                let section = NSCollectionLayoutSection(group: group)
-                section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 24, bottom: 50, trailing: 24)
-                return section
-                
+                return self.fullWidthSection()
             case 1...3:
-                // Секции со скроллом влево
-                let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(48)))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .absolute(118), heightDimension: .absolute(48)), subitems: [item])
-                let section = NSCollectionLayoutSection(group: group)
-                section.interGroupSpacing = 10
-                section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 24, bottom: 24, trailing: 24)
-                section.orthogonalScrollingBehavior = .continuous
-                return section
-                
+                return self.scrollingSection(itemHeight: 48, groupWidth: 118)
             case 4:
-                let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(48)))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .absolute(128), heightDimension: .absolute(48)), subitems: [item])
-                let section = NSCollectionLayoutSection(group: group)
-                section.interGroupSpacing = 10
-                section.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 24, bottom: 24, trailing: 24)
-                section.orthogonalScrollingBehavior = .continuous
-                return section
-                
+                return self.scrollingSection(itemHeight: 48, groupWidth: 128)
             case 5:
-                let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(48)))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .absolute(150), heightDimension: .absolute(48)), subitems: [item])
-                let section = NSCollectionLayoutSection(group: group)
-                section.interGroupSpacing = 10
-                section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 24, bottom: 24, trailing: 24)
-                section.orthogonalScrollingBehavior = .continuous
-                return section
+                return self.scrollingSection(itemHeight: 48, groupWidth: 150)
             default:
-                fatalError("configureCollectionViewLayout - Неожиданный индекс секции")
+                fatalError("Unexpected section index")
             }
         }
-        return layout
     }
+    
+    private func fullWidthSection() -> NSCollectionLayoutSection {
+        let item = createItem(width: .fractionalWidth(1), height: .absolute(96))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(96)), subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 24, bottom: 50, trailing: 24)
+        return section
+    }
+    
+    private func scrollingSection(itemHeight: CGFloat, groupWidth: CGFloat) -> NSCollectionLayoutSection {
+        let item = createItem(width: .fractionalWidth(1), height: .absolute(itemHeight))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .absolute(groupWidth), heightDimension: .absolute(itemHeight)), subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 10
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 24, bottom: 24, trailing: 24)
+        section.orthogonalScrollingBehavior = .continuous
+        return section
+    }
+    
+    private func createItem(width: NSCollectionLayoutDimension, height: NSCollectionLayoutDimension) -> NSCollectionLayoutItem {
+        return NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: width, heightDimension: height))
+    }
+    
 }
 
 // MARK: - UICollectionViewDataSource
 
 extension ShipFittingView: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 6
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        guard let ship = viewModel.ship.value else {
+            return 0
+        }
+        
+        switch section {
+        case 1:
+            return ship.fitting.highSlots
+        case 2:
+            return ship.fitting.midSlots
+        case 3:
+            return ship.fitting.lowSlots
+        case 4:
+            return ship.fitting.combatRigs
+        case 5:
+            return ship.fitting.engineeringRigs
+        default:
+            return 1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ShipsCell.reuseIdentifier, for: indexPath) as? ShipsCell else {
-            fatalError("Cannot dequeue ShipsCell")
+        
+        guard let section = Section(rawValue: indexPath.section) else {
+            fatalError("Unexpected section index")
         }
-        let shipModel = viewModel.getShipViewModel()!
-        cell.configure(with: shipModel)
-        return cell
+        
+        switch section {
+        case .selectedShip:
+            let cell = collectionView.dequeueReusableCell(withType: ShipCell.self, for: indexPath)
+            let shipModel = viewModel.getShipViewModel()!
+            cell.configure(with: shipModel)
+            return cell
+        case .highSlot, .midSlot, .lowSlot, .combatRig, .engineeringRig:
+            let (title, image) = section.titleAndImage()
+            let cell = collectionView.dequeueReusableCell(withType: FittingCell.self, for: indexPath)
+            cell.configure(title: title, image: image)
+            return cell
+        }
+        
     }
 }
 
 // MARK: - UICollectionViewDelegate
 
 extension ShipFittingView: UICollectionViewDelegate {
+    
 }

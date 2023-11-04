@@ -10,6 +10,12 @@ enum TitleType {
     case shipDescription
     case shipTypeInCell
     case shipSelectionPageTitle
+    case moduleTitle
+}
+
+enum ButtonTypes {
+    case okButton
+    case exitButton
 }
 
 protocol ViewsFactoryProtocol {
@@ -18,6 +24,8 @@ protocol ViewsFactoryProtocol {
     func createShipImageView() -> UIImageView
     func createTitle(for title: TitleType) -> UILabel
     func createAddShipImage() -> UIImageView
+    
+    func createButton(type: ButtonTypes) -> UIButton
 }
 
 final class ViewsFactory: ViewsFactoryProtocol {
@@ -60,11 +68,14 @@ final class ViewsFactory: ViewsFactoryProtocol {
             label.textColor = .white
             label.textAlignment = .center
             label.font = CustomFonts.figtreeExBold16
-            
         case .shipSelectionPageTitle:
             label.textColor = BasicColors.accent
             label.textAlignment = .center
             label.font = CustomFonts.figtreeExBold24
+        case .moduleTitle:
+            label.textAlignment = .left
+            label.textColor = .white
+            label.font = CustomFonts.figtreeExBold12
         }
         return label
     }
@@ -73,6 +84,18 @@ final class ViewsFactory: ViewsFactoryProtocol {
         let imageView = baseImageView(image: NavigationImages.addButtonImage)
         return imageView
     }
+    
+    func createButton(type: ButtonTypes) -> UIButton {
+        let button = UIButton(type: .custom)
+        switch type {
+        case .okButton:
+            button.setImage(NavigationImages.okButton, for: .normal)
+        case .exitButton:
+            button.setImage(NavigationImages.exitButton, for: .normal)
+        }
+        return button
+    }
+
     
     private func baseImageView(image: UIImage? = nil) -> UIImageView {
         let imageView = UIImageView(image: image)

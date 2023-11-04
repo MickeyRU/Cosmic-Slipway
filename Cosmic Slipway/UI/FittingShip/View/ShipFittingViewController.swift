@@ -7,10 +7,8 @@ final class ShipFittingViewController: UIViewController {
     // MARK: - Private Properties
     
     private let ship: UUID
-    
     private let viewModel: ShipFittingViewModel
     private var cancellables: Set<AnyCancellable> = []
-    
     private let shipFittingView: ShipFittingView
     
     // MARK: - Init
@@ -45,7 +43,7 @@ final class ShipFittingViewController: UIViewController {
     // MARK: - Private methods
     
     private func setupViews() {
-        view.addSubview(shipFittingView)
+        [shipFittingView].forEach { view.addSubview($0) }
         
         shipFittingView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
