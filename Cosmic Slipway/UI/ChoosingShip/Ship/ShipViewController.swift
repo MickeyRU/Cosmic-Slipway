@@ -8,7 +8,7 @@ final class ShipViewController: UIViewController {
     
     private let router: NavigationRouterProtocol
     
-    private lazy var viewModel = SelectionViewModel<Ship>(data: ShipDataService.shared.getShips(forShipSubTypeID: shipSubTypeID))
+    private lazy var viewModel = SelectionViewModel<Ship>(data: ShipManagementService.shared.getShips(forShipSubTypeID: shipSubTypeID))
     
     private lazy var backgroundView = SelectionView<Ship>(frame: .zero,
                                                                            title: "Select ship",
@@ -30,7 +30,7 @@ final class ShipViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.selectedShipData
+        viewModel.selectedData
             .sink { [weak self] ship in
                 guard let self = self else { return }
                 self.router.navigateToShipFittingScreen(shipID: ship.id)

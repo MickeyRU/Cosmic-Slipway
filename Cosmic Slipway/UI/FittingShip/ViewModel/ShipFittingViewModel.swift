@@ -2,9 +2,11 @@ import Combine
 import UIKit
 
 final class ShipFittingViewModel {
+    
     // Subjects для команд
     let okButtonTapped = PassthroughSubject<Void, Never>()
     let exitButtonTapped = PassthroughSubject<Void, Never>()
+    let didSelectModuleSlot = PassthroughSubject<ModuleSelection, Never>()
     
     var ship: CurrentValueSubject<Ship?, Never>
     
@@ -31,6 +33,13 @@ final class ShipFittingViewModel {
                 self.handleExitButtonTapped()
             })
             .store(in: &cancellables)
+        
+        didSelectModuleSlot
+               .sink(receiveValue: { [weak self] moduleSelection in
+                   guard let self = self else { return }
+                   self.handleModuleSelected(moduleSelection)
+               })
+               .store(in: &cancellables)
     }
     
     func getShipViewModel() -> ShipUIViewModel? {
@@ -60,7 +69,7 @@ final class ShipFittingViewModel {
         let newShipConfiguration = createNewShipConfiguration(for: currentShip.id, with: currentShip.fitting)
         
         // Сохраняем новый экземпляр корабля.
-        ShipDataService.shared.saveUserShip(newShipConfiguration)
+        ShipManagementService.shared.saveUserShip(newShipConfiguration)
     }
     
     
@@ -68,9 +77,13 @@ final class ShipFittingViewModel {
         print("exitButtonPressed")
     }
     
+    private func handleModuleSelected(_ selection: ModuleSelection) {
+        ModuleManagementService.shared.prepareModuleTypesForSlotFitting(selection: selection)
+    }
+    
     private func createNewShipConfiguration(for shipId: UUID, with fitting: Fitting) -> Ship {
         // Получаем информацию о базовом корабле по его ID.
-        let baseShip = ShipDataService.shared.getShip(byID: shipId)
+        let baseShip = ShipManagementService.shared.getShip(byID: shipId)
         
         // Создаём новую конфигурацию с уникальным ID конфигурации, но тем же ID корабля.
         return Ship(cloning: baseShip, withNewFitting: fitting)
@@ -78,69 +91,10 @@ final class ShipFittingViewModel {
     
     private func loadShip(with shipID: UUID) {
         DispatchQueue.global(qos: .background).async {
-            let result = ShipDataService.shared.getShip(byID: shipID)
+            let result = ShipManagementService.shared.getShip(byID: shipID)
             DispatchQueue.main.async {
                 self.ship.send(result)
             }
         }
-    }
-}
-
-/// Работа с модулями
-extension ShipFittingViewModel {
-    // Метод для добавления модуля в конкретный слот
-    func addModule(_ module: Module, to slotType: ModuleType) {
-        guard var currentFitting = ship.value?.fitting else { return }
-        
-        // Определяем, в какой слот будет добавлен модуль
-        switch slotType {
-        case .high:
-            if currentFitting.highSlots.count < currentFitting.maxHighSlots {
-                currentFitting.highSlots.append(module)
-            }
-        case .mid:
-            if currentFitting.midSlots.count < currentFitting.maxMidSlots {
-                currentFitting.midSlots.append(module)
-            }
-        case .low:
-            if currentFitting.lowSlots.count < currentFitting.maxLowSlots {
-                currentFitting.lowSlots.append(module)
-            }
-        case .combatRig:
-            if currentFitting.combatRigs.count < currentFitting.maxCombatRigs {
-                currentFitting.combatRigs.append(module)
-            }
-        case .engineeringRig:
-            if currentFitting.engineeringRigs.count < currentFitting.maxEngineeringRigs {
-                currentFitting.engineeringRigs.append(module)
-            }
-        }
-        
-        // Обновляем текущий корабль с новым fitting, если добавление модуля произошло успешно
-        ship.value?.fitting = currentFitting
-        ship.send(ship.value)
-    }
-
-    // Метод для удаления модуля из конкретного слота
-    func removeModule(_ module: Module, from slotType: ModuleType) {
-        guard var currentFitting = ship.value?.fitting else { return }
-        
-        // Определяем, из какого слота будет удален модуль
-        switch slotType {
-        case .high:
-            currentFitting.highSlots.removeAll { $0.id == module.id }
-        case .mid:
-            currentFitting.midSlots.removeAll { $0.id == module.id }
-        case .low:
-            currentFitting.lowSlots.removeAll { $0.id == module.id }
-        case .combatRig:
-            currentFitting.combatRigs.removeAll { $0.id == module.id }
-        case .engineeringRig:
-            currentFitting.engineeringRigs.removeAll { $0.id == module.id }
-        }
-        
-        // Обновляем текущий корабль с новым fitting, если удаление модуля произошло успешно
-        ship.value?.fitting = currentFitting
-        ship.send(ship.value)
     }
 }

@@ -32,6 +32,8 @@ enum ModuleImages {
     static let lowSlotClean: UIImage = ImageFactory.safeImage(named: "lowSlot")
     static let combatRigClean: UIImage = ImageFactory.safeImage(named: "combatRig")
     static let engineerRigsClean: UIImage = ImageFactory.safeImage(named: "engineerRigs")
+    
+    static let largeRifledRailgun: UIImage = ImageFactory.safeImage(named: "large_Rifled_Railgun")
 }
 
 // Изображения для навигации

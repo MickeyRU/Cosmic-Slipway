@@ -4,7 +4,7 @@ import Combine
 
 final class ShipTypeViewController: UIViewController {
     
-    private let viewModel = SelectionViewModel<ShipType>(data: ShipDataService.shared.getAllShipTypes())
+    private let viewModel = SelectionViewModel<ShipType>(data: ShipManagementService.shared.getAllShipTypes())
     private let router: NavigationRouterProtocol
     
     private lazy var backgroundView = SelectionView<ShipType>(frame: .zero,
@@ -27,7 +27,7 @@ final class ShipTypeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.selectedShipData
+        viewModel.selectedData
             .sink { [weak self] shipType in
                 guard let self = self else { return }
                 self.router.navigateToShipSubTypeScreen(shipTypeID: shipType.id)

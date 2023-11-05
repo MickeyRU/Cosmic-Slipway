@@ -31,15 +31,7 @@ final class ShipFittingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        viewModel.ship
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in
-                guard let self = self else { return }
-                self.shipFittingView.reloadData()
-            }
-            .store(in: &cancellables)
-        
+    
         setupViews()
         setupBindings()
         
@@ -56,6 +48,14 @@ final class ShipFittingViewController: UIViewController {
     }
     
     private func setupBindings() {
+        viewModel.ship
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                guard let self = self else { return }
+                self.shipFittingView.reloadData()
+            }
+            .store(in: &cancellables)
+        
         viewModel.exitButtonTapped
             .sink { [weak self] _ in
                 guard let self = self else { return }
@@ -67,6 +67,13 @@ final class ShipFittingViewController: UIViewController {
             .sink { [weak self] _ in
                 guard let self = self else { return }
                 self.router.dismissToRootViewController()
+            }
+            .store(in: &cancellables)
+        
+        viewModel.didSelectModuleSlot
+            .sink { [weak self] moduleSelection in
+                guard let self = self else { return }
+                self.router.navigateToModuleSelection()
             }
             .store(in: &cancellables)
     }

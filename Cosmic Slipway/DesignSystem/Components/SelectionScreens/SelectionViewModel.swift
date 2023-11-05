@@ -3,7 +3,7 @@ import Combine
 
 final class SelectionViewModel<DataType: Nameable> {
     let data: [DataType]
-    let selectedShipData = PassthroughSubject<DataType, Never>()
+    let selectedData = PassthroughSubject<DataType, Never>()
 
     init(data: [DataType]) {
         self.data = data
@@ -11,6 +11,6 @@ final class SelectionViewModel<DataType: Nameable> {
 
     func didSelectItemAt(index: Int) {
         let dataAtIndex = data[index]
-        selectedShipData.send(dataAtIndex)
+        selectedData.send(dataAtIndex)
     }
 }

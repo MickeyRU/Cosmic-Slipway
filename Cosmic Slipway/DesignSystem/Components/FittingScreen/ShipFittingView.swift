@@ -118,7 +118,7 @@ final class ShipFittingView: UIView {
     }
     
     private func createItem(width: NSCollectionLayoutDimension, height: NSCollectionLayoutDimension) -> NSCollectionLayoutItem {
-        return NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: width, 
+        return NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: width,
                                                                          heightDimension: height))
     }
     
@@ -153,7 +153,6 @@ extension ShipFittingView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         guard let section = Section(rawValue: indexPath.section) else {
             fatalError("Unexpected section index")
         }
@@ -176,5 +175,28 @@ extension ShipFittingView: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate
 
 extension ShipFittingView: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {}
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let section = Section(rawValue: indexPath.section) else {
+            fatalError("Unexpected section index")
+        }
+        let slot: ModuleSlot
+        
+        switch section {
+        case .highSlot:
+            slot = .high
+        case .midSlot:
+            slot = .mid
+        case .lowSlot:
+            slot = .low
+        case .combatRig:
+            slot = .combatRig
+        case .engineeringRig:
+            slot = .engineeringRig
+        default:
+            return // Обрабатывайте только определенные секции
+        }
+        
+        let selection = ModuleSelection(slot: slot, indexPath: indexPath)
+        viewModel.didSelectModuleSlot.send(selection)
+    }
 }

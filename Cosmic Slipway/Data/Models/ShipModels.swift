@@ -4,12 +4,12 @@ import Foundation
 struct ShipType: Nameable {
     let id: UUID
     let name: String
-    let subtypes: [ShipSubtype] // Подтипы корабля
+    let subTypes: [ShipSubtype] // Подтипы корабля
     
-    init(id: UUID = UUID(), name: String, subtypes: [ShipSubtype]) {
+    init(id: UUID = UUID(), name: String, subTypes: [ShipSubtype]) {
         self.id = id
         self.name = name
-        self.subtypes = subtypes
+        self.subTypes = subTypes
     }
 }
 
@@ -58,21 +58,6 @@ struct Ship: Nameable {
     }
 }
 
-// Модули - которые будем фитить
-struct Module: Nameable {
-    let id: UUID
-    let name: String
-    let type: ModuleType
-}
-
-enum ModuleType {
-    case high
-    case mid
-    case low
-    case combatRig
-    case engineeringRig
-}
-
 // Структура для хранения оснащения корабля
 
 struct Fitting {
@@ -95,11 +80,13 @@ struct Fitting {
         self.maxLowSlots = maxLowSlots
         self.maxCombatRigs = maxCombatRigs
         self.maxEngineeringRigs = maxEngineeringRigs
+        
 
-        highSlots = Array(repeating: Module(id: UUID(), name: "Empty", type: .high), count: maxHighSlots)
-        midSlots = Array(repeating: Module(id: UUID(), name: "Empty", type: .mid), count: maxMidSlots)
-        lowSlots = Array(repeating: Module(id: UUID(), name: "Empty", type: .low), count: maxLowSlots)
-        combatRigs = Array(repeating: Module(id: UUID(), name: "Empty", type: .combatRig), count: maxCombatRigs)
-        engineeringRigs = Array(repeating: Module(id: UUID(), name: "Empty", type: .engineeringRig), count: maxEngineeringRigs)
+        highSlots = Array(repeating: Module(id: UUID(), name: "Empty", slot: .high, moduleImage: "highSlot"), count: maxHighSlots)
+        midSlots = Array(repeating: Module(id: UUID(), name: "Empty", slot: .mid, moduleImage: "midSlot"), count: maxMidSlots)
+        lowSlots = Array(repeating: Module(id: UUID(), name: "Empty", slot: .low, moduleImage: "lowSlot"), count: maxLowSlots)
+        combatRigs = Array(repeating: Module(id: UUID(), name: "Empty", slot: .combatRig, moduleImage: "combatRig"), count: maxCombatRigs)
+        engineeringRigs = Array(repeating: Module(id: UUID(), name: "Empty", slot: .engineeringRig, moduleImage: "engineeringRig"), count: maxEngineeringRigs)
+
     }
 }

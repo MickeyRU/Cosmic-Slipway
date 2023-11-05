@@ -18,7 +18,7 @@ final class MainViewModel: ObservableObject, MainViewModelProtocol {
     }
     
     init() {
-        ShipDataService.shared.userShipsPublisher
+        ShipManagementService.shared.userShipsPublisher
             .receive(on: DispatchQueue.main)
             .sink { [weak self] updatedShips in
                 guard let self = self else { return }

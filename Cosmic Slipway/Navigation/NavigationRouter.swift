@@ -7,7 +7,8 @@ protocol NavigationRouterProtocol {
     func navigateToShipSubTypeScreen(shipTypeID: UUID)
     func navigateToShipScreen(shipSubTypeID: UUID)
     func navigateToShipFittingScreen(shipID: UUID)
-    func navigateToSlotsFittingScreen()
+    
+    func navigateToModuleSelection()
     
     func dismissToRootViewController()
     
@@ -55,10 +56,10 @@ final class NavigationRouter: NavigationRouterProtocol {
         navigationController.present(tabBarController, animated: true)
     }
     
-    func navigateToSlotsFittingScreen() {
-        let slotFittingVC = SlotFittingViewController(router: self)
-        slotFittingVC.modalPresentationStyle = .overCurrentContext
-        navigationController.present(slotFittingVC, animated: true)
+    func navigateToModuleSelection() {
+        let moduleSelectionVC = SlotFittingViewController(router: self)
+        guard let tabBarController = navigationController.presentedViewController as? UITabBarController else { return }
+        tabBarController.present(moduleSelectionVC, animated: true)
     }
     
     func dismissToRootViewController() {
