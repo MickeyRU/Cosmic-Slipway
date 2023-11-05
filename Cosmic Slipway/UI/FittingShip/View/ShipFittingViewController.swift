@@ -59,14 +59,14 @@ final class ShipFittingViewController: UIViewController {
         viewModel.exitButtonTapped
             .sink { [weak self] _ in
                 guard let self = self else { return }
-                self.router.dismissPresentedController()
+                self.router.dismissToRootViewController()
             }
             .store(in: &cancellables)
         
         viewModel.okButtonTapped
             .sink { [weak self] _ in
                 guard let self = self else { return }
-                self.router.dismissPresentedController()
+                self.router.dismissToRootViewController()
             }
             .store(in: &cancellables)
     }

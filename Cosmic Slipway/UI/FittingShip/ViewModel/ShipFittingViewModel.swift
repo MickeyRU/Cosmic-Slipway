@@ -76,7 +76,6 @@ final class ShipFittingViewModel {
         return Ship(cloning: baseShip, withNewFitting: fitting)
     }
     
-    
     private func loadShip(with shipID: UUID) {
         DispatchQueue.global(qos: .background).async {
             let result = ShipDataService.shared.getShip(byID: shipID)
@@ -84,5 +83,64 @@ final class ShipFittingViewModel {
                 self.ship.send(result)
             }
         }
+    }
+}
+
+/// Работа с модулями
+extension ShipFittingViewModel {
+    // Метод для добавления модуля в конкретный слот
+    func addModule(_ module: Module, to slotType: ModuleType) {
+        guard var currentFitting = ship.value?.fitting else { return }
+        
+        // Определяем, в какой слот будет добавлен модуль
+        switch slotType {
+        case .high:
+            if currentFitting.highSlots.count < currentFitting.maxHighSlots {
+                currentFitting.highSlots.append(module)
+            }
+        case .mid:
+            if currentFitting.midSlots.count < currentFitting.maxMidSlots {
+                currentFitting.midSlots.append(module)
+            }
+        case .low:
+            if currentFitting.lowSlots.count < currentFitting.maxLowSlots {
+                currentFitting.lowSlots.append(module)
+            }
+        case .combatRig:
+            if currentFitting.combatRigs.count < currentFitting.maxCombatRigs {
+                currentFitting.combatRigs.append(module)
+            }
+        case .engineeringRig:
+            if currentFitting.engineeringRigs.count < currentFitting.maxEngineeringRigs {
+                currentFitting.engineeringRigs.append(module)
+            }
+        }
+        
+        // Обновляем текущий корабль с новым fitting, если добавление модуля произошло успешно
+        ship.value?.fitting = currentFitting
+        ship.send(ship.value)
+    }
+
+    // Метод для удаления модуля из конкретного слота
+    func removeModule(_ module: Module, from slotType: ModuleType) {
+        guard var currentFitting = ship.value?.fitting else { return }
+        
+        // Определяем, из какого слота будет удален модуль
+        switch slotType {
+        case .high:
+            currentFitting.highSlots.removeAll { $0.id == module.id }
+        case .mid:
+            currentFitting.midSlots.removeAll { $0.id == module.id }
+        case .low:
+            currentFitting.lowSlots.removeAll { $0.id == module.id }
+        case .combatRig:
+            currentFitting.combatRigs.removeAll { $0.id == module.id }
+        case .engineeringRig:
+            currentFitting.engineeringRigs.removeAll { $0.id == module.id }
+        }
+        
+        // Обновляем текущий корабль с новым fitting, если удаление модуля произошло успешно
+        ship.value?.fitting = currentFitting
+        ship.send(ship.value)
     }
 }

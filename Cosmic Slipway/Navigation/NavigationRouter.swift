@@ -6,10 +6,10 @@ protocol NavigationRouterProtocol {
     func navigateToShipTypeScreen()
     func navigateToShipSubTypeScreen(shipTypeID: UUID)
     func navigateToShipScreen(shipSubTypeID: UUID)
-    
     func navigateToShipFittingScreen(shipID: UUID)
+    func navigateToSlotsFittingScreen()
     
-    func dismissPresentedController()
+    func dismissToRootViewController()
     
 }
 
@@ -55,7 +55,13 @@ final class NavigationRouter: NavigationRouterProtocol {
         navigationController.present(tabBarController, animated: true)
     }
     
-    func dismissPresentedController() {
+    func navigateToSlotsFittingScreen() {
+        let slotFittingVC = SlotFittingViewController(router: self)
+        slotFittingVC.modalPresentationStyle = .overCurrentContext
+        navigationController.present(slotFittingVC, animated: true)
+    }
+    
+    func dismissToRootViewController() {
         navigationController.popToRootViewController(animated: true)
         navigationController.dismiss(animated: true)
     }

@@ -30,11 +30,11 @@ class ShipDataService {
                                                      ShipSubtype(name: "Siege Battleships", ships: [
                                                         Ship(id: UUID(), name: "Megathron Striker",
                                                              shipImage: "megathronStriker",
-                                                             fitting: Fitting(highSlots: 7,
-                                                                              midSlots: 7,
-                                                                              lowSlots: 7,
-                                                                              combatRigs: 7,
-                                                                              engineeringRigs: 7))
+                                                             fitting: Fitting(maxHighSlots: 7,
+                                                                              maxMidSlots: 4,
+                                                                              maxLowSlots: 6,
+                                                                              maxCombatRigs: 3,
+                                                                              maxEngineeringRigs: 3))
                                                      ])
                                                     ]),
             ShipType(name: "Capital Ships", subtypes: [])

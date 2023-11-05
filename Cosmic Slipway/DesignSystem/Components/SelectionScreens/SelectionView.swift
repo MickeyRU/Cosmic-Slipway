@@ -1,7 +1,7 @@
 import UIKit
 import SnapKit
 
-final class BackgroundContainerView<DataType: Nameable>: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+final class SelectionView<DataType: Nameable>: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     // MARK: - Private Properties
     
@@ -21,24 +21,24 @@ final class BackgroundContainerView<DataType: Nameable>: UIView, UICollectionVie
         return viewsFactory.createBGImageView(for: .shipSelection)
     }()
     
-    private lazy var shipTypeCollectionView: UICollectionView = {
+    private lazy var dataCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.backgroundColor = .clear
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UniversalSelectionShipTypeCell.self, forCellWithReuseIdentifier: UniversalSelectionShipTypeCell.reuseIdentifier)
+        collectionView.register(UniversalDataCell.self, forCellWithReuseIdentifier: UniversalDataCell.reuseIdentifier)
         collectionView.showsVerticalScrollIndicator = false
         return collectionView
     }()
     
-    private var viewModel: BackgroundContainerViewModel<DataType>
+    private var viewModel: SelectionViewModel<DataType>
     
     // MARK: - Initializers
     
     init(frame: CGRect,
          title: String,
          viewsFactory: ViewsFactoryProtocol = ViewsFactory(),
-         viewModel: BackgroundContainerViewModel<DataType>) {
+         viewModel: SelectionViewModel<DataType>) {
         self.viewsFactory = viewsFactory
         self.viewModel = viewModel
         super.init(frame: frame)
@@ -53,7 +53,7 @@ final class BackgroundContainerView<DataType: Nameable>: UIView, UICollectionVie
     // MARK: - Private Methods
     
     private func setupSubviews() {
-        [bgImageView, backgroundView, titleLabel, shipTypeCollectionView].forEach { addSubview($0) }
+        [bgImageView, backgroundView, titleLabel, dataCollectionView].forEach { addSubview($0) }
         
         bgImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -68,7 +68,7 @@ final class BackgroundContainerView<DataType: Nameable>: UIView, UICollectionVie
             make.top.equalTo(safeAreaLayoutGuide).offset(40)
         }
         
-        shipTypeCollectionView.snp.makeConstraints { make in
+        dataCollectionView.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(24)
             make.leading.trailing.equalToSuperview().inset(48)
             make.bottom.equalTo(safeAreaLayoutGuide).offset(-24)
@@ -80,14 +80,14 @@ final class BackgroundContainerView<DataType: Nameable>: UIView, UICollectionVie
     // MARK: - UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.shipsData.count
+        viewModel.data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UniversalSelectionShipTypeCell.reuseIdentifier, for: indexPath) as? UniversalSelectionShipTypeCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UniversalDataCell.reuseIdentifier, for: indexPath) as? UniversalDataCell else {
             return UICollectionViewCell()
         }
-        let shipType = viewModel.shipsData[indexPath.item]
+        let shipType = viewModel.data[indexPath.item]
         cell.setupCell(title: shipType.name)
         return cell
     }
@@ -102,7 +102,6 @@ final class BackgroundContainerView<DataType: Nameable>: UIView, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.didSelectItemAt(index: indexPath.row)
     }
-    
     
     // MARK: - UICollectionViewDelegateFlowLayout
     

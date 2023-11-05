@@ -37,7 +37,6 @@ final class ShipFittingView: UIView {
         super.init(frame: .zero)
         setupViews()
         setupBindings()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -119,7 +118,8 @@ final class ShipFittingView: UIView {
     }
     
     private func createItem(width: NSCollectionLayoutDimension, height: NSCollectionLayoutDimension) -> NSCollectionLayoutItem {
-        return NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: width, heightDimension: height))
+        return NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: width, 
+                                                                         heightDimension: height))
     }
     
 }
@@ -127,7 +127,6 @@ final class ShipFittingView: UIView {
 // MARK: - UICollectionViewDataSource
 
 extension ShipFittingView: UICollectionViewDataSource {
-    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 6
     }
@@ -139,15 +138,15 @@ extension ShipFittingView: UICollectionViewDataSource {
         
         switch section {
         case 1:
-            return ship.fitting.highSlots
+            return ship.fitting.maxHighSlots
         case 2:
-            return ship.fitting.midSlots
+            return ship.fitting.maxMidSlots
         case 3:
-            return ship.fitting.lowSlots
+            return ship.fitting.maxLowSlots
         case 4:
-            return ship.fitting.combatRigs
+            return ship.fitting.maxCombatRigs
         case 5:
-            return ship.fitting.engineeringRigs
+            return ship.fitting.maxEngineeringRigs
         default:
             return 1
         }
@@ -171,12 +170,11 @@ extension ShipFittingView: UICollectionViewDataSource {
             cell.configure(title: title, image: image)
             return cell
         }
-        
     }
 }
 
 // MARK: - UICollectionViewDelegate
 
 extension ShipFittingView: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {}
 }

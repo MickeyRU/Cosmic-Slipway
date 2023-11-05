@@ -8,9 +8,9 @@ final class ShipSubTypeViewController: UIViewController {
     
     private let router: NavigationRouterProtocol
     
-    private lazy var viewModel = BackgroundContainerViewModel<ShipSubtype>(shipsData: ShipDataService.shared.getShipSubtypes(forShipTypeID: shipTypeID))
+    private lazy var viewModel = SelectionViewModel<ShipSubtype>(data: ShipDataService.shared.getShipSubtypes(forShipTypeID: shipTypeID))
     
-    private lazy var backgroundView = BackgroundContainerView<ShipSubtype>(frame: .zero,
+    private lazy var backgroundView = SelectionView<ShipSubtype>(frame: .zero,
                                                                            title: "Select ship subtype",
                                                                            viewModel: viewModel)
     

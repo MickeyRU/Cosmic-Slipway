@@ -35,9 +35,6 @@ final class ShipCell: UICollectionViewCell {
         self.viewsFactory = ViewsFactory()
         super.init(frame: frame)
         
-        layer.cornerRadius = 28
-        clipsToBounds = true
-        
         setupViews()
         setupAddShipImageView()
     }
@@ -72,6 +69,9 @@ final class ShipCell: UICollectionViewCell {
     }
     
     private func setupViews() {
+        layer.cornerRadius = 28
+        clipsToBounds = true
+        
         [bgView, shipImageView, shipTitle, shipSubTitle].forEach { addSubview($0) }
         
         bgView.snp.makeConstraints { make in

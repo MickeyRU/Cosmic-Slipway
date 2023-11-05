@@ -4,12 +4,12 @@ import Combine
 
 final class ShipTypeViewController: UIViewController {
     
-    private let viewModel = BackgroundContainerViewModel<ShipType>(shipsData: ShipDataService.shared.getAllShipTypes())
+    private let viewModel = SelectionViewModel<ShipType>(data: ShipDataService.shared.getAllShipTypes())
     private let router: NavigationRouterProtocol
     
-    private lazy var  backgroundView = BackgroundContainerView<ShipType>(frame: .zero,
-                                                                         title: "Select ship type",
-                                                                         viewModel: viewModel)
+    private lazy var backgroundView = SelectionView<ShipType>(frame: .zero,
+                                                              title: "Select ship type",
+                                                              viewModel: viewModel)
     
     
     private var subscriptions = Set<AnyCancellable>()
