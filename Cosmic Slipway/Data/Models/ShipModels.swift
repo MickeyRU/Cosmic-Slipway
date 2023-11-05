@@ -25,19 +25,31 @@ struct ShipSubtype: Nameable {
         self.ships = ships
     }
 }
- 
+
 // Структура для хранения данных конкретного корабля
 struct Ship: Nameable {
     let id: UUID
     let name: String
     let shipImage: String
     let fitting: Fitting // Модули корабля
+    let configurationID: UUID // Уникальный ID конкретной конфигурации корабля
     
-    init(id: UUID = UUID(), name: String, shipImage: String, fitting: Fitting) {
+    
+    init(id: UUID, name: String, shipImage: String, fitting: Fitting, configurationID: UUID = UUID()) {
         self.id = id
         self.name = name
         self.shipImage = shipImage
         self.fitting = fitting
+        self.configurationID = configurationID
+    }
+    
+    // Инициализатор для клонирования существующего корабля с новой конфигурацией
+    init(cloning ship: Ship, withNewFitting fitting: Fitting) {
+        self.id = ship.id
+        self.name = ship.name
+        self.shipImage = ship.shipImage
+        self.fitting = fitting
+        self.configurationID = UUID() // Новый уникальный ID для новой конфигурации
     }
 }
 

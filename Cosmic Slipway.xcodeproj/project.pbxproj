@@ -17,9 +17,9 @@
 		BE07C3EE2AF6E36600E272E4 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C3ED2AF6E36600E272E4 /* HeaderView.swift */; };
 		BE07C3F12AF6EBEB00E272E4 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C3F02AF6EBEB00E272E4 /* Section.swift */; };
 		BE07C3F42AF6F0E200E272E4 /* PowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C3F32AF6F0E200E272E4 /* PowerViewController.swift */; };
+		BE07C4092AF7091400E272E4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BE07C4082AF7091400E272E4 /* SnapKit */; };
+		BE07C40B2AF7091400E272E4 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = BE07C40A2AF7091400E272E4 /* SnapKit-Dynamic */; };
 		BE4D01112AE6A057005CA4CA /* ViewsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4D01102AE6A057005CA4CA /* ViewsFactory.swift */; };
-		BE4D01142AE6AB0B005CA4CA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BE4D01132AE6AB0B005CA4CA /* SnapKit */; };
-		BE4D01162AE6AB0B005CA4CA /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = BE4D01152AE6AB0B005CA4CA /* SnapKit-Dynamic */; };
 		BE952F522AF531E400CBAEFC /* BackgroundContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE952F512AF531E400CBAEFC /* BackgroundContainerViewModel.swift */; };
 		BE952F562AF537CD00CBAEFC /* ShipSubTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE952F552AF537CD00CBAEFC /* ShipSubTypeViewController.swift */; };
 		BE952F592AF5404A00CBAEFC /* Nameable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE952F582AF5404A00CBAEFC /* Nameable.swift */; };
@@ -45,6 +45,19 @@
 		BEEA422D29D06CB6008B98E4 /* Figtree-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEEA422C29D06CB6008B98E4 /* Figtree-ExtraBold.ttf */; };
 		BEEA423029D09684008B98E4 /* Figtree-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEEA422F29D09684008B98E4 /* Figtree-Regular.ttf */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BE07C3F62AF6FE3600E272E4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		BE07C3DA2AF674C700E272E4 /* ShipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipViewController.swift; sourceTree = "<group>"; };
@@ -91,8 +104,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE4D01142AE6AB0B005CA4CA /* SnapKit in Frameworks */,
-				BE4D01162AE6AB0B005CA4CA /* SnapKit-Dynamic in Frameworks */,
+				BE07C4092AF7091400E272E4 /* SnapKit in Frameworks */,
+				BE07C40B2AF7091400E272E4 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,15 +429,17 @@
 				BEB7D09B29CF18AE002B3431 /* Sources */,
 				BEB7D09C29CF18AE002B3431 /* Frameworks */,
 				BEB7D09D29CF18AE002B3431 /* Resources */,
+				BE07C3F62AF6FE3600E272E4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BE07C4062AF7062F00E272E4 /* PBXTargetDependency */,
 			);
 			name = "Cosmic Slipway";
 			packageProductDependencies = (
-				BE4D01132AE6AB0B005CA4CA /* SnapKit */,
-				BE4D01152AE6AB0B005CA4CA /* SnapKit-Dynamic */,
+				BE07C4082AF7091400E272E4 /* SnapKit */,
+				BE07C40A2AF7091400E272E4 /* SnapKit-Dynamic */,
 			);
 			productName = "Cosmic Slipway";
 			productReference = BEB7D09F29CF18AE002B3431 /* Cosmic Slipway.app */;
@@ -455,7 +470,7 @@
 			);
 			mainGroup = BEB7D09629CF18AD002B3431;
 			packageReferences = (
-				BE4D01122AE6AB0B005CA4CA /* XCRemoteSwiftPackageReference "SnapKit" */,
+				BE07C4072AF7091400E272E4 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = BEB7D0A029CF18AE002B3431 /* Products */;
 			projectDirPath = "";
@@ -520,6 +535,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BE07C4062AF7062F00E272E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = BE07C4052AF7062F00E272E4 /* SnapKit */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BEB7D0AD29CF18B3002B3431 /* LaunchScreen.storyboard */ = {
@@ -659,6 +681,8 @@
 				DEVELOPMENT_TEAM = 3YZWNV863X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Cosmic Slipway/Configuration/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Cosmic Slipway";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
@@ -691,6 +715,8 @@
 				DEVELOPMENT_TEAM = 3YZWNV863X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Cosmic Slipway/Configuration/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Cosmic Slipway";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
@@ -737,7 +763,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BE4D01122AE6AB0B005CA4CA /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		BE07C4022AF7053400E272E4 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+		BE07C4072AF7091400E272E4 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -748,14 +782,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BE4D01132AE6AB0B005CA4CA /* SnapKit */ = {
+		BE07C4052AF7062F00E272E4 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BE4D01122AE6AB0B005CA4CA /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = BE07C4022AF7053400E272E4 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		BE4D01152AE6AB0B005CA4CA /* SnapKit-Dynamic */ = {
+		BE07C4082AF7091400E272E4 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BE4D01122AE6AB0B005CA4CA /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = BE07C4072AF7091400E272E4 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		BE07C40A2AF7091400E272E4 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE07C4072AF7091400E272E4 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */

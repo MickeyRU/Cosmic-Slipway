@@ -29,7 +29,6 @@ final class ShipCell: UICollectionViewCell {
     
     private var addShipImageView: UIImageView?
     
-    
     // MARK: - Initializers
     
     override init(frame: CGRect) {
@@ -39,7 +38,8 @@ final class ShipCell: UICollectionViewCell {
         layer.cornerRadius = 28
         clipsToBounds = true
         
-        layout()
+        setupViews()
+        setupAddShipImageView()
     }
     
     required init?(coder: NSCoder) {
@@ -53,24 +53,25 @@ final class ShipCell: UICollectionViewCell {
         shipTitle.text = viewModel.title
         shipSubTitle.text = viewModel.subTitle
         
-        if let addImage = viewModel.addShipImage {
-            let imageView = viewsFactory.createAddShipImage()
-            imageView.image = addImage
-            
-            addSubview(imageView)
-            imageView.snp.makeConstraints { make in
-                make.centerY.equalToSuperview()
-                make.trailing.equalToSuperview().inset(19)
-                make.width.height.equalTo(48)
-            }
-            
-            addShipImageView = imageView
-        }
+        // Configure addShipImageView only if addImage is available
+        addShipImageView?.image = viewModel.addShipImage
+        addShipImageView?.isHidden = viewModel.addShipImage == nil
     }
     
     // MARK: - Private Methods
     
-    private func layout() {
+    private func setupAddShipImageView() {
+        let imageView = viewsFactory.createAddShipImage()
+        addSubview(imageView)
+        imageView.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.trailing.equalToSuperview().inset(19)
+            make.width.height.equalTo(48)
+        }
+        addShipImageView = imageView
+    }
+    
+    private func setupViews() {
         [bgView, shipImageView, shipTitle, shipSubTitle].forEach { addSubview($0) }
         
         bgView.snp.makeConstraints { make in

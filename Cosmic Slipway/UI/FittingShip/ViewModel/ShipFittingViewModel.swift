@@ -50,20 +50,32 @@ final class ShipFittingViewModel {
     }
     
     private func handleOkButtonTapped() {
-        if let shipToSave = ship.value {
-            saveShip(shipToSave)
-        } else {
+        // Проверяем, есть ли текущий корабль для сохранения.
+        guard let currentShip = ship.value else {
             error.send("Ошибка: корабль не найден или данные неполные.")
+            return
         }
+        
+        // Создаём новый экземпляр корабля с новым ID конфигурации.
+        let newShipConfiguration = createNewShipConfiguration(for: currentShip.id, with: currentShip.fitting)
+        
+        // Сохраняем новый экземпляр корабля.
+        ShipDataService.shared.saveUserShip(newShipConfiguration)
     }
+    
     
     private func handleExitButtonTapped() {
         print("exitButtonPressed")
     }
     
-    private func saveShip(_ ship: Ship) {
-        ShipDataService.shared.saveUserShip(ship)
+    private func createNewShipConfiguration(for shipId: UUID, with fitting: Fitting) -> Ship {
+        // Получаем информацию о базовом корабле по его ID.
+        let baseShip = ShipDataService.shared.getShip(byID: shipId)
+        
+        // Создаём новую конфигурацию с уникальным ID конфигурации, но тем же ID корабля.
+        return Ship(cloning: baseShip, withNewFitting: fitting)
     }
+    
     
     private func loadShip(with shipID: UUID) {
         DispatchQueue.global(qos: .background).async {
@@ -73,6 +85,4 @@ final class ShipFittingViewModel {
             }
         }
     }
-    
-    
 }

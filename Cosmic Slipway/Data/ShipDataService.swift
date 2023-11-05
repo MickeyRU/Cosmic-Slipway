@@ -5,8 +5,8 @@ class ShipDataService {
     static let shared = ShipDataService()
     
     var userShipsPublisher: AnyPublisher<[Ship], Never> {
-           userShipsSubject.eraseToAnyPublisher()
-       }
+        userShipsSubject.eraseToAnyPublisher()
+    }
     private var userShipsSubject = CurrentValueSubject<[Ship], Never>([])
     
     // Массивы для хранения общих данных о кораблях
@@ -28,7 +28,7 @@ class ShipDataService {
             ShipType(name: "Industrial Ships", subtypes: []),
             ShipType(name: "Battleships", subtypes: [ShipSubtype(name: "Battleships", ships: []),
                                                      ShipSubtype(name: "Siege Battleships", ships: [
-                                                        Ship(name: "Megathron Striker",
+                                                        Ship(id: UUID(), name: "Megathron Striker",
                                                              shipImage: "megathronStriker",
                                                              fitting: Fitting(highSlots: 7,
                                                                               midSlots: 7,
@@ -64,7 +64,11 @@ class ShipDataService {
     }
     
     func saveUserShip(_ ship: Ship) {
-            userShips.append(ship)
-            userShipsSubject.send(userShips)
+        if let index = userShips.firstIndex(where: { $0.configurationID == ship.configurationID }) {
+            userShips[index] = ship // Обновляем существующую конфигурацию
+        } else {
+            userShips.append(ship) // Добавляем новую конфигурацию
         }
+        userShipsSubject.send(self.userShips)
+    }
 }
