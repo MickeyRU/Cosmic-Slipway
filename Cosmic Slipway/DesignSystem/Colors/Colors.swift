@@ -11,3 +11,6 @@ struct BasicColors {
     }
 }
 
+struct HighlightsColors {
+    static let pureBlack = UIColor(hex: "000")
+}

@@ -12,6 +12,6 @@ struct CustomFonts {
     static let figtreeExBold18 = UIFont(name: Fonts.ebFigtree, size: 18)
     static let figtreeExBold24 = UIFont(name: Fonts.ebFigtree, size: 24)
 
-    static let figtreeRegular12  = UIFont(name: Fonts.rFigtree, size: 12)
+    static let figtreeRegular10  = UIFont(name: Fonts.rFigtree, size: 10)
 
 }

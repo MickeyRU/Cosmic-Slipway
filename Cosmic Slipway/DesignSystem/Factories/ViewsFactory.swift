@@ -1,7 +1,7 @@
 import UIKit
 
 enum Alpha: CGFloat {
-    case semiTransparent = 0.7
+    case semiTransparent = 0.65
     case moreTransparent = 0.5
 }
 
@@ -68,7 +68,7 @@ final class ViewsFactory: ViewsFactoryProtocol {
             label.font = CustomFonts.figtreeExBold16
         case .shipDescription:
             label.textColor = BasicColors.iconText
-            label.font = CustomFonts.figtreeRegular12
+            label.font = CustomFonts.figtreeRegular10
         case .shipTypeInCell:
             label.textColor = .white
             label.textAlignment = .center

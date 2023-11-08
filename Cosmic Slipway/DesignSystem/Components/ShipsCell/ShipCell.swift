@@ -45,13 +45,16 @@ final class ShipCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        bgView.addBorder(cornerRadius: 28,
-                       lineWidth: 1,
-                       colors: [BasicColors.colorWithAlpha(BasicColors.active, withAlpha: 0.1),
-                                BasicColors.colorWithAlpha(BasicColors.darkBG, withAlpha: 0.3)],
-                       startPoint: CGPoint(x: 0, y: 0),
-                       endPoint: CGPoint(x: 0.3, y: 0.2))
+        bgView.addShadowAndBorder(cornerRadius: 28,
+                                  lineWidth: 1,
+                                  colors: [BasicColors.colorWithAlpha(BasicColors.active, withAlpha: 0.1),
+                                           BasicColors.colorWithAlpha(HighlightsColors.pureBlack, withAlpha: 0.1)],
+                                  startPoint: CGPoint(x: 0, y: 0),
+                                  endPoint: CGPoint(x: 0.3, y: 0.2),
+                                  shadowColor: HighlightsColors.pureBlack,
+                                  shadowOpacity: 0.8,
+                                  shadowOffset: CGSize(width: 0, height: -14),
+                                  shadowRadius: 16)
     }
     
     // MARK: - Public Methods
@@ -67,7 +70,7 @@ final class ShipCell: UICollectionViewCell {
     }
     
     // MARK: - Private Methods
-
+    
     private func setupAddShipImageView() {
         let imageView = viewsFactory.createAddShipImage()
         addSubview(imageView)
