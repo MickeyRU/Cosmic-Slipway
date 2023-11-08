@@ -1,5 +1,5 @@
-import SnapKit
 import UIKit
+import SnapKit
 
 final class ShipCell: UICollectionViewCell {
     
@@ -43,6 +43,17 @@ final class ShipCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        bgView.addBorder(cornerRadius: 28,
+                       lineWidth: 1,
+                       colors: [BasicColors.colorWithAlpha(BasicColors.active, withAlpha: 0.1),
+                                BasicColors.colorWithAlpha(BasicColors.darkBG, withAlpha: 0.3)],
+                       startPoint: CGPoint(x: 0, y: 0),
+                       endPoint: CGPoint(x: 0.3, y: 0.2))
+    }
+    
     // MARK: - Public Methods
     
     func configure(with viewModel: ShipUIViewModel) {
@@ -56,7 +67,7 @@ final class ShipCell: UICollectionViewCell {
     }
     
     // MARK: - Private Methods
-    
+
     private func setupAddShipImageView() {
         let imageView = viewsFactory.createAddShipImage()
         addSubview(imageView)
@@ -69,9 +80,6 @@ final class ShipCell: UICollectionViewCell {
     }
     
     private func setupViews() {
-        layer.cornerRadius = 28
-        clipsToBounds = true
-        
         [bgView, shipImageView, shipTitle, shipSubTitle].forEach { addSubview($0) }
         
         bgView.snp.makeConstraints { make in

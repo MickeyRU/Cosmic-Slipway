@@ -270,6 +270,9 @@
 		BEAA53272AF43E1600E44AE4 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				BEB0624529D1B5A9005AEB24 /* Images */,
+				BEEA422E29D06D0B008B98E4 /* Fonts */,
+				BEB0624029D1AE07005AEB24 /* Colors */,
 				BEAA53282AF43E3100E44AE4 /* Components */,
 				BEAA53222AF4265B00E44AE4 /* Factories */,
 			);
@@ -279,9 +282,6 @@
 		BEAA53282AF43E3100E44AE4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				BEB0624529D1B5A9005AEB24 /* Images */,
-				BEEA422E29D06D0B008B98E4 /* Fonts */,
-				BEB0624029D1AE07005AEB24 /* Colors */,
 				BE952F572AF53DE400CBAEFC /* SelectionScreens */,
 				BE07C3DF2AF67EEA00E272E4 /* FittingScreen */,
 				BE07C3EF2AF6E5D600E272E4 /* HeaderView */,
