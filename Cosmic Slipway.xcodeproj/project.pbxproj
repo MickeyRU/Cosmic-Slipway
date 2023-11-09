@@ -39,11 +39,12 @@
 		BEB7D0A729CF18AE002B3431 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7D0A629CF18AE002B3431 /* MainViewController.swift */; };
 		BEB7D0AC29CF18B3002B3431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEB7D0AB29CF18B3002B3431 /* Assets.xcassets */; };
 		BEB7D0AF29CF18B3002B3431 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEB7D0AD29CF18B3002B3431 /* LaunchScreen.storyboard */; };
-		BEB7D0C629CF5D1A002B3431 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7D0C529CF5D1A002B3431 /* UIView+Extension.swift */; };
 		BEC331E72AEA957100630D0D /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC331E62AEA957100630D0D /* MainViewModel.swift */; };
 		BEC331ED2AEA97B600630D0D /* ShipModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC331EC2AEA97B600630D0D /* ShipModels.swift */; };
 		BEC331F22AEAB6AD00630D0D /* ShipTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC331F12AEAB6AD00630D0D /* ShipTypeViewController.swift */; };
 		BEC332182AEBA29400630D0D /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC332172AEBA29400630D0D /* NavigationRouter.swift */; };
+		BED8DA692AFD14C200786637 /* BorderConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED8DA682AFD14C200786637 /* BorderConfigurable.swift */; };
+		BED8DA6B2AFD14EB00786637 /* ShadowConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED8DA6A2AFD14EB00786637 /* ShadowConfigurable.swift */; };
 		BEEA422529D03B57008B98E4 /* ShipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEA422429D03B57008B98E4 /* ShipCell.swift */; };
 		BEEA422729D044B2008B98E4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEA422629D044B2008B98E4 /* UIColor+Extension.swift */; };
 		BEEA422D29D06CB6008B98E4 /* Figtree-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEEA422C29D06CB6008B98E4 /* Figtree-ExtraBold.ttf */; };
@@ -96,11 +97,12 @@
 		BEB7D0AB29CF18B3002B3431 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEB7D0AE29CF18B3002B3431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEB7D0B029CF18B3002B3431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BEB7D0C529CF5D1A002B3431 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		BEC331E62AEA957100630D0D /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		BEC331EC2AEA97B600630D0D /* ShipModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipModels.swift; sourceTree = "<group>"; };
 		BEC331F12AEAB6AD00630D0D /* ShipTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipTypeViewController.swift; sourceTree = "<group>"; };
 		BEC332172AEBA29400630D0D /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
+		BED8DA682AFD14C200786637 /* BorderConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderConfigurable.swift; sourceTree = "<group>"; };
+		BED8DA6A2AFD14EB00786637 /* ShadowConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowConfigurable.swift; sourceTree = "<group>"; };
 		BEEA422429D03B57008B98E4 /* ShipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipCell.swift; sourceTree = "<group>"; };
 		BEEA422629D044B2008B98E4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		BEEA422C29D06CB6008B98E4 /* Figtree-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 		BEAA53272AF43E1600E44AE4 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				BED8DA672AFD14B000786637 /* Protocols */,
 				BEB0624529D1B5A9005AEB24 /* Images */,
 				BEEA422E29D06D0B008B98E4 /* Fonts */,
 				BEB0624029D1AE07005AEB24 /* Colors */,
@@ -420,7 +423,6 @@
 		BEB7D0C229CF5C8B002B3431 /* UIKit+Extension */ = {
 			isa = PBXGroup;
 			children = (
-				BEB7D0C529CF5D1A002B3431 /* UIView+Extension.swift */,
 				BEEA422629D044B2008B98E4 /* UIColor+Extension.swift */,
 				BE07C3EB2AF6BF6F00E272E4 /* UICollectionView+Extension.swift */,
 			);
@@ -435,6 +437,15 @@
 				BE07C3D92AF6749300E272E4 /* Ship */,
 			);
 			path = ChoosingShip;
+			sourceTree = "<group>";
+		};
+		BED8DA672AFD14B000786637 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BED8DA682AFD14C200786637 /* BorderConfigurable.swift */,
+				BED8DA6A2AFD14EB00786637 /* ShadowConfigurable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		BEEA422E29D06D0B008B98E4 /* Fonts */ = {
@@ -529,7 +540,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE07C3EA2AF6B9C300E272E4 /* FittingCell.swift in Sources */,
-				BEB7D0C629CF5D1A002B3431 /* UIView+Extension.swift in Sources */,
 				BE07C4122AF813F900E272E4 /* ModuleManagementService.swift in Sources */,
 				BE952F562AF537CD00CBAEFC /* ShipSubTypeViewController.swift in Sources */,
 				BE07C3E62AF6984100E272E4 /* ShipFittingViewModel.swift in Sources */,
@@ -546,6 +556,7 @@
 				BE07C3E42AF68B8400E272E4 /* ShipUIViewModel.swift in Sources */,
 				BEEA422529D03B57008B98E4 /* ShipCell.swift in Sources */,
 				BEB0624429D1B5A0005AEB24 /* Images.swift in Sources */,
+				BED8DA692AFD14C200786637 /* BorderConfigurable.swift in Sources */,
 				BEC331ED2AEA97B600630D0D /* ShipModels.swift in Sources */,
 				BE07C40E2AF7E5CD00E272E4 /* SlotFittingViewController.swift in Sources */,
 				BE07C3F12AF6EBEB00E272E4 /* Section.swift in Sources */,
@@ -557,6 +568,7 @@
 				BE07C3EE2AF6E36600E272E4 /* HeaderView.swift in Sources */,
 				BEAA532F2AF4479800E44AE4 /* UniversalDataCell.swift in Sources */,
 				BEB7D0A529CF18AE002B3431 /* SceneDelegate.swift in Sources */,
+				BED8DA6B2AFD14EB00786637 /* ShadowConfigurable.swift in Sources */,
 				BE07C3DB2AF674C700E272E4 /* ShipViewController.swift in Sources */,
 				BEAA532D2AF446A800E44AE4 /* ShipManagementService.swift in Sources */,
 				BE952F522AF531E400CBAEFC /* SelectionViewModel.swift in Sources */,
