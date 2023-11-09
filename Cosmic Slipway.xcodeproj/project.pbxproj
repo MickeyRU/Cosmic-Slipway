@@ -29,7 +29,7 @@
 		BE952F592AF5404A00CBAEFC /* Nameable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE952F582AF5404A00CBAEFC /* Nameable.swift */; };
 		BEAA532A2AF43E4300E44AE4 /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAA53292AF43E4300E44AE4 /* SelectionView.swift */; };
 		BEAA532D2AF446A800E44AE4 /* ShipManagementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAA532C2AF446A800E44AE4 /* ShipManagementService.swift */; };
-		BEAA532F2AF4479800E44AE4 /* UniversalDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAA532E2AF4479800E44AE4 /* UniversalDataCell.swift */; };
+		BEAA532F2AF4479800E44AE4 /* SelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAA532E2AF4479800E44AE4 /* SelectionCell.swift */; };
 		BEAC9BD729E43834009987A3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC9BD629E43834009987A3 /* MainTabBarController.swift */; };
 		BEB0624229D1AE2B005AEB24 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0624129D1AE2B005AEB24 /* Colors.swift */; };
 		BEB0624429D1B5A0005AEB24 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0624329D1B5A0005AEB24 /* Images.swift */; };
@@ -85,7 +85,7 @@
 		BE952F582AF5404A00CBAEFC /* Nameable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nameable.swift; sourceTree = "<group>"; };
 		BEAA53292AF43E4300E44AE4 /* SelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
 		BEAA532C2AF446A800E44AE4 /* ShipManagementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipManagementService.swift; sourceTree = "<group>"; };
-		BEAA532E2AF4479800E44AE4 /* UniversalDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalDataCell.swift; sourceTree = "<group>"; };
+		BEAA532E2AF4479800E44AE4 /* SelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCell.swift; sourceTree = "<group>"; };
 		BEAC9BD629E43834009987A3 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		BEB0624129D1AE2B005AEB24 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		BEB0624329D1B5A0005AEB24 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
@@ -225,7 +225,7 @@
 		BE952F572AF53DE400CBAEFC /* SelectionScreens */ = {
 			isa = PBXGroup;
 			children = (
-				BEAA532E2AF4479800E44AE4 /* UniversalDataCell.swift */,
+				BEAA532E2AF4479800E44AE4 /* SelectionCell.swift */,
 				BEAA53292AF43E4300E44AE4 /* SelectionView.swift */,
 				BE952F512AF531E400CBAEFC /* SelectionViewModel.swift */,
 				BE952F582AF5404A00CBAEFC /* Nameable.swift */,
@@ -566,7 +566,7 @@
 				BEB0624729D1B71F005AEB24 /* Fonts.swift in Sources */,
 				BEAA532A2AF43E4300E44AE4 /* SelectionView.swift in Sources */,
 				BE07C3EE2AF6E36600E272E4 /* HeaderView.swift in Sources */,
-				BEAA532F2AF4479800E44AE4 /* UniversalDataCell.swift in Sources */,
+				BEAA532F2AF4479800E44AE4 /* SelectionCell.swift in Sources */,
 				BEB7D0A529CF18AE002B3431 /* SceneDelegate.swift in Sources */,
 				BED8DA6B2AFD14EB00786637 /* ShadowConfigurable.swift in Sources */,
 				BE07C3DB2AF674C700E272E4 /* ShipViewController.swift in Sources */,

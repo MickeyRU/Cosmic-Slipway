@@ -13,4 +13,6 @@ struct BasicColors {
 
 struct HighlightsColors {
     static let pureBlack = UIColor(hex: "000")
+    static let gradient = [UIColor(hex: "00E5E5", alpha: 1),
+                           UIColor(hex: "E961FF", alpha: 1)]
 }

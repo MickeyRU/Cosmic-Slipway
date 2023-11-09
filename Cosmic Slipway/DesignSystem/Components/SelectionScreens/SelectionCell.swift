@@ -1,21 +1,15 @@
 import UIKit
 import SnapKit
 
-final class UniversalDataCell: UICollectionViewCell {
+final class SelectionCell: UICollectionViewCell, BorderConfigurable {
     
     // MARK: - Public Properties
     
-    static let reuseIdentifier = "UniversalDataCell"
+    static let reuseIdentifier = "SelectionCell"
     
     // MARK: - Private Properties
     
     private let viewsFactory: ViewsFactoryProtocol
-    
-    private let backBorderImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = BgImages.backBorderImage
-        return imageView
-    }()
     
     private lazy var cellLabel: UILabel = {
         return viewsFactory.createTitle(for: .shipTypeInCell)
@@ -32,6 +26,17 @@ final class UniversalDataCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        addBorder(to: self,
+                  cornerRadius: 24,
+                  lineWidth: 2,
+                  borderColors: HighlightsColors.gradient,
+                  startPoint: CGPoint(x: 0.9, y: 0),
+                  endPoint: CGPoint(x: 0.1, y: 1))
+    }
     
     // MARK: - Public Methods
     
@@ -42,16 +47,12 @@ final class UniversalDataCell: UICollectionViewCell {
     // MARK: - Private Methods
     
     private func layout() {
-        [backBorderImageView, cellLabel].forEach { contentView.addSubview($0) }
+        [cellLabel].forEach { contentView.addSubview($0) }
         
-        backBorderImageView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-
         cellLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.leading.equalTo(backBorderImageView).offset(17)
-            make.trailing.equalTo(backBorderImageView).offset(-17)
+            make.leading.equalToSuperview().offset(17)
+            make.trailing.equalToSuperview().offset(-17)
             make.centerY.equalToSuperview()
         }
     }

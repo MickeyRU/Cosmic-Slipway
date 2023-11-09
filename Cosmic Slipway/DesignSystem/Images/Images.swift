@@ -16,7 +16,6 @@ enum ImageFactory {
 enum BgImages {
     static let mainBackImage: UIImage = ImageFactory.safeImage(named: "mainBackImage")
     static let shipSelectionBgImage: UIImage = ImageFactory.safeImage(named: "shipSelectionBg")
-    static let backBorderImage: UIImage = ImageFactory.safeImage(named: "backBorderImage")
 }
 
 // Изображения кораблей

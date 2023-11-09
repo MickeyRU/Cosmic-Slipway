@@ -26,7 +26,7 @@ final class SelectionView<DataType: Nameable>: UIView, UICollectionViewDataSourc
         collectionView.backgroundColor = .clear
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UniversalDataCell.self, forCellWithReuseIdentifier: UniversalDataCell.reuseIdentifier)
+        collectionView.register(SelectionCell.self, forCellWithReuseIdentifier: SelectionCell.reuseIdentifier)
         collectionView.showsVerticalScrollIndicator = false
         return collectionView
     }()
@@ -84,7 +84,7 @@ final class SelectionView<DataType: Nameable>: UIView, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UniversalDataCell.reuseIdentifier, for: indexPath) as? UniversalDataCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SelectionCell.reuseIdentifier, for: indexPath) as? SelectionCell else {
             return UICollectionViewCell()
         }
         let shipType = viewModel.data[indexPath.item]
