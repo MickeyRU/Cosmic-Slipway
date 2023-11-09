@@ -45,6 +45,7 @@
 		BEC332182AEBA29400630D0D /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC332172AEBA29400630D0D /* NavigationRouter.swift */; };
 		BED8DA692AFD14C200786637 /* BorderConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED8DA682AFD14C200786637 /* BorderConfigurable.swift */; };
 		BED8DA6B2AFD14EB00786637 /* ShadowConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED8DA6A2AFD14EB00786637 /* ShadowConfigurable.swift */; };
+		BED8DA6D2AFD531F00786637 /* MockDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED8DA6C2AFD531F00786637 /* MockDataService.swift */; };
 		BEEA422529D03B57008B98E4 /* ShipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEA422429D03B57008B98E4 /* ShipCell.swift */; };
 		BEEA422729D044B2008B98E4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEA422629D044B2008B98E4 /* UIColor+Extension.swift */; };
 		BEEA422D29D06CB6008B98E4 /* Figtree-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEEA422C29D06CB6008B98E4 /* Figtree-ExtraBold.ttf */; };
@@ -103,6 +104,7 @@
 		BEC332172AEBA29400630D0D /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		BED8DA682AFD14C200786637 /* BorderConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderConfigurable.swift; sourceTree = "<group>"; };
 		BED8DA6A2AFD14EB00786637 /* ShadowConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowConfigurable.swift; sourceTree = "<group>"; };
+		BED8DA6C2AFD531F00786637 /* MockDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataService.swift; sourceTree = "<group>"; };
 		BEEA422429D03B57008B98E4 /* ShipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipCell.swift; sourceTree = "<group>"; };
 		BEEA422629D044B2008B98E4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		BEEA422C29D06CB6008B98E4 /* Figtree-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			children = (
 				BEAA532C2AF446A800E44AE4 /* ShipManagementService.swift */,
 				BE07C4112AF813F900E272E4 /* ModuleManagementService.swift */,
+				BED8DA6C2AFD531F00786637 /* MockDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				BEAA532F2AF4479800E44AE4 /* SelectionCell.swift in Sources */,
 				BEB7D0A529CF18AE002B3431 /* SceneDelegate.swift in Sources */,
 				BED8DA6B2AFD14EB00786637 /* ShadowConfigurable.swift in Sources */,
+				BED8DA6D2AFD531F00786637 /* MockDataService.swift in Sources */,
 				BE07C3DB2AF674C700E272E4 /* ShipViewController.swift in Sources */,
 				BEAA532D2AF446A800E44AE4 /* ShipManagementService.swift in Sources */,
 				BE952F522AF531E400CBAEFC /* SelectionViewModel.swift in Sources */,

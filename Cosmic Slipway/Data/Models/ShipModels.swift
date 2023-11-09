@@ -67,11 +67,11 @@ struct Fitting {
     var combatRigs: [Module]
     var engineeringRigs: [Module]
 
-    let maxHighSlots: Int // Максимальное количество высоких слотов
-    let maxMidSlots: Int // Максимальное количество средних слотов
-    let maxLowSlots: Int // Максимальное количество низких слотов
-    let maxCombatRigs: Int // Максимальное количество боевых ригов
-    let maxEngineeringRigs: Int // Максимальное количество инженерных ригов
+    let maxHighSlots: Int
+    let maxMidSlots: Int
+    let maxLowSlots: Int
+    let maxCombatRigs: Int
+    let maxEngineeringRigs: Int 
 
     // Инициализатор, который устанавливает начальные значения слотов на основе максимальных значений.
     init(maxHighSlots: Int, maxMidSlots: Int, maxLowSlots: Int, maxCombatRigs: Int, maxEngineeringRigs: Int) {
@@ -82,11 +82,11 @@ struct Fitting {
         self.maxEngineeringRigs = maxEngineeringRigs
         
 
-        highSlots = Array(repeating: Module(id: UUID(), name: "Empty", slot: .high, moduleImage: "highSlot"), count: maxHighSlots)
-        midSlots = Array(repeating: Module(id: UUID(), name: "Empty", slot: .mid, moduleImage: "midSlot"), count: maxMidSlots)
-        lowSlots = Array(repeating: Module(id: UUID(), name: "Empty", slot: .low, moduleImage: "lowSlot"), count: maxLowSlots)
-        combatRigs = Array(repeating: Module(id: UUID(), name: "Empty", slot: .combatRig, moduleImage: "combatRig"), count: maxCombatRigs)
-        engineeringRigs = Array(repeating: Module(id: UUID(), name: "Empty", slot: .engineeringRig, moduleImage: "engineeringRig"), count: maxEngineeringRigs)
+        highSlots = Array(repeating: Module(id: UUID(), name: "Empty", moduleImage: "highSlot"), count: maxHighSlots)
+        midSlots = Array(repeating: Module(id: UUID(), name: "Empty", moduleImage: "midSlot"), count: maxMidSlots)
+        lowSlots = Array(repeating: Module(id: UUID(), name: "Empty", moduleImage: "lowSlot"), count: maxLowSlots)
+        combatRigs = Array(repeating: Module(id: UUID(), name: "Empty", moduleImage: "combatRig"), count: maxCombatRigs)
+        engineeringRigs = Array(repeating: Module(id: UUID(), name: "Empty", moduleImage: "engineeringRig"), count: maxEngineeringRigs)
 
     }
 }

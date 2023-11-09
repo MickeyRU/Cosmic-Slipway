@@ -11,11 +11,13 @@ enum ModuleSlot {
 struct ModuleType: Nameable {
     let id: UUID
     let name: String
+    let slot: ModuleSlot
     var subTypes: [ModuleSubType]
     
-    init(id: UUID = UUID(), name: String, subTypes: [ModuleSubType]) {
+    init(id: UUID = UUID(), name: String, slot: ModuleSlot, subTypes: [ModuleSubType]) {
         self.id = id
         self.name = name
+        self.slot = slot
         self.subTypes = subTypes
     }
 }
@@ -35,14 +37,11 @@ struct ModuleSubType: Nameable {
 struct Module: Nameable {
     let id: UUID
     let name: String
-    let slot: ModuleSlot
     let moduleImage: String
-
     
-    init(id: UUID, name: String, slot: ModuleSlot, moduleImage: String) {
+    init(id: UUID = UUID(), name: String , moduleImage: String) {
         self.id = id
         self.name = name
-        self.slot = slot
         self.moduleImage = moduleImage
     }
 }

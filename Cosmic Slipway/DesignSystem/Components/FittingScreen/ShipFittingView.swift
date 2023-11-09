@@ -193,7 +193,7 @@ extension ShipFittingView: UICollectionViewDelegate {
         case .engineeringRig:
             slot = .engineeringRig
         default:
-            return // Обрабатывайте только определенные секции
+            return
         }
         
         let selection = ModuleSelection(slot: slot, indexPath: indexPath)
