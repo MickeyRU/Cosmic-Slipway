@@ -49,7 +49,7 @@ final class FittingCell: UICollectionViewCell, ShadowConfigurable, BorderConfigu
         
         addShadow(to: self.bgView, cornerRadius: 24,
                   shadowColor: HighlightsColors.pureBlack,
-                  shadowOpacity: 0.8,
+                  shadowOpacity: 0.5,
                   shadowOffset: CGSize(width: 4, height: -4),
                   shadowRadius: 4)
     }

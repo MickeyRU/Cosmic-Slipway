@@ -35,7 +35,6 @@ final class MainViewModel: ObservableObject, MainViewModelProtocol {
                                    isAddButtonVisible: true)
         } else {
             let ship = ships[index - 1]
-            // Здесь предполагается, что у вас есть способ получения изображения из названия
             let image = UIImage(named: ship.shipImage) ?? ShipImages.defaultShipImage
             return ShipUIViewModel(image: image,
                                    title: ship.name,

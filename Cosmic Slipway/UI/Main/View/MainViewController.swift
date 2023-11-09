@@ -7,13 +7,10 @@ final class MainViewController: UIViewController {
     // MARK: - Private Properties
     
     private let router: NavigationRouterProtocol
-    
     private let viewModel: MainViewModelProtocol
-    
     private let viewsFactory: ViewsFactoryProtocol
     
     private var cancellables: Set<AnyCancellable> = []
-    private var cellCancellables: [IndexPath: AnyCancellable] = [:]
     
     private lazy var bgImageView: UIImageView = {
         viewsFactory.createBGImageView(for: .main)
@@ -59,7 +56,7 @@ final class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         viewModel.shipsPublisher
             .sink(receiveValue: { [weak self] _ in
                 guard let self = self else { return }
@@ -103,21 +100,17 @@ extension MainViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        
-        
         let shipViewModel = viewModel.getShipViewModel(at: indexPath.row)
         cell.configure(with: shipViewModel)
         
-        if cellCancellables[indexPath] == nil {
-            cellCancellables[indexPath] = cell.addButtonTapped
-                .sink { [weak self] in
-                    guard
-                        let self = self,
-                        shipViewModel.isAddButtonVisible
-                    else { return }
-                    self.router.navigateToShipTypeScreen()
-                }
-        }
+        cell.cancellable = cell.addButtonTapped
+            .sink { [weak self] in
+                guard 
+                    let self = self,
+                    shipViewModel.isAddButtonVisible
+                else { return }
+                self.router.navigateToShipTypeScreen()
+            }
         return cell
     }
 }
@@ -126,7 +119,10 @@ extension MainViewController: UICollectionViewDataSource {
 
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellInserts = UIEdgeInsets(top: 0, left: collectionViewInsets.sideInsets, bottom: 0, right: collectionViewInsets.sideInsets)
+        let cellInserts = UIEdgeInsets(top: 0, 
+                                       left: collectionViewInsets.sideInsets,
+                                       bottom: 0,
+                                       right: collectionViewInsets.sideInsets)
         let width = view.frame.width - (cellInserts.left + cellInserts.right)
         return CGSize(width: width, height: collectionViewInsets.cellHeight)
     }

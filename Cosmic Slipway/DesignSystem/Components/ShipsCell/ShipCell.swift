@@ -2,15 +2,15 @@ import UIKit
 import SnapKit
 import Combine
 
-
 final class ShipCell: UICollectionViewCell, BorderConfigurable, ShadowConfigurable {
     
     // MARK: - Public Properties
-    
+        
     static let reuseIdentifier = "ShipCell"
-    
+        
     let addButtonTapped = PassthroughSubject<Void, Never>()
-    
+    var cancellable: AnyCancellable?
+
     // MARK: - Private Properties
     
     private let viewsFactory: ViewsFactoryProtocol
@@ -36,9 +36,9 @@ final class ShipCell: UICollectionViewCell, BorderConfigurable, ShadowConfigurab
         button.addTarget(self, action: #selector(addButtonPressed), for: .touchUpInside)
         return button
     }()
-    
+
     private var addShipImageView: UIImageView?
-    
+        
     // MARK: - Initializers
     
     override init(frame: CGRect) {
@@ -63,10 +63,15 @@ final class ShipCell: UICollectionViewCell, BorderConfigurable, ShadowConfigurab
         
         addShadow(to: self.bgView, cornerRadius: 28,
                   shadowColor: HighlightsColors.pureBlack,
-                  shadowOpacity: 0.8,
+                  shadowOpacity: 0.5,
                   shadowOffset: CGSize(width: 0, height: -4),
                   shadowRadius: 4)
     }
+    
+    override func prepareForReuse() {
+           super.prepareForReuse()
+           cancellable?.cancel()
+       }
     
     // MARK: - Public Methods
     
