@@ -1,11 +1,15 @@
 import UIKit
 import SnapKit
+import Combine
+
 
 final class ShipCell: UICollectionViewCell, BorderConfigurable, ShadowConfigurable {
     
     // MARK: - Public Properties
     
     static let reuseIdentifier = "ShipCell"
+    
+    let addButtonTapped = PassthroughSubject<Void, Never>()
     
     // MARK: - Private Properties
     
@@ -27,6 +31,12 @@ final class ShipCell: UICollectionViewCell, BorderConfigurable, ShadowConfigurab
         return viewsFactory.createTitle(for: .shipDescription)
     }()
     
+    private lazy var addShipButton: UIButton = {
+        let button = viewsFactory.createButton(type: .addButton)
+        button.addTarget(self, action: #selector(addButtonPressed), for: .touchUpInside)
+        return button
+    }()
+    
     private var addShipImageView: UIImageView?
     
     // MARK: - Initializers
@@ -36,13 +46,11 @@ final class ShipCell: UICollectionViewCell, BorderConfigurable, ShadowConfigurab
         super.init(frame: frame)
         
         setupViews()
-        setupAddShipImageView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -66,27 +74,18 @@ final class ShipCell: UICollectionViewCell, BorderConfigurable, ShadowConfigurab
         shipImageView.image = viewModel.image
         shipTitle.text = viewModel.title
         shipSubTitle.text = viewModel.subTitle
-        
-        // Configure addShipImageView only if addImage is available
-        addShipImageView?.image = viewModel.addShipImage
-        addShipImageView?.isHidden = viewModel.addShipImage == nil
+        addShipButton.isHidden = !viewModel.isAddButtonVisible
     }
     
     // MARK: - Private Methods
     
-    private func setupAddShipImageView() {
-        let imageView = viewsFactory.createAddShipImage()
-        addSubview(imageView)
-        imageView.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.trailing.equalToSuperview().inset(19)
-            make.width.height.equalTo(48)
-        }
-        addShipImageView = imageView
+    @objc
+    private func addButtonPressed() {
+        addButtonTapped.send()
     }
     
     private func setupViews() {
-        [bgView, shipImageView, shipTitle, shipSubTitle].forEach { addSubview($0) }
+        [bgView, shipImageView, shipTitle, shipSubTitle, addShipButton].forEach { addSubview($0) }
         
         bgView.snp.makeConstraints { make in
             make.top.leading.bottom.trailing.equalToSuperview()
@@ -106,6 +105,12 @@ final class ShipCell: UICollectionViewCell, BorderConfigurable, ShadowConfigurab
         shipSubTitle.snp.makeConstraints { make in
             make.leading.equalTo(shipTitle)
             make.bottom.equalTo(shipTitle.snp.top).inset(-6)
+        }
+        
+        addShipButton.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.trailing.equalToSuperview().inset(19)
+            make.width.height.equalTo(48)
         }
     }
 }

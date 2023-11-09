@@ -21,6 +21,7 @@ enum TitleType {
 enum ButtonTypes {
     case okButton
     case exitButton
+    case addButton
 }
 
 protocol ViewsFactoryProtocol {
@@ -86,7 +87,7 @@ final class ViewsFactory: ViewsFactoryProtocol {
     }
     
     func createAddShipImage() -> UIImageView {
-        let imageView = baseImageView(image: NavigationImages.addButtonImage)
+        let imageView = baseImageView(image: NavigationImages.addButton)
         return imageView
     }
     
@@ -97,10 +98,11 @@ final class ViewsFactory: ViewsFactoryProtocol {
             button.setImage(NavigationImages.okButton, for: .normal)
         case .exitButton:
             button.setImage(NavigationImages.exitButton, for: .normal)
+        case .addButton:
+            button.setImage(NavigationImages.addButton, for: .normal)
         }
         return button
     }
-
     
     private func baseImageView(image: UIImage? = nil) -> UIImageView {
         let imageView = UIImageView(image: image)

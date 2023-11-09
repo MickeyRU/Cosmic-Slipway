@@ -55,7 +55,7 @@ final class ShipFittingViewModel {
         return ShipUIViewModel(image: image,
                                title: currentShip.name,
                                subTitle: "Your Ship",
-                               addShipImage: nil)
+                               isAddButtonVisible: false)
     }
     
     private func handleOkButtonTapped() {

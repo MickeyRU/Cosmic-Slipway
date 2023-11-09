@@ -13,6 +13,7 @@ final class MainViewController: UIViewController {
     private let viewsFactory: ViewsFactoryProtocol
     
     private var cancellables: Set<AnyCancellable> = []
+    private var cellCancellables: [IndexPath: AnyCancellable] = [:]
     
     private lazy var bgImageView: UIImageView = {
         viewsFactory.createBGImageView(for: .main)
@@ -50,7 +51,6 @@ final class MainViewController: UIViewController {
     }
     
     // MARK: - UIViewController LC
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -102,9 +102,22 @@ extension MainViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ShipCell.reuseIdentifier, for: indexPath) as? ShipCell else {
             return UICollectionViewCell()
         }
-
+        
+        
+        
         let shipViewModel = viewModel.getShipViewModel(at: indexPath.row)
         cell.configure(with: shipViewModel)
+        
+        if cellCancellables[indexPath] == nil {
+            cellCancellables[indexPath] = cell.addButtonTapped
+                .sink { [weak self] in
+                    guard
+                        let self = self,
+                        shipViewModel.isAddButtonVisible
+                    else { return }
+                    self.router.navigateToShipTypeScreen()
+                }
+        }
         return cell
     }
 }
@@ -116,14 +129,5 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
         let cellInserts = UIEdgeInsets(top: 0, left: collectionViewInsets.sideInsets, bottom: 0, right: collectionViewInsets.sideInsets)
         let width = view.frame.width - (cellInserts.left + cellInserts.right)
         return CGSize(width: width, height: collectionViewInsets.cellHeight)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0:
-            router.navigateToShipTypeScreen()
-        default:
-            break
-        }
     }
 }

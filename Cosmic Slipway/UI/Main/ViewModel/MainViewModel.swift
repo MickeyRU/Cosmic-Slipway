@@ -32,7 +32,7 @@ final class MainViewModel: ObservableObject, MainViewModelProtocol {
             return ShipUIViewModel(image: ShipImages.defaultShipImage,
                                    title: "New ship",
                                    subTitle: "Configure",
-                                   addShipImage: NavigationImages.addButtonImage)
+                                   isAddButtonVisible: true)
         } else {
             let ship = ships[index - 1]
             // Здесь предполагается, что у вас есть способ получения изображения из названия
@@ -40,7 +40,7 @@ final class MainViewModel: ObservableObject, MainViewModelProtocol {
             return ShipUIViewModel(image: image,
                                    title: ship.name,
                                    subTitle: "Your Configuration",
-                                   addShipImage: nil)
+                                   isAddButtonVisible: false)
         }
     }
 }

@@ -41,8 +41,7 @@ enum NavigationImages {
     static let homeTabBarSelected: UIImage = ImageFactory.safeImage(named: "homeTabBarSelected")
     static let fittingTabBarClean: UIImage = ImageFactory.safeImage(named: "fittingTabBarClean")
     static let fittingTabBarSelected: UIImage = ImageFactory.safeImage(named: "fittingTabBarSelected")
-    static let addButtonImage: UIImage = ImageFactory.safeImage(named: "addButtonImage")
-    static let backButton: UIImage = ImageFactory.safeImage(named: "backButton")
+    static let addButton: UIImage = ImageFactory.safeImage(named: "addButton")
     static let exitButton: UIImage = ImageFactory.safeImage(named: "exitButton")
     static let okButton: UIImage = ImageFactory.safeImage(named: "okButton")
 }
