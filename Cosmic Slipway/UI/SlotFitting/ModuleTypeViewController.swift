@@ -1,7 +1,7 @@
 import UIKit
 import Combine
 
-final class SlotFittingViewController: UIViewController {
+final class ModuleTypeViewController: UIViewController {
     
     // MARK: - Private Properties
     
@@ -9,7 +9,7 @@ final class SlotFittingViewController: UIViewController {
     
     private lazy var viewModel = SelectionViewModel<ModuleType>(data: ModuleManagementService.shared.getModuleTypes())
     private lazy var selectionView = SelectionView<ModuleType>(frame: .zero,
-                                                         title: "Choose weapon type",
+                                                               title: "Choose weapon type", backgroundType: .withImageView, backgroundImage: .main,
                                                          viewModel: viewModel)
     private var subscriptions = Set<AnyCancellable>()
 
@@ -29,11 +29,21 @@ final class SlotFittingViewController: UIViewController {
         super.viewDidLoad()
         
         viewModel.selectedData
-            .sink { [weak self] ModuleType in
+            .sink { [weak self] moduleType in
                 guard let self = self else { return }
-//                self.router.navigateToShipSubTypeScreen(shipTypeID: shipType.id)
+                self.router.navigateToModuleSubTypeScreen(moduleTypeID: moduleType.id)
             }
             .store(in: &subscriptions)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = true
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        tabBarController?.tabBar.isHidden = false
     }
     
     private func setupViews() {

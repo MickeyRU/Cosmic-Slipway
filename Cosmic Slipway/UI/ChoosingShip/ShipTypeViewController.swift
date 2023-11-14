@@ -8,7 +8,7 @@ final class ShipTypeViewController: UIViewController {
     private let router: NavigationRouterProtocol
     
     private lazy var backgroundView = SelectionView<ShipType>(frame: .zero,
-                                                              title: "Select ship type",
+                                                              title: "Select ship type", backgroundType: .withImageView, backgroundImage: .shipSelection,
                                                               viewModel: viewModel)
     
     

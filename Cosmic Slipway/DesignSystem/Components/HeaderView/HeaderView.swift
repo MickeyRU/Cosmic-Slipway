@@ -24,7 +24,7 @@ final class HeaderView: UIView, ShadowConfigurable, BorderConfigurable {
     private let viewsFactory: ViewsFactoryProtocol
     
     private lazy var bgImage: UIView = {
-        let view = viewsFactory.createBGView(alpha: .moreTransparent)
+        let view = viewsFactory.createBGView(alpha: .heavyTransparent)
         view.layer.cornerRadius = 28
         return view
     }()

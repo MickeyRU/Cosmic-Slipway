@@ -179,7 +179,7 @@ extension ShipFittingView: UICollectionViewDelegate {
         guard let section = Section(rawValue: indexPath.section) else {
             fatalError("Unexpected section index")
         }
-        let slot: ModuleSlot
+        let slot: SlotType
         
         switch section {
         case .highSlot:
@@ -196,7 +196,7 @@ extension ShipFittingView: UICollectionViewDelegate {
             return
         }
         
-        let selection = ModuleSelection(slot: slot, indexPath: indexPath)
-        viewModel.didSelectModuleSlot.send(selection)
+        let selection = ChosenSlotType(slot: slot, indexPath: indexPath)
+        viewModel.userSelectSlotForFitting.send(selection)
     }
 }

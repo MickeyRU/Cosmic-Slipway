@@ -1,16 +1,26 @@
 import UIKit
 import SnapKit
 
+enum BackgroundType {
+    case withImageView
+    case withoutImageView
+}
+
 final class SelectionView<DataType: Nameable>: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     // MARK: - Private Properties
     
     private let viewsFactory: ViewsFactoryProtocol
+    private let backgroundType: BackgroundType
+    private let backgroundImage: BackgroundImageType
     
-    private let backgroundView: UIView = {
-        let bgView = UIView()
-        bgView.backgroundColor = BasicColors.colorWithAlpha(BasicColors.darkBG, withAlpha: 0.7)
-        return bgView
+    private lazy var backgroundView: UIView = {
+        switch backgroundType {
+        case .withImageView:
+            return viewsFactory.createBGView(alpha: .mediumTransparent)
+        case .withoutImageView:
+            return viewsFactory.createBGView(alpha: .lowTransparent)
+        }
     }()
     
     private lazy var titleLabel: UILabel = {
@@ -18,7 +28,7 @@ final class SelectionView<DataType: Nameable>: UIView, UICollectionViewDataSourc
     }()
     
     private lazy var bgImageView: UIImageView = {
-        return viewsFactory.createBGImageView(for: .shipSelection)
+        return viewsFactory.createBGImageView(for: backgroundImage)
     }()
     
     private lazy var dataCollectionView: UICollectionView = {
@@ -37,10 +47,14 @@ final class SelectionView<DataType: Nameable>: UIView, UICollectionViewDataSourc
     
     init(frame: CGRect,
          title: String,
+         backgroundType: BackgroundType,
+         backgroundImage: BackgroundImageType,
          viewsFactory: ViewsFactoryProtocol = ViewsFactory(),
          viewModel: SelectionViewModel<DataType>) {
         self.viewsFactory = viewsFactory
         self.viewModel = viewModel
+        self.backgroundType = backgroundType
+        self.backgroundImage = backgroundImage
         super.init(frame: frame)
         self.titleLabel.text = title
         setupSubviews()
@@ -53,11 +67,17 @@ final class SelectionView<DataType: Nameable>: UIView, UICollectionViewDataSourc
     // MARK: - Private Methods
     
     private func setupSubviews() {
-        [bgImageView, backgroundView, titleLabel, dataCollectionView].forEach { addSubview($0) }
-        
-        bgImageView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+        switch backgroundType {
+        case .withImageView:
+            addSubview(bgImageView)
+            bgImageView.snp.makeConstraints { make in
+                make.edges.equalToSuperview()
+            }
+        case .withoutImageView:
+            break
         }
+        
+        [backgroundView, titleLabel, dataCollectionView].forEach { addSubview($0) }
         
         backgroundView.snp.makeConstraints { make in
             make.top.leading.trailing.bottom.equalToSuperview()
@@ -74,8 +94,6 @@ final class SelectionView<DataType: Nameable>: UIView, UICollectionViewDataSourc
             make.bottom.equalTo(safeAreaLayoutGuide).offset(-24)
         }
     }
-    
-    
     
     // MARK: - UICollectionViewDataSource
     

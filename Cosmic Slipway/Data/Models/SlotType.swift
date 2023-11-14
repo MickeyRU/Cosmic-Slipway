@@ -1,6 +1,6 @@
 import Foundation
 
-struct ModuleSelection {
-    let slot: ModuleSlot
+struct ChosenSlotType {
+    let slot: SlotType
     let indexPath: IndexPath
 }

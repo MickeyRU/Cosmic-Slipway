@@ -3,10 +3,11 @@ import UIKit
 
 final class ShipFittingViewModel {
     
-    // Subjects для команд
     let okButtonTapped = PassthroughSubject<Void, Never>()
     let exitButtonTapped = PassthroughSubject<Void, Never>()
-    let didSelectModuleSlot = PassthroughSubject<ModuleSelection, Never>()
+    
+    let userSelectSlotForFitting = PassthroughSubject<ChosenSlotType, Never>()
+    let moduleTypesData = PassthroughSubject<Void, Never>()
     
     var ship: CurrentValueSubject<Ship?, Never>
     
@@ -34,7 +35,7 @@ final class ShipFittingViewModel {
             })
             .store(in: &cancellables)
         
-        didSelectModuleSlot
+        userSelectSlotForFitting
                .sink(receiveValue: { [weak self] moduleSelection in
                    guard let self = self else { return }
                    self.handleModuleSelected(moduleSelection)
@@ -77,8 +78,9 @@ final class ShipFittingViewModel {
         print("exitButtonPressed")
     }
     
-    private func handleModuleSelected(_ selection: ModuleSelection) {
-        ModuleManagementService.shared.prepareModuleTypesForSlotFitting(selection: selection)
+    private func handleModuleSelected(_ selection: ChosenSlotType) {
+        ModuleManagementService.shared.sortModuleTypeData(selection: selection)
+        self.moduleTypesData.send()
     }
     
     private func createNewShipConfiguration(for shipId: UUID, with fitting: Fitting) -> Ship {

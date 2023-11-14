@@ -11,6 +11,7 @@ final class ModuleManagementService {
     
     private let moduleTypes: [ModuleType]
     private var filteredModuleTypes: [ModuleType] = []
+    private var moduleSubTypes: [ModuleSubType] = []
     
     // MARK: - Init
     
@@ -20,17 +21,21 @@ final class ModuleManagementService {
     
     // MARK: - Public Methods
     
-    func prepareModuleTypesForSlotFitting(selection: ModuleSelection)  {
-        return loadModuleFoSelectedSloType(selection: selection)
+    func sortModuleTypeData(selection: ChosenSlotType)  {
+        return sort(for: selection)
     }
     
     func getModuleTypes() -> [ModuleType] {
         return filteredModuleTypes
     }
     
+    func getModuleSubTypes(moduleTypeID: UUID) -> [ModuleSubType] {
+        return moduleSubTypes
+    }
+    
     // MARK: - Private Methods
     
-    private func loadModuleFoSelectedSloType(selection: ModuleSelection) {
+    private func sort(for selection: ChosenSlotType) {
         let filteredModuleTypes = moduleTypes.filter { moduleType in
             moduleType.slot == selection.slot
         }

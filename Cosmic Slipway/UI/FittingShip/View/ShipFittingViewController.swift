@@ -36,6 +36,16 @@ final class ShipFittingViewController: UIViewController {
         setupBindings()
         
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
     
     // MARK: - Private methods
     
@@ -70,10 +80,10 @@ final class ShipFittingViewController: UIViewController {
             }
             .store(in: &cancellables)
         
-        viewModel.didSelectModuleSlot
-            .sink { [weak self] moduleSelection in
+        viewModel.moduleTypesData
+            .sink { [weak self] _ in
                 guard let self = self else { return }
-                self.router.navigateToModuleSelection()
+                self.router.navigateToModuleTypeScreen()
             }
             .store(in: &cancellables)
     }

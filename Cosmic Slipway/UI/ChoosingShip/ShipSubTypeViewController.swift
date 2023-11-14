@@ -11,7 +11,7 @@ final class ShipSubTypeViewController: UIViewController {
     private lazy var viewModel = SelectionViewModel<ShipSubtype>(data: ShipManagementService.shared.getShipSubtypes(forShipTypeID: shipTypeID))
     
     private lazy var backgroundView = SelectionView<ShipSubtype>(frame: .zero,
-                                                                           title: "Select ship subtype",
+                                                                 title: "Select ship subtype", backgroundType: .withImageView, backgroundImage: .shipSelection,
                                                                            viewModel: viewModel)
     
     private var subscriptions = Set<AnyCancellable>()

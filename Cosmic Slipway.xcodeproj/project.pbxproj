@@ -19,10 +19,10 @@
 		BE07C3F42AF6F0E200E272E4 /* PowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C3F32AF6F0E200E272E4 /* PowerViewController.swift */; };
 		BE07C4092AF7091400E272E4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BE07C4082AF7091400E272E4 /* SnapKit */; };
 		BE07C40B2AF7091400E272E4 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = BE07C40A2AF7091400E272E4 /* SnapKit-Dynamic */; };
-		BE07C40E2AF7E5CD00E272E4 /* SlotFittingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C40D2AF7E5CD00E272E4 /* SlotFittingViewController.swift */; };
+		BE07C40E2AF7E5CD00E272E4 /* ModuleTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C40D2AF7E5CD00E272E4 /* ModuleTypeViewController.swift */; };
 		BE07C4102AF80F6500E272E4 /* ModuleModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C40F2AF80F6500E272E4 /* ModuleModels.swift */; };
 		BE07C4122AF813F900E272E4 /* ModuleManagementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C4112AF813F900E272E4 /* ModuleManagementService.swift */; };
-		BE07C4172AF83EB900E272E4 /* ModuleSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C4162AF83EB900E272E4 /* ModuleSelection.swift */; };
+		BE07C4172AF83EB900E272E4 /* SlotType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C4162AF83EB900E272E4 /* SlotType.swift */; };
 		BE4D01112AE6A057005CA4CA /* ViewsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4D01102AE6A057005CA4CA /* ViewsFactory.swift */; };
 		BE952F522AF531E400CBAEFC /* SelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE952F512AF531E400CBAEFC /* SelectionViewModel.swift */; };
 		BE952F562AF537CD00CBAEFC /* ShipSubTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE952F552AF537CD00CBAEFC /* ShipSubTypeViewController.swift */; };
@@ -46,6 +46,7 @@
 		BED8DA692AFD14C200786637 /* BorderConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED8DA682AFD14C200786637 /* BorderConfigurable.swift */; };
 		BED8DA6B2AFD14EB00786637 /* ShadowConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED8DA6A2AFD14EB00786637 /* ShadowConfigurable.swift */; };
 		BED8DA6D2AFD531F00786637 /* MockDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED8DA6C2AFD531F00786637 /* MockDataService.swift */; };
+		BED8DA6F2AFD5E5800786637 /* ModuleSubTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED8DA6E2AFD5E5800786637 /* ModuleSubTypeViewController.swift */; };
 		BEEA422529D03B57008B98E4 /* ShipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEA422429D03B57008B98E4 /* ShipCell.swift */; };
 		BEEA422729D044B2008B98E4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEA422629D044B2008B98E4 /* UIColor+Extension.swift */; };
 		BEEA422D29D06CB6008B98E4 /* Figtree-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEEA422C29D06CB6008B98E4 /* Figtree-ExtraBold.ttf */; };
@@ -76,10 +77,10 @@
 		BE07C3ED2AF6E36600E272E4 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		BE07C3F02AF6EBEB00E272E4 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		BE07C3F32AF6F0E200E272E4 /* PowerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerViewController.swift; sourceTree = "<group>"; };
-		BE07C40D2AF7E5CD00E272E4 /* SlotFittingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotFittingViewController.swift; sourceTree = "<group>"; };
+		BE07C40D2AF7E5CD00E272E4 /* ModuleTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleTypeViewController.swift; sourceTree = "<group>"; };
 		BE07C40F2AF80F6500E272E4 /* ModuleModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleModels.swift; sourceTree = "<group>"; };
 		BE07C4112AF813F900E272E4 /* ModuleManagementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleManagementService.swift; sourceTree = "<group>"; };
-		BE07C4162AF83EB900E272E4 /* ModuleSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleSelection.swift; sourceTree = "<group>"; };
+		BE07C4162AF83EB900E272E4 /* SlotType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotType.swift; sourceTree = "<group>"; };
 		BE4D01102AE6A057005CA4CA /* ViewsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsFactory.swift; sourceTree = "<group>"; };
 		BE952F512AF531E400CBAEFC /* SelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewModel.swift; sourceTree = "<group>"; };
 		BE952F552AF537CD00CBAEFC /* ShipSubTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipSubTypeViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +106,7 @@
 		BED8DA682AFD14C200786637 /* BorderConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderConfigurable.swift; sourceTree = "<group>"; };
 		BED8DA6A2AFD14EB00786637 /* ShadowConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowConfigurable.swift; sourceTree = "<group>"; };
 		BED8DA6C2AFD531F00786637 /* MockDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataService.swift; sourceTree = "<group>"; };
+		BED8DA6E2AFD5E5800786637 /* ModuleSubTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleSubTypeViewController.swift; sourceTree = "<group>"; };
 		BEEA422429D03B57008B98E4 /* ShipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipCell.swift; sourceTree = "<group>"; };
 		BEEA422629D044B2008B98E4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		BEEA422C29D06CB6008B98E4 /* Figtree-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -124,14 +126,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BE07C3D92AF6749300E272E4 /* Ship */ = {
-			isa = PBXGroup;
-			children = (
-				BE07C3DA2AF674C700E272E4 /* ShipViewController.swift */,
-			);
-			path = Ship;
-			sourceTree = "<group>";
-		};
 		BE07C3DE2AF67B3D00E272E4 /* FittingShip */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,7 +188,8 @@
 		BE07C40C2AF7E5AA00E272E4 /* SlotFitting */ = {
 			isa = PBXGroup;
 			children = (
-				BE07C40D2AF7E5CD00E272E4 /* SlotFittingViewController.swift */,
+				BE07C40D2AF7E5CD00E272E4 /* ModuleTypeViewController.swift */,
+				BED8DA6E2AFD5E5800786637 /* ModuleSubTypeViewController.swift */,
 			);
 			path = SlotFitting;
 			sourceTree = "<group>";
@@ -207,22 +202,6 @@
 				BED8DA6C2AFD531F00786637 /* MockDataService.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		BE952F532AF5377600CBAEFC /* ShipType */ = {
-			isa = PBXGroup;
-			children = (
-				BEC331F12AEAB6AD00630D0D /* ShipTypeViewController.swift */,
-			);
-			path = ShipType;
-			sourceTree = "<group>";
-		};
-		BE952F542AF5379300CBAEFC /* ShipSubType */ = {
-			isa = PBXGroup;
-			children = (
-				BE952F552AF537CD00CBAEFC /* ShipSubTypeViewController.swift */,
-			);
-			path = ShipSubType;
 			sourceTree = "<group>";
 		};
 		BE952F572AF53DE400CBAEFC /* SelectionScreens */ = {
@@ -242,7 +221,7 @@
 				BE07C3E32AF68B8400E272E4 /* ShipUIViewModel.swift */,
 				BEC331EC2AEA97B600630D0D /* ShipModels.swift */,
 				BE07C40F2AF80F6500E272E4 /* ModuleModels.swift */,
-				BE07C4162AF83EB900E272E4 /* ModuleSelection.swift */,
+				BE07C4162AF83EB900E272E4 /* SlotType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -435,9 +414,9 @@
 		BEC331F02AEAB47C00630D0D /* ChoosingShip */ = {
 			isa = PBXGroup;
 			children = (
-				BE952F532AF5377600CBAEFC /* ShipType */,
-				BE952F542AF5379300CBAEFC /* ShipSubType */,
-				BE07C3D92AF6749300E272E4 /* Ship */,
+				BEC331F12AEAB6AD00630D0D /* ShipTypeViewController.swift */,
+				BE952F552AF537CD00CBAEFC /* ShipSubTypeViewController.swift */,
+				BE07C3DA2AF674C700E272E4 /* ShipViewController.swift */,
 			);
 			path = ChoosingShip;
 			sourceTree = "<group>";
@@ -476,6 +455,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				BE4C3BB62B03798F004792A5 /* PBXTargetDependency */,
 				BE07C4062AF7062F00E272E4 /* PBXTargetDependency */,
 			);
 			name = "Cosmic Slipway";
@@ -554,14 +534,15 @@
 				BE07C3EC2AF6BF6F00E272E4 /* UICollectionView+Extension.swift in Sources */,
 				BE07C3F42AF6F0E200E272E4 /* PowerViewController.swift in Sources */,
 				BE07C3DD2AF67B3800E272E4 /* ShipFittingViewController.swift in Sources */,
-				BE07C4172AF83EB900E272E4 /* ModuleSelection.swift in Sources */,
+				BE07C4172AF83EB900E272E4 /* SlotType.swift in Sources */,
 				BEAC9BD729E43834009987A3 /* MainTabBarController.swift in Sources */,
 				BE07C3E42AF68B8400E272E4 /* ShipUIViewModel.swift in Sources */,
+				BED8DA6F2AFD5E5800786637 /* ModuleSubTypeViewController.swift in Sources */,
 				BEEA422529D03B57008B98E4 /* ShipCell.swift in Sources */,
 				BEB0624429D1B5A0005AEB24 /* Images.swift in Sources */,
 				BED8DA692AFD14C200786637 /* BorderConfigurable.swift in Sources */,
 				BEC331ED2AEA97B600630D0D /* ShipModels.swift in Sources */,
-				BE07C40E2AF7E5CD00E272E4 /* SlotFittingViewController.swift in Sources */,
+				BE07C40E2AF7E5CD00E272E4 /* ModuleTypeViewController.swift in Sources */,
 				BE07C3F12AF6EBEB00E272E4 /* Section.swift in Sources */,
 				BEB7D0A729CF18AE002B3431 /* MainViewController.swift in Sources */,
 				BEB7D0A329CF18AE002B3431 /* AppDelegate.swift in Sources */,
@@ -588,6 +569,10 @@
 		BE07C4062AF7062F00E272E4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = BE07C4052AF7062F00E272E4 /* SnapKit */;
+		};
+		BE4C3BB62B03798F004792A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = BE4C3BB52B03798F004792A5 /* SnapKit-Dynamic */;
 		};
 /* End PBXTargetDependency section */
 
@@ -841,6 +826,11 @@
 			productName = SnapKit;
 		};
 		BE07C40A2AF7091400E272E4 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE07C4072AF7091400E272E4 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+		BE4C3BB52B03798F004792A5 /* SnapKit-Dynamic */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BE07C4072AF7091400E272E4 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = "SnapKit-Dynamic";

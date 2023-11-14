@@ -16,7 +16,7 @@ final class ShipCell: UICollectionViewCell, BorderConfigurable, ShadowConfigurab
     private let viewsFactory: ViewsFactoryProtocol
     
     private lazy var bgView: UIView = {
-        return viewsFactory.createBGView(alpha: .semiTransparent)
+        return viewsFactory.createBGView(alpha: .mediumTransparent)
     }()
     
     private lazy var shipImageView: UIImageView = {

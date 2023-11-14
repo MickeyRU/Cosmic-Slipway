@@ -18,7 +18,7 @@ final class FittingCell: UICollectionViewCell, ShadowConfigurable, BorderConfigu
     }()
     
     private lazy var bgView: UIView = {
-        return viewsFactory.createBGView(alpha: .semiTransparent)
+        return viewsFactory.createBGView(alpha: .mediumTransparent)
     }()
     
     private lazy var moduleTitle: UILabel = {
