@@ -12,7 +12,8 @@ protocol NavigationRouterProtocol {
     func navigateToModuleSubTypeScreen(moduleTypeID: UUID)
     func navigateToModulesScreen(moduleSubTypeID: UUID)
     
-    func dismissToRootViewController()
+    func dismissToFittingViewController()
+    func dismissToMainViewController()
     
 }
 
@@ -86,8 +87,16 @@ final class NavigationRouter: NavigationRouterProtocol {
             }
         }
     }
+    
+    func dismissToFittingViewController() {
+        if let tabBarController = navigationController.presentedViewController as? UITabBarController {
+            if let navigationController = tabBarController.selectedViewController as? UINavigationController {
+                navigationController.popToRootViewController(animated: true)
+            }
+        }
+    }
 
-    func dismissToRootViewController() {
+    func dismissToMainViewController() {
         navigationController.popToRootViewController(animated: true)
         navigationController.dismiss(animated: true)
     }

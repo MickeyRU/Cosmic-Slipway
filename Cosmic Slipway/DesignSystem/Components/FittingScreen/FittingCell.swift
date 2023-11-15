@@ -80,6 +80,7 @@ final class FittingCell: UICollectionViewCell, ShadowConfigurable, BorderConfigu
             make.centerY.equalToSuperview()
             make.leading.equalTo(moduleImage.snp.trailing).offset(8)
             make.trailing.equalToSuperview().inset(14)
+            make.top.bottom.equalToSuperview().inset(8)
         }
     }
 }

@@ -121,7 +121,6 @@ final class ShipFittingView: UIView {
         return NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: width,
                                                                          heightDimension: height))
     }
-    
 }
 
 // MARK: - UICollectionViewDataSource
@@ -163,13 +162,45 @@ extension ShipFittingView: UICollectionViewDataSource {
             let shipModel = viewModel.getShipViewModel()!
             cell.configure(with: shipModel)
             return cell
-        case .highSlot, .midSlot, .lowSlot, .combatRig, .engineeringRig:
-            let (title, image) = section.titleAndImage()
-            let cell = collectionView.dequeueReusableCell(withType: FittingCell.self, for: indexPath)
-            cell.configure(title: title, image: image)
-            return cell
+            
+        case .highSlot:
+            return configureFittingCell(for: collectionView, at: indexPath, with: viewModel.ship.value?.fitting.highSlots ?? [])
+            
+        case .midSlot:
+            return configureFittingCell(for: collectionView, at: indexPath, with: viewModel.ship.value?.fitting.midSlots ?? [])
+            
+        case .lowSlot:
+            return configureFittingCell(for: collectionView, at: indexPath, with: viewModel.ship.value?.fitting.lowSlots ?? [])
+            
+        case .combatRig:
+            return configureFittingCell(for: collectionView, at: indexPath, with: viewModel.ship.value?.fitting.combatRigs ?? [])
+            
+        case .engineeringRig:
+            return configureFittingCell(for: collectionView, at: indexPath, with: viewModel.ship.value?.fitting.engineeringRigs ?? [])
         }
     }
+    
+    
+    private func configureFittingCell(for collectionView: UICollectionView, at indexPath: IndexPath, with modules: [Module]) -> FittingCell {
+        let cell = collectionView.dequeueReusableCell(withType: FittingCell.self, for: indexPath)
+        
+        // Проверка, что indexPath.row находится в пределах массива модулей
+        guard indexPath.row < modules.count else {
+            print("Ошибка: indexPath.row выходит за пределы массива модулей")
+            return cell
+        }
+        
+        let module = modules[indexPath.row]
+        let title = module.name
+        guard let newImage = UIImage(named: module.moduleImage) else {
+            print("Ошибка получения фото")
+            return cell
+        }
+        
+        cell.configure(title: title, image: newImage)
+        return cell
+    }
+    
 }
 
 // MARK: - UICollectionViewDelegate

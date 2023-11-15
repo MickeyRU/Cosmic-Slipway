@@ -23,7 +23,7 @@ class ShipManagementService {
     // MARK: - Init
     
     private init() {
-        loadShips()
+        self.shipTypes = MockDataService.shared.loadMockShipsData()
     }
     
     // MARK: - Public Methods
@@ -60,26 +60,4 @@ class ShipManagementService {
     }
     
     // MARK: - Private Methods
-
-    private func loadShips() {
-        self.shipTypes = [
-            ShipType(name: "Frigates", subTypes: []),
-            ShipType(name: "Destroyers", subTypes: []),
-            ShipType(name: "Cruisers", subTypes: []),
-            ShipType(name: "Battlecruisers", subTypes: []),
-            ShipType(name: "Industrial Ships", subTypes: []),
-            ShipType(name: "Battleships", subTypes: [ShipSubtype(name: "Battleships", ships: []),
-                                                     ShipSubtype(name: "Siege Battleships", ships: [
-                                                        Ship(id: UUID(), name: "Megathron Striker",
-                                                             shipImage: "megathronStriker",
-                                                             fitting: Fitting(maxHighSlots: 7,
-                                                                              maxMidSlots: 4,
-                                                                              maxLowSlots: 6,
-                                                                              maxCombatRigs: 3,
-                                                                              maxEngineeringRigs: 3))
-                                                     ])
-                                                    ]),
-            ShipType(name: "Capital Ships", subTypes: [])
-        ]
-    }
 }

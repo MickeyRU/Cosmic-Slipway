@@ -9,7 +9,7 @@ final class ShipFittingViewModel {
     let userSelectSlotForFitting = PassthroughSubject<ChosenSlotType, Never>()
     let moduleTypesData = PassthroughSubject<Void, Never>()
     
-    var ship: CurrentValueSubject<Ship?, Never>
+    private(set) var ship: CurrentValueSubject<Ship?, Never>
     
     // Subject для ошибок
     var error: PassthroughSubject<String, Never> = PassthroughSubject()
@@ -36,11 +36,24 @@ final class ShipFittingViewModel {
             .store(in: &cancellables)
         
         userSelectSlotForFitting
-               .sink(receiveValue: { [weak self] moduleSelection in
-                   guard let self = self else { return }
-                   self.handleModuleSelected(moduleSelection)
-               })
-               .store(in: &cancellables)
+            .sink(receiveValue: { [weak self] moduleSelection in
+                guard let self = self else { return }
+                self.handleModuleSelected(moduleSelection)
+            })
+            .store(in: &cancellables)
+        
+        ModuleManagementService.shared.$moduleForUpdate
+            .sink { [weak self] moduleForUpdate in
+                guard
+                    let self = self,
+                    let module = moduleForUpdate
+                else {
+                    print("module - ошибка получения")
+                    return
+                }
+                self.updateShipFitting(with: module)
+            }
+            .store(in: &cancellables)
     }
     
     func getShipViewModel() -> ShipUIViewModel? {
@@ -98,5 +111,25 @@ final class ShipFittingViewModel {
                 self.ship.send(result)
             }
         }
+    }
+    
+    private func updateShipFitting(with module: ModuleForUpdate) {
+        guard let currentShip = ship.value else {
+            error.send("Ошибка: корабль не найден или данные неполные.")
+            return
+        }
+        
+        let moduleForAdd = ModuleManagementService.shared.getModule(byID: module.moduleID)
+        let index = module.chosenSlotType.indexPath.row
+        let slotType = module.chosenSlotType.slot
+        
+        
+        // Обновление Fitting используя новый метод updatedFitting
+        let newFitting = currentShip.fitting.updatedFitting(withUpdatedSlot: slotType,
+                                                            atIndex: index,
+                                                            newModule: moduleForAdd)
+        
+        let updatedShip = currentShip.withUpdatedFitting(newFitting)
+        self.ship.send(updatedShip)
     }
 }

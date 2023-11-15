@@ -82,6 +82,9 @@ final class ViewsFactory: ViewsFactoryProtocol {
             label.textAlignment = .left
             label.textColor = .white
             label.font = CustomFonts.figtreeExBold12
+            label.adjustsFontSizeToFitWidth = true // Автоматическое уменьшение размера шрифта
+            label.numberOfLines = 0 // Позволяет тексту размещаться на нескольких строках
+            
         }
         return label
     }

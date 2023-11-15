@@ -7,9 +7,9 @@ final class ModulesViewController: UIViewController {
     private let moduleSubTypeID: UUID
     private let router: NavigationRouterProtocol
     
-    private lazy var viewModel = SelectionViewModel<Module>(data: ModuleManagementService.shared.getModule(moduleSubTypeID: moduleSubTypeID))
+    private lazy var viewModel = SelectionViewModel<Module>(data: ModuleManagementService.shared.sortModuleFromSubTypes(moduleSubTypeID: moduleSubTypeID))
     private lazy var selectionView = SelectionView<Module>(frame: .zero,
-                                                                  title: "Choose weapon subtype", backgroundType: .withImageView, backgroundImage: .main,
+                                                                  title: "Choose weapon", backgroundType: .withImageView, backgroundImage: .main,
                                                          viewModel: viewModel)
     private var subscriptions = Set<AnyCancellable>()
 
@@ -32,7 +32,8 @@ final class ModulesViewController: UIViewController {
         viewModel.selectedData
             .sink { [weak self] module in
                 guard let self = self else { return }
-//                self.router.navigateToShipSubTypeScreen(shipTypeID: shipType.id)
+                ModuleManagementService.shared.userSelectModule(moduleID: module.id)
+                self.router.dismissToFittingViewController()
             }
             .store(in: &subscriptions)
     }

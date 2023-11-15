@@ -1,11 +1,18 @@
 import Foundation
 import Combine
 
+struct ModuleForUpdate {
+    let moduleID: UUID
+    let chosenSlotType: ChosenSlotType
+}
+
 final class ModuleManagementService {
     
     // MARK: - Public Properties
     
     static let shared = ModuleManagementService()
+    
+    @Published var moduleForUpdate: ModuleForUpdate?
     
     // MARK: - Private Properties
     
@@ -13,8 +20,9 @@ final class ModuleManagementService {
     private var filteredBySlotModuleTypes: [ModuleType] = []
     private var filteredModuleSubTypes: [ModuleSubType] = []
     private var filteredModules: [Module] = []
-
     
+    private var selectedSlot: ChosenSlotType?
+
     // MARK: - Init
     
     private init() {
@@ -24,6 +32,7 @@ final class ModuleManagementService {
     // MARK: - Public Methods
     
     func sortModuleTypeData(selection: ChosenSlotType)  {
+        self.selectedSlot = selection
         return sortModuleTypes(for: selection)
     }
     
@@ -36,10 +45,28 @@ final class ModuleManagementService {
         return filteredModuleSubTypes
     }
     
-    func getModule(moduleSubTypeID: UUID) -> [Module] {
+    func sortModuleFromSubTypes(moduleSubTypeID: UUID) -> [Module] {
         self.filteredModules = filteredModuleSubTypes.first(where: { $0.id == moduleSubTypeID } )?.modules ?? []
         return filteredModules
     }
+    
+    func getModule(byID: UUID) -> Module {
+        guard let module = filteredModules.first(where: {$0.id == byID }) else {
+            print("Ошибка получения Модуля")
+            fatalError()
+        }
+        return module
+    }
+    
+    func userSelectModule(moduleID: UUID) {
+        guard let slot = self.selectedSlot else {
+            print("Ошибка получения слота")
+            return
+        }
+        let module = ModuleForUpdate(moduleID: moduleID, chosenSlotType: slot)
+        self.moduleForUpdate = module
+    }
+    
     // MARK: - Private Methods
     
     private func sortModuleTypes(for selection: ChosenSlotType) {
