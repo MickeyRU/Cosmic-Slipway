@@ -10,6 +10,7 @@ protocol NavigationRouterProtocol {
     
     func navigateToModuleTypeScreen()
     func navigateToModuleSubTypeScreen(moduleTypeID: UUID)
+    func navigateToModulesScreen(moduleSubTypeID: UUID)
     
     func dismissToRootViewController()
     
@@ -77,6 +78,15 @@ final class NavigationRouter: NavigationRouterProtocol {
         }
     }
     
+    func navigateToModulesScreen(moduleSubTypeID: UUID) {
+        let modulesVC = ModulesViewController(moduleSubTypeID: moduleSubTypeID, router: self)
+        if let tabBarController = navigationController.presentedViewController as? UITabBarController {
+            if let navigationController = tabBarController.selectedViewController as? UINavigationController {
+                navigationController.pushViewController(modulesVC, animated: true)
+            }
+        }
+    }
+
     func dismissToRootViewController() {
         navigationController.popToRootViewController(animated: true)
         navigationController.dismiss(animated: true)

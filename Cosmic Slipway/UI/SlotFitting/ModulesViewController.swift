@@ -1,22 +1,22 @@
 import UIKit
 import Combine
 
-final class ModuleSubTypeViewController: UIViewController {
+final class ModulesViewController: UIViewController {
     
     // MARK: - Private Properties
-    private let moduleTypeID: UUID
+    private let moduleSubTypeID: UUID
     private let router: NavigationRouterProtocol
     
-    private lazy var viewModel = SelectionViewModel<ModuleSubType>(data: ModuleManagementService.shared.getModuleSubTypes(moduleTypeID: moduleTypeID))
-    private lazy var selectionView = SelectionView<ModuleSubType>(frame: .zero,
+    private lazy var viewModel = SelectionViewModel<Module>(data: ModuleManagementService.shared.getModule(moduleSubTypeID: moduleSubTypeID))
+    private lazy var selectionView = SelectionView<Module>(frame: .zero,
                                                                   title: "Choose weapon subtype", backgroundType: .withImageView, backgroundImage: .main,
                                                          viewModel: viewModel)
     private var subscriptions = Set<AnyCancellable>()
 
     // MARK: - Init
     
-    init(moduleTypeID: UUID, router: NavigationRouterProtocol) {
-        self.moduleTypeID = moduleTypeID
+    init(moduleSubTypeID: UUID, router: NavigationRouterProtocol) {
+        self.moduleSubTypeID = moduleSubTypeID
         self.router = router
         super.init(nibName: nil, bundle: nil)
         setupViews()
@@ -30,9 +30,9 @@ final class ModuleSubTypeViewController: UIViewController {
         super.viewDidLoad()
         
         viewModel.selectedData
-            .sink { [weak self] moduleSubType in
+            .sink { [weak self] module in
                 guard let self = self else { return }
-                self.router.navigateToModulesScreen(moduleSubTypeID: moduleSubType.id)
+//                self.router.navigateToShipSubTypeScreen(shipTypeID: shipType.id)
             }
             .store(in: &subscriptions)
     }
