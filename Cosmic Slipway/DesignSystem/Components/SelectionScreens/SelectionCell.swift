@@ -50,10 +50,10 @@ final class SelectionCell: UICollectionViewCell, BorderConfigurable {
         [cellLabel].forEach { contentView.addSubview($0) }
         
         cellLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
             make.leading.equalToSuperview().offset(17)
             make.trailing.equalToSuperview().offset(-17)
-            make.centerY.equalToSuperview()
+            make.top.equalToSuperview().offset(8)
+            make.bottom.equalToSuperview().offset(-8)
         }
     }
 }

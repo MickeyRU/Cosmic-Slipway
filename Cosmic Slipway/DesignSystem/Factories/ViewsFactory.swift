@@ -62,6 +62,8 @@ final class ViewsFactory: ViewsFactoryProtocol {
     func createTitle(for title: TitleType) -> UILabel {
         let label = UILabel()
         label.textAlignment = .left
+        label.adjustsFontSizeToFitWidth = true
+        label.numberOfLines = 0
         
         switch title {
         case .shipTitle:
@@ -79,12 +81,8 @@ final class ViewsFactory: ViewsFactoryProtocol {
             label.textAlignment = .center
             label.font = CustomFonts.figtreeExBold24
         case .moduleTitle:
-            label.textAlignment = .left
             label.textColor = .white
             label.font = CustomFonts.figtreeExBold12
-            label.adjustsFontSizeToFitWidth = true // Автоматическое уменьшение размера шрифта
-            label.numberOfLines = 0 // Позволяет тексту размещаться на нескольких строках
-            
         }
         return label
     }
