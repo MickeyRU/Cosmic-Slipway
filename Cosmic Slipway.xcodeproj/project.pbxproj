@@ -33,7 +33,6 @@
 		BEAA532D2AF446A800E44AE4 /* ShipManagementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAA532C2AF446A800E44AE4 /* ShipManagementService.swift */; };
 		BEAA532F2AF4479800E44AE4 /* SelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAA532E2AF4479800E44AE4 /* SelectionCell.swift */; };
 		BEAC9BD729E43834009987A3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC9BD629E43834009987A3 /* MainTabBarController.swift */; };
-		BEB0624229D1AE2B005AEB24 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0624129D1AE2B005AEB24 /* Colors.swift */; };
 		BEB0624729D1B71F005AEB24 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0624629D1B71F005AEB24 /* Fonts.swift */; };
 		BEB7D0A329CF18AE002B3431 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7D0A229CF18AE002B3431 /* AppDelegate.swift */; };
 		BEB7D0A529CF18AE002B3431 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7D0A429CF18AE002B3431 /* SceneDelegate.swift */; };
@@ -94,7 +93,6 @@
 		BEAA532C2AF446A800E44AE4 /* ShipManagementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipManagementService.swift; sourceTree = "<group>"; };
 		BEAA532E2AF4479800E44AE4 /* SelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCell.swift; sourceTree = "<group>"; };
 		BEAC9BD629E43834009987A3 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		BEB0624129D1AE2B005AEB24 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		BEB0624629D1B71F005AEB24 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		BEB7D09F29CF18AE002B3431 /* Cosmic Slipway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cosmic Slipway.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB7D0A229CF18AE002B3431 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -260,7 +258,6 @@
 			children = (
 				BED8DA672AFD14B000786637 /* Protocols */,
 				BEEA422E29D06D0B008B98E4 /* Fonts */,
-				BEB0624029D1AE07005AEB24 /* Colors */,
 				BEAA53282AF43E3100E44AE4 /* Components */,
 				BEAA53222AF4265B00E44AE4 /* Factories */,
 			);
@@ -328,14 +325,6 @@
 				BEB7D0B029CF18B3002B3431 /* Info.plist */,
 			);
 			path = Configuration;
-			sourceTree = "<group>";
-		};
-		BEB0624029D1AE07005AEB24 /* Colors */ = {
-			isa = PBXGroup;
-			children = (
-				BEB0624129D1AE2B005AEB24 /* Colors.swift */,
-			);
-			path = Colors;
 			sourceTree = "<group>";
 		};
 		BEB7D09629CF18AD002B3431 = {
@@ -521,7 +510,6 @@
 				BE07C3E62AF6984100E272E4 /* CreatingShipFittingViewModel.swift in Sources */,
 				BEC332182AEBA29400630D0D /* NavigationRouter.swift in Sources */,
 				BEA5E3892B04EB8C00256162 /* ModulesViewController.swift in Sources */,
-				BEB0624229D1AE2B005AEB24 /* Colors.swift in Sources */,
 				BE07C4102AF80F6500E272E4 /* ModuleModels.swift in Sources */,
 				BE07C3E12AF67F2100E272E4 /* ShipFittingView.swift in Sources */,
 				BE4D01112AE6A057005CA4CA /* ViewsFactory.swift in Sources */,

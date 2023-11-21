@@ -52,7 +52,7 @@ final class ViewsFactory: ViewsFactoryProtocol {
     
     func createBGView(alpha: Alpha) -> UIView {
         let view = UIView()
-        view.backgroundColor = BasicColors.colorWithAlpha(BasicColors.darkBG, withAlpha: alpha.rawValue)
+        view.backgroundColor = UIColor.darkBG.withAlphaComponent(alpha.rawValue)
         return view
     }
     
@@ -68,17 +68,17 @@ final class ViewsFactory: ViewsFactoryProtocol {
         
         switch title {
         case .shipTitle:
-            label.textColor = BasicColors.accent
+            label.textColor = UIColor.accent
             label.font = CustomFonts.figtreeExBold16
         case .shipDescription:
-            label.textColor = BasicColors.iconText
+            label.textColor = UIColor.iconText
             label.font = CustomFonts.figtreeRegular10
         case .shipTypeInCell:
             label.textColor = .white
             label.textAlignment = .center
             label.font = CustomFonts.figtreeExBold16
         case .shipSelectionPageTitle:
-            label.textColor = BasicColors.accent
+            label.textColor = UIColor.accent
             label.textAlignment = .center
             label.font = CustomFonts.figtreeExBold24
         case .moduleTitle:

@@ -54,13 +54,13 @@ final class ShipCell: UICollectionViewCell, BorderConfigurable, ShadowConfigurab
         super.layoutSubviews()
         addBorder(to: self.bgView, cornerRadius: 28,
                   lineWidth: 1,
-                  borderColors: [BasicColors.colorWithAlpha(BasicColors.active, withAlpha: 0.2),
-                                 BasicColors.colorWithAlpha(HighlightsColors.pureBlack, withAlpha: 0.3)],
+                  borderColors: [UIColor.active.withAlphaComponent(0.2),
+                                 UIColor.pureBlack.withAlphaComponent(0.3)],
                   startPoint: CGPoint(x: 0, y: 0),
                   endPoint: CGPoint(x: 0.3, y: 0.2))
         
         addShadow(to: self.bgView, cornerRadius: 28,
-                  shadowColor: HighlightsColors.pureBlack,
+                  shadowColor: UIColor.pureBlack,
                   shadowOpacity: 0.5,
                   shadowOffset: CGSize(width: 0, height: -4),
                   shadowRadius: 4)

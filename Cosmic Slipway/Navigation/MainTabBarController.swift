@@ -13,9 +13,9 @@ final class MainTabBarController: UITabBarController {
     // MARK: - Private Methods
     
     private func configTabBar() {
-        tabBar.unselectedItemTintColor = BasicColors.iconText
-        tabBar.tintColor = BasicColors.accent
-        tabBar.backgroundColor = BasicColors.colorWithAlpha(BasicColors.darkBG, withAlpha: 0.7)
+        tabBar.unselectedItemTintColor = UIColor.iconText
+        tabBar.tintColor = UIColor.accent
+        tabBar.backgroundColor = UIColor.darkBG.withAlphaComponent(0.7)
         tabBar.layer.cornerRadius = 28
     }
 }

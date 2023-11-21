@@ -33,7 +33,8 @@ final class SelectionCell: UICollectionViewCell, BorderConfigurable {
         addBorder(to: self,
                   cornerRadius: 24,
                   lineWidth: 2,
-                  borderColors: HighlightsColors.gradient,
+                  borderColors: [UIColor.gradientFrom,
+                                 UIColor.gradientTo],
                   startPoint: CGPoint(x: 0.9, y: 0),
                   endPoint: CGPoint(x: 0.1, y: 1))
     }

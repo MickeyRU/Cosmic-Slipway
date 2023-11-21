@@ -49,21 +49,21 @@ final class HeaderView: UIView, ShadowConfigurable, BorderConfigurable {
         super.layoutSubviews()
         addShadow(to: self.okButton,
                   cornerRadius: 28,
-                  shadowColor: HighlightsColors.pureBlack,
+                  shadowColor: UIColor.pureBlack,
                   shadowOpacity: 0.8,
                   shadowOffset: CGSize(width: 0, height: -4),
                   shadowRadius: 16)
         addShadow(to: self.exitButton,
                   cornerRadius: 28,
-                  shadowColor: HighlightsColors.pureBlack,
+                  shadowColor: UIColor.pureBlack,
                   shadowOpacity: 0.8,
                   shadowOffset: CGSize(width: 0, height: -4),
                   shadowRadius: 16)
         addBorder(to: self.bgImage,
                   cornerRadius: 28,
                   lineWidth: 1,
-                  borderColors: [HighlightsColors.pureBlack,
-                                 HighlightsColors.pureBlack],
+                  borderColors: [UIColor.pureBlack,
+                                 UIColor.pureBlack],
                   startPoint: CGPoint(x: 0, y: 0),
                   endPoint: CGPoint(x: 1, y: 1))
     }
