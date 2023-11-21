@@ -32,14 +32,14 @@ final class MainViewModel: ObservableObject, MainViewModelProtocol {
             return ShipUIViewModel(image: ShipImages.defaultShipImage,
                                    title: "New ship",
                                    subTitle: "Configure",
-                                   isAddButtonVisible: true)
+                                   buttonType: .addButton)
         } else {
             let ship = ships[index - 1]
             let image = UIImage(named: ship.shipImage) ?? ShipImages.defaultShipImage
             return ShipUIViewModel(image: image,
                                    title: ship.name,
                                    subTitle: "Your Configuration",
-                                   isAddButtonVisible: false)
+                                   buttonType: .detailsButton)
         }
     }
 }

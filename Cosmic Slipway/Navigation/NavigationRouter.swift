@@ -6,7 +6,8 @@ protocol NavigationRouterProtocol {
     func navigateToShipTypeScreen()
     func navigateToShipSubTypeScreen(shipTypeID: UUID)
     func navigateToShipScreen(shipSubTypeID: UUID)
-    func navigateToShipFittingScreen(shipID: UUID)
+    func navigateToNewShipFittingScreen(shipID: UUID)
+    func navigateToUserShipFittingScreen(shipID: UUID)
     
     func navigateToModuleTypeScreen()
     func navigateToModuleSubTypeScreen(moduleTypeID: UUID)
@@ -45,8 +46,9 @@ final class NavigationRouter: NavigationRouterProtocol {
         navigationController.pushViewController(shipSelectVC, animated: true)
     }
     
-    func navigateToShipFittingScreen(shipID: UUID) {
-        let shipFittingVC = ShipFittingViewController(shipID: shipID, router: self)
+    func navigateToNewShipFittingScreen(shipID: UUID) {
+        let newShipFittingViewModel = CreatingShipFittingViewModel(shipID: shipID)
+        let shipFittingVC = ShipFittingViewController(viewModel: newShipFittingViewModel, router: self)
         shipFittingVC.tabBarItem = UITabBarItem(title: "Fitting", image: NavigationImages.fittingTabBarClean, tag: 0)
         
         let shipNavVC = UINavigationController(rootViewController: shipFittingVC)
@@ -60,6 +62,24 @@ final class NavigationRouter: NavigationRouterProtocol {
         
         navigationController.present(tabBarController, animated: true)
     }
+    
+    func navigateToUserShipFittingScreen(shipID: UUID) {
+        let viewModel = EditingShipFittingViewModel(shipID: shipID)
+        let shipFittingVC = ShipFittingViewController(viewModel: viewModel, router: self)
+        shipFittingVC.tabBarItem = UITabBarItem(title: "Fitting", image: NavigationImages.fittingTabBarClean, tag: 0)
+        
+        let shipNavVC = UINavigationController(rootViewController: shipFittingVC)
+        
+        let shipPowerVC = PowerViewController(router: self)
+        shipPowerVC.tabBarItem = UITabBarItem(title: "Power", image: NavigationImages.fittingTabBarSelected, tag: 1)
+        
+        let tabBarController = MainTabBarController()
+        tabBarController.modalPresentationStyle = .fullScreen
+        tabBarController.viewControllers = [shipNavVC, shipPowerVC]
+        
+        navigationController.present(tabBarController, animated: true)
+    }
+
     
     func navigateToModuleTypeScreen() {
         let moduleTypeVC = ModuleTypeViewController(router: self)

@@ -32,18 +32,15 @@ struct Ship: Nameable {
     let name: String
     let shipImage: String
     var fitting: Fitting // Модули корабля
-    let configurationID: UUID // Уникальный ID конкретной конфигурации корабля
     
     init(id: UUID,
          name: String,
          shipImage: String,
-         fitting: Fitting,
-         configurationID: UUID = UUID()) {
+         fitting: Fitting) {
         self.id = id
         self.name = name
         self.shipImage = shipImage
         self.fitting = fitting
-        self.configurationID = configurationID
     }
     
     // Инициализатор для клонирования существующего корабля с новой конфигурацией
@@ -53,7 +50,6 @@ struct Ship: Nameable {
         self.name = ship.name
         self.shipImage = ship.shipImage
         self.fitting = fitting
-        self.configurationID = UUID() // Новый уникальный ID для новой конфигурации
     }
     
     // Метод для обновления оснащения (fitting) корабля
@@ -62,8 +58,7 @@ struct Ship: Nameable {
         return Ship(id: self.id,
                     name: self.name,
                     shipImage: self.shipImage,
-                    fitting: newFitting,
-                    configurationID: self.configurationID)
+                    fitting: newFitting)
     }
 }
 

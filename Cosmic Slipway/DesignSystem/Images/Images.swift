@@ -44,4 +44,5 @@ enum NavigationImages {
     static let addButton: UIImage = ImageFactory.safeImage(named: "addButton")
     static let exitButton: UIImage = ImageFactory.safeImage(named: "exitButton")
     static let okButton: UIImage = ImageFactory.safeImage(named: "okButton")
+    static let detailsButton: UIImage = ImageFactory.safeImage(named: "detailsButton")
 }

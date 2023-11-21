@@ -7,7 +7,7 @@ final class ShipFittingView: UIView {
     // MARK: - Private Properties
     
     private let viewsFactory: ViewsFactoryProtocol
-    private let viewModel: ShipFittingViewModel
+    private let viewModel: ShipFittingViewModelProtocol
     private let headerView: HeaderView
     
     private lazy var bgImage: UIImageView = {
@@ -30,7 +30,7 @@ final class ShipFittingView: UIView {
     
     // MARK: - Init
     
-    init(viewModel: ShipFittingViewModel, headerView: HeaderView = HeaderView()) {
+    init(viewModel: ShipFittingViewModelProtocol, headerView: HeaderView = HeaderView()) {
         self.viewModel = viewModel
         self.headerView = headerView
         self.viewsFactory = ViewsFactory()
@@ -53,11 +53,17 @@ final class ShipFittingView: UIView {
     
     private func setupBindings() {
         headerView.okButtonTappedPublisher
-            .sink { [weak viewModel] in viewModel?.okButtonTapped.send() }
+            .sink { [weak self] in
+                guard let self = self else { return }
+                self.viewModel.okButtonTapped.send()
+            }
             .store(in: &cancellables)
         
         headerView.exitButtonTappedPublisher
-            .sink { [weak viewModel] in viewModel?.exitButtonTapped.send() }
+            .sink { [weak self] in
+                guard let self = self else { return }
+                self.viewModel.exitButtonTapped.send()
+            }
             .store(in: &cancellables)
     }
     
@@ -159,13 +165,14 @@ extension ShipFittingView: UICollectionViewDataSource {
         switch section {
         case .selectedShip:
             let cell = collectionView.dequeueReusableCell(withType: ShipCell.self, for: indexPath)
-            let shipModel = viewModel.getShipViewModel()!
+            guard let shipModel = viewModel.getShipViewModel() else { return cell }
             cell.configure(with: shipModel)
             return cell
             
         case .highSlot:
-            return configureFittingCell(for: collectionView, at: indexPath, with: viewModel.ship.value?.fitting.highSlots ?? [])
-            
+            return configureFittingCell(for: collectionView, 
+                                        at: indexPath,
+                                        with: viewModel.ship.value?.fitting.highSlots ?? [])    
         case .midSlot:
             return configureFittingCell(for: collectionView, at: indexPath, with: viewModel.ship.value?.fitting.midSlots ?? [])
             
@@ -227,7 +234,7 @@ extension ShipFittingView: UICollectionViewDelegate {
             return
         }
         
-        let selection = ChosenSlotType(slot: slot, indexPath: indexPath)
-        viewModel.userSelectSlotForFitting.send(selection)
+        let selection = SlotAndIndex(slot: slot, indexPath: indexPath)
+        viewModel.slotForFitting.send(selection)
     }
 }

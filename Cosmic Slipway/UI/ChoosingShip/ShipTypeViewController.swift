@@ -4,7 +4,7 @@ import Combine
 
 final class ShipTypeViewController: UIViewController {
     
-    private let viewModel = SelectionViewModel<ShipType>(data: ShipManagementService.shared.getAllShipTypes())
+    private let viewModel = SelectionViewModel<ShipType>(data: ShipManagementService.shared.loadShipTypesList())
     private let router: NavigationRouterProtocol
     
     private lazy var backgroundView = SelectionView<ShipType>(frame: .zero,

@@ -5,12 +5,14 @@ import Combine
 final class ShipCell: UICollectionViewCell, BorderConfigurable, ShadowConfigurable {
     
     // MARK: - Public Properties
-        
+    
     static let reuseIdentifier = "ShipCell"
-        
+    
     let addButtonTapped = PassthroughSubject<Void, Never>()
+    let detailsButtonTapped = PassthroughSubject<Void, Never>()
+    
     var cancellable: AnyCancellable?
-
+    
     // MARK: - Private Properties
     
     private let viewsFactory: ViewsFactoryProtocol
@@ -31,14 +33,10 @@ final class ShipCell: UICollectionViewCell, BorderConfigurable, ShadowConfigurab
         return viewsFactory.createTitle(for: .shipDescription)
     }()
     
-    private lazy var addShipButton: UIButton = {
-        let button = viewsFactory.createButton(type: .addButton)
-        button.addTarget(self, action: #selector(addButtonPressed), for: .touchUpInside)
-        return button
-    }()
+    private var cellButton: UIButton = UIButton(type: .custom)
 
     private var addShipImageView: UIImageView?
-        
+    
     // MARK: - Initializers
     
     override init(frame: CGRect) {
@@ -69,9 +67,9 @@ final class ShipCell: UICollectionViewCell, BorderConfigurable, ShadowConfigurab
     }
     
     override func prepareForReuse() {
-           super.prepareForReuse()
-           cancellable?.cancel()
-       }
+        super.prepareForReuse()
+        cancellable?.cancel()
+    }
     
     // MARK: - Public Methods
     
@@ -79,7 +77,7 @@ final class ShipCell: UICollectionViewCell, BorderConfigurable, ShadowConfigurab
         shipImageView.image = viewModel.image
         shipTitle.text = viewModel.title
         shipSubTitle.text = viewModel.subTitle
-        addShipButton.isHidden = !viewModel.isAddButtonVisible
+        self.configureButton(for: viewModel.buttonType)
     }
     
     // MARK: - Private Methods
@@ -89,8 +87,29 @@ final class ShipCell: UICollectionViewCell, BorderConfigurable, ShadowConfigurab
         addButtonTapped.send()
     }
     
+    @objc
+    private func detailsButtonPressed() {
+        print("detailsButtonPressed")
+        detailsButtonTapped.send()
+    }
+    
+    private func configureButton(for type: ButtonTypes) {
+        cellButton.removeTarget(nil, action: nil, for: .allEvents)
+        
+        viewsFactory.updateButton(cellButton, withType: type)
+        
+        switch type {
+        case .addButton:
+            cellButton.addTarget(self, action: #selector(addButtonPressed), for: .touchUpInside)
+        case .detailsButton:
+            cellButton.addTarget(self, action: #selector(detailsButtonPressed), for: .touchUpInside)
+        default:
+            break
+        }
+    }
+    
     private func setupViews() {
-        [bgView, shipImageView, shipTitle, shipSubTitle, addShipButton].forEach { addSubview($0) }
+        [bgView, shipImageView, shipTitle, shipSubTitle, cellButton].forEach { addSubview($0) }
         
         bgView.snp.makeConstraints { make in
             make.top.leading.bottom.trailing.equalToSuperview()
@@ -112,7 +131,7 @@ final class ShipCell: UICollectionViewCell, BorderConfigurable, ShadowConfigurab
             make.bottom.equalTo(shipTitle.snp.top).inset(-6)
         }
         
-        addShipButton.snp.makeConstraints { make in
+        cellButton.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.trailing.equalToSuperview().inset(19)
             make.width.height.equalTo(48)

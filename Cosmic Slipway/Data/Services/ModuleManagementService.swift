@@ -3,7 +3,7 @@ import Combine
 
 struct ModuleForUpdate {
     let moduleID: UUID
-    let chosenSlotType: ChosenSlotType
+    let chosenSlotType: SlotAndIndex
 }
 
 final class ModuleManagementService {
@@ -21,7 +21,7 @@ final class ModuleManagementService {
     private var filteredModuleSubTypes: [ModuleSubType] = []
     private var filteredModules: [Module] = []
     
-    private var selectedSlot: ChosenSlotType?
+    private var selectedSlot: SlotAndIndex?
 
     // MARK: - Init
     
@@ -31,7 +31,7 @@ final class ModuleManagementService {
     
     // MARK: - Public Methods
     
-    func sortModuleTypeData(selection: ChosenSlotType)  {
+    func sortModuleTypeData(selection: SlotAndIndex)  {
         self.selectedSlot = selection
         return sortModuleTypes(for: selection)
     }
@@ -69,7 +69,7 @@ final class ModuleManagementService {
     
     // MARK: - Private Methods
     
-    private func sortModuleTypes(for selection: ChosenSlotType) {
+    private func sortModuleTypes(for selection: SlotAndIndex) {
         let filteredModuleTypes = allModuleTypes.filter { moduleType in
             moduleType.slot == selection.slot
         }

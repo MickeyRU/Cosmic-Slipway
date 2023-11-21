@@ -4,5 +4,5 @@ struct ShipUIViewModel {
     let image: UIImage
     let title: String
     let subTitle: String
-    let isAddButtonVisible: Bool
+    let buttonType: ButtonTypes
 }

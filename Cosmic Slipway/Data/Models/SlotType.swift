@@ -1,6 +1,6 @@
 import Foundation
 
-struct ChosenSlotType {
+struct SlotAndIndex {
     let slot: SlotType
     let indexPath: IndexPath
 }

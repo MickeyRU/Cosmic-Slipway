@@ -56,7 +56,7 @@ final class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         viewModel.shipsPublisher
             .sink(receiveValue: { [weak self] _ in
                 guard let self = self else { return }
@@ -102,15 +102,25 @@ extension MainViewController: UICollectionViewDataSource {
         
         let shipViewModel = viewModel.getShipViewModel(at: indexPath.row)
         cell.configure(with: shipViewModel)
+    
+        // Первая ячейка: подписка на addButtonTapped
+        if indexPath.row == 0 {
+            cell.cancellable = cell.addButtonTapped
+                .sink { [weak self] in
+                    guard let self = self else { return }
+                    self.router.navigateToShipTypeScreen()
+                }
+        }
+        // Для остальных ячеек: подписка на detailsButtonTapped
+        else {
+            let shipID = self.viewModel.ships[indexPath.row - 1].id
+            cell.cancellable = cell.detailsButtonTapped
+                .sink { [weak self] in
+                    guard let self = self else { return }
+                    self.router.navigateToUserShipFittingScreen(shipID: shipID)
+                }
+        }
         
-        cell.cancellable = cell.addButtonTapped
-            .sink { [weak self] in
-                guard 
-                    let self = self,
-                    shipViewModel.isAddButtonVisible
-                else { return }
-                self.router.navigateToShipTypeScreen()
-            }
         return cell
     }
 }
@@ -119,7 +129,7 @@ extension MainViewController: UICollectionViewDataSource {
 
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellInserts = UIEdgeInsets(top: 0, 
+        let cellInserts = UIEdgeInsets(top: 0,
                                        left: collectionViewInsets.sideInsets,
                                        bottom: 0,
                                        right: collectionViewInsets.sideInsets)

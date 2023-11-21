@@ -6,18 +6,15 @@ final class ShipFittingViewController: UIViewController {
     
     // MARK: - Private Properties
     
-    private let ship: UUID
-    private let viewModel: ShipFittingViewModel
+    private let viewModel: ShipFittingViewModelProtocol
     private let shipFittingView: ShipFittingView
     private let router: NavigationRouterProtocol
     private var cancellables: Set<AnyCancellable> = []
 
-    
     // MARK: - Init
     
-    init(shipID: UUID, router: NavigationRouterProtocol) {
-        self.viewModel = ShipFittingViewModel(shipID: shipID)
-        self.ship = shipID
+    init(viewModel: ShipFittingViewModelProtocol, router: NavigationRouterProtocol) {
+        self.viewModel = viewModel
         self.router = router
         self.shipFittingView = ShipFittingView(viewModel: viewModel)
         super.init(nibName: nil, bundle: nil)
@@ -34,7 +31,6 @@ final class ShipFittingViewController: UIViewController {
     
         setupViews()
         setupBindings()
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -80,7 +76,7 @@ final class ShipFittingViewController: UIViewController {
             }
             .store(in: &cancellables)
         
-        viewModel.moduleTypesData
+        viewModel.moduleType
             .sink { [weak self] _ in
                 guard let self = self else { return }
                 self.router.navigateToModuleTypeScreen()

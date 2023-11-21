@@ -6,7 +6,7 @@ final class MockDataService {
     
     private init() {}
     
-    func loadMockShipsData() -> [ShipType]{
+    func loadMockShipTypesData() -> [ShipType]{
         return [ShipType(name: "Frigates", subTypes: []),
                 ShipType(name: "Destroyers", subTypes: []),
                 ShipType(name: "Cruisers", subTypes: []),
@@ -16,11 +16,11 @@ final class MockDataService {
                                                          ShipSubtype(name: "Siege Battleships", ships: [
                                                             Ship(id: UUID(), name: "Megathron Striker",
                                                                  shipImage: "megathronStriker",
-                                                                 fitting: Fitting(maxHighSlots: 2,
-                                                                                  maxMidSlots: 2,
-                                                                                  maxLowSlots: 2,
-                                                                                  maxCombatRigs: 2,
-                                                                                  maxEngineeringRigs: 2))])]),
+                                                                 fitting: Fitting(maxHighSlots: 10,
+                                                                                  maxMidSlots: 10,
+                                                                                  maxLowSlots: 10,
+                                                                                  maxCombatRigs: 5,
+                                                                                  maxEngineeringRigs: 6))])]),
                 ShipType(name: "Capital Ships", subTypes: [])
         ]
     }

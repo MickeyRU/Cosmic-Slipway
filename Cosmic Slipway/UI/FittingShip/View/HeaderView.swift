@@ -23,22 +23,13 @@ final class HeaderView: UIView, ShadowConfigurable, BorderConfigurable {
     
     private let viewsFactory: ViewsFactoryProtocol
     
+    private var okButton: UIButton = UIButton(type: .custom)
+    private var exitButton: UIButton = UIButton(type: .custom)
+    
     private lazy var bgImage: UIView = {
         let view = viewsFactory.createBGView(alpha: .heavyTransparent)
         view.layer.cornerRadius = 28
         return view
-    }()
-    
-    private lazy var okButton = {
-        let button = viewsFactory.createButton(type: .okButton)
-        button.addTarget(self, action: #selector(okButtonPressed), for: .touchUpInside)
-        return button
-    }()
-    
-    private lazy var exitButton = {
-        let button = viewsFactory.createButton(type: .exitButton)
-        button.addTarget(self, action: #selector(exitButtonPressed), for: .touchUpInside)
-        return button
     }()
     
     // MARK: - Init
@@ -47,6 +38,7 @@ final class HeaderView: UIView, ShadowConfigurable, BorderConfigurable {
         self.viewsFactory = ViewsFactory()
         super.init(frame: .zero)
         setupViews()
+        configureButtons()
     }
     
     required init?(coder: NSCoder) {
@@ -55,13 +47,13 @@ final class HeaderView: UIView, ShadowConfigurable, BorderConfigurable {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        addShadow(to: self.okButton, 
+        addShadow(to: self.okButton,
                   cornerRadius: 28,
                   shadowColor: HighlightsColors.pureBlack,
                   shadowOpacity: 0.8,
                   shadowOffset: CGSize(width: 0, height: -4),
                   shadowRadius: 16)
-        addShadow(to: self.exitButton, 
+        addShadow(to: self.exitButton,
                   cornerRadius: 28,
                   shadowColor: HighlightsColors.pureBlack,
                   shadowOpacity: 0.8,
@@ -88,6 +80,16 @@ final class HeaderView: UIView, ShadowConfigurable, BorderConfigurable {
         exitButtonTappedSubject.send()
     }
     
+    private func configureButtons() {
+        setupButton(okButton, type: .okButton, action: #selector(okButtonPressed))
+        setupButton(exitButton, type: .exitButton, action: #selector(exitButtonPressed))
+    }
+
+    private func setupButton(_ button: UIButton, type: ButtonTypes, action: Selector) {
+        viewsFactory.updateButton(button, withType: type)
+        button.addTarget(self, action: action, for: .touchUpInside)
+    }
+    
     private func setupViews() {
         [bgImage, okButton, exitButton].forEach { addSubview($0) }
         
@@ -108,4 +110,3 @@ final class HeaderView: UIView, ShadowConfigurable, BorderConfigurable {
         }
     }
 }
-
