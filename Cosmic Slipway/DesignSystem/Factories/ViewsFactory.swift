@@ -42,9 +42,9 @@ final class ViewsFactory: ViewsFactoryProtocol {
         
         switch screen {
         case .main:
-            imageView.image = BgImages.mainBackImage
+            imageView.image = UIImage.mainBG
         case .shipSelection:
-            imageView.image = BgImages.shipSelectionBgImage
+            imageView.image = UIImage.shipSelectionBG
         }
         
         return imageView
@@ -89,20 +89,20 @@ final class ViewsFactory: ViewsFactoryProtocol {
     }
     
     func createAddShipImage() -> UIImageView {
-        let imageView = baseImageView(image: NavigationImages.addButton)
+        let imageView = baseImageView(image: UIImage.addButton)
         return imageView
     }
         
     func updateButton(_ button: UIButton, withType type: ButtonTypes) {
         switch type {
         case .okButton:
-            button.setImage(NavigationImages.okButton, for: .normal)
+            button.setImage(UIImage.okButton, for: .normal)
         case .exitButton:
-            button.setImage(NavigationImages.exitButton, for: .normal)
+            button.setImage(UIImage.exitButton, for: .normal)
         case .addButton:
-            button.setImage(NavigationImages.addButton, for: .normal)
+            button.setImage(UIImage.addButton, for: .normal)
         case .detailsButton:
-            button.setImage(NavigationImages.detailsButton, for: .normal)
+            button.setImage(UIImage.detailsButton, for: .normal)
         }
     }
 

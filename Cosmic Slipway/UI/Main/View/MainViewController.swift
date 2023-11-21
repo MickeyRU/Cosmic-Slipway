@@ -120,7 +120,7 @@ extension MainViewController: UICollectionViewDataSource {
                     self.router.navigateToUserShipFittingScreen(shipID: shipID)
                 }
         }
-        
+
         return cell
     }
 }

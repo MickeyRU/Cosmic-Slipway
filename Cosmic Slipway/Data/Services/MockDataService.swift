@@ -30,22 +30,22 @@ final class MockDataService {
                            slot: .high,
                            subTypes: [ModuleSubType(name: "Small Pulse Lasers",
                                                     modules: [Module(name: "MK9 Small Pulse Laser",
-                                                                     moduleImage: "large_Rifled_Railgun")]),
+                                                                     moduleImage: "largeRifledRailgun")]),
                                       ModuleSubType(name: "Medium Pulse Lasers",
                                                     modules: [Module(name: "MK9 Medium Pulse Laser",
-                                                                     moduleImage: "large_Rifled_Railgun")])]),
+                                                                     moduleImage: "mediumPulseLaser")])]),
                 ModuleType(name: "Railguns",
                            slot: .high,
                            subTypes: [ModuleSubType(name: "Large Snubnosed Railguns",
                                                     modules: [Module(name: "Core X-Type Large Snubnosed Railguns",
-                                                                     moduleImage: "large_Rifled_Railgun"),
-                                                              Module(name: "Core A-Type Large Snubnosed Railguns", 
-                                                                     moduleImage: "large_Rifled_Railgun")])]),
-                ModuleType(name: "Energy Neutralaizer",
+                                                                     moduleImage: "largeSnubnosedRailgun"),
+                                                              Module(name: "Core A-Type Large Snubnosed Railguns",
+                                                                     moduleImage: "largeSnubnosedRailgun")])]),
+                ModuleType(name: "Energy Neutralizer",
                            slot: .mid,
                            subTypes: [ModuleSubType(name: "Large Energy Neutralizers",
                                                     modules: [Module(name: "'Moat' Large Energy Neutralizer",
-                                                                     moduleImage: "large_Rifled_Railgun")])])
+                                                                     moduleImage: "largeEnergyNeutralizer")])])
         ]
     }
 }

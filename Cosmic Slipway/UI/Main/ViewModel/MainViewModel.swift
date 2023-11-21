@@ -29,13 +29,13 @@ final class MainViewModel: ObservableObject, MainViewModelProtocol {
     
     func getShipViewModel(at index: Int) -> ShipUIViewModel {
         if index == 0 {
-            return ShipUIViewModel(image: ShipImages.defaultShipImage,
+            return ShipUIViewModel(image: UIImage.defaultShip,
                                    title: "New ship",
                                    subTitle: "Configure",
                                    buttonType: .addButton)
         } else {
             let ship = ships[index - 1]
-            let image = UIImage(named: ship.shipImage) ?? ShipImages.defaultShipImage
+            let image = UIImage(named: ship.shipImage) ?? UIImage.defaultShip
             return ShipUIViewModel(image: image,
                                    title: ship.name,
                                    subTitle: "Your Configuration",

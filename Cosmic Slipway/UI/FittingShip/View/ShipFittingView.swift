@@ -200,7 +200,7 @@ extension ShipFittingView: UICollectionViewDataSource {
         let module = modules[indexPath.row]
         let title = module.name
         guard let newImage = UIImage(named: module.moduleImage) else {
-            print("Ошибка получения фото")
+            print("Ошибка с установкой изображения в ячейку фиттинга")
             return cell
         }
         

@@ -31,7 +31,7 @@ final class HeaderView: UIView, ShadowConfigurable, BorderConfigurable {
         view.layer.cornerRadius = 28
         return view
     }()
-    
+        
     // MARK: - Init
     
     init() {

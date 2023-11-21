@@ -49,12 +49,12 @@ final class NavigationRouter: NavigationRouterProtocol {
     func navigateToNewShipFittingScreen(shipID: UUID) {
         let newShipFittingViewModel = CreatingShipFittingViewModel(shipID: shipID)
         let shipFittingVC = ShipFittingViewController(viewModel: newShipFittingViewModel, router: self)
-        shipFittingVC.tabBarItem = UITabBarItem(title: "Fitting", image: NavigationImages.fittingTabBarClean, tag: 0)
+        shipFittingVC.tabBarItem = UITabBarItem(title: "Fitting", image: UIImage.fittingTabBar, tag: 0)
         
         let shipNavVC = UINavigationController(rootViewController: shipFittingVC)
         
         let shipPowerVC = PowerViewController(router: self)
-        shipPowerVC.tabBarItem = UITabBarItem(title: "Power", image: NavigationImages.fittingTabBarSelected, tag: 1)
+        shipPowerVC.tabBarItem = UITabBarItem(title: "Power", image: UIImage.fittingTabBar, tag: 1)
         
         let tabBarController = MainTabBarController()
         tabBarController.modalPresentationStyle = .fullScreen
@@ -66,12 +66,12 @@ final class NavigationRouter: NavigationRouterProtocol {
     func navigateToUserShipFittingScreen(shipID: UUID) {
         let viewModel = EditingShipFittingViewModel(shipID: shipID)
         let shipFittingVC = ShipFittingViewController(viewModel: viewModel, router: self)
-        shipFittingVC.tabBarItem = UITabBarItem(title: "Fitting", image: NavigationImages.fittingTabBarClean, tag: 0)
+        shipFittingVC.tabBarItem = UITabBarItem(title: "Fitting", image: UIImage.fittingTabBar, tag: 0)
         
         let shipNavVC = UINavigationController(rootViewController: shipFittingVC)
         
         let shipPowerVC = PowerViewController(router: self)
-        shipPowerVC.tabBarItem = UITabBarItem(title: "Power", image: NavigationImages.fittingTabBarSelected, tag: 1)
+        shipPowerVC.tabBarItem = UITabBarItem(title: "Power", image: UIImage.fittingTabBar, tag: 1)
         
         let tabBarController = MainTabBarController()
         tabBarController.modalPresentationStyle = .fullScreen

@@ -34,7 +34,6 @@
 		BEAA532F2AF4479800E44AE4 /* SelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAA532E2AF4479800E44AE4 /* SelectionCell.swift */; };
 		BEAC9BD729E43834009987A3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC9BD629E43834009987A3 /* MainTabBarController.swift */; };
 		BEB0624229D1AE2B005AEB24 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0624129D1AE2B005AEB24 /* Colors.swift */; };
-		BEB0624429D1B5A0005AEB24 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0624329D1B5A0005AEB24 /* Images.swift */; };
 		BEB0624729D1B71F005AEB24 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0624629D1B71F005AEB24 /* Fonts.swift */; };
 		BEB7D0A329CF18AE002B3431 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7D0A229CF18AE002B3431 /* AppDelegate.swift */; };
 		BEB7D0A529CF18AE002B3431 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7D0A429CF18AE002B3431 /* SceneDelegate.swift */; };
@@ -96,7 +95,6 @@
 		BEAA532E2AF4479800E44AE4 /* SelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCell.swift; sourceTree = "<group>"; };
 		BEAC9BD629E43834009987A3 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		BEB0624129D1AE2B005AEB24 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		BEB0624329D1B5A0005AEB24 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		BEB0624629D1B71F005AEB24 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		BEB7D09F29CF18AE002B3431 /* Cosmic Slipway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cosmic Slipway.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB7D0A229CF18AE002B3431 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -164,11 +162,11 @@
 		BE07C3E82AF6985000E272E4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BE07C3F02AF6EBEB00E272E4 /* Section.swift */,
 				BE07C3ED2AF6E36600E272E4 /* HeaderView.swift */,
 				BE07C3E02AF67F2100E272E4 /* ShipFittingView.swift */,
 				BE07C3DC2AF67B3800E272E4 /* ShipFittingViewController.swift */,
 				BE07C3E92AF6B9C200E272E4 /* FittingCell.swift */,
-				BE07C3F02AF6EBEB00E272E4 /* Section.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -261,7 +259,6 @@
 			isa = PBXGroup;
 			children = (
 				BED8DA672AFD14B000786637 /* Protocols */,
-				BEB0624529D1B5A9005AEB24 /* Images */,
 				BEEA422E29D06D0B008B98E4 /* Fonts */,
 				BEB0624029D1AE07005AEB24 /* Colors */,
 				BEAA53282AF43E3100E44AE4 /* Components */,
@@ -339,14 +336,6 @@
 				BEB0624129D1AE2B005AEB24 /* Colors.swift */,
 			);
 			path = Colors;
-			sourceTree = "<group>";
-		};
-		BEB0624529D1B5A9005AEB24 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				BEB0624329D1B5A0005AEB24 /* Images.swift */,
-			);
-			path = Images;
 			sourceTree = "<group>";
 		};
 		BEB7D09629CF18AD002B3431 = {
@@ -544,7 +533,6 @@
 				BE07C3E42AF68B8400E272E4 /* ShipUIViewModel.swift in Sources */,
 				BED8DA6F2AFD5E5800786637 /* ModuleSubTypeViewController.swift in Sources */,
 				BEEA422529D03B57008B98E4 /* ShipCell.swift in Sources */,
-				BEB0624429D1B5A0005AEB24 /* Images.swift in Sources */,
 				BED8DA692AFD14C200786637 /* BorderConfigurable.swift in Sources */,
 				BEC331ED2AEA97B600630D0D /* ShipModels.swift in Sources */,
 				BEBA91772B0B8EBF00C2DE96 /* ShipFittingViewModelProtocol.swift in Sources */,
@@ -600,6 +588,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -661,6 +650,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
