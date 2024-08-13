@@ -1,7 +1,6 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    
     var window: UIWindow?
     var navigationRouter: NavigationRouterProtocol?
     
@@ -21,9 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func configureNavigationBarAppearance() {
-        let attributes: [NSAttributedString.Key: Any] = [
-            .font: CustomFonts.figtreeExBold18 as Any
-        ]
+        let attributes: [NSAttributedString.Key: Any] = [.font: AppFonts.figtreeExBold18 as Any]
         
         UIBarButtonItem.appearance().setTitleTextAttributes(attributes, for: .normal)
         UIBarButtonItem.appearance().setTitleTextAttributes(attributes, for: .highlighted)

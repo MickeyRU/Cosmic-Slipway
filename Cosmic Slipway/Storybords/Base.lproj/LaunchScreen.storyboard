@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,14 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cosmic slipway" translatesAutoresizingMaskIntoConstraints="NO" id="LI0-hp-n1V">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cosmicSlipway" translatesAutoresizingMaskIntoConstraints="NO" id="LI0-hp-n1V">
                                 <rect key="frame" x="48.666666666666657" y="278" width="296" height="296"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="296" id="JFO-7C-UmN"/>
                                     <constraint firstAttribute="width" constant="296" id="Y8a-ue-d8U"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eve echoes " translatesAutoresizingMaskIntoConstraints="NO" id="AbV-CR-oeF">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eveEchoes" translatesAutoresizingMaskIntoConstraints="NO" id="AbV-CR-oeF">
                                 <rect key="frame" x="156.66666666666666" y="726" width="80" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="3vZ-7t-NQY"/>
@@ -47,7 +47,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cosmic slipway" width="375" height="656"/>
-        <image name="eve echoes " width="80" height="32"/>
+        <image name="cosmicSlipway" width="375" height="656"/>
+        <image name="eveEchoes" width="80" height="32"/>
     </resources>
 </document>

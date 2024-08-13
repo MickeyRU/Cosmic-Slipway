@@ -53,7 +53,7 @@ final class NavigationRouter: NavigationRouterProtocol {
         
         let shipNavVC = UINavigationController(rootViewController: shipFittingVC)
         
-        let shipPowerVC = PowerViewController(router: self)
+        let shipPowerVC = PowerViewController(router: self, viewModel: PowerViewModel())
         shipPowerVC.tabBarItem = UITabBarItem(title: "Power", image: UIImage.fittingTabBar, tag: 1)
         
         let tabBarController = MainTabBarController()
@@ -70,7 +70,7 @@ final class NavigationRouter: NavigationRouterProtocol {
         
         let shipNavVC = UINavigationController(rootViewController: shipFittingVC)
         
-        let shipPowerVC = PowerViewController(router: self)
+        let shipPowerVC = PowerViewController(router: self, viewModel: PowerViewModel())
         shipPowerVC.tabBarItem = UITabBarItem(title: "Power", image: UIImage.fittingTabBar, tag: 1)
         
         let tabBarController = MainTabBarController()

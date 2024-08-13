@@ -18,13 +18,21 @@
 		BE07C3F12AF6EBEB00E272E4 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C3F02AF6EBEB00E272E4 /* Section.swift */; };
 		BE07C3F42AF6F0E200E272E4 /* PowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C3F32AF6F0E200E272E4 /* PowerViewController.swift */; };
 		BE07C4092AF7091400E272E4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BE07C4082AF7091400E272E4 /* SnapKit */; };
-		BE07C40B2AF7091400E272E4 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = BE07C40A2AF7091400E272E4 /* SnapKit-Dynamic */; };
 		BE07C40E2AF7E5CD00E272E4 /* ModuleTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C40D2AF7E5CD00E272E4 /* ModuleTypeViewController.swift */; };
 		BE07C4102AF80F6500E272E4 /* ModuleModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C40F2AF80F6500E272E4 /* ModuleModels.swift */; };
 		BE07C4122AF813F900E272E4 /* ModuleManagementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C4112AF813F900E272E4 /* ModuleManagementService.swift */; };
 		BE07C4172AF83EB900E272E4 /* SlotType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C4162AF83EB900E272E4 /* SlotType.swift */; };
 		BE3A55A12B0CA8300053C851 /* ShipCreatingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3A55A02B0CA8300053C851 /* ShipCreatingService.swift */; };
 		BE4D01112AE6A057005CA4CA /* ViewsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4D01102AE6A057005CA4CA /* ViewsFactory.swift */; };
+		BE4D3D9D2BBAFA3A007CD433 /* PowerViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4D3D9C2BBAFA3A007CD433 /* PowerViewModelProtocol.swift */; };
+		BE4D3D9F2BBAFA4C007CD433 /* PowerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4D3D9E2BBAFA4C007CD433 /* PowerViewModel.swift */; };
+		BE4D3DA12BBB0179007CD433 /* AttributeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4D3DA02BBB0179007CD433 /* AttributeCell.swift */; };
+		BE4D3DA42BBC47CB007CD433 /* AttributeCellConfigurationTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4D3DA32BBC47CB007CD433 /* AttributeCellConfigurationTypes.swift */; };
+		BE4D3DA72BBD9A36007CD433 /* PowerLocalization.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BE4D3DA62BBD9A36007CD433 /* PowerLocalization.xcstrings */; };
+		BE4D3DAC2BBDABFE007CD433 /* ConfigurableDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4D3DAB2BBDABFE007CD433 /* ConfigurableDetailView.swift */; };
+		BE4D3DAE2BBDAC1B007CD433 /* OffenseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4D3DAD2BBDAC1B007CD433 /* OffenseDetailView.swift */; };
+		BE4D3DB02BBEEBD8007CD433 /* OffenseViewUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4D3DAF2BBEEBD8007CD433 /* OffenseViewUIModel.swift */; };
+		BE8EE57C2BC8085900D8F1DE /* DetailsViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8EE57B2BC8085900D8F1DE /* DetailsViewFactory.swift */; };
 		BE952F522AF531E400CBAEFC /* SelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE952F512AF531E400CBAEFC /* SelectionViewModel.swift */; };
 		BE952F562AF537CD00CBAEFC /* ShipSubTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE952F552AF537CD00CBAEFC /* ShipSubTypeViewController.swift */; };
 		BE952F592AF5404A00CBAEFC /* Nameable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE952F582AF5404A00CBAEFC /* Nameable.swift */; };
@@ -41,6 +49,7 @@
 		BEB7D0AF29CF18B3002B3431 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEB7D0AD29CF18B3002B3431 /* LaunchScreen.storyboard */; };
 		BEBA91742B0B832000C2DE96 /* EditingShipFittingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBA91732B0B832000C2DE96 /* EditingShipFittingViewModel.swift */; };
 		BEBA91772B0B8EBF00C2DE96 /* ShipFittingViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBA91762B0B8EBF00C2DE96 /* ShipFittingViewModelProtocol.swift */; };
+		BEBF413C2BD6ADE100745A8A /* DefenseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBF413B2BD6ADE100745A8A /* DefenseDetailView.swift */; };
 		BEC331E72AEA957100630D0D /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC331E62AEA957100630D0D /* MainViewModel.swift */; };
 		BEC331ED2AEA97B600630D0D /* ShipModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC331EC2AEA97B600630D0D /* ShipModels.swift */; };
 		BEC331F22AEAB6AD00630D0D /* ShipTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC331F12AEAB6AD00630D0D /* ShipTypeViewController.swift */; };
@@ -85,6 +94,15 @@
 		BE07C4162AF83EB900E272E4 /* SlotType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotType.swift; sourceTree = "<group>"; };
 		BE3A55A02B0CA8300053C851 /* ShipCreatingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipCreatingService.swift; sourceTree = "<group>"; };
 		BE4D01102AE6A057005CA4CA /* ViewsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsFactory.swift; sourceTree = "<group>"; };
+		BE4D3D9C2BBAFA3A007CD433 /* PowerViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerViewModelProtocol.swift; sourceTree = "<group>"; };
+		BE4D3D9E2BBAFA4C007CD433 /* PowerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerViewModel.swift; sourceTree = "<group>"; };
+		BE4D3DA02BBB0179007CD433 /* AttributeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeCell.swift; sourceTree = "<group>"; };
+		BE4D3DA32BBC47CB007CD433 /* AttributeCellConfigurationTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeCellConfigurationTypes.swift; sourceTree = "<group>"; };
+		BE4D3DA62BBD9A36007CD433 /* PowerLocalization.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = PowerLocalization.xcstrings; sourceTree = "<group>"; };
+		BE4D3DAB2BBDABFE007CD433 /* ConfigurableDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableDetailView.swift; sourceTree = "<group>"; };
+		BE4D3DAD2BBDAC1B007CD433 /* OffenseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffenseDetailView.swift; sourceTree = "<group>"; };
+		BE4D3DAF2BBEEBD8007CD433 /* OffenseViewUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffenseViewUIModel.swift; sourceTree = "<group>"; };
+		BE8EE57B2BC8085900D8F1DE /* DetailsViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewFactory.swift; sourceTree = "<group>"; };
 		BE952F512AF531E400CBAEFC /* SelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewModel.swift; sourceTree = "<group>"; };
 		BE952F552AF537CD00CBAEFC /* ShipSubTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipSubTypeViewController.swift; sourceTree = "<group>"; };
 		BE952F582AF5404A00CBAEFC /* Nameable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nameable.swift; sourceTree = "<group>"; };
@@ -103,6 +121,7 @@
 		BEB7D0B029CF18B3002B3431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEBA91732B0B832000C2DE96 /* EditingShipFittingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingShipFittingViewModel.swift; sourceTree = "<group>"; };
 		BEBA91762B0B8EBF00C2DE96 /* ShipFittingViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipFittingViewModelProtocol.swift; sourceTree = "<group>"; };
+		BEBF413B2BD6ADE100745A8A /* DefenseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefenseDetailView.swift; sourceTree = "<group>"; };
 		BEC331E62AEA957100630D0D /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		BEC331EC2AEA97B600630D0D /* ShipModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipModels.swift; sourceTree = "<group>"; };
 		BEC331F12AEAB6AD00630D0D /* ShipTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipTypeViewController.swift; sourceTree = "<group>"; };
@@ -123,7 +142,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE07C4092AF7091400E272E4 /* SnapKit in Frameworks */,
-				BE07C40B2AF7091400E272E4 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,7 +190,9 @@
 		BE07C3F22AF6F0A300E272E4 /* Power */ = {
 			isa = PBXGroup;
 			children = (
-				BE07C3F32AF6F0E200E272E4 /* PowerViewController.swift */,
+				BE4D3DA22BBC47A8007CD433 /* Models */,
+				BE4D3D9A2BBAF9D8007CD433 /* Views */,
+				BE4D3D9B2BBAF9DE007CD433 /* ViewModels */,
 			);
 			path = Power;
 			sourceTree = "<group>";
@@ -204,6 +224,52 @@
 				BE3A55A02B0CA8300053C851 /* ShipCreatingService.swift */,
 			);
 			path = Ships;
+			sourceTree = "<group>";
+		};
+		BE4D3D9A2BBAF9D8007CD433 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BE4D3DAA2BBDABDC007CD433 /* DetailViews */,
+				BE07C3F32AF6F0E200E272E4 /* PowerViewController.swift */,
+				BE4D3DA02BBB0179007CD433 /* AttributeCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BE4D3D9B2BBAF9DE007CD433 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BE4D3D9C2BBAFA3A007CD433 /* PowerViewModelProtocol.swift */,
+				BE4D3D9E2BBAFA4C007CD433 /* PowerViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BE4D3DA22BBC47A8007CD433 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BE4D3DA32BBC47CB007CD433 /* AttributeCellConfigurationTypes.swift */,
+				BE4D3DAF2BBEEBD8007CD433 /* OffenseViewUIModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BE4D3DA52BBD9991007CD433 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				BE4D3DA62BBD9A36007CD433 /* PowerLocalization.xcstrings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		BE4D3DAA2BBDABDC007CD433 /* DetailViews */ = {
+			isa = PBXGroup;
+			children = (
+				BE4D3DAB2BBDABFE007CD433 /* ConfigurableDetailView.swift */,
+				BE4D3DAD2BBDAC1B007CD433 /* OffenseDetailView.swift */,
+				BEBF413B2BD6ADE100745A8A /* DefenseDetailView.swift */,
+			);
+			path = DetailViews;
 			sourceTree = "<group>";
 		};
 		BE952F572AF53DE400CBAEFC /* SelectionScreens */ = {
@@ -249,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				BE4D01102AE6A057005CA4CA /* ViewsFactory.swift */,
+				BE8EE57B2BC8085900D8F1DE /* DetailsViewFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -354,6 +421,7 @@
 				BEB0623929D1A665005AEB24 /* Resources */,
 				BEB7D0BF29CF3775002B3431 /* Extensions */,
 				BEB0623D29D1A7FB005AEB24 /* Storybords */,
+				BE4D3DA52BBD9991007CD433 /* Localization */,
 				BEB0623F29D1AB90005AEB24 /* Configuration */,
 			);
 			path = "Cosmic Slipway";
@@ -443,7 +511,6 @@
 			name = "Cosmic Slipway";
 			packageProductDependencies = (
 				BE07C4082AF7091400E272E4 /* SnapKit */,
-				BE07C40A2AF7091400E272E4 /* SnapKit-Dynamic */,
 			);
 			productName = "Cosmic Slipway";
 			productReference = BEB7D09F29CF18AE002B3431 /* Cosmic Slipway.app */;
@@ -492,6 +559,7 @@
 			files = (
 				BEEA423029D09684008B98E4 /* Figtree-Regular.ttf in Resources */,
 				BEEA422D29D06CB6008B98E4 /* Figtree-ExtraBold.ttf in Resources */,
+				BE4D3DA72BBD9A36007CD433 /* PowerLocalization.xcstrings in Resources */,
 				BEB7D0AF29CF18B3002B3431 /* LaunchScreen.storyboard in Resources */,
 				BEB7D0AC29CF18B3002B3431 /* Assets.xcassets in Resources */,
 			);
@@ -504,11 +572,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE4D3D9F2BBAFA4C007CD433 /* PowerViewModel.swift in Sources */,
 				BE07C3EA2AF6B9C300E272E4 /* FittingCell.swift in Sources */,
+				BEBF413C2BD6ADE100745A8A /* DefenseDetailView.swift in Sources */,
 				BE07C4122AF813F900E272E4 /* ModuleManagementService.swift in Sources */,
 				BE952F562AF537CD00CBAEFC /* ShipSubTypeViewController.swift in Sources */,
+				BE4D3DB02BBEEBD8007CD433 /* OffenseViewUIModel.swift in Sources */,
+				BE4D3DAE2BBDAC1B007CD433 /* OffenseDetailView.swift in Sources */,
 				BE07C3E62AF6984100E272E4 /* CreatingShipFittingViewModel.swift in Sources */,
 				BEC332182AEBA29400630D0D /* NavigationRouter.swift in Sources */,
+				BE4D3DAC2BBDABFE007CD433 /* ConfigurableDetailView.swift in Sources */,
 				BEA5E3892B04EB8C00256162 /* ModulesViewController.swift in Sources */,
 				BE07C4102AF80F6500E272E4 /* ModuleModels.swift in Sources */,
 				BE07C3E12AF67F2100E272E4 /* ShipFittingView.swift in Sources */,
@@ -521,15 +594,19 @@
 				BE07C3E42AF68B8400E272E4 /* ShipUIViewModel.swift in Sources */,
 				BED8DA6F2AFD5E5800786637 /* ModuleSubTypeViewController.swift in Sources */,
 				BEEA422529D03B57008B98E4 /* ShipCell.swift in Sources */,
+				BE4D3DA42BBC47CB007CD433 /* AttributeCellConfigurationTypes.swift in Sources */,
 				BED8DA692AFD14C200786637 /* BorderConfigurable.swift in Sources */,
 				BEC331ED2AEA97B600630D0D /* ShipModels.swift in Sources */,
 				BEBA91772B0B8EBF00C2DE96 /* ShipFittingViewModelProtocol.swift in Sources */,
 				BE07C40E2AF7E5CD00E272E4 /* ModuleTypeViewController.swift in Sources */,
+				BE4D3DA12BBB0179007CD433 /* AttributeCell.swift in Sources */,
 				BE07C3F12AF6EBEB00E272E4 /* Section.swift in Sources */,
+				BE8EE57C2BC8085900D8F1DE /* DetailsViewFactory.swift in Sources */,
 				BEB7D0A729CF18AE002B3431 /* MainViewController.swift in Sources */,
 				BE3A55A12B0CA8300053C851 /* ShipCreatingService.swift in Sources */,
 				BEB7D0A329CF18AE002B3431 /* AppDelegate.swift in Sources */,
 				BEC331F22AEAB6AD00630D0D /* ShipTypeViewController.swift in Sources */,
+				BE4D3D9D2BBAFA3A007CD433 /* PowerViewModelProtocol.swift in Sources */,
 				BEB0624729D1B71F005AEB24 /* Fonts.swift in Sources */,
 				BEAA532A2AF43E4300E44AE4 /* SelectionView.swift in Sources */,
 				BE07C3EE2AF6E36600E272E4 /* HeaderView.swift in Sources */,
@@ -624,7 +701,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -680,7 +757,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -707,7 +784,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -718,6 +795,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -741,7 +819,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -752,6 +830,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -810,11 +889,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BE07C4072AF7091400E272E4 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		BE07C40A2AF7091400E272E4 /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BE07C4072AF7091400E272E4 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
 		};
 		BE4C3BB52B03798F004792A5 /* SnapKit-Dynamic */ = {
 			isa = XCSwiftPackageProductDependency;
