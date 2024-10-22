@@ -21,6 +21,7 @@ enum TitleType {
 
 enum ButtonTypes {
     case okButton
+    case profileButton
     case exitButton
     case addButton
     case detailsButton
@@ -69,21 +70,21 @@ final class ViewsFactory: ViewsFactoryProtocol {
         switch title {
         case .shipTitle:
             label.textColor = UIColor.accent
-            label.font = AppFonts.figtreeExBold16
+            label.font = AppFonts.figtreeExBold16.uiKitFont()
         case .shipDescription:
             label.textColor = UIColor.iconText
-            label.font = AppFonts.figtreeRegular10
+            label.font = AppFonts.figtreeRegular10.uiKitFont()
         case .shipTypeInCell:
             label.textColor = .white
             label.textAlignment = .center
-            label.font = AppFonts.figtreeExBold16
+            label.font = AppFonts.figtreeExBold16.uiKitFont()
         case .shipSelectionPageTitle:
             label.textColor = UIColor.accent
             label.textAlignment = .center
-            label.font = AppFonts.figtreeExBold24
+            label.font = AppFonts.figtreeExBold24.uiKitFont()
         case .moduleTitle:
             label.textColor = .white
-            label.font = AppFonts.figtreeExBold12
+            label.font = AppFonts.figtreeExBold12.uiKitFont()
         }
         return label
     }
@@ -103,6 +104,8 @@ final class ViewsFactory: ViewsFactoryProtocol {
             button.setImage(UIImage.addButton, for: .normal)
         case .detailsButton:
             button.setImage(UIImage.detailsButton, for: .normal)
+        case .profileButton:
+            button.setImage(UIImage.profileButton, for: .normal)
         }
     }
 

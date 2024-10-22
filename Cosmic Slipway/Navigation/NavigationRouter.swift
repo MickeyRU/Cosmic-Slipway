@@ -1,7 +1,10 @@
 import UIKit
+import SwiftUI
 
 protocol NavigationRouterProtocol {
     func startNavigation()
+    
+    func navigateToProfileScreen()
     
     func navigateToShipTypeScreen()
     func navigateToShipSubTypeScreen(shipTypeID: UUID)
@@ -29,6 +32,12 @@ final class NavigationRouter: NavigationRouterProtocol {
     func startNavigation() {
         let rootViewController = MainViewController(router: self)
         navigationController.pushViewController(rootViewController, animated: false)
+    }
+    
+    func navigateToProfileScreen() {
+        let skillsView = SkillsView()
+        let hostingController = UIHostingController(rootView: skillsView)
+        navigationController.pushViewController(hostingController, animated: true)
     }
     
     func navigateToShipTypeScreen() {
@@ -79,7 +88,7 @@ final class NavigationRouter: NavigationRouterProtocol {
         
         navigationController.present(tabBarController, animated: true)
     }
-
+    
     
     func navigateToModuleTypeScreen() {
         let moduleTypeVC = ModuleTypeViewController(router: self)
@@ -115,7 +124,7 @@ final class NavigationRouter: NavigationRouterProtocol {
             }
         }
     }
-
+    
     func dismissToMainViewController() {
         navigationController.popToRootViewController(animated: true)
         navigationController.dismiss(animated: true)

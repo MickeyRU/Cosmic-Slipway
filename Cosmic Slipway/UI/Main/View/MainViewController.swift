@@ -9,6 +9,7 @@ final class MainViewController: UIViewController {
     private let router: NavigationRouterProtocol
     private let viewModel: MainViewModelProtocol
     private let viewsFactory: ViewsFactoryProtocol
+    private let mainHeaderView = MainHeaderView()
     
     private var cancellables: Set<AnyCancellable> = []
     
@@ -47,16 +48,23 @@ final class MainViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - UIViewController LC
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupBindings()
+        setupViews()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    private func setupBindings() {
         viewModel.shipsPublisher
             .sink(receiveValue: { [weak self] _ in
                 guard let self = self else { return }
@@ -64,25 +72,32 @@ final class MainViewController: UIViewController {
             })
             .store(in: &cancellables)
         
-        setupViews()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
+        mainHeaderView.profileButtonTappedPublisher
+            .sink { [weak self] in
+                guard let self = self else { return }
+                self.router.navigateToProfileScreen()
+            }
+            .store(in: &cancellables)
+
     }
     
     // MARK: - Private Methods
     
     private func setupViews() {
-        [bgImageView, shipCollectionView].forEach { view.addSubview($0) }
+        [bgImageView, mainHeaderView, shipCollectionView].forEach { view.addSubview($0) }
         
         bgImageView.snp.makeConstraints { make in
             make.top.leading.bottom.trailing.equalTo(view)
         }
         
+        mainHeaderView.snp.makeConstraints { make in
+            make.top.leading.trailing.equalToSuperview()
+            make.height.equalTo(128)
+        }
+        
         shipCollectionView.snp.makeConstraints { make in
-            make.top.bottom.equalTo(view.safeAreaLayoutGuide)
+            make.top.equalTo(mainHeaderView.snp.bottom)
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
             make.leading.trailing.equalTo(view)
         }
     }
@@ -102,7 +117,7 @@ extension MainViewController: UICollectionViewDataSource {
         
         let shipViewModel = viewModel.getShipViewModel(at: indexPath.row)
         cell.configure(with: shipViewModel)
-    
+        
         // Первая ячейка: подписка на addButtonTapped
         if indexPath.row == 0 {
             cell.cancellable = cell.addButtonTapped
@@ -120,7 +135,7 @@ extension MainViewController: UICollectionViewDataSource {
                     self.router.navigateToUserShipFittingScreen(shipID: shipID)
                 }
         }
-
+        
         return cell
     }
 }

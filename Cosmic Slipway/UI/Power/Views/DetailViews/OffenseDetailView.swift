@@ -10,27 +10,27 @@ final class OffenseDetailView: UIView, ConfigurableDetailView {
     private lazy var turrentsTitle = viewFactory.createLabel(withText: NSLocalizedString("turrets", 
                                                                                          tableName: "PowerLocalization",
                                                                                          comment: ""),
-                                                             font: AppFonts.figtreeRegular12,
+                                                             font: AppFonts.figtreeRegular12.uiKitFont(),
                                                              textColor: .iconText, aligment: .left)
     private lazy var misslesTitle = viewFactory.createLabel(withText: NSLocalizedString("missles",
                                                                                          tableName: "PowerLocalization",
                                                                                          comment: ""),
-                                                             font: AppFonts.figtreeRegular12,
+                                                            font: AppFonts.figtreeRegular12.uiKitFont(),
                                                              textColor: .iconText, aligment: .left)
     private lazy var dronesTitle = viewFactory.createLabel(withText: NSLocalizedString("drones",
                                                                                        tableName: "PowerLocalization",
                                                                                        comment: ""),
-                                                           font: AppFonts.figtreeRegular12,
+                                                           font: AppFonts.figtreeRegular12.uiKitFont(),
                                                            textColor: .iconText, aligment: .left)
     
     private lazy var turrentsDpsTitle = viewFactory.createLabel(withText: "199 131.10 DPS",
-                                                             font: AppFonts.figtreeExBold16,
+                                                                font: AppFonts.figtreeExBold16.uiKitFont(),
                                                                 textColor: .active, aligment: .center)
     private lazy var misslesDpsTitle = viewFactory.createLabel(withText: "1 131.10 DPS",
-                                                             font: AppFonts.figtreeExBold16,
+                                                               font: AppFonts.figtreeExBold16.uiKitFont(),
                                                                 textColor: .active, aligment: .center)
     private lazy var dronesDpsTitle = viewFactory.createLabel(withText: "1 131.10 DPS",
-                                                           font: AppFonts.figtreeExBold16,
+                                                              font: AppFonts.figtreeExBold16.uiKitFont(),
                                                               textColor: .active, aligment: .center)
     
     private lazy var dpsStackView: UIStackView = {

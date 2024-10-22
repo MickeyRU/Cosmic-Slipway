@@ -19,14 +19,14 @@ final class AttributeCell: UICollectionViewCell, ShadowConfigurable, BorderConfi
     
     private let cellTitle: UILabel = {
         let label = UILabel()
-        label.font = AppFonts.figtreeExBold16
+        label.font = AppFonts.figtreeExBold16.uiKitFont()
         label.textColor = .active
         return label
     }()
     
     private let cellSubTitle: UILabel = {
         let label = UILabel()
-        label.font = AppFonts.figtreeRegular10
+        label.font = AppFonts.figtreeRegular10.uiKitFont()
         label.textColor = .iconText
         return label
     }()
@@ -40,7 +40,7 @@ final class AttributeCell: UICollectionViewCell, ShadowConfigurable, BorderConfi
     
     private let cellValueTitle: UILabel = {
         let label = UILabel()
-        label.font = AppFonts.figtreeExBold24
+        label.font = AppFonts.figtreeExBold24.uiKitFont()
         label.textColor = .active
         label.textAlignment = .center
         label.text = "17 223.43"
