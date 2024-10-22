@@ -10,7 +10,7 @@ protocol MainViewModelProtocol {
 
 final class MainViewModel: ObservableObject, MainViewModelProtocol {
     @Published
-    private (set) var ships: [Ship] = []
+    private(set) var ships: [Ship] = []
     
     private var cancellables = Set<AnyCancellable>()
     

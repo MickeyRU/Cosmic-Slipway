@@ -70,21 +70,21 @@ final class ViewsFactory: ViewsFactoryProtocol {
         switch title {
         case .shipTitle:
             label.textColor = UIColor.accent
-            label.font = AppFonts.figtreeExBold16.uiKitFont()
+            label.font = AppFonts.figtreeExBold16
         case .shipDescription:
             label.textColor = UIColor.iconText
-            label.font = AppFonts.figtreeRegular10.uiKitFont()
+            label.font = AppFonts.figtreeRegular10
         case .shipTypeInCell:
             label.textColor = .white
             label.textAlignment = .center
-            label.font = AppFonts.figtreeExBold16.uiKitFont()
+            label.font = AppFonts.figtreeExBold16
         case .shipSelectionPageTitle:
             label.textColor = UIColor.accent
             label.textAlignment = .center
-            label.font = AppFonts.figtreeExBold24.uiKitFont()
+            label.font = AppFonts.figtreeExBold24
         case .moduleTitle:
             label.textColor = .white
-            label.font = AppFonts.figtreeExBold12.uiKitFont()
+            label.font = AppFonts.figtreeExBold12
         }
         return label
     }

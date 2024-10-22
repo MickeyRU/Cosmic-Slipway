@@ -43,21 +43,21 @@ struct SkillsGroupCell: View {
     var skillGroup: SkillGroup
     
     var body: some View {
-        HStack(alignment: .top, spacing: 24) {
-            GroupImage(imageName: skillGroup.imageName)
-            VStack(alignment: .leading, spacing: 8) {
-                Text(skillGroup.title)
-                    .font(AppFonts.figtreeExBold16.swiftUIFont())
-                    .foregroundStyle(.accent)
-                Text("Learned: \(skillGroup.learnedPercent)" + "%")
-                    .font(AppFonts.figtreeRegular12.swiftUIFont())
-                    .foregroundStyle(.active)
-                HStack {
-                    NavigationLink(destination: SkillView(skillGroup: skillGroup.title)) {
+        NavigationLink(destination: SkillView(skillGroup: skillGroup.title)) {
+            HStack(alignment: .top, spacing: 24) {
+                GroupImage(imageName: skillGroup.imageName)
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(skillGroup.title)
+                        .font(AppFonts.figtreeExBold16SwiftUI)
+                        .foregroundStyle(.accent)
+                    HStack {
+                        Text("Learned: \(skillGroup.learnedPercent)" + "%")
+                            .font(AppFonts.figtreeRegular12SwiftUI)
+                            .foregroundStyle(.iconText)
+                        Spacer()
                         HStack {
-                            Spacer()
                             Text("Edit")
-                                .font(AppFonts.figtreeExBold12.swiftUIFont())
+                                .font(AppFonts.figtreeExBold12SwiftUI)
                                 .foregroundStyle(.active)
                             Image(.detailsButton)
                                 .renderingMode(.template)

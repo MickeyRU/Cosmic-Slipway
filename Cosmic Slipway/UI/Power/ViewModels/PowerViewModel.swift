@@ -2,7 +2,7 @@ import Foundation
 import Combine
 
 final class PowerViewModel: PowerViewModelProtocol {
-    private (set) var cellConfigurationsSubject = PassthroughSubject<[AttributeCellConfiguration], Never>()
+    private(set) var cellConfigurationsSubject = PassthroughSubject<[AttributeCellConfiguration], Never>()
     private var attributes: [AttributeCellConfiguration] = []
     
     init() {
