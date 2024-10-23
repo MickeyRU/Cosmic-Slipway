@@ -1,74 +1,67 @@
 import SwiftUI
 
-struct SkillGroup: Identifiable {
-    let id = UUID()
-    let imageName: String
-    let title: String
-    let learnedPercent: Float
-}
-
-struct SkillsView: View {
-    let skills = [
-        SkillGroup(imageName: "cruisingTechnology", title: "Cruising Technology", learnedPercent: 25.3),
-        SkillGroup(imageName: "maintenanceTechnology", title: "Maintenance Technology", learnedPercent: 16.2),
-        SkillGroup(imageName: "electronics", title: "Electronics", learnedPercent: 15.0),
-        SkillGroup(imageName: "weaponTechnology", title: "Weapon Technology", learnedPercent: 11.3),
-        SkillGroup(imageName: "industrialTechnology", title: "Industrial Technology", learnedPercent: 0.0),
-        SkillGroup(imageName: "socialScience", title: "Social Science", learnedPercent: 18.57),
-        SkillGroup(imageName: "appliedScience", title: "Applied Science", learnedPercent: 0.0),
-        SkillGroup(imageName: "naturalScience", title: "Natural Science", learnedPercent: 45.3),
-    ]
-    
+struct SkillsGroupView: View {
     var body: some View {
-        NavigationStack {
-            ZStack {
-                Image(.mainBG)
-                    .resizable()
-                    .ignoresSafeArea()
-                List(skills) { skill in
-                    SkillsGroupCell(skillGroup: skill)
-                        .listRowBackground(Color.clear)
-                        .listRowInsets(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
-                }
-                .scrollIndicators(.hidden)
-                .padding(.horizontal, 24)
-                .listStyle(.plain)
-                .clipped()
+        ZStack {
+            ScreenBGImageView(image: .mainBG)
+            
+            List(testSkills) { skill in
+                SkillsGroupCell(skillGroup: skill)
+                    .listRowBackground(Color.clear)
+                    .listRowInsets(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
             }
+            .scrollIndicators(.hidden)
+            .listStyle(.plain)
+            .padding()
         }
     }
 }
 
 struct SkillsGroupCell: View {
-    var skillGroup: SkillGroup
+    let skillGroup: SkillGroup
     
     var body: some View {
-        NavigationLink(destination: SkillView(skillGroup: skillGroup.title)) {
-            HStack(alignment: .top, spacing: 24) {
-                GroupImage(imageName: skillGroup.imageName)
-                VStack(alignment: .leading, spacing: 8) {
+        ZStack {
+            GroupInfoView(skillGroup: skillGroup)
+            NavigationLink(destination: SkillsCategoryView(skillsCategories: skillGroup.skillsCategories)) {
+                EmptyView()
+            }
+            .opacity(0)
+        }
+    }
+}
+
+struct GroupInfoView: View {
+    let skillGroup: SkillGroup
+    
+    var body: some View {
+        HStack(alignment: .center, spacing: 24) {
+            SkillImageView(image: skillGroup.imageName, size: .regular)
+            
+            VStack(alignment: .leading) {
+                HStack {
                     Text(skillGroup.title)
                         .font(AppFonts.figtreeExBold16SwiftUI)
                         .foregroundStyle(.accent)
-                    HStack {
+                }
+                
+                HStack (alignment: .bottom) {
+                    VStack(alignment: .leading, spacing: 8) {
                         Text("Learned: \(skillGroup.learnedPercent)" + "%")
-                            .font(AppFonts.figtreeRegular12SwiftUI)
-                            .foregroundStyle(.iconText)
-                        Spacer()
-                        HStack {
-                            Text("Edit")
-                                .font(AppFonts.figtreeExBold12SwiftUI)
-                                .foregroundStyle(.active)
-                            Image(.detailsButton)
-                                .renderingMode(.template)
-                                .foregroundStyle(.accent)
-                        }
+                        Text("Total SP: \(skillGroup.learnedSP)")
                     }
+                    .font(AppFonts.figtreeRegular12SwiftUI)
+                    .foregroundStyle(.iconText)
+                    
+                    Spacer()
+                    
+                    EditButtonWithArrowView(text: "Edit")
                 }
             }
+            
         }
         .padding(24)
-        .background(Color.darkBG.opacity(0.5))
+        .background(Color.darkBG.opacity(0.6))
         .clipShape(RoundedRectangle(cornerRadius: 28))
         .overlay(
             RoundedRectangle(cornerRadius: 28)
@@ -84,25 +77,6 @@ struct SkillsGroupCell: View {
     }
 }
 
-struct GroupImage: View {
-    var imageName: String
-    
-    var body: some View {
-        Image(imageName)
-            .resizable()
-            .scaledToFit()
-            .frame(width: 50, height: 50)
-            .overlay(
-                LinearGradient(
-                    gradient: Gradient(colors: [.gradientFrom, .gradientMiddle, .gradientTo]),
-                    startPoint: .topTrailing,
-                    endPoint: .bottomLeading
-                )
-                .blendMode(.darken)
-            )
-    }
-}
-
 #Preview {
-    SkillsView()
+    SkillsGroupView()
 }

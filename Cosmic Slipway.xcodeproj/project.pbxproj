@@ -22,6 +22,11 @@
 		BE07C4102AF80F6500E272E4 /* ModuleModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C40F2AF80F6500E272E4 /* ModuleModels.swift */; };
 		BE07C4122AF813F900E272E4 /* ModuleManagementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C4112AF813F900E272E4 /* ModuleManagementService.swift */; };
 		BE07C4172AF83EB900E272E4 /* SlotType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07C4162AF83EB900E272E4 /* SlotType.swift */; };
+		BE34CAF82CC8F6B30046A1DD /* EditButtonWithArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE34CAF72CC8F6B30046A1DD /* EditButtonWithArrowView.swift */; };
+		BE34CAFC2CC8FB480046A1DD /* SkillsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE34CAFB2CC8FB480046A1DD /* SkillsView.swift */; };
+		BE34CAFE2CC8FD220046A1DD /* ScreenBGImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE34CAFD2CC8FD220046A1DD /* ScreenBGImageView.swift */; };
+		BE34CB002CC91D3D0046A1DD /* SkillImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE34CAFF2CC91D3D0046A1DD /* SkillImageView.swift */; };
+		BE34CB022CC923CD0046A1DD /* CustomStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE34CB012CC923CD0046A1DD /* CustomStepper.swift */; };
 		BE3A55A12B0CA8300053C851 /* ShipCreatingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3A55A02B0CA8300053C851 /* ShipCreatingService.swift */; };
 		BE4D01112AE6A057005CA4CA /* ViewsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4D01102AE6A057005CA4CA /* ViewsFactory.swift */; };
 		BE4D3D9D2BBAFA3A007CD433 /* PowerViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4D3D9C2BBAFA3A007CD433 /* PowerViewModelProtocol.swift */; };
@@ -56,7 +61,8 @@
 		BEC331ED2AEA97B600630D0D /* ShipModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC331EC2AEA97B600630D0D /* ShipModels.swift */; };
 		BEC331F22AEAB6AD00630D0D /* ShipTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC331F12AEAB6AD00630D0D /* ShipTypeViewController.swift */; };
 		BEC332182AEBA29400630D0D /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC332172AEBA29400630D0D /* NavigationRouter.swift */; };
-		BEC81C702CC7E2F700190296 /* SkillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC81C6F2CC7E2F700190296 /* SkillView.swift */; };
+		BEC81C702CC7E2F700190296 /* SkillsCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC81C6F2CC7E2F700190296 /* SkillsCategoryView.swift */; };
+		BEC81C722CC82F8100190296 /* SkillsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC81C712CC82F7800190296 /* SkillsModel.swift */; };
 		BED8DA692AFD14C200786637 /* BorderConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED8DA682AFD14C200786637 /* BorderConfigurable.swift */; };
 		BED8DA6B2AFD14EB00786637 /* ShadowConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED8DA6A2AFD14EB00786637 /* ShadowConfigurable.swift */; };
 		BED8DA6D2AFD531F00786637 /* MockDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED8DA6C2AFD531F00786637 /* MockDataService.swift */; };
@@ -95,6 +101,11 @@
 		BE07C40F2AF80F6500E272E4 /* ModuleModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleModels.swift; sourceTree = "<group>"; };
 		BE07C4112AF813F900E272E4 /* ModuleManagementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleManagementService.swift; sourceTree = "<group>"; };
 		BE07C4162AF83EB900E272E4 /* SlotType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotType.swift; sourceTree = "<group>"; };
+		BE34CAF72CC8F6B30046A1DD /* EditButtonWithArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditButtonWithArrowView.swift; sourceTree = "<group>"; };
+		BE34CAFB2CC8FB480046A1DD /* SkillsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsView.swift; sourceTree = "<group>"; };
+		BE34CAFD2CC8FD220046A1DD /* ScreenBGImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBGImageView.swift; sourceTree = "<group>"; };
+		BE34CAFF2CC91D3D0046A1DD /* SkillImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillImageView.swift; sourceTree = "<group>"; };
+		BE34CB012CC923CD0046A1DD /* CustomStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStepper.swift; sourceTree = "<group>"; };
 		BE3A55A02B0CA8300053C851 /* ShipCreatingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipCreatingService.swift; sourceTree = "<group>"; };
 		BE4D01102AE6A057005CA4CA /* ViewsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsFactory.swift; sourceTree = "<group>"; };
 		BE4D3D9C2BBAFA3A007CD433 /* PowerViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -131,7 +142,8 @@
 		BEC331EC2AEA97B600630D0D /* ShipModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipModels.swift; sourceTree = "<group>"; };
 		BEC331F12AEAB6AD00630D0D /* ShipTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipTypeViewController.swift; sourceTree = "<group>"; };
 		BEC332172AEBA29400630D0D /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
-		BEC81C6F2CC7E2F700190296 /* SkillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillView.swift; sourceTree = "<group>"; };
+		BEC81C6F2CC7E2F700190296 /* SkillsCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsCategoryView.swift; sourceTree = "<group>"; };
+		BEC81C712CC82F7800190296 /* SkillsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsModel.swift; sourceTree = "<group>"; };
 		BED8DA682AFD14C200786637 /* BorderConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderConfigurable.swift; sourceTree = "<group>"; };
 		BED8DA6A2AFD14EB00786637 /* ShadowConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowConfigurable.swift; sourceTree = "<group>"; };
 		BED8DA6C2AFD531F00786637 /* MockDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataService.swift; sourceTree = "<group>"; };
@@ -223,6 +235,17 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		BE34CAF62CC8F6910046A1DD /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				BE34CAF72CC8F6B30046A1DD /* EditButtonWithArrowView.swift */,
+				BE34CAFD2CC8FD220046A1DD /* ScreenBGImageView.swift */,
+				BE34CAFF2CC91D3D0046A1DD /* SkillImageView.swift */,
+				BE34CB012CC923CD0046A1DD /* CustomStepper.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
 		BE3A55A42B0CA95F0053C851 /* Ships */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,8 +334,10 @@
 		BEA5899C2CAF13E600352F46 /* Skills */ = {
 			isa = PBXGroup;
 			children = (
+				BEC81C712CC82F7800190296 /* SkillsModel.swift */,
 				BEA5899D2CAF13FA00352F46 /* SkillsGroupView.swift */,
-				BEC81C6F2CC7E2F700190296 /* SkillView.swift */,
+				BEC81C6F2CC7E2F700190296 /* SkillsCategoryView.swift */,
+				BE34CAFB2CC8FB480046A1DD /* SkillsView.swift */,
 			);
 			path = Skills;
 			sourceTree = "<group>";
@@ -357,6 +382,7 @@
 		BEAA53282AF43E3100E44AE4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				BE34CAF62CC8F6910046A1DD /* SwiftUI */,
 				BE952F572AF53DE400CBAEFC /* SelectionScreens */,
 				BE07C3E22AF68B5200E272E4 /* ShipsCell */,
 			);
@@ -601,6 +627,7 @@
 				BE07C3EA2AF6B9C300E272E4 /* FittingCell.swift in Sources */,
 				BEBF413C2BD6ADE100745A8A /* DefenseDetailView.swift in Sources */,
 				BE07C4122AF813F900E272E4 /* ModuleManagementService.swift in Sources */,
+				BE34CAF82CC8F6B30046A1DD /* EditButtonWithArrowView.swift in Sources */,
 				BE952F562AF537CD00CBAEFC /* ShipSubTypeViewController.swift in Sources */,
 				BE4D3DB02BBEEBD8007CD433 /* OffenseViewUIModel.swift in Sources */,
 				BEA5899E2CAF155200352F46 /* SkillsGroupView.swift in Sources */,
@@ -612,6 +639,7 @@
 				BE07C4102AF80F6500E272E4 /* ModuleModels.swift in Sources */,
 				BE07C3E12AF67F2100E272E4 /* ShipFittingView.swift in Sources */,
 				BE4D01112AE6A057005CA4CA /* ViewsFactory.swift in Sources */,
+				BE34CB002CC91D3D0046A1DD /* SkillImageView.swift in Sources */,
 				BE07C3EC2AF6BF6F00E272E4 /* UICollectionView+Extension.swift in Sources */,
 				BE07C3F42AF6F0E200E272E4 /* PowerViewController.swift in Sources */,
 				BE07C3DD2AF67B3800E272E4 /* ShipFittingViewController.swift in Sources */,
@@ -621,17 +649,20 @@
 				BED8DA6F2AFD5E5800786637 /* ModuleSubTypeViewController.swift in Sources */,
 				BEEA422529D03B57008B98E4 /* ShipCell.swift in Sources */,
 				BE4D3DA42BBC47CB007CD433 /* AttributeCellConfigurationTypes.swift in Sources */,
+				BE34CAFE2CC8FD220046A1DD /* ScreenBGImageView.swift in Sources */,
 				BED8DA692AFD14C200786637 /* BorderConfigurable.swift in Sources */,
 				BEC331ED2AEA97B600630D0D /* ShipModels.swift in Sources */,
 				BEBA91772B0B8EBF00C2DE96 /* ShipFittingViewModelProtocol.swift in Sources */,
 				BE07C40E2AF7E5CD00E272E4 /* ModuleTypeViewController.swift in Sources */,
-				BEC81C702CC7E2F700190296 /* SkillView.swift in Sources */,
+				BEC81C702CC7E2F700190296 /* SkillsCategoryView.swift in Sources */,
+				BE34CB022CC923CD0046A1DD /* CustomStepper.swift in Sources */,
 				BE4D3DA12BBB0179007CD433 /* AttributeCell.swift in Sources */,
 				BE07C3F12AF6EBEB00E272E4 /* Section.swift in Sources */,
 				BE8EE57C2BC8085900D8F1DE /* DetailsViewFactory.swift in Sources */,
 				BEB7D0A729CF18AE002B3431 /* MainViewController.swift in Sources */,
 				BE3A55A12B0CA8300053C851 /* ShipCreatingService.swift in Sources */,
 				BEB7D0A329CF18AE002B3431 /* AppDelegate.swift in Sources */,
+				BE34CAFC2CC8FB480046A1DD /* SkillsView.swift in Sources */,
 				BEC331F22AEAB6AD00630D0D /* ShipTypeViewController.swift in Sources */,
 				BE4D3D9D2BBAFA3A007CD433 /* PowerViewModelProtocol.swift in Sources */,
 				BEB0624729D1B71F005AEB24 /* Fonts.swift in Sources */,
@@ -642,6 +673,7 @@
 				BEB7D0A529CF18AE002B3431 /* SceneDelegate.swift in Sources */,
 				BED8DA6B2AFD14EB00786637 /* ShadowConfigurable.swift in Sources */,
 				BED8DA6D2AFD531F00786637 /* MockDataService.swift in Sources */,
+				BEC81C722CC82F8100190296 /* SkillsModel.swift in Sources */,
 				BE07C3DB2AF674C700E272E4 /* ShipViewController.swift in Sources */,
 				BEAA532D2AF446A800E44AE4 /* ShipManagementService.swift in Sources */,
 				BE952F522AF531E400CBAEFC /* SelectionViewModel.swift in Sources */,

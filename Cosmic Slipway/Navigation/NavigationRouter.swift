@@ -35,7 +35,7 @@ final class NavigationRouter: NavigationRouterProtocol {
     }
     
     func navigateToProfileScreen() {
-        let skillsView = SkillsView()
+        let skillsView = SkillsGroupView()
         let hostingController = UIHostingController(rootView: skillsView)
         navigationController.pushViewController(hostingController, animated: true)
     }
