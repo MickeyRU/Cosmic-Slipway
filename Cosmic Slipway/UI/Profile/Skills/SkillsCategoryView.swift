@@ -30,6 +30,7 @@ struct GroupCellView: View {
             }
             .opacity(0)
         }
+        .shadow(color: Color.pureBlack.opacity(0.4), radius: 6, x: 0, y: -4)
     }
 }
 
@@ -57,9 +58,9 @@ struct CategoryInfoView: View {
             RoundedRectangle(cornerRadius: 28)
                 .stroke(LinearGradient(
                     gradient: Gradient(colors: [
-                        Color(UIColor.gradientFrom),
-                        Color(UIColor.gradientMiddle),
-                        Color(UIColor.gradientTo)
+                        Color(UIColor.gradientFrom.withAlphaComponent(0.2)),
+                        Color(UIColor.gradientMiddle.withAlphaComponent(0.4)),
+                        Color(UIColor.gradientTo.withAlphaComponent(0.2))
                     ]),
                     startPoint: .init(x: 0.9, y: 0),
                     endPoint: .init(x: 0.1, y: 1)

@@ -28,6 +28,7 @@ struct SkillsGroupCell: View {
             }
             .opacity(0)
         }
+        .shadow(color: Color.pureBlack.opacity(0.4), radius: 6, x: 0, y: -4)
     }
 }
 
