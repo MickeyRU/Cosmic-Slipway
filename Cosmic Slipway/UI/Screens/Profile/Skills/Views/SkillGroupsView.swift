@@ -1,45 +1,44 @@
 import SwiftUI
 
-struct SkillsCategoryView: View {
-    let skillsCategories: [SkillsCategory]
+struct SkillGroupsView: View {
+    let skillCategories: [SkillsGroup]
     
     var body: some View {
         ZStack {
             ScreenBGImageView(image: .mainBG)
             
-            List(skillsCategories) { skillCategory in
-                GroupCellView(skillCategory: skillCategory)
+            List(skillCategories) { skillCategory in
+                CategoriesCellView(skillCategory: skillCategory)
                     .listRowBackground(Color.clear)
-                    .listRowInsets(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
             }
             .scrollIndicators(.hidden)
             .listStyle(.plain)
-            .padding()
+            .padding(.vertical, 1)
         }
     }
 }
 
-struct GroupCellView: View {
-    let skillCategory: SkillsCategory
+struct CategoriesCellView: View {
+    let skillCategory: SkillsGroup
     
     var body: some View {
         ZStack {
             CategoryInfoView(skillCategory: skillCategory)
-            NavigationLink(destination: SkillsView(skills: skillCategory.skills)) {
+            NavigationLink(destination: SkillsView(skillsSubGroups: skillCategory.skillsSubGroups)) {
                 EmptyView()
             }
             .opacity(0)
         }
-        .shadow(color: Color.pureBlack.opacity(0.4), radius: 6, x: 0, y: -4)
+        .shadow(color: Color.pureBlack.opacity(0.2), radius: 6, x: 0, y: -4)
     }
 }
 
 struct CategoryInfoView: View {
-    let skillCategory: SkillsCategory
+    let skillCategory: SkillsGroup
 
     var body: some View {
         HStack(spacing: 24) {
-            SkillImageView(image: skillCategory.imageName, size: .regular)
+            SkillImageView(image: skillCategory.imageName, size: .small)
        
             HStack(alignment: .center) {
                 Text(skillCategory.title)
@@ -52,7 +51,7 @@ struct CategoryInfoView: View {
         }
         .padding(.horizontal, 24)
         .padding(.vertical, 14)
-        .background(Color.darkBG.opacity(0.6))
+        .background(Color.darkBG.opacity(Alpha.mediumTransparent.rawValue))
         .clipShape(RoundedRectangle(cornerRadius: 28))
         .overlay(
             RoundedRectangle(cornerRadius: 28)
@@ -70,5 +69,5 @@ struct CategoryInfoView: View {
 }
 
 #Preview {
-    SkillsCategoryView(skillsCategories: testSkills[0].skillsCategories)
+    SkillGroupsView(skillCategories: testSkills[0].skillsGroups)
 }

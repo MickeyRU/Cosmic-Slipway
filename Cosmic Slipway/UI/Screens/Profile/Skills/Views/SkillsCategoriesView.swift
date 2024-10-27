@@ -1,39 +1,44 @@
 import SwiftUI
 
-struct SkillsGroupView: View {
+struct SkillsCategoriesView: View {
+    @ObservedObject private var viewModel: SkillCategoriesViewModel
+    
     var body: some View {
         ZStack {
             ScreenBGImageView(image: .mainBG)
             
-            List(testSkills) { skill in
-                SkillsGroupCell(skillGroup: skill)
+            List(viewModel.skillCategories) { skill in
+                SkillGroupsCell(skillGroup: skill)
                     .listRowBackground(Color.clear)
-                    .listRowInsets(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
             }
             .scrollIndicators(.hidden)
             .listStyle(.plain)
-            .padding()
+            .padding(.vertical, 1)
         }
+    }
+    
+    init(viewModel: SkillCategoriesViewModel) {
+        self.viewModel = viewModel
     }
 }
 
-struct SkillsGroupCell: View {
-    let skillGroup: SkillGroup
+struct SkillGroupsCell: View {
+    let skillGroup: SkillsCategory
     
     var body: some View {
         ZStack {
             GroupInfoView(skillGroup: skillGroup)
-            NavigationLink(destination: SkillsCategoryView(skillsCategories: skillGroup.skillsCategories)) {
+            NavigationLink(destination: SkillGroupsView(skillCategories: skillGroup.skillsGroups)) {
                 EmptyView()
             }
             .opacity(0)
         }
-        .shadow(color: Color.pureBlack.opacity(0.4), radius: 6, x: 0, y: -4)
+        .shadow(color: Color.pureBlack.opacity(0.2), radius: 6, x: 0, y: -4)
     }
 }
 
 struct GroupInfoView: View {
-    let skillGroup: SkillGroup
+    let skillGroup: SkillsCategory
     
     var body: some View {
         HStack(alignment: .center, spacing: 24) {
@@ -62,7 +67,7 @@ struct GroupInfoView: View {
             
         }
         .padding(24)
-        .background(Color.darkBG.opacity(0.6))
+        .background(Color.darkBG.opacity(Alpha.mediumTransparent.rawValue))
         .clipShape(RoundedRectangle(cornerRadius: 28))
         .overlay(
             RoundedRectangle(cornerRadius: 28)
@@ -79,5 +84,5 @@ struct GroupInfoView: View {
 }
 
 #Preview {
-    SkillsGroupView()
+    SkillsCategoriesView(viewModel: SkillCategoriesViewModel(skillsDataManager: SkillsDataManager()))
 }

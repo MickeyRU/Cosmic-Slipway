@@ -24,9 +24,11 @@ protocol NavigationRouterProtocol {
 final class NavigationRouter: NavigationRouterProtocol {
     
     private let navigationController: UINavigationController
+    private let skillsDataManager: SkillsDataManager
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        self.skillsDataManager = SkillsDataManager()
     }
     
     func startNavigation() {
@@ -35,7 +37,8 @@ final class NavigationRouter: NavigationRouterProtocol {
     }
     
     func navigateToProfileScreen() {
-        let skillsView = SkillsGroupView()
+        let viewModel = SkillCategoriesViewModel(skillsDataManager: skillsDataManager)
+        let skillsView = SkillsCategoriesView(viewModel: viewModel)
         let hostingController = UIHostingController(rootView: skillsView)
         navigationController.pushViewController(hostingController, animated: true)
     }

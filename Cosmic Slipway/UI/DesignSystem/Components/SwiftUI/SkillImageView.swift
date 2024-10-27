@@ -1,6 +1,7 @@
 import SwiftUI
 
 enum ImageSize: CGFloat {
+    case small = 40
     case regular = 50
 }
 

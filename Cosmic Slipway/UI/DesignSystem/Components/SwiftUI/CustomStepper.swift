@@ -1,15 +1,15 @@
 import SwiftUI
 
 struct CustomStepper: View {
-    @State private var level: Int = 0
+    @Binding var level: CurrentSkillLevel
     
-    private let range: ClosedRange<Int> = 0...5
+    private let range: ClosedRange<CurrentSkillLevel> = .zero ... .five
     
     var body: some View {
         HStack(alignment: .center, spacing: 8) {
             Button(action: {
-                if level > range.lowerBound {
-                    level -= 1
+                if level.rawValue > range.lowerBound.rawValue {
+                    level = CurrentSkillLevel(rawValue: level.rawValue - 1) ?? .zero
                 }
             }) {
                 Image(.minusButton)
@@ -21,7 +21,7 @@ struct CustomStepper: View {
             VStack(alignment: .center) {
                 HStack(spacing: 2) {
                     Text("Level:")
-                    Text("\(level)")
+                    Text("\(level.rawValue)")
                         .monospacedDigit()
                 }
                     .font(AppFonts.figtreeRegular12SwiftUI)
@@ -31,15 +31,15 @@ struct CustomStepper: View {
                 HStack(spacing: 4) {
                     ForEach(0..<5) { index in
                         Rectangle()
-                            .fill(index < level ? .accent : .iconText)
+                            .fill(index < level.rawValue ? .accent : .iconText)
                             .frame(width: 5, height: 5)
                     }
                 }           
             }
             
             Button(action: {
-                if level < range.upperBound {
-                    level += 1
+                if level.rawValue < range.upperBound.rawValue {
+                    level = CurrentSkillLevel(rawValue: level.rawValue + 1) ?? .five
                 }
             }) {
                 Image(.addButton)
@@ -52,5 +52,5 @@ struct CustomStepper: View {
 }
 
 #Preview {
-    CustomStepper()
+    CustomStepper(level: .constant(.zero))
 }
