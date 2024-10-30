@@ -26,9 +26,9 @@ final class NavigationRouter: NavigationRouterProtocol {
     private let navigationController: UINavigationController
     private let skillsDataManager: SkillsDataManager
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, skillsDataManager: SkillsDataManager = SkillsDataManager()) {
         self.navigationController = navigationController
-        self.skillsDataManager = SkillsDataManager()
+        self.skillsDataManager = skillsDataManager
     }
     
     func startNavigation() {
@@ -37,8 +37,7 @@ final class NavigationRouter: NavigationRouterProtocol {
     }
     
     func navigateToProfileScreen() {
-        let viewModel = SkillCategoriesViewModel(skillsDataManager: skillsDataManager)
-        let skillsView = SkillsCategoriesView(viewModel: viewModel)
+        let skillsView = SkillsCategoriesView().environmentObject(self.skillsDataManager)
         let hostingController = UIHostingController(rootView: skillsView)
         navigationController.pushViewController(hostingController, animated: true)
     }

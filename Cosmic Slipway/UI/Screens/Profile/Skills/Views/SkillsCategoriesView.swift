@@ -1,34 +1,32 @@
 import SwiftUI
 
 struct SkillsCategoriesView: View {
-    @ObservedObject private var viewModel: SkillCategoriesViewModel
+    @EnvironmentObject private var skillsDataManager: SkillsDataManager
     
     var body: some View {
         ZStack {
             ScreenBGImageView(image: .mainBG)
             
-            List(viewModel.skillCategories) { skill in
+            List(skillsDataManager.skillsCategories) { skill in
                 SkillGroupsCell(skillGroup: skill)
                     .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
             }
             .scrollIndicators(.hidden)
             .listStyle(.plain)
             .padding(.vertical, 1)
         }
     }
-    
-    init(viewModel: SkillCategoriesViewModel) {
-        self.viewModel = viewModel
-    }
 }
 
 struct SkillGroupsCell: View {
+    @EnvironmentObject private var skillsDataManager: SkillsDataManager
     let skillGroup: SkillsCategory
     
     var body: some View {
         ZStack {
-            GroupInfoView(skillGroup: skillGroup)
-            NavigationLink(destination: SkillGroupsView(skillCategories: skillGroup.skillsGroups)) {
+            GroupInfoView(skillsCategory: skillGroup)
+            NavigationLink(destination: SkillGroupsView(skillCategories: skillGroup.skillsGroups).environmentObject(self.skillsDataManager)) {
                 EmptyView()
             }
             .opacity(0)
@@ -38,30 +36,36 @@ struct SkillGroupsCell: View {
 }
 
 struct GroupInfoView: View {
-    let skillGroup: SkillsCategory
+    let skillsCategory: SkillsCategory
     
     var body: some View {
         HStack(alignment: .center, spacing: 24) {
-            SkillImageView(image: skillGroup.imageName, size: .regular)
+            SkillImageView(image: skillsCategory.imageName, size: .regular)
             
             VStack(alignment: .leading) {
                 HStack {
-                    Text(skillGroup.title)
+                    Text(skillsCategory.title)
                         .font(AppFonts.figtreeExBold16SwiftUI)
                         .foregroundStyle(.accent)
                 }
                 
-                HStack (alignment: .bottom) {
+                HStack(alignment: .bottom) {
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("Learned: \(skillGroup.learnedPercent)" + "%")
-                        Text("Total SP: \(skillGroup.learnedSP)")
+                        Text(String(format: NSLocalizedString("Learned: %.1f%%",
+                                                              tableName: "SkillsLocalization",
+                                                              comment: ""), skillsCategory.learnedPercent))
+                        Text(String(format: NSLocalizedString("Total SP: %d",
+                                                              tableName: "SkillsLocalization",
+                                                              comment: ""), skillsCategory.learnedSP))
                     }
                     .font(AppFonts.figtreeRegular12SwiftUI)
                     .foregroundStyle(.iconText)
                     
                     Spacer()
                     
-                    EditButtonWithArrowView(text: "Edit")
+                    EditButtonWithArrowView(text: NSLocalizedString("Edit",
+                                                                    tableName: "SkillsLocalization",
+                                                                    comment: ""))
                 }
             }
             
@@ -84,5 +88,7 @@ struct GroupInfoView: View {
 }
 
 #Preview {
-    SkillsCategoriesView(viewModel: SkillCategoriesViewModel(skillsDataManager: SkillsDataManager()))
+    let skillsDataManager = SkillsDataManager()
+    SkillsCategoriesView()
+        .environmentObject(skillsDataManager)
 }

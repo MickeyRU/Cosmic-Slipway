@@ -36,7 +36,7 @@ enum SkillPresetTier: SkillGroupExperience {
         }
     }
     
-    // Реализация метода для получения опыта по техлвл и уровню
+    // Получение опыта по техлвл и уровню
     func experienceForLevel(_ tech: SkillTech, _ level: CurrentSkillLevel) -> Int {
         return experienceByTechAndLevel[tech]?[level] ?? 0
     }

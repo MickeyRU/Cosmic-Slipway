@@ -1,0 +1,21 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Edit" : {
+
+    },
+    "Learned: %.1f%%" : {
+
+    },
+    "Level:" : {
+
+    },
+    "SP: %@" : {
+
+    },
+    "Total SP: %d" : {
+
+    }
+  },
+  "version" : "1.0"
+}

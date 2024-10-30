@@ -10,6 +10,7 @@ struct SkillGroupsView: View {
             List(skillCategories) { skillCategory in
                 CategoriesCellView(skillCategory: skillCategory)
                     .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
             }
             .scrollIndicators(.hidden)
             .listStyle(.plain)
@@ -19,12 +20,14 @@ struct SkillGroupsView: View {
 }
 
 struct CategoriesCellView: View {
+    @EnvironmentObject private var skillsDataManager: SkillsDataManager
+
     let skillCategory: SkillsGroup
     
     var body: some View {
         ZStack {
             CategoryInfoView(skillCategory: skillCategory)
-            NavigationLink(destination: SkillsView(skillsSubGroups: skillCategory.skillsSubGroups)) {
+            NavigationLink(destination: SkillsView(skillsSubGroups: skillCategory.skillsSubGroups).environmentObject(self.skillsDataManager)) {
                 EmptyView()
             }
             .opacity(0)
@@ -46,7 +49,9 @@ struct CategoryInfoView: View {
                     .foregroundStyle(.active)
                 Spacer()
 
-                EditButtonWithArrowView(text: "Edit")
+                EditButtonWithArrowView(text: NSLocalizedString("Edit",
+                                                                tableName: "SkillsLocalization",
+                                                                comment: ""))
             }
         }
         .padding(.horizontal, 24)

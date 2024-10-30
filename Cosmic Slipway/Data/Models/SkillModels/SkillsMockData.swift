@@ -2,8 +2,6 @@ let testSkills = [
     SkillsCategory(
         title: "Cruising Technology",
         imageName: "cruisingTechnology",
-        learnedPercent: 25.3,
-        learnedSP: 15043,
         skillsGroups: [
             SkillsGroup(
                 title: "Spaceship Command",
