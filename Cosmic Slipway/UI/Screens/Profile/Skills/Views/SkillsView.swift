@@ -2,7 +2,7 @@ import SwiftUI
 
 struct SkillsView: View {
     let skillsSubGroups: [SkillsSubGroup]
-
+    
     var body: some View {
         ZStack {
             ScreenBGImageView(image: .mainBG)
@@ -23,7 +23,7 @@ struct SkillsView: View {
 
 struct SkillsSubGroupView: View {
     let subGroup: SkillsSubGroup
-
+    
     var body: some View {
         VStack {
             SkillCellView(skill: subGroup.basicSkill, subGroupId: subGroup.id)
@@ -51,49 +51,88 @@ struct SkillsSubGroupView: View {
 }
 
 struct SkillCellView: View {
-    @EnvironmentObject private var skillsDataManager: SkillsDataManager
     let skill: Skill
     let subGroupId: UUID
     
+    @EnvironmentObject private var skillsDataManager: SkillsDataManager
+    @State private var showError: Bool = false
+    
     var body: some View {
-        HStack(spacing: 20) {
-            SkillImageView(image: skill.imageName, size: .small)
-            
-            VStack(alignment: .leading, spacing: 16){
-                Text(skill.title)
-                    .font(AppFonts.figtreeExBold16SwiftUI)
-                    .foregroundStyle(.active)
-                HStack {
-                    Text(String(format: NSLocalizedString("SP: %@",
-                                                          tableName: "SkillsLocalization",
-                                                          comment: ""),
-                                skill.getSPforCurrentLVL().formattedWithSpaceSeparator()))
+        ZStack {
+            HStack(spacing: 20) {
+                SkillImageView(image: skill.imageName, size: .small)
+                
+                VStack(alignment: .leading, spacing: 16){
+                    Text(skill.title)
+                        .font(AppFonts.figtreeExBold16SwiftUI)
+                        .foregroundStyle(.active)
+                    HStack {
+                        Text(String(format: NSLocalizedString("SP: %@",
+                                                              tableName: "SkillsLocalization",
+                                                              comment: ""), skill.currentSP.formatted()))
                         .font(AppFonts.figtreeRegular12SwiftUI)
                         .foregroundStyle(.iconText)
-                    
-                    Spacer()
-                    
-                    CustomStepper(
-                        level: skill.currentLvl,
-                        onIncrement: {
-                            Task {
-                                try await skillsDataManager.tryAsyncChangeSkillLevel(subGroupId: subGroupId,
-                                                                                     skillTech: skill.skillTech,
-                                                                                     increase: true)
+                        
+                        Spacer()
+                        
+                        CustomStepper(
+                            level: skill.currentLvl,
+                            onIncrement: {
+                                Task {
+                                    do {
+                                        try await skillsDataManager.tryAsyncChangeSkillLevel(subGroupId: subGroupId,
+                                                                                             skillTech: skill.skillTech,
+                                                                                             increase: true)
+                                    } catch {
+                                        await asyncShowErrorMessage()
+                                    }
+                                    
+                                }
+                            },
+                            onDecrement: {
+                                Task {
+                                    do {
+                                        try await skillsDataManager.tryAsyncChangeSkillLevel(subGroupId: subGroupId,
+                                                                                             skillTech: skill.skillTech,
+                                                                                             increase: false)
+                                    } catch {
+                                        await asyncShowErrorMessage()
+                                    }
+                                }
                             }
-                        },
-                        onDecrement: {
-                            Task {
-                                try await skillsDataManager.tryAsyncChangeSkillLevel(subGroupId: subGroupId,
-                                                                                     skillTech: skill.skillTech,
-                                                                                     increase: false)
-                            }
-                        }
-                    )
+                        )
+                    }
                 }
             }
+            .padding(.vertical, 8)
+            
+            if showError {
+                Color.darkBG
+                    .cornerRadius(28)
+                    .overlay(
+                        Text(NSLocalizedString("You can't change the level of the skill.",
+                                               tableName: "SkillsLocalization",
+                                               comment: ""))
+                        .font(AppFonts.figtreeExBold16SwiftUI)
+                        .foregroundColor(.accent)
+                        .padding()
+                    )
+                    .transition(.opacity)
+            }
         }
-        .padding(.vertical, 8)
+    }
+    
+    @MainActor
+    private func asyncShowErrorMessage() async {
+        withAnimation {
+            showError = true
+        }
+        
+        try? await Task.sleep(nanoseconds: 2 * 1_000_000_000)
+        
+        withAnimation {
+            showError = false
+        }
     }
 }
 

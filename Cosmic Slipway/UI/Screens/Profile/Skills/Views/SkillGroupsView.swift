@@ -27,7 +27,7 @@ struct CategoriesCellView: View {
     var body: some View {
         ZStack {
             CategoryInfoView(skillCategory: skillCategory)
-            NavigationLink(destination: SkillsView(skillsSubGroups: skillCategory.skillsSubGroups).environmentObject(self.skillsDataManager)) {
+            NavigationLink(destination: SkillsView(skillsSubGroups: skillCategory.skillsSubGroups).environmentObject(skillsDataManager)) {
                 EmptyView()
             }
             .opacity(0)
@@ -74,5 +74,6 @@ struct CategoryInfoView: View {
 }
 
 #Preview {
-    SkillGroupsView(skillCategories: testSkills[0].skillsGroups)
+    let dataManager = SkillsDataManager()
+    SkillGroupsView(skillCategories: testSkills[0].skillsGroups).environmentObject(dataManager)
 }

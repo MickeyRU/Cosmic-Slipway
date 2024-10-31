@@ -13,7 +13,10 @@
     "SP: %@" : {
 
     },
-    "Total SP: %d" : {
+    "Total SP: %@" : {
+
+    },
+    "You can't change the level of the skill." : {
 
     }
   },

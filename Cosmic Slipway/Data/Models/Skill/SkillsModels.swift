@@ -22,6 +22,7 @@ enum CurrentSkillLevel: Int, Comparable {
 
 enum SkillTierDependency {
     case tier1  // 4-5-0  (basic -> advanced (если basic минимум в 4), advanced -> expert (если advanced минимум в 5)
+    case tier2 // 1-1-1 (все скиллы качаются на любой уровнь)
     
     func isSatisfiedForLvlUp(for currentTech: SkillTech, basedOn subgroup: SkillsSubGroup) -> Bool {
         switch self {
@@ -34,6 +35,8 @@ enum SkillTierDependency {
             case .expert:
                 return subgroup.advancedSkill.currentLvl.rawValue == 5
             }
+        case .tier2:
+            switch currentTech { case .basic, .advanced, .expert: return true }
         }
     }
     
@@ -42,12 +45,14 @@ enum SkillTierDependency {
         case .tier1:
             switch currentTech {
             case .basic:
-                return subgroup.advancedSkill.currentLvl.rawValue == 0
+                return subgroup.basicSkill.currentLvl.rawValue > 4 || subgroup.advancedSkill.currentLvl.rawValue == 0
             case .advanced:
-                return subgroup.expertSkill.currentLvl.rawValue == 0
+                return subgroup.advancedSkill.currentLvl.rawValue > 4 || subgroup.expertSkill.currentLvl.rawValue == 0
             case .expert:
                 return true
             }
+        case .tier2:
+            switch currentTech { case .basic, .advanced, .expert: return true }
         }
     }
 }
@@ -59,7 +64,7 @@ struct SkillsCategory: SkillsIdentifiable {
     var skillsGroups: [SkillsGroup]
     
     var learnedSP: Int {
-        skillsGroups.reduce(0) { $0 + $1.totalSP }
+        skillsGroups.reduce(0) { $0 + $1.currentSP }
     }
     
     var learnedPercent: Float {
@@ -75,7 +80,7 @@ struct SkillsGroup: SkillsIdentifiable {
     var imageName: String
     var skillsSubGroups: [SkillsSubGroup]
     
-    var totalSP: Int {
+    var currentSP: Int {
         skillsSubGroups.reduce(0) { $0 + $1.currentSP }
     }
     
@@ -93,7 +98,7 @@ struct SkillsSubGroup: Identifiable {
     let dependency: SkillTierDependency
     
     var currentSP: Int {
-        basicSkill.getSPforCurrentLVL() + advancedSkill.getSPforCurrentLVL() + expertSkill.getSPforCurrentLVL()
+        basicSkill.currentSP + advancedSkill.currentSP + expertSkill.currentSP
     }
     
     var maxSP: Int {
@@ -140,6 +145,15 @@ struct Skill: Identifiable {
     let experiencePreset: SkillPresetTier
     var currentLvl: CurrentSkillLevel = .zero
     
+    var currentSP: Int {
+        (CurrentSkillLevel.zero.rawValue...currentLvl.rawValue).reduce(0) { totalSp, level in
+            if let skillLevel = CurrentSkillLevel(rawValue: level) {
+                return totalSp + experiencePreset.experienceForLevel(skillTech, skillLevel)
+            }
+            return totalSp
+        }
+    }
+    
     var maxSP: Int {
         (0...5).reduce(0) { total, level in
             if let skillLevel = CurrentSkillLevel(rawValue: level) {
@@ -159,17 +173,5 @@ struct Skill: Identifiable {
         let previousLevel = currentLvl.rawValue - 1
         guard previousLevel >= 0, let newLevel = CurrentSkillLevel(rawValue: previousLevel) else { return }
         currentLvl = newLevel
-    }
-    
-    func getSPforCurrentLVL() ->  Int {
-        var totalSp: Int = 0
-        
-        for level in CurrentSkillLevel.zero.rawValue...currentLvl.rawValue {
-            if let skillLevel = CurrentSkillLevel(rawValue: level) {
-                totalSp += experiencePreset.experienceForLevel(skillTech, skillLevel)
-            }
-        }
-        
-        return totalSp
     }
 }

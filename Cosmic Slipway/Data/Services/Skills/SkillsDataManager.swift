@@ -3,7 +3,6 @@ import Foundation
 enum SkillChangeError: Error {
     case invalidSubGroup
     case dependencyNotSatisfied
-    case invalidSkillTech
 }
 
 final class SkillsDataManager: ObservableObject {
@@ -15,32 +14,44 @@ final class SkillsDataManager: ObservableObject {
         }
     }
     
-    func tryAsyncChangeSkillLevel(subGroupId: UUID, skillTech: SkillTech, increase: Bool) async throws -> Bool {
-            for categoryIndex in skillsCategories.indices {
-                for groupIndex in skillsCategories[categoryIndex].skillsGroups.indices {
-                    if let subGroupIndex = skillsCategories[categoryIndex].skillsGroups[groupIndex].skillsSubGroups.firstIndex(where: { $0.id == subGroupId }) {
-                        
-                        // Выполняем изменения на главном потоке с корректной обработкой ошибок
-                        return try await MainActor.run { () -> Bool in
-                            let subGroup = skillsCategories[categoryIndex].skillsGroups[groupIndex].skillsSubGroups[subGroupIndex]
-                            let canChangeLevel = increase ? subGroup.canLevelUp(from: skillTech) : subGroup.canLevelDown(from: skillTech)
-                            
-                            guard canChangeLevel else {
-                                throw SkillChangeError.dependencyNotSatisfied
-                            }
-                            
-                            // Изменение уровня навыка
-                            skillsCategories[categoryIndex].skillsGroups[groupIndex].skillsSubGroups[subGroupIndex].changeSkillLevel(for: skillTech, increase: increase)
-                            return true
-                        }
-                    }
-                }
-            }
-            
+    func tryAsyncChangeSkillLevel(subGroupId: UUID, skillTech: SkillTech, increase: Bool) async throws {
+        guard let indices = findSubGroup(by: subGroupId) else {
             throw SkillChangeError.invalidSubGroup
         }
+        
+        try await MainActor.run {
+            try self.changeSkillLevel(at: indices, skillTech: skillTech, increase: increase)
+        }
+    }
     
-    // Пример асинхронного метода загрузки данных
+    private func findSubGroup(by subGroupId: UUID) -> (categoryIndex: Int, groupIndex: Int, subGroupIndex: Int)? {
+        for categoryIndex in skillsCategories.indices {
+            for groupIndex in skillsCategories[categoryIndex].skillsGroups.indices {
+                if let subGroupIndex = skillsCategories[categoryIndex].skillsGroups[groupIndex].skillsSubGroups.firstIndex(where: { $0.id == subGroupId }) {
+                    return (categoryIndex, groupIndex, subGroupIndex)
+                }
+            }
+        }
+        return nil
+    }
+    
+    
+    @MainActor
+    private func changeSkillLevel(at indices: (categoryIndex: Int, groupIndex: Int, subGroupIndex: Int),
+                                  skillTech: SkillTech,
+                                  increase: Bool) throws {
+        let subGroup = skillsCategories[indices.categoryIndex].skillsGroups[indices.groupIndex].skillsSubGroups[indices.subGroupIndex]
+        
+        let canChangeLevel = increase ? subGroup.canLevelUp(from: skillTech) : subGroup.canLevelDown(from: skillTech)
+        guard canChangeLevel else {
+            throw SkillChangeError.dependencyNotSatisfied
+        }
+        
+        // Изменение уровня навыка
+        skillsCategories[indices.categoryIndex].skillsGroups[indices.groupIndex].skillsSubGroups[indices.subGroupIndex].changeSkillLevel(for: skillTech, increase: increase)
+    }
+    
+    // Заглушка асинхронного метода загрузки данных
     private func asyncLoadSkills() async {
         do {
             try await Task.sleep(for: .seconds(5))
@@ -52,6 +63,8 @@ final class SkillsDataManager: ObservableObject {
         }
     }
 }
+
+// Mark: - extension SkillsDataManager
 
 extension SkillsDataManager {
     func getSubGroups(for groupId: UUID) -> [SkillsSubGroup]? {

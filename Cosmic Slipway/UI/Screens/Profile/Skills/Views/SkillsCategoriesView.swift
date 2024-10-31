@@ -26,7 +26,7 @@ struct SkillGroupsCell: View {
     var body: some View {
         ZStack {
             GroupInfoView(skillsCategory: skillGroup)
-            NavigationLink(destination: SkillGroupsView(skillCategories: skillGroup.skillsGroups).environmentObject(self.skillsDataManager)) {
+            NavigationLink(destination: SkillGroupsView(skillCategories: skillGroup.skillsGroups).environmentObject(skillsDataManager)) {
                 EmptyView()
             }
             .opacity(0)
@@ -54,9 +54,9 @@ struct GroupInfoView: View {
                         Text(String(format: NSLocalizedString("Learned: %.1f%%",
                                                               tableName: "SkillsLocalization",
                                                               comment: ""), skillsCategory.learnedPercent))
-                        Text(String(format: NSLocalizedString("Total SP: %d",
+                        Text(String(format: NSLocalizedString("Total SP: %@",
                                                               tableName: "SkillsLocalization",
-                                                              comment: ""), skillsCategory.learnedSP))
+                                                              comment: ""), skillsCategory.learnedSP.formatted()))
                     }
                     .font(AppFonts.figtreeRegular12SwiftUI)
                     .foregroundStyle(.iconText)
