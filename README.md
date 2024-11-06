@@ -26,7 +26,7 @@ Cosmic Slpway - мобильное приложение под IOS, предна
 -	UI написан на комбинации фремворков UIKit, SwiftUI. Для реактивного обновления применяется Combine. Для верстки используетя Auto Layout на основе ShapKit
 -	Основная архитектура модулей приложения - MVVM для навигации используется Router
 -	Проблемы многопоточности решены на основе Swift Concurrency
--	Бэкенд написан на основе фраемворка VAPOR (планируется реализация)
+-	[Бэкенд](https://www.eveechoes.com](https://github.com/MickeyRU/Cosmic-Slipway-Backend)) написан на фраемворке VAPOR
 
 # 🚀 **Скоро в App Store**:
 
