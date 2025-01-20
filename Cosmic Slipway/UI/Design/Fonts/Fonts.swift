@@ -12,6 +12,7 @@ enum FontSize: CGFloat {
     case size16 = 16
     case size18 = 18
     case size24 = 24
+    case size36 = 36
 }
 
 struct AppFonts {
@@ -28,6 +29,7 @@ struct AppFonts {
     static var figtreeExBold16: UIFont? { return uiKitFont(for: .ebFigtree, size: .size16) }
     static var figtreeExBold18: UIFont? { return uiKitFont(for: .ebFigtree, size: .size18) }
     static var figtreeExBold24: UIFont? { return uiKitFont(for: .ebFigtree, size: .size24) }
+    static var figtreeExBold36: UIFont? { return uiKitFont(for: .ebFigtree, size: .size36) }
     static var figtreeRegular10: UIFont? { return uiKitFont(for: .rFigtree, size: .size10) }
     static var figtreeRegular12: UIFont? { return uiKitFont(for: .rFigtree, size: .size12) }
     
@@ -36,6 +38,7 @@ struct AppFonts {
     static var figtreeExBold16SwiftUI: Font { return swiftUIFont(for: .ebFigtree, size: .size16) }
     static var figtreeExBold18SwiftUI: Font { return swiftUIFont(for: .ebFigtree, size: .size18) }
     static var figtreeExBold24SwiftUI: Font { return swiftUIFont(for: .ebFigtree, size: .size24) }
+    static var figtreeExBold36SwiftUI: Font { return swiftUIFont(for: .ebFigtree, size: .size36) }
     static var figtreeRegular10SwiftUI: Font { return swiftUIFont(for: .rFigtree, size: .size10) }
     static var figtreeRegular12SwiftUI: Font { return swiftUIFont(for: .rFigtree, size: .size12) }
 }

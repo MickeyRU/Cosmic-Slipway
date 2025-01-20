@@ -25,19 +25,24 @@ final class NavigationRouter: NavigationRouterProtocol {
     
     private let navigationController: UINavigationController
     private let skillsDataManager: SkillsDataManager
+    private let authorizationViewModel: AuthorizationViewModel
     
     init(
         navigationController: UINavigationController,
-        skillsDataManager: SkillsDataManager = SkillsDataManager()
+        skillsDataManager: SkillsDataManager = SkillsDataManager(),
+        authorizationViewModel: AuthorizationViewModel = AuthorizationViewModel()
     ) {
         self.navigationController = navigationController
         self.skillsDataManager = skillsDataManager
+        self.authorizationViewModel = authorizationViewModel
     }
     
     func startNavigation() {
-        let skillsView = AuthorizationView().environmentObject(self.skillsDataManager)
-        let hostingController = UIHostingController(rootView: skillsView)
+        let authorizationView = AuthorizationView().environmentObject(self.authorizationViewModel)
+        let hostingController = UIHostingController(rootView: authorizationView)
         navigationController.pushViewController(hostingController, animated: true)
+//        let rootViewController = MainViewController(router: self)
+//        navigationController.pushViewController(rootViewController, animated: false)
     }
     
     func navigateToMainviewAfterAuthorization() {
