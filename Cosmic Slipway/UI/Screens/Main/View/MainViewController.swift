@@ -106,12 +106,20 @@ final class MainViewController: UIViewController {
 // MARK: - UICollectionViewDataSource
 
 extension MainViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int
+    ) -> Int {
         viewModel.ships.count + 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ShipCell.reuseIdentifier, for: indexPath) as? ShipCell else {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        guard 
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ShipCell.reuseIdentifier, for: indexPath) as? ShipCell
+        else {
             return UICollectionViewCell()
         }
         
@@ -143,12 +151,19 @@ extension MainViewController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension MainViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
         let cellInserts = UIEdgeInsets(top: 0,
                                        left: collectionViewInsets.sideInsets,
                                        bottom: 0,
                                        right: collectionViewInsets.sideInsets)
         let width = view.frame.width - (cellInserts.left + cellInserts.right)
-        return CGSize(width: width, height: collectionViewInsets.cellHeight)
+        return CGSize(
+            width: width,
+            height: collectionViewInsets.cellHeight
+        )
     }
 }

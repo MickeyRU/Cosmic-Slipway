@@ -24,7 +24,13 @@ final class SkillsDataManager: ObservableObject {
         }
     }
     
-    private func findSubGroup(by subGroupId: UUID) -> (categoryIndex: Int, groupIndex: Int, subGroupIndex: Int)? {
+    private func findSubGroup(
+        by subGroupId: UUID
+    ) -> (
+        categoryIndex: Int,
+        groupIndex: Int,
+        subGroupIndex: Int
+    )? {
         for categoryIndex in skillsCategories.indices {
             for groupIndex in skillsCategories[categoryIndex].skillsGroups.indices {
                 if let subGroupIndex = skillsCategories[categoryIndex].skillsGroups[groupIndex].skillsSubGroups.firstIndex(where: { $0.id == subGroupId }) {
@@ -37,10 +43,18 @@ final class SkillsDataManager: ObservableObject {
     
     
     @MainActor
-    private func changeSkillLevel(at indices: (categoryIndex: Int, groupIndex: Int, subGroupIndex: Int),
-                                  skillTech: SkillTech,
-                                  increase: Bool) throws {
-        let subGroup = skillsCategories[indices.categoryIndex].skillsGroups[indices.groupIndex].skillsSubGroups[indices.subGroupIndex]
+    private func changeSkillLevel(
+        at indices: (
+            categoryIndex: Int,
+            groupIndex: Int,
+            subGroupIndex: Int
+        ),
+        skillTech: SkillTech,
+        increase: Bool
+    ) throws {
+        let subGroup = skillsCategories[indices.categoryIndex]
+            .skillsGroups[indices.groupIndex]
+            .skillsSubGroups[indices.subGroupIndex]
         
         let canChangeLevel = increase ? subGroup.canLevelUp(from: skillTech) : subGroup.canLevelDown(from: skillTech)
         guard canChangeLevel else {
@@ -48,7 +62,10 @@ final class SkillsDataManager: ObservableObject {
         }
         
         // Изменение уровня навыка
-        skillsCategories[indices.categoryIndex].skillsGroups[indices.groupIndex].skillsSubGroups[indices.subGroupIndex].changeSkillLevel(for: skillTech, increase: increase)
+        skillsCategories[indices.categoryIndex]
+            .skillsGroups[indices.groupIndex]
+            .skillsSubGroups[indices.subGroupIndex]
+            .changeSkillLevel(for: skillTech, increase: increase)
     }
     
     // Заглушка асинхронного метода загрузки данных

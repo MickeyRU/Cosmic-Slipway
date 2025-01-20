@@ -26,12 +26,21 @@ final class NavigationRouter: NavigationRouterProtocol {
     private let navigationController: UINavigationController
     private let skillsDataManager: SkillsDataManager
     
-    init(navigationController: UINavigationController, skillsDataManager: SkillsDataManager = SkillsDataManager()) {
+    init(
+        navigationController: UINavigationController,
+        skillsDataManager: SkillsDataManager = SkillsDataManager()
+    ) {
         self.navigationController = navigationController
         self.skillsDataManager = skillsDataManager
     }
     
     func startNavigation() {
+        let skillsView = AuthorizationView().environmentObject(self.skillsDataManager)
+        let hostingController = UIHostingController(rootView: skillsView)
+        navigationController.pushViewController(hostingController, animated: true)
+    }
+    
+    func navigateToMainviewAfterAuthorization() {
         let rootViewController = MainViewController(router: self)
         navigationController.pushViewController(rootViewController, animated: false)
     }
@@ -59,8 +68,15 @@ final class NavigationRouter: NavigationRouterProtocol {
     
     func navigateToNewShipFittingScreen(shipID: UUID) {
         let newShipFittingViewModel = CreatingShipFittingViewModel(shipID: shipID)
-        let shipFittingVC = ShipFittingViewController(viewModel: newShipFittingViewModel, router: self)
-        shipFittingVC.tabBarItem = UITabBarItem(title: "Fitting", image: UIImage.fittingTabBar, tag: 0)
+        let shipFittingVC = ShipFittingViewController(
+            viewModel: newShipFittingViewModel,
+            router: self
+        )
+        shipFittingVC.tabBarItem = UITabBarItem(
+            title: "Fitting",
+            image: UIImage.fittingTabBar,
+            tag: 0
+        )
         
         let shipNavVC = UINavigationController(rootViewController: shipFittingVC)
         

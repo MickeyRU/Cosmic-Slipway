@@ -72,8 +72,3 @@ struct CategoryInfoView: View {
         )
     }
 }
-
-#Preview {
-    let dataManager = SkillsDataManager()
-    SkillGroupsView(skillCategories: testSkills[0].skillsGroups).environmentObject(dataManager)
-}

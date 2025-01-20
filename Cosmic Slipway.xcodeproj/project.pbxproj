@@ -76,6 +76,8 @@
 		BEEA422729D044B2008B98E4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEA422629D044B2008B98E4 /* UIColor+Extension.swift */; };
 		BEEA422D29D06CB6008B98E4 /* Figtree-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEEA422C29D06CB6008B98E4 /* Figtree-ExtraBold.ttf */; };
 		BEEA423029D09684008B98E4 /* Figtree-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEEA422F29D09684008B98E4 /* Figtree-Regular.ttf */; };
+		E251E4F32D3D272100D4B9D8 /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E251E4F22D3D272100D4B9D8 /* AuthorizationView.swift */; };
+		E251E4F52D3D3B5000D4B9D8 /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E251E4F42D3D3B5000D4B9D8 /* AuthorizationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -162,6 +164,8 @@
 		BEEA422629D044B2008B98E4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		BEEA422C29D06CB6008B98E4 /* Figtree-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-ExtraBold.ttf"; sourceTree = "<group>"; };
 		BEEA422F29D09684008B98E4 /* Figtree-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-Regular.ttf"; sourceTree = "<group>"; };
+		E251E4F22D3D272100D4B9D8 /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
+		E251E4F42D3D3B5000D4B9D8 /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,6 +348,7 @@
 		BE835D062CCEB06800564397 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				E251E4EF2D3D248800D4B9D8 /* Authorization */,
 				BEB0623829D1A3CD005AEB24 /* Main */,
 				BEA5899B2CAF13B800352F46 /* Profile */,
 				BEC331F02AEAB47C00630D0D /* ChoosingShip */,
@@ -596,6 +601,31 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		E251E4EF2D3D248800D4B9D8 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				E251E4F12D3D26F700D4B9D8 /* ViewModel */,
+				E251E4F02D3D26EE00D4B9D8 /* View */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		E251E4F02D3D26EE00D4B9D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E251E4F22D3D272100D4B9D8 /* AuthorizationView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E251E4F12D3D26F700D4B9D8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E251E4F42D3D3B5000D4B9D8 /* AuthorizationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -705,6 +735,7 @@
 				BEAC9BD729E43834009987A3 /* MainTabBarController.swift in Sources */,
 				BE07C3E42AF68B8400E272E4 /* ShipUIViewModel.swift in Sources */,
 				BED8DA6F2AFD5E5800786637 /* ModuleSubTypeViewController.swift in Sources */,
+				E251E4F32D3D272100D4B9D8 /* AuthorizationView.swift in Sources */,
 				BEEA422529D03B57008B98E4 /* ShipCell.swift in Sources */,
 				BE4D3DA42BBC47CB007CD433 /* AttributeCellConfigurationTypes.swift in Sources */,
 				BE34CAFE2CC8FD220046A1DD /* ScreenBGImageView.swift in Sources */,
@@ -730,6 +761,7 @@
 				BEAA532F2AF4479800E44AE4 /* SelectionCell.swift in Sources */,
 				BEA589A02CAF22BD00352F46 /* MainHeaderView.swift in Sources */,
 				BEB7D0A529CF18AE002B3431 /* SceneDelegate.swift in Sources */,
+				E251E4F52D3D3B5000D4B9D8 /* AuthorizationViewModel.swift in Sources */,
 				BED8DA6B2AFD14EB00786637 /* ShadowConfigurable.swift in Sources */,
 				BED8DA6D2AFD531F00786637 /* MockDataService.swift in Sources */,
 				BEC81C722CC82F8100190296 /* SkillsModels.swift in Sources */,

@@ -1,12 +1,24 @@
 import UIKit
 
 protocol DetailsViewFactoryProtocol {
-    func createLabel(withText text: String, font: UIFont?, textColor: UIColor?, aligment: NSTextAlignment) -> UILabel
-    func createImageView(withImageName uiImageName: UIImage) -> UIImageView
+    func createLabel(
+        withText text: String,
+        font: UIFont?,
+        textColor: UIColor?,
+        aligment: NSTextAlignment
+    ) -> UILabel
+    func createImageView(
+        withImageName uiImageName: UIImage
+    ) -> UIImageView
 }
 
 final class DetailsViewFactory: DetailsViewFactoryProtocol {
-    func createLabel(withText text: String, font: UIFont?, textColor: UIColor?, aligment: NSTextAlignment) -> UILabel {
+    func createLabel(
+        withText text: String,
+        font: UIFont?,
+        textColor: UIColor?,
+        aligment: NSTextAlignment
+    ) -> UILabel {
         let label = UILabel()
         label.text = text
         label.font = font
@@ -17,7 +29,9 @@ final class DetailsViewFactory: DetailsViewFactoryProtocol {
         return label
     }
     
-    func createImageView(withImageName uiImageName: UIImage) -> UIImageView {
+    func createImageView(
+        withImageName uiImageName: UIImage
+    ) -> UIImageView {
         let imageView = UIImageView()
         imageView.image = uiImageName
         imageView.contentMode = .scaleAspectFit

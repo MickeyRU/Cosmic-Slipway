@@ -86,9 +86,3 @@ struct GroupInfoView: View {
         )
     }
 }
-
-#Preview {
-    let skillsDataManager = SkillsDataManager()
-    SkillsCategoriesView()
-        .environmentObject(skillsDataManager)
-}

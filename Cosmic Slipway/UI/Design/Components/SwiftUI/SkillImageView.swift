@@ -14,11 +14,20 @@ struct SkillImageView: View {
         .renderingMode(.template)
         .foregroundStyle(
             LinearGradient(
-                gradient: Gradient(colors: [.gradientFrom, .gradientMiddle, .gradientTo]),
+                gradient: Gradient(
+                    colors: [
+                        .gradientFrom,
+                        .gradientMiddle,
+                        .gradientTo
+                    ]
+                ),
                 startPoint: .topTrailing,
                 endPoint: .bottomLeading
                 )
         )
-        .frame(width: size.rawValue, height: size.rawValue)
+        .frame(
+            width: size.rawValue,
+            height: size.rawValue
+        )
     }
 }
